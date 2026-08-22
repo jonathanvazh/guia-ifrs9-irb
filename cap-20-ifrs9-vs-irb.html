@@ -1,0 +1,1913 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>20. IFRS 9 frente a IRB: las diferencias que gobiernan todo lo demás · Modelos IFRS 9 e IRB para cartera Wholesale</title>
+<meta name="description" content="Por qué dos modelos que estiman lo mismo dan números distintos, cuáles son exactamente las diferencias y cómo se construye el puente entre los parámetros regulatorios y los contables sin romper ninguno de los dos.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><path id="DejaVuSans-Oblique-4d" d="M 1081 4666  L 2028 4666  L 2572 1522  L 4378 4666  L 5350 4666  L 4441 0  L 3828 0  L 4622 4091  L 2791 897  L 2175 897  L 1581 4103  L 788 0  L 172 0  L 1081 4666  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-62" d="M 3169 2138  Q 3169 2591 2961 2847  Q 2753 3103 2388 3103  Q 2122 3103 1889 2973  Q 1656 2844 1484 2597  Q 1303 2338 1198 1995  Q 1094 1653 1094 1313  Q 1094 881 1298 636  Q 1503 391 1863 391  Q 2134 391 2365 517  Q 2597 644 2772 891  Q 2950 1147 3059 1487  Q 3169 1828 3169 2138  z M 1381 2969  Q 1594 3256 1914 3420  Q 2234 3584 2584 3584  Q 3122 3584 3439 3221  Q 3756 2859 3756 2241  Q 3756 1734 3570 1259  Q 3384 784 3041 416  Q 2816 172 2522 40  Q 2228 -91 1906 -91  Q 1566 -91 1316 65  Q 1066 222 909 531  L 806 0  L 231 0  L 1178 4863  L 1753 4863  L 1381 2969  z " transform="scale(0.015625)"/><path id="DejaVuSans-28" d="M 1984 4856  Q 1566 4138 1362 3434  Q 1159 2731 1159 2009  Q 1159 1288 1364 580  Q 1569 -128 1984 -844  L 1484 -844  Q 1016 -109 783 600  Q 550 1309 550 2009  Q 550 2706 781 3412  Q 1013 4119 1484 4856  L 1984 4856  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-50" d="M 1081 4666  L 2541 4666  Q 3178 4666 3512 4369  Q 3847 4072 3847 3500  Q 3847 2731 3353 2303  Q 2859 1875 1966 1875  L 1172 1875  L 806 0  L 172 0  L 1081 4666  z M 1613 4147  L 1275 2394  L 2069 2394  Q 2606 2394 2893 2669  Q 3181 2944 3181 3456  Q 3181 3784 2986 3965  Q 2791 4147 2438 4147  L 1613 4147  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-44" d="M 1081 4666  L 2438 4666  Q 3519 4666 4070 4208  Q 4622 3750 4622 2847  Q 4622 2250 4412 1698  Q 4203 1147 3834 769  Q 3463 381 2891 190  Q 2319 0 1538 0  L 172 0  L 1081 4666  z M 1613 4147  L 909 519  L 1734 519  Q 2794 519 3375 1128  Q 3956 1738 3956 2847  Q 3956 3519 3581 3833  Q 3206 4147 2406 4147  L 1613 4147  z " transform="scale(0.015625)"/><path id="DejaVuSans-29" d="M 513 4856  L 1013 4856  Q 1481 4119 1714 3412  Q 1947 2706 1947 2009  Q 1947 1309 1714 600  Q 1481 -109 1013 -844  L 513 -844  Q 928 -128 1133 580  Q 1338 1288 1338 2009  Q 1338 2731 1133 3434  Q 928 4138 513 4856  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-45" d="M 1081 4666  L 4031 4666  L 3928 4134  L 1606 4134  L 1338 2753  L 3566 2753  L 3463 2222  L 1234 2222  L 909 531  L 3284 531  L 3181 0  L 172 0  L 1081 4666  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-4c" d="M 1075 4666  L 1709 4666  L 909 525  L 3181 525  L 3078 0  L 172 0  L 1075 4666  z " transform="scale(0.015625)"/><path id="DejaVuSans-3d" d="M 678 2906  L 4684 2906  L 4684 2381  L 678 2381  L 678 2906  z M 678 1631  L 4684 1631  L 4684 1100  L 678 1100  L 678 1631  z " transform="scale(0.015625)"/><path id="DejaVuSans-d7" d="M 4488 3438  L 3059 2003  L 4488 575  L 4116 197  L 2681 1631  L 1247 197  L 878 575  L 2303 2003  L 878 3438  L 1247 3816  L 2681 2381  L 4116 3816  L 4488 3438  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-47" d="M 3494 697  L 3738 1919  L 2700 1919  L 2797 2438  L 4453 2438  L 4050 384  Q 3634 156 3143 32  Q 2653 -91 2156 -91  Q 1278 -91 783 396  Q 288 884 288 1753  Q 288 2475 589 3126  Q 891 3778 1422 4213  Q 1756 4484 2153 4617  Q 2550 4750 3034 4750  Q 3472 4750 3873 4639  Q 4275 4528 4641 4306  L 4513 3634  Q 4231 3928 3853 4083  Q 3475 4238 3047 4238  Q 2550 4238 2172 4048  Q 1794 3859 1497 3463  Q 1244 3125 1098 2667  Q 953 2209 953 1734  Q 953 1081 1287 751  Q 1622 422 2284 422  Q 2616 422 2925 492  Q 3234 563 3494 697  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-41" d="M 2356 4666  L 3072 4666  L 3938 0  L 3278 0  L 3084 1197  L 984 1197  L 325 0  L -341 0  L 2356 4666  z M 2584 4044  L 1275 1722  L 2988 1722  L 2584 4044  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-3c1" d="M 1203 2875  Q 1453 3194 1981 3475  Q 2188 3584 2756 3584  Q 3394 3584 3694 3078  Q 3994 2572 3834 1747  Q 3672 922 3175 415  Q 2678 -91 2041 -91  Q 1656 -91 1409 63  Q 1163 213 1044 525  L 681 -1331  L 103 -1331  L 697 1716  Q 838 2438 1203 2875  z M 3238 1747  Q 3359 2381 3169 2744  Q 2978 3103 2522 3103  Q 2066 3103 1734 2744  Q 1403 2381 1281 1747  Q 1156 1113 1347 750  Q 1538 391 1994 391  Q 2450 391 2781 750  Q 3113 1113 3238 1747  z " transform="scale(0.015625)"/><path id="DejaVuSans-30" d="M 2034 4250  Q 1547 4250 1301 3770  Q 1056 3291 1056 2328  Q 1056 1369 1301 889  Q 1547 409 2034 409  Q 2525 409 2770 889  Q 3016 1369 3016 2328  Q 3016 3291 2770 3770  Q 2525 4250 2034 4250  z M 2034 4750  Q 2819 4750 3233 4129  Q 3647 3509 3647 2328  Q 3647 1150 3233 529  Q 2819 -91 2034 -91  Q 1250 -91 836 529  Q 422 1150 422 2328  Q 422 3509 836 4129  Q 1250 4750 2034 4750  z " transform="scale(0.015625)"/><path id="DejaVuSans-2c" d="M 750 794  L 1409 794  L 1409 256  L 897 -744  L 494 -744  L 750 256  L 750 794  z " transform="scale(0.015625)"/><path id="DejaVuSans-31" d="M 794 531  L 1825 531  L 1825 4091  L 703 3866  L 703 4441  L 1819 4666  L 2450 4666  L 2450 531  L 3481 531  L 3481 0  L 794 0  L 794 531  z " transform="scale(0.015625)"/><path id="DejaVuSans-34" d="M 2419 4116  L 825 1625  L 2419 1625  L 2419 4116  z M 2253 4666  L 3047 4666  L 3047 1625  L 3713 1625  L 3713 1100  L 3047 1100  L 3047 0  L 2419 0  L 2419 1100  L 313 1100  L 313 1709  L 2253 4666  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-5a" d="M 838 4666  L 4500 4666  L 4409 4184  L 794 531  L 3769 531  L 3669 0  L -141 0  L -50 481  L 3566 4134  L 738 4134  L 838 4666  z " transform="scale(0.015625)"/><path id="DejaVuSans-2212" d="M 678 2272  L 4684 2272  L 4684 1741  L 678 1741  L 678 2272  z " transform="scale(0.015625)"/><path id="DejaVuSans-33" d="M 2597 2516  Q 3050 2419 3304 2112  Q 3559 1806 3559 1356  Q 3559 666 3084 287  Q 2609 -91 1734 -91  Q 1441 -91 1130 -33  Q 819 25 488 141  L 488 750  Q 750 597 1062 519  Q 1375 441 1716 441  Q 2309 441 2620 675  Q 2931 909 2931 1356  Q 2931 1769 2642 2001  Q 2353 2234 1838 2234  L 1294 2234  L 1294 2753  L 1863 2753  Q 2328 2753 2575 2939  Q 2822 3125 2822 3475  Q 2822 3834 2567 4026  Q 2313 4219 1838 4219  Q 1578 4219 1281 4162  Q 984 4106 628 3988  L 628 4550  Q 988 4650 1302 4700  Q 1616 4750 1894 4750  Q 2613 4750 3031 4423  Q 3450 4097 3450 3541  Q 3450 3153 3228 2886  Q 3006 2619 2597 2516  z " transform="scale(0.015625)"/><path id="DejaVuSans-35" d="M 691 4666  L 3169 4666  L 3169 4134  L 1269 4134  L 1269 2991  Q 1406 3038 1543 3061  Q 1681 3084 1819 3084  Q 2600 3084 3056 2656  Q 3513 2228 3513 1497  Q 3513 744 3044 326  Q 2575 -91 1722 -91  Q 1428 -91 1123 -41  Q 819 9 494 109  L 494 744  Q 775 591 1075 516  Q 1375 441 1709 441  Q 2250 441 2565 725  Q 2881 1009 2881 1497  Q 2881 1984 2565 2268  Q 2250 2553 1709 2553  Q 1456 2553 1204 2497  Q 953 2441 691 2322  L 691 4666  z " transform="scale(0.015625)"/><path id="DejaVuSans-2b" d="M 2944 4013  L 2944 2272  L 4684 2272  L 4684 1741  L 2944 1741  L 2944 0  L 2419 0  L 2419 1741  L 678 1741  L 678 2272  L 2419 2272  L 2419 4013  L 2944 4013  z " transform="scale(0.015625)"/><path id="DejaVuSans-38" d="M 2034 2216  Q 1584 2216 1326 1975  Q 1069 1734 1069 1313  Q 1069 891 1326 650  Q 1584 409 2034 409  Q 2484 409 2743 651  Q 3003 894 3003 1313  Q 3003 1734 2745 1975  Q 2488 2216 2034 2216  z M 1403 2484  Q 997 2584 770 2862  Q 544 3141 544 3541  Q 544 4100 942 4425  Q 1341 4750 2034 4750  Q 2731 4750 3128 4425  Q 3525 4100 3525 3541  Q 3525 3141 3298 2862  Q 3072 2584 2669 2484  Q 3125 2378 3379 2068  Q 3634 1759 3634 1313  Q 3634 634 3220 271  Q 2806 -91 2034 -91  Q 1263 -91 848 271  Q 434 634 434 1313  Q 434 1759 690 2068  Q 947 2378 1403 2484  z M 1172 3481  Q 1172 3119 1398 2916  Q 1625 2713 2034 2713  Q 2441 2713 2670 2916  Q 2900 3119 2900 3481  Q 2900 3844 2670 4047  Q 2441 4250 2034 4250  Q 1625 4250 1398 4047  Q 1172 3844 1172 3481  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-49" d="M 1081 4666  L 1716 4666  L 806 0  L 172 0  L 1081 4666  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-54" d="M 378 4666  L 4325 4666  L 4225 4134  L 2559 4134  L 1759 0  L 1125 0  L 1925 4134  L 275 4134  L 378 4666  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-4e" d="M 1081 4666  L 1931 4666  L 3219 666  L 4000 4666  L 4616 4666  L 3706 0  L 2853 0  L 1569 4025  L 788 0  L 172 0  L 1081 4666  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-43" d="M 4447 4306  L 4319 3641  Q 4019 3944 3683 4091  Q 3347 4238 2956 4238  Q 2422 4238 2017 3981  Q 1613 3725 1319 3200  Q 1131 2863 1032 2486  Q 934 2109 934 1728  Q 934 1091 1264 756  Q 1594 422 2222 422  Q 2656 422 3056 561  Q 3456 700 3834 978  L 3688 231  Q 3316 72 2936 -9  Q 2556 -91 2175 -91  Q 1278 -91 773 396  Q 269 884 269 1753  Q 269 2309 461 2846  Q 653 3384 1013 3828  Q 1394 4300 1883 4525  Q 2372 4750 3022 4750  Q 3422 4750 3780 4639  Q 4138 4528 4447 4306  z " transform="scale(0.015625)"/><path id="DejaVuSans-36" d="M 2113 2584  Q 1688 2584 1439 2293  Q 1191 2003 1191 1497  Q 1191 994 1439 701  Q 1688 409 2113 409  Q 2538 409 2786 701  Q 3034 994 3034 1497  Q 3034 2003 2786 2293  Q 2538 2584 2113 2584  z M 3366 4563  L 3366 3988  Q 3128 4100 2886 4159  Q 2644 4219 2406 4219  Q 1781 4219 1451 3797  Q 1122 3375 1075 2522  Q 1259 2794 1537 2939  Q 1816 3084 2150 3084  Q 2853 3084 3261 2657  Q 3669 2231 3669 1497  Q 3669 778 3244 343  Q 2819 -91 2113 -91  Q 1303 -91 875 529  Q 447 1150 447 2328  Q 447 3434 972 4092  Q 1497 4750 2381 4750  Q 2619 4750 2861 4703  Q 3103 4656 3366 4563  z " transform="scale(0.015625)"/><path id="DejaVuSans-25" d="M 4653 2053  Q 4381 2053 4226 1822  Q 4072 1591 4072 1178  Q 4072 772 4226 539  Q 4381 306 4653 306  Q 4919 306 5073 539  Q 5228 772 5228 1178  Q 5228 1588 5073 1820  Q 4919 2053 4653 2053  z M 4653 2450  Q 5147 2450 5437 2106  Q 5728 1763 5728 1178  Q 5728 594 5436 251  Q 5144 -91 4653 -91  Q 4153 -91 3862 251  Q 3572 594 3572 1178  Q 3572 1766 3864 2108  Q 4156 2450 4653 2450  z M 1428 4353  Q 1159 4353 1004 4120  Q 850 3888 850 3481  Q 850 3069 1003 2837  Q 1156 2606 1428 2606  Q 1700 2606 1854 2837  Q 2009 3069 2009 3481  Q 2009 3884 1853 4118  Q 1697 4353 1428 4353  z M 4250 4750  L 4750 4750  L 1831 -91  L 1331 -91  L 4250 4750  z M 1428 4750  Q 1922 4750 2215 4408  Q 2509 4066 2509 3481  Q 2509 2891 2217 2550  Q 1925 2209 1428 2209  Q 931 2209 642 2551  Q 353 2894 353 3481  Q 353 4063 643 4406  Q 934 4750 1428 4750  z " transform="scale(0.015625)"/><path id="DejaVuSans-2e" d="M 684 794  L 1344 794  L 1344 0  L 684 0  L 684 794  z " transform="scale(0.015625)"/></defs></svg>
+<div class="progress"><i id="bar"></i></div>
+<button class="navtoggle" id="navtoggle" aria-label="Índice">☰</button>
+<div class="app">
+<aside class="nav">
+  <div class="nav-head">
+    <p class="brand"><a href="index.html" style="color:inherit;text-decoration:none">Modelos IFRS 9 e IRB para cartera Wholesale</a><small>Guía técnica exhaustiva · PRA · CNBV · Basilea 3.1</small></p>
+    <div class="nav-tools">
+      <input class="search" id="q" type="search" placeholder="Buscar en toda la guía…  /"
+             autocomplete="off" spellcheck="false">
+      <button class="btn" id="theme" aria-label="Cambiar tema">☾</button>
+    </div>
+  </div>
+  <nav class="toc"><div class="toc-part">Cómo usar esta guía</div>
+<a class="l2" href="cap-00-mapa.html">0. Cómo usar esta guía</a>
+<div class="toc-part">El universo Wholesale</div>
+<a class="l2" href="cap-01-universo.html">1. El universo Wholesale: segmentación y clases de exposición</a>
+<a class="l2" href="cap-02-productos.html">2. Productos de crédito Wholesale y su perfil de riesgo</a>
+<a class="l2" href="cap-03-especializado.html">3. Financiamiento especializado: project finance, activos, materias primas e inmuebles</a>
+<a class="l2" href="cap-04-contrapartes.html">4. Bancos, soberanos, entidades financieras no bancarias y fondos</a>
+<div class="toc-part">Los insumos</div>
+<a class="l2" href="cap-05-default.html">5. La definición de incumplimiento</a>
+<a class="l2" href="cap-06-datos.html">6. Arquitectura de datos para modelos wholesale</a>
+<a class="l2" href="cap-07-estados-financieros.html">7. Estados financieros corporativos para el analista de crédito</a>
+<a class="l2" href="cap-08-razones-sector.html">8. Razones financieras, industria y sentido económico</a>
+<a class="l2" href="cap-09-buro-cualitativas.html">9. Buró de crédito, información externa y variables cualitativas</a>
+<div class="toc-part">Modelos IRB de PD</div>
+<a class="l2" href="cap-10-marco-capital.html">10. El marco de capital: estándar, F-IRB, A-IRB y el output floor</a>
+<a class="l2" href="cap-11-arquitectura-pd.html">11. Arquitectura de un modelo de PD corporativo</a>
+<a class="l2" href="cap-12-desarrollo-pd.html">12. Desarrollo estadístico de un modelo de PD, paso a paso</a>
+<a class="l2" href="cap-13-estadistica.html">13. Estadística para seleccionar y validar modelos</a>
+<a class="l2" href="cap-14-calibracion.html">14. Calibración, filosofía de calificación y margen de conservadurismo</a>
+<a class="l2" href="cap-15-ldp.html">15. Carteras de bajo incumplimiento</a>
+<div class="toc-part">LGD, EAD y mitigantes</div>
+<a class="l2" href="cap-16-lgd.html">16. Modelos de LGD</a>
+<a class="l2" href="cap-17-ead.html">17. Modelos de EAD y factores de conversión</a>
+<a class="l2" href="cap-18-colaterales.html">18. Colaterales y mitigantes del riesgo de crédito</a>
+<a class="l2" href="cap-19-slotting.html">19. Slotting y modelización de exposiciones especiales</a>
+<div class="toc-part">IFRS 9 de punta a punta</div>
+<a class="l2 cur" href="cap-20-ifrs9-vs-irb.html">20. IFRS 9 frente a IRB: las diferencias que gobiernan todo lo demás</a>
+<a class="l3" href="#1-dos-preguntas-distintas">1. Dos preguntas distintas</a>
+<a class="l3" href="#2-la-tabla-maestra-de-diferencias">2. La tabla maestra de diferencias</a>
+<a class="l4" href="#21-horizonte">2.1 Horizonte</a>
+<a class="l4" href="#22-filosofia-de-calificacion">2.2 Filosofía de calificación</a>
+<a class="l4" href="#23-condiciones-economicas-recesion-obligatoria-frente-a-escenarios-pon">2.3 Condiciones económicas: recesión obligatoria frente a escenarios ponderados</a>
+<a class="l4" href="#24-sesgo-conservadurismo-obligatorio-frente-a-estimacion-insesgada">2.4 Sesgo: conservadurismo obligatorio frente a estimación insesgada</a>
+<a class="l4" href="#25-descuento">2.5 Descuento</a>
+<a class="l4" href="#26-costos-incluidos">2.6 Costos incluidos</a>
+<a class="l4" href="#27-pisos-regulatorios">2.7 Pisos regulatorios</a>
+<a class="l4" href="#28-definicion-de-incumplimiento">2.8 Definición de incumplimiento</a>
+<a class="l4" href="#29-alcance">2.9 Alcance</a>
+<a class="l4" href="#210-gobierno">2.10 Gobierno</a>
+<a class="l3" href="#3-el-puente-de-los-parametros-irb-a-los-parametros-ifrs-9">3. El puente: de los parámetros IRB a los parámetros IFRS 9</a>
+<a class="l4" href="#31-la-cascada-paso-a-paso">3.1 La cascada, paso a paso</a>
+<a class="l4" href="#32-ejemplo-numerico-en-cascada">3.2 Ejemplo numérico en cascada</a>
+<a class="l4" href="#33-de-la-pd-a-la-ecl-y-comparacion-con-la-perdida-esperada-regulatoria">3.3 De la PD a la ECL, y comparación con la pérdida esperada regulatoria</a>
+<a class="l3" href="#4-perdida-esperada-regulatoria-frente-a-provisiones-contables">4. Pérdida esperada regulatoria frente a provisiones contables</a>
+<a class="l4" href="#41-la-comparacion-y-su-tratamiento-asimetrico">4.1 La comparación y su tratamiento asimétrico</a>
+<a class="l4" href="#42-el-impacto-de-la-transicion-y-sus-disposiciones-transitorias">4.2 El impacto de la transición y sus disposiciones transitorias</a>
+<a class="l3" href="#5-sinergias-reales-y-tensiones-organizativas">5. Sinergias reales y tensiones organizativas</a>
+<a class="l4" href="#51-lo-que-si-conviene-compartir">5.1 Lo que sí conviene compartir</a>
+<a class="l4" href="#52-lo-que-no-se-puede-compartir-y-hay-que-separar-explicitamente">5.2 Lo que no se puede compartir y hay que separar explícitamente</a>
+<a class="l3" href="#6-mexico-nif-c-16-y-la-arquitectura-de-reservas">6. México: NIF C-16 y la arquitectura de reservas</a>
+<a class="l3" href="#7-que-mira-el-supervisor-que-mira-el-auditor">7. Qué mira el supervisor, qué mira el auditor</a>
+<a class="l4" href="#fuentes-de-este-capitulo-19">Fuentes de este capítulo</a>
+<a class="l2" href="cap-21-sicr.html">21. Incremento significativo del riesgo de crédito y clasificación por etapas</a>
+<a class="l2" href="cap-22-pd-ifrs9.html">22. &#x27;PD IFRS 9: estructuras temporales y matrices de transición&#x27;</a>
+<a class="l2" href="cap-23-macro.html">23. &#x27;PD IFRS 9: modelos macroeconómicos, escenarios y ponderación&#x27;</a>
+<a class="l2" href="cap-24-lgd-ead-ifrs9.html">24. LGD y EAD bajo IFRS 9</a>
+<a class="l2" href="cap-25-ecl.html">25. El cálculo de la pérdida crediticia esperada</a>
+<a class="l2" href="cap-26-overlays.html">26. Ajustes fuera de modelo (overlays) y gobierno de la ECL</a>
+<a class="l2" href="cap-27-impacto.html">27. Impacto en provisiones: sensibilidad, migración y volatilidad</a>
+<div class="toc-part">Del modelo al negocio</div>
+<a class="l2" href="cap-28-rwa.html">28. De los parámetros al capital: RWA, pérdida esperada y provisiones</a>
+<a class="l2" href="cap-29-raroc.html">29. Rentabilidad ajustada por riesgo: RAROC, pricing y valor presente neto</a>
+<a class="l2" href="cap-30-stress.html">30. Pruebas de estrés, ICAAP y planeación</a>
+<a class="l2" href="cap-31-organizacion.html">31. El área de modelos frente a riesgos, negocio, finanzas y operaciones</a>
+<div class="toc-part">Gobierno y regulación</div>
+<a class="l2" href="cap-32-mrm.html">32. Gestión del riesgo de modelo</a>
+<a class="l2" href="cap-33-autorizacion.html">33. Documentación, use test, roll-out y autorización ante PRA y CNBV</a>
+<a class="l2" href="cap-34-monitoreo.html">34. Monitoreo continuo, redesarrollo y remediación</a>
+<div class="toc-part">Frontera</div>
+<a class="l2" href="cap-35-innovacion.html">35. &quot;Frontera: técnicas innovadoras aplicables a wholesale&quot;</a>
+<div class="toc-part">Anexos</div>
+<a class="l2" href="cap-36-ejercicios.html">36. Ejercicios y casos con soluciones</a>
+<a class="l2" href="cap-37-entrevistas.html">37. Banco de preguntas para un rol de dirección</a>
+<a class="l2" href="cap-38-formulario.html">38. Formulario, glosario español-inglés y referencias</a></nav>
+</aside>
+<main><div class="wrap"><section class="chapter"><p class="eyebrow">Capítulo 20</p><h2 class="ch-title">IFRS 9 frente a IRB: las diferencias que gobiernan todo lo demás</h2><p class="lede">Por qué dos modelos que estiman lo mismo dan números distintos, cuáles son exactamente las diferencias y cómo se construye el puente entre los parámetros regulatorios y los contables sin romper ninguno de los dos.</p><p>Casi todos los errores de diseño de un sistema de pérdida crediticia esperada (<em>expected
+credit loss</em>, ECL) que he visto nacen de la misma frase dicha en la primera reunión del
+proyecto: «ya tenemos los parámetros IRB, los reutilizamos y listo». La frase no es
+absurda —reutilizar es exactamente lo que hay que hacer—, pero omite que entre un parámetro
+regulatorio y un parámetro contable hay una decena de ajustes, cada uno con su justificación,
+su documentación y su capacidad de mover el resultado del ejercicio en decenas de millones.</p>
+<p>Este capítulo hace tres cosas. Primero, separa con precisión los dos marcos: qué pregunta
+responde cada uno y por qué esa pregunta implica cada una de sus convenciones. Segundo,
+recorre las diferencias una a una, con la cita normativa de cada lado. Tercero, construye el
+puente: la cascada concreta que lleva una probabilidad de incumplimiento (<em>probability of
+default</em>, PD) regulatoria de un cliente a la PD contable del mismo cliente en la misma fecha,
+con un ejemplo numérico completo. El resto de la Parte V —etapas, estructuras temporales,
+escenarios, severidad, cálculo, ajustes fuera de modelo— se apoya sobre este puente.</p>
+<div class="box box-alerta">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Sobre las citas de IFRS 9 en esta guía</span></div>
+<div class="box-b">
+<p>El texto íntegro de IFRS 9 y de IFRS 7 está protegido por derechos de autor de la Fundación
+IFRS y <strong>no es de acceso público gratuito</strong>: el dosier de investigación de esta guía confirmó
+que los enlaces a las normas emitidas en ifrs.org redirigen a un acceso por suscripción
+[F13]. Por eso, todas las citas de párrafos que aparecen aquí proceden de <strong>documentos
+primarios que los reproducen literalmente</strong> —los <em>staff papers</em> del grupo de recursos de
+transición (<em>Transition Resource Group</em>, ITG), los resúmenes de proyecto del IASB, la revisión
+posterior a la implementación de 2023-2024 y el documento del Comité de Basilea BCBS d350,
+que reproduce extractos con autorización de la Fundación IFRS—. Donde el dosier no pudo
+verificar el texto literal, este capítulo lo dice explícitamente y describe el contenido
+sustantivo sin entrecomillarlo. Para una nota metodológica formal o una discusión con el
+auditor, ve a la norma.</p>
+</div>
+</div>
+<h2 id="1-dos-preguntas-distintas">1. Dos preguntas distintas<a class="hlink" href="#1-dos-preguntas-distintas" aria-label="enlace">#</a></h2>
+<p>El marco de capital y el marco contable no son dos formas de medir lo mismo con distinto
+rigor. Responden preguntas diferentes:</p>
+<ul>
+<li><strong>Capital regulatorio (IRB).</strong> ¿Cuánto capital necesita el banco para absorber las pérdidas
+  de crédito de los próximos doce meses en un escenario suficientemente malo —el percentil
+  99,9 % de la distribución— sin quebrar? La respuesta es un <strong>colchón contra la pérdida
+  inesperada</strong>, calculado con la función de ponderación del modelo asintótico de un factor
+  (cap. 10), y deliberadamente conservador porque el costo social de quedarse corto es una
+  quiebra bancaria.</li>
+<li><strong>Contabilidad (IFRS 9).</strong> ¿Cuál es hoy, en el balance, el importe de los flujos
+  contractuales que el banco <strong>no espera cobrar</strong>? La respuesta es una <strong>estimación insesgada,
+  ponderada por probabilidad y descontada</strong> de la pérdida esperada, y su destinatario es un
+  inversionista que necesita saber cuánto vale realmente la cartera, ni más ni menos.</li>
+</ul>
+<p>El párrafo 5.5.17 de IFRS 9 fija los tres elementos que esa estimación debe reunir, citados
+textualmente por el resumen de proyecto oficial del IASB de julio de 2014 [F1]: un resultado
+<strong>ponderado por probabilidad</strong> —"ni el escenario mejor ni el peor caso"—, el <strong>valor temporal
+del dinero</strong>, e <strong>información razonable y sustentable disponible sin costo o esfuerzo
+desproporcionado</strong>, incluyendo información histórica, actual y prospectiva.</p>
+<div class="box box-economico">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">La diferencia en una frase</span></div>
+<div class="box-b">
+<p>El capital regulatorio responde a "cuánto puedo perder si va mal"; la provisión contable
+responde a "cuánto espero perder tal como veo hoy el mundo". El primero tiene que estar
+sesgado hacia arriba por diseño; la segunda tiene que no estar sesgada por exigencia expresa.</p>
+</div>
+</div>
+<div class="box box-regulatorio">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">BCBS d350 · los modelos de capital no son directamente utilizables</span></div>
+<div class="box-b">
+<p>El documento del Comité de Basilea sobre riesgo de crédito y contabilidad de pérdidas
+esperadas reconoce que los modelos de capital regulatorio pueden usarse como punto de partida
+para la ECL contable, pero advierte que <em>"regulatory capital models may not be directly
+usable"</em> por diferencias en horizonte temporal y supuestos: bajo el marco de capital la PD
+puede ser a través del ciclo con horizonte de doce meses y la severidad refleja condiciones
+de recesión, frente a la PD y la severidad a un punto en el tiempo y prospectivas que exige
+la ECL contable [F14].</p>
+</div>
+</div>
+<h2 id="2-la-tabla-maestra-de-diferencias">2. La tabla maestra de diferencias<a class="hlink" href="#2-la-tabla-maestra-de-diferencias" aria-label="enlace">#</a></h2>
+<p><figure class="fig" id="fig-cap20_marcos_dimensiones"><div class="fig-svg"><svg preserveAspectRatio="xMidYMid meet" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 438.952225 288.72" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 288.72 
+L 438.952225 288.72 
+L 438.952225 0 
+L 0 0 
+L 0 288.72 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 5.76 52.884 
+L 429.84 52.884 
+L 429.84 25.164 
+L 5.76 25.164 
+z
+" clip-path="url(#p4a561bb1d2)" style="fill: var(--c-grid, #e1e0d9); opacity: 0.45"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 5.76 108.324 
+L 429.84 108.324 
+L 429.84 80.604 
+L 5.76 80.604 
+z
+" clip-path="url(#p4a561bb1d2)" style="fill: var(--c-grid, #e1e0d9); opacity: 0.45"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 5.76 163.764 
+L 429.84 163.764 
+L 429.84 136.044 
+L 5.76 136.044 
+z
+" clip-path="url(#p4a561bb1d2)" style="fill: var(--c-grid, #e1e0d9); opacity: 0.45"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 5.76 219.204 
+L 429.84 219.204 
+L 429.84 191.484 
+L 5.76 191.484 
+z
+" clip-path="url(#p4a561bb1d2)" style="fill: var(--c-grid, #e1e0d9); opacity: 0.45"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 5.76 274.644 
+L 429.84 274.644 
+L 429.84 246.924 
+L 5.76 246.924 
+z
+" clip-path="url(#p4a561bb1d2)" style="fill: var(--c-grid, #e1e0d9); opacity: 0.45"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 600; font-size: 10px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--s1, #2a78d6)" x="154.188" y="14.076" transform="rotate(-0 154.188 14.076)">IRB · capital regulatorio</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 600; font-size: 10px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--s2, #eb6834)" x="332.3016" y="14.076" transform="rotate(-0 332.3016 14.076)">IFRS 9 · pérdida crediticia esperada</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="7.8804" y="41.62825" transform="rotate(-0 7.8804 41.62825)">Propósito</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink2, #52514e)" transform="translate(80.025844 36.328092)">Colchón para pérdidas inesperadas</text>
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink2, #52514e)" transform="translate(101.728687 46.691658)">en un escenario extremo</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink2, #52514e)" transform="translate(267.5061 35.933292)">Reconocimiento contable de la</text>
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink2, #52514e)" transform="translate(295.426256 46.750458)">pérdida esperada</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="7.8804" y="69.17225" transform="rotate(-0 7.8804 69.17225)">Horizonte</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="154.188" y="69.061875" transform="rotate(-0 154.188 69.061875)">12 meses, siempre</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="332.3016" y="69.229875" transform="rotate(-0 332.3016 69.229875)">12 meses o vida remanente, según etapa</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="7.8804" y="96.89225" transform="rotate(-0 7.8804 96.89225)">Filosofía</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="154.188" y="96.781875" transform="rotate(-0 154.188 96.781875)">A través del ciclo (PD)</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="332.3016" y="96.781875" transform="rotate(-0 332.3016 96.781875)">Punto en el tiempo y prospectiva</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink, #0b0b0b)" transform="translate(7.8804 119.350881)">Condiciones</text>
+    <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink, #0b0b0b)" transform="translate(7.8804 129.873619)">económicas</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink2, #52514e)" transform="translate(111.565875 119.488092)">Recesión obligatoria</text>
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink2, #52514e)" transform="translate(125.341875 129.851658)">en LGD y CCF</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="332.3016" y="124.501875" transform="rotate(-0 332.3016 124.501875)">Escenarios ponderados por probabilidad</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="7.8804" y="152.33225" transform="rotate(-0 7.8804 152.33225)">Sesgo</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="154.188" y="152.221875" transform="rotate(-0 154.188 152.221875)">Conservadurismo obligatorio (MoC)</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="332.3016" y="152.389875" transform="rotate(-0 332.3016 152.389875)">Estimación insesgada</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="7.8804" y="180.05225" transform="rotate(-0 7.8804 180.05225)">Descuento</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="154.188" y="179.941875" transform="rotate(-0 154.188 179.941875)">No se descuenta</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="332.3016" y="179.941875" transform="rotate(-0 332.3016 179.941875)">Tasa de interés efectiva</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="7.8804" y="207.77225" transform="rotate(-0 7.8804 207.77225)">Pisos</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="154.188" y="207.661875" transform="rotate(-0 154.188 207.661875)">PD 0,05 %; pisos de LGD y CCF</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="332.3016" y="207.661875" transform="rotate(-0 332.3016 207.661875)">Sin pisos regulatorios</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="7.8804" y="235.49225" transform="rotate(-0 7.8804 235.49225)">Vencimiento</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="154.188" y="235.453406" transform="rotate(-0 154.188 235.453406)">M acotado entre 1 y 5 años</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="332.3016" y="235.381875" transform="rotate(-0 332.3016 235.381875)">Periodo contractual máximo</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="7.8804" y="263.21225" transform="rotate(-0 7.8804 263.21225)">Alcance</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="154.188" y="263.101875" transform="rotate(-0 154.188 263.101875)">Cartera sujeta a permiso IRB</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="332.3016" y="263.101875" transform="rotate(-0 332.3016 263.101875)">Todo instrumento en el alcance de deterioro</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p4a561bb1d2">
+   <rect x="5.76" y="5.76" width="424.08" height="277.2"/>
+  </clipPath>
+ </defs>
+</svg></div><figcaption>Las nueve dimensiones en las que el marco de capital IRB y el marco contable de IFRS 9 divergen. Síntesis del autor a partir de CRE31-32, EBA/GL/2017/16, IFRS 9 §5.5.17 y BCBS d350.</figcaption></figure></p>
+<table>
+<thead>
+<tr>
+<th>Dimensión</th>
+<th>IRB (capital)</th>
+<th>IFRS 9 (contable)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Propósito</td>
+<td>Colchón para pérdida inesperada al 99,9 %</td>
+<td>Reconocimiento de la pérdida esperada</td>
+</tr>
+<tr>
+<td>Horizonte</td>
+<td>12 meses siempre</td>
+<td>12 meses (etapa 1) o vida remanente (etapas 2 y 3)</td>
+</tr>
+<tr>
+<td>Filosofía de la PD</td>
+<td>A través del ciclo, promedio de largo plazo</td>
+<td>Punto en el tiempo, condicionada al escenario</td>
+</tr>
+<tr>
+<td>Condiciones económicas</td>
+<td>Recesión obligatoria en severidad y factores de conversión</td>
+<td>Escenarios ponderados por probabilidad</td>
+</tr>
+<tr>
+<td>Sesgo</td>
+<td>Conservadurismo obligatorio (margen de conservadurismo)</td>
+<td>Estimación insesgada obligatoria</td>
+</tr>
+<tr>
+<td>Descuento</td>
+<td>La pérdida esperada no se descuenta a la fecha de reporte</td>
+<td>Descuento a la tasa de interés efectiva</td>
+</tr>
+<tr>
+<td>Costos incluidos</td>
+<td>Costos directos e indirectos de recuperación</td>
+<td>Diferencia entre flujos contractuales y flujos esperados</td>
+</tr>
+<tr>
+<td>Pisos regulatorios</td>
+<td>PD 0,05 %, pisos de severidad y de exposición</td>
+<td>Ninguno</td>
+</tr>
+<tr>
+<td>Vencimiento</td>
+<td><svg class="math-inline" style="width:0.8750em;height:0.7500em;vertical-align:-0.0000em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 12" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-4d" transform="translate(0 0.09375)"/></g></g></g></svg> acotado entre 1 y 5 años</td>
+<td>Periodo contractual máximo, con la excepción de revolventes</td>
+</tr>
+<tr>
+<td>Definición de incumplimiento</td>
+<td>Art. 178 CRR, armonizada</td>
+<td>La entidad elige, con presunción refutable de 90 días</td>
+</tr>
+<tr>
+<td>Alcance</td>
+<td>Carteras con permiso IRB</td>
+<td>Todo instrumento en el alcance del deterioro</td>
+</tr>
+<tr>
+<td>Gobierno</td>
+<td>Riesgo de modelo, validación independiente, permiso supervisor</td>
+<td>Reporte financiero, auditor externo, comité de provisiones</td>
+</tr>
+</tbody>
+</table>
+<p>Las secciones siguientes toman cada fila y explican qué la origina y qué hay que hacer con
+ella en la práctica.</p>
+<h3 id="21-horizonte">2.1 Horizonte<a class="hlink" href="#21-horizonte" aria-label="enlace">#</a></h3>
+<p>El marco de capital mide siempre a doce meses, y el efecto del plazo entra por otra vía: el
+ajuste por vencimiento <svg class="math-inline" style="width:2.8125em;height:1.0000em;vertical-align:-0.1875em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 45 16" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 13) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-62" transform="translate(0 0.015625)"/><use xlink:href="#DejaVuSans-28" transform="translate(63.476562 0.015625)"/><use xlink:href="#DejaVuSans-Oblique-50" transform="translate(102.490234 0.015625)"/><use xlink:href="#DejaVuSans-Oblique-44" transform="translate(162.792969 0.015625)"/><use xlink:href="#DejaVuSans-29" transform="translate(239.794922 0.015625)"/></g></g></g></svg> con <svg class="math-inline" style="width:0.8750em;height:0.7500em;vertical-align:-0.0000em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 12" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-4d" transform="translate(0 0.09375)"/></g></g></g></svg> acotado entre uno y cinco años en el enfoque avanzado
+y fijado en 2,5 años en el básico [CRE31.6, CRE32.44, CRE32.46] [B1][B2]. Es un ajuste de
+capital por riesgo de migración, no una extensión del horizonte de pérdida.</p>
+<p>IFRS 9 hace lo contrario: el horizonte <strong>es</strong> la variable de clasificación. En etapa 1 se
+reconoce la ECL de doce meses; en etapas 2 y 3, la de la vida remanente completa. El periodo
+máximo a considerar es el <strong>periodo contractual máximo, incluidas las opciones de extensión</strong>,
+según cita el <em>staff paper</em> del ITG de abril de 2015 sobre el párrafo 5.5.19 [F7]. Esto
+prioriza el compromiso contractual sobre la práctica comercial: aunque el banco renueve de
+hecho una línea año tras año durante una década, el horizonte es el contractual.</p>
+<p>La excepción del párrafo 5.5.20 —para instrumentos con componente dispuesto y componente
+comprometido no dispuesto donde el derecho contractual de cancelación no limita en la
+práctica la exposición al periodo de aviso— está documentada en detalle por tres <em>staff
+papers</em> del ITG [F7][F5][F6][F3]. Para la cartera <em>wholesale</em> importa por una razón concreta:
+las <strong>líneas de crédito revolventes corporativas</strong> y las facilidades de sobregiro pueden caer
+bajo esa excepción si se gestionan de forma colectiva y la cancelación contractual no acota
+de verdad la exposición [F3]. El ITG precisó además que el periodo máximo termina cuando se
+esperan acciones de mitigación que la entidad <strong>realmente espera tomar</strong>, no meramente las
+que le serían operativamente posibles [F3], y que la excepción se refiere al <strong>periodo</strong>, no
+a los límites de crédito: las disposiciones se estiman dentro del límite contractual [F5].</p>
+<p><figure class="fig" id="fig-cap20_horizonte_etapa"><div class="fig-svg"><svg preserveAspectRatio="xMidYMid meet" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 532.914514 261.174547" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 261.174547 
+L 532.914514 261.174547 
+L 532.914514 0 
+L 0 0 
+L 0 261.174547 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 87.087578 226.542203 
+L 500.007578 226.542203 
+L 500.007578 26.958203 
+L 87.087578 26.958203 
+L 87.087578 226.542203 
+z
+" style="fill: none"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 87.087578 226.542203 
+L 87.087578 26.958203 
+" clip-path="url(#p58cc5ccb1a)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_2"/>
+     <g id="text_1">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="87.087578" y="239.760719" transform="rotate(-0 87.087578 239.760719)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 115.402092 226.542203 
+L 115.402092 26.958203 
+" clip-path="url(#p58cc5ccb1a)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_2">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="115.402092" y="239.760719" transform="rotate(-0 115.402092 239.760719)">12</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 143.716607 226.542203 
+L 143.716607 26.958203 
+" clip-path="url(#p58cc5ccb1a)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_3">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="143.716607" y="239.760719" transform="rotate(-0 143.716607 239.760719)">24</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 172.031121 226.542203 
+L 172.031121 26.958203 
+" clip-path="url(#p58cc5ccb1a)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_4">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="172.031121" y="239.760719" transform="rotate(-0 172.031121 239.760719)">36</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 200.345635 226.542203 
+L 200.345635 26.958203 
+" clip-path="url(#p58cc5ccb1a)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_5">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="200.345635" y="239.760719" transform="rotate(-0 200.345635 239.760719)">48</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_11">
+      <path d="M 228.66015 226.542203 
+L 228.66015 26.958203 
+" clip-path="url(#p58cc5ccb1a)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_12"/>
+     <g id="text_6">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="228.66015" y="239.760719" transform="rotate(-0 228.66015 239.760719)">60</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_13">
+      <path d="M 256.974664 226.542203 
+L 256.974664 26.958203 
+" clip-path="url(#p58cc5ccb1a)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_14"/>
+     <g id="text_7">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="256.974664" y="239.760719" transform="rotate(-0 256.974664 239.760719)">72</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_15">
+      <path d="M 285.289178 226.542203 
+L 285.289178 26.958203 
+" clip-path="url(#p58cc5ccb1a)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_16"/>
+     <g id="text_8">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="285.289178" y="239.760719" transform="rotate(-0 285.289178 239.760719)">84</text>
+     </g>
+    </g>
+    <g id="text_9">
+     <text style="font-size: 10px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="293.547578" y="253.334859" transform="rotate(-0 293.547578 253.334859)">Meses desde la fecha de reporte</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_17">
+      <path d="M 87.087578 204.510203 
+L 500.007578 204.510203 
+" clip-path="url(#p58cc5ccb1a)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_18"/>
+     <g id="text_10">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="81.087578" y="208.119461" transform="rotate(-0 81.087578 208.119461)">IFRS 9 · etapa 3</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_19">
+      <path d="M 87.087578 152.670203 
+L 500.007578 152.670203 
+" clip-path="url(#p58cc5ccb1a)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_20"/>
+     <g id="text_11">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="81.087578" y="156.279461" transform="rotate(-0 81.087578 156.279461)">IFRS 9 · etapa 2</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_21">
+      <path d="M 87.087578 100.830203 
+L 500.007578 100.830203 
+" clip-path="url(#p58cc5ccb1a)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_22"/>
+     <g id="text_12">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="81.087578" y="104.439461" transform="rotate(-0 81.087578 104.439461)">IFRS 9 · etapa 1</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_23">
+      <path d="M 87.087578 48.990203 
+L 500.007578 48.990203 
+" clip-path="url(#p58cc5ccb1a)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_24"/>
+     <g id="text_13">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="81.087578" y="52.599461" transform="rotate(-0 81.087578 52.599461)">IRB · capital</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 87.087578 226.542203 
+L 87.087578 26.958203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 87.087578 226.542203 
+L 500.007578 226.542203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 87.087578 61.950203 
+L 115.402092 61.950203 
+L 115.402092 36.030203 
+L 87.087578 36.030203 
+z
+" clip-path="url(#p58cc5ccb1a)" style="fill: var(--s4, #eda100)"/>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="120.121178" y="51.418453" transform="rotate(-0 120.121178 51.418453)">Horizonte fijo de 12 meses, todas las exposiciones vivas</text>
+   </g>
+   <g id="patch_6">
+    <path d="M 87.087578 113.790203 
+L 115.402092 113.790203 
+L 115.402092 87.870203 
+L 87.087578 87.870203 
+z
+" clip-path="url(#p58cc5ccb1a)" style="fill: var(--s1, #2a78d6)"/>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="120.121178" y="103.434453" transform="rotate(-0 120.121178 103.434453)">Pérdida esperada de 12 meses</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 87.087578 165.630203 
+L 285.289178 165.630203 
+L 285.289178 139.710203 
+L 87.087578 139.710203 
+z
+" clip-path="url(#p58cc5ccb1a)" style="fill: var(--s2, #eb6834)"/>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="290.008264" y="155.274453" transform="rotate(-0 290.008264 155.274453)">Pérdida esperada de la vida remanente (aquí, 7 años)</text>
+   </g>
+   <g id="patch_8">
+    <path d="M 87.087578 217.470203 
+L 285.289178 217.470203 
+L 285.289178 191.550203 
+L 87.087578 191.550203 
+z
+" clip-path="url(#p58cc5ccb1a)" style="fill: var(--s3, #1baf7a)"/>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="290.008264" y="206.938453" transform="rotate(-0 290.008264 206.938453)">Vida remanente; intereses sobre el importe neto</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 600; font-size: 11.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="87.087578" y="14.958203" transform="rotate(-0 87.087578 14.958203)">Horizonte de medición por marco y por etapa</text>
+   </g>
+   <g id="line2d_25">
+    <path d="M 115.402092 226.542203 
+L 115.402092 26.958203 
+" clip-path="url(#p58cc5ccb1a)" style="fill: none; stroke-dasharray: 1,1.65; stroke-dashoffset: 0; stroke: var(--c-muted, #898781)"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p58cc5ccb1a">
+   <rect x="87.087578" y="26.958203" width="412.92" height="199.584"/>
+  </clipPath>
+ </defs>
+</svg></div><figcaption>Horizonte de medición de cada marco y de cada etapa de IFRS 9. Esquema del autor; el plazo de siete años es ilustrativo.</figcaption></figure></p>
+<div class="box box-alerta">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">El error del vencimiento de cinco años</span></div>
+<div class="box-b">
+<p>Un equipo que reutiliza el <svg class="math-inline" style="width:0.8750em;height:0.7500em;vertical-align:-0.0000em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 12" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-4d" transform="translate(0 0.09375)"/></g></g></g></svg> regulatorio como vida remanente contable comete dos errores a
+la vez: acota a cinco años lo que puede durar quince, y usa un promedio ponderado por flujos
+donde la contabilidad pide el periodo contractual máximo. En una cartera de financiamiento de
+proyectos o de crédito estructurado a largo plazo, esa sola confusión puede subestimar la ECL
+de etapa 2 en más de la mitad.</p>
+</div>
+</div>
+<h3 id="22-filosofia-de-calificacion">2.2 Filosofía de calificación<a class="hlink" href="#22-filosofia-de-calificacion" aria-label="enlace">#</a></h3>
+<p>La PD regulatoria se calibra a una tasa de incumplimiento promedio de largo plazo, con la
+obligación de considerar observaciones anteriores a los cinco años más recientes cuando sean
+necesarias para reflejar el rango probable de variabilidad y de ajustar cuando faltan años
+malos [EBA/GL/2017/16 §82, §85-86] [E1]. Es una estimación deliberadamente <strong>estable</strong>: se
+quiere que el capital no oscile con el ciclo.</p>
+<p>La ECL exige lo contrario: una estimación <strong>condicionada al momento y al futuro esperado</strong>.
+No basta con reconocer que la economía va mal; hay que traducirlo al parámetro. El capítulo
+23 desarrolla los modelos macroeconómicos; aquí basta con retener que la conversión de una PD
+a través del ciclo a una PD a un punto en el tiempo es un modelo con sus propios supuestos
+—correlación, factor sistémico, calibración— y no un ajuste mecánico.</p>
+<h3 id="23-condiciones-economicas-recesion-obligatoria-frente-a-escenarios-pon">2.3 Condiciones económicas: recesión obligatoria frente a escenarios ponderados<a class="hlink" href="#23-condiciones-economicas-recesion-obligatoria-frente-a-escenarios-pon" aria-label="enlace">#</a></h3>
+<p>El marco de capital exige una severidad (<em>loss given default</em>, LGD) apropiada para una
+recesión económica, con la naturaleza, severidad y duración del periodo de recesión definidas
+por norma técnica: indicadores obligatorios de producto interno bruto, desempleo, tasas de
+incumplimiento agregadas y pérdidas crediticias agregadas; severidad identificada por el valor
+más adverso de doce meses en un horizonte histórico de <strong>veinte años</strong>; duración suficiente
+para cubrir los picos [Reglamento Delegado (UE) 2021/930, arts. 2-4] [L1], con los tres
+enfoques de cuantificación de EBA/GL/2019/03 §23 [E3].</p>
+<p>IFRS 9 no pide una recesión: pide el <strong>resultado ponderado por probabilidad</strong> de un rango de
+escenarios [IFRS 9 §5.5.17, citado en F1]. Y el ITG demostró con un ejemplo numérico por qué
+esto no es una formalidad: usando tres escenarios de desempleo, la ECL resultante fue <strong>92</strong>
+unidades monetarias frente a <strong>70</strong> con un único escenario central, porque la relación entre
+variables económicas y pérdida es <strong>no lineal</strong> [F2]. La conclusión operativa que recogió el
+resumen de la reunión es que usar un único escenario central prospectivo <em>"would not result in
+an unbiased and probability-weighted amount"</em> cuando existen esas no linealidades [F3], y la
+recomendación práctica del <em>staff paper</em> fue el llamado <strong>método 3</strong>: calcular la pérdida
+crediticia en cada escenario por separado y <strong>después</strong> ponderar por probabilidad, en lugar de
+promediar primero las variables económicas [F2].</p>
+<div class="box box-llano">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">En palabras llanas</span></div>
+<div class="box-b">
+<p>Bajo capital te obligan a suponer una crisis. Bajo contabilidad te obligan a suponer varios
+futuros con sus probabilidades y a promediar las pérdidas, no los escenarios. No es lo mismo
+calcular la pérdida del promedio que el promedio de las pérdidas, y la diferencia es
+sistemáticamente hacia arriba.</p>
+</div>
+</div>
+<h3 id="24-sesgo-conservadurismo-obligatorio-frente-a-estimacion-insesgada">2.4 Sesgo: conservadurismo obligatorio frente a estimación insesgada<a class="hlink" href="#24-sesgo-conservadurismo-obligatorio-frente-a-estimacion-insesgada" aria-label="enlace">#</a></h3>
+<p>Esta es la diferencia que más discusiones internas genera, porque parece filosófica y es
+perfectamente cuantificable. El artículo 179 del CRR obliga a añadir a las estimaciones
+regulatorias <em>"un margen de conservadurismo relacionado con el rango esperado de errores de
+estimación"</em>, mayor cuanto peores sean los métodos y los datos [R22]; las directrices europeas
+lo estructuran en tres categorías —A por deficiencias de datos y metodológicas, B por cambios
+en originación, apetito y políticas de recuperación, C por el error general de estimación—,
+exigen que el total sea su suma y que la categoría C sea <strong>mayor que cero</strong> [EBA/GL/2017/16
+§42-47] [E1], y la declaración supervisora británica reproduce el mismo marco de tres
+categorías, precisando que los ajustes solo pueden <strong>incrementar o mantener</strong> las estimaciones,
+nunca reducirlas [SS4/24 §9.7-9.12] [R15].</p>
+<p>IFRS 9 exige lo contrario y con la misma fuerza: la medición debe ser <strong>insesgada</strong>. Todo el
+margen de conservadurismo regulatorio tiene que salir del parámetro contable, y salir de forma
+documentada y trazable, categoría por categoría.</p>
+<div class="box box-alerta">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">El conservadurismo que se cuela por la puerta de atrás</span></div>
+<div class="box-b">
+<p>Quitar el margen de conservadurismo del parámetro y volver a meterlo como ajuste fuera de
+modelo es la forma más común de incumplir la exigencia de insesgadez sin decirlo. Un ajuste
+fuera de modelo legítimo cubre un riesgo real que el modelo no captura; un ajuste que
+reconstruye el margen regulatorio no cubre nada, solo repone conservadurismo. El capítulo 26
+trata cómo se distingue uno de otro y qué esperan los supervisores.</p>
+</div>
+</div>
+<h3 id="25-descuento">2.5 Descuento<a class="hlink" href="#25-descuento" aria-label="enlace">#</a></h3>
+<p>Bajo el marco de capital, la pérdida esperada regulatoria <svg class="math-inline" style="width:10.4375em;height:0.8125em;vertical-align:-0.0625em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 167 13" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-45" transform="translate(0 0.78125)"/><use xlink:href="#DejaVuSans-Oblique-4c" transform="translate(63.183594 0.78125)"/><use xlink:href="#DejaVuSans-3d" transform="translate(138.378906 0.78125)"/><use xlink:href="#DejaVuSans-Oblique-50" transform="translate(241.650391 0.78125)"/><use xlink:href="#DejaVuSans-Oblique-44" transform="translate(301.953125 0.78125)"/><use xlink:href="#DejaVuSans-d7" transform="translate(398.4375 0.78125)"/><use xlink:href="#DejaVuSans-Oblique-4c" transform="translate(501.708984 0.78125)"/><use xlink:href="#DejaVuSans-Oblique-47" transform="translate(557.421875 0.78125)"/><use xlink:href="#DejaVuSans-Oblique-44" transform="translate(634.912109 0.78125)"/><use xlink:href="#DejaVuSans-d7" transform="translate(731.396484 0.78125)"/><use xlink:href="#DejaVuSans-Oblique-45" transform="translate(834.667969 0.78125)"/><use xlink:href="#DejaVuSans-Oblique-41" transform="translate(897.851562 0.78125)"/><use xlink:href="#DejaVuSans-Oblique-44" transform="translate(966.259766 0.78125)"/></g></g></g></svg>
+<strong>no se descuenta</strong> a la fecha de reporte. Hay descuento dentro de la estimación de la
+severidad —las recuperaciones se descuentan a la fecha de incumplimiento para calcular la
+pérdida económica [EBA/GL/2017/16 §132] [E1]—, pero no del incumplimiento futuro a hoy.</p>
+<p>Bajo IFRS 9, el valor temporal del dinero es uno de los tres elementos obligatorios del
+párrafo 5.5.17 [F1]: la ECL se descuenta a la fecha de reporte con la tasa de interés efectiva.
+El ITG precisó dos consecuencias operativas: para instrumentos a tasa variable debe mantenerse
+consistencia entre la tasa usada para reconocer intereses, la usada para proyectar flujos y la
+usada para descontarlos; y para activos con deterioro crediticio, las pérdidas esperadas se
+descuentan con la <strong>tasa de interés efectiva original</strong> [F3].</p>
+<p>En una cartera <em>wholesale</em> a plazos largos, este ajuste no es menor: descontar una ECL de vida
+remanente de siete años a una tasa efectiva del 8 % reduce el importe reconocido en un orden
+del 20 % frente a la suma sin descontar.</p>
+<h3 id="26-costos-incluidos">2.6 Costos incluidos<a class="hlink" href="#26-costos-incluidos" aria-label="enlace">#</a></h3>
+<p>La severidad regulatoria incorpora costos directos e indirectos materiales de recuperación,
+que deben asignarse en su totalidad cuando sean materiales [EBA/GL/2017/16 §113, §132] [E1]:
+el costo del área de recuperaciones, la asesoría legal, la administración del colateral. La
+pérdida crediticia contable se define como la <strong>diferencia entre los flujos de efectivo
+contractuales que se deben y los que se espera recibir</strong>, descontada [F5]. Los costos internos
+del banco no son flujos de efectivo dejados de recibir del deudor. La consecuencia práctica es
+que la severidad contable es, por esta vía y antes de cualquier otro ajuste, algo menor que la
+regulatoria.</p>
+<h3 id="27-pisos-regulatorios">2.7 Pisos regulatorios<a class="hlink" href="#27-pisos-regulatorios" aria-label="enlace">#</a></h3>
+<p>El capital tiene pisos y la contabilidad no. La PD regulatoria no puede ser inferior al
+<strong>0,05 %</strong> salvo para soberanos [CRE32.3] [B2]; la severidad avanzada tiene pisos del 25 % sin
+garantía y del 0 %, 10 % o 15 % según el tipo de colateral [CRE32.16-32.17] [B2]; y la
+exposición estimada para revolventes tiene un suelo igual al saldo dispuesto más el 50 % de la
+partida fuera de balance [CRE32.36] [B2]. Ninguno de estos pisos tiene equivalente en IFRS 9,
+y todos deben retirarse al construir el parámetro contable.</p>
+<div class="box box-economico">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Qué significa retirar el piso de PD</span></div>
+<div class="box-b">
+<p>En una cartera de grandes corporativos con grados equivalentes a AA, la PD modelada puede ser
+de 2 o 3 puntos base y el piso regulatorio la lleva a 5. Retirar el piso reduce la ECL de esas
+exposiciones a la mitad o menos. Como esa parte de la cartera suele ser la de mayor exposición
+unitaria, el efecto agregado en la provisión de etapa 1 es visible.</p>
+</div>
+</div>
+<h3 id="28-definicion-de-incumplimiento">2.8 Definición de incumplimiento<a class="hlink" href="#28-definicion-de-incumplimiento" aria-label="enlace">#</a></h3>
+<p>La definición regulatoria está armonizada por el artículo 178 del CRR y desarrollada en
+detalle por las directrices europeas: 90 días de mora a nivel de deudor por encima de un
+umbral de materialidad con componente absoluto y relativo, más los indicadores de
+improbabilidad de pago, con periodos de probación para el retorno a estado no impagado
+[EBA/GL/2016/07 §21-22, §27, §35-63, §71-73] [E2]. El régimen mexicano converge en el umbral
+cuantitativo: el Anexo 26 de la Circular Única de Bancos define el incumplimiento por
+incapacidad o falta de voluntad de pago o por <strong>mora igual o superior a 90 días</strong> [M4].</p>
+<p>IFRS 9 <strong>no prescribe</strong> una definición única. El <em>staff paper</em> del IASB de febrero de 2024
+confirma que el estándar deliberadamente permite alinearla con las definiciones regulatorias e
+internas, siempre que se apliquen <em>"consistently from one period to another"</em> y de forma
+consistente con la definición usada para la gestión interna del riesgo de crédito [F11]. Lo
+que sí incorpora es una presunción refutable: <em>"the rebuttable presumption that default does
+not occur later than 90 days past due"</em>, citada textualmente por BCBS d350 y correspondiente
+al párrafo B5.5.37 [F14].</p>
+<p>En la práctica, la respuesta correcta para un banco con permiso IRB es <strong>usar la misma
+definición</strong> en ambos marcos. Cualquier otra cosa obliga a mantener dos poblaciones de
+incumplimiento, dos históricos y dos conciliaciones, y a explicárselo al auditor y al
+supervisor todos los años.</p>
+<h3 id="29-alcance">2.9 Alcance<a class="hlink" href="#29-alcance" aria-label="enlace">#</a></h3>
+<p>El IRB cubre lo que el permiso cubre. IFRS 9 cubre todo instrumento dentro del alcance del
+deterioro: activos financieros a costo amortizado y a valor razonable con cambios en otro
+resultado integral, <strong>compromisos de préstamo y garantías financieras</strong> no medidos a valor
+razonable con cambios en resultados, cuentas por cobrar de arrendamiento y activos de
+contrato. El contenido sustantivo del párrafo 5.5.1 está corroborado por el resumen de
+proyecto del IASB y por las directrices europeas, aunque el dosier de esta guía marca su
+redacción literal como <strong>no verificada</strong> [F1][F19].</p>
+<p>Para <em>wholesale</em> esto tiene dos consecuencias inmediatas: las <strong>líneas comprometidas no
+dispuestas</strong> generan provisión aunque no haya activo en balance —y la provisión es un pasivo,
+no un menor valor del activo—, y las <strong>garantías financieras otorgadas</strong> también. Es habitual
+que el sistema contable capture bien los préstamos y mal los compromisos.</p>
+<h3 id="210-gobierno">2.10 Gobierno<a class="hlink" href="#210-gobierno" aria-label="enlace">#</a></h3>
+<p>El modelo IRB vive en el marco de riesgo de modelo, con validación independiente del
+desarrollo [RTS 2022/439 art. 10] [L2], permiso supervisor previo por clase de exposición y
+por sistema de calificación [art. 143 CRR] [R19] y atestación anual de la función directiva
+responsable [SS4/24 §2.12-2.13] [R15]. El modelo de ECL vive además en el marco de reporte
+financiero: lo audita un auditor externo, lo aprueba un comité de provisiones y lo revisan
+supervisores contables y de mercados.</p>
+<p>El Banco Central Europeo fue explícito sobre este punto al revisar los ajustes fuera de
+modelo: identificó involucramiento limitado de finanzas y de las unidades de negocio en las
+decisiones y sobredependencia de las unidades de riesgo con supervisión insuficiente de la
+función de reporte financiero, y recordó que <em>"Accountants... have dealt with risks that cannot
+be modelled statistically for centuries"</em>, esperando responsabilidades explícitas de esa
+función [F22].</p>
+<h2 id="3-el-puente-de-los-parametros-irb-a-los-parametros-ifrs-9">3. El puente: de los parámetros IRB a los parámetros IFRS 9<a class="hlink" href="#3-el-puente-de-los-parametros-irb-a-los-parametros-ifrs-9" aria-label="enlace">#</a></h2>
+<h3 id="31-la-cascada-paso-a-paso">3.1 La cascada, paso a paso<a class="hlink" href="#31-la-cascada-paso-a-paso" aria-label="enlace">#</a></h3>
+<p>El puente correcto no es un factor de conversión aplicado al resultado, sino una <strong>secuencia
+de ajustes al parámetro</strong>, cada uno documentado y cada uno reversible:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Ajuste</th>
+<th>Qué se hace</th>
+<th>Base</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Retirar el margen de conservadurismo</td>
+<td>Restar las categorías A, B y C cuantificadas en el expediente de calibración</td>
+<td>[EBA/GL/2017/16 §42-47] [E1]</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Retirar pisos regulatorios</td>
+<td>Usar la PD modelada aunque esté por debajo del 0,05 %; usar la severidad estimada sin pisos</td>
+<td>[CRE32.3, CRE32.16-32.17] [B2]</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Retirar el conservadurismo de calibración</td>
+<td>Deshacer los ajustes por años malos faltantes y por representatividad que elevan la tasa de largo plazo por encima de la mejor estimación</td>
+<td>[EBA/GL/2017/16 §85-86] [E1]</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Retirar la recesión de la severidad</td>
+<td>Volver de la severidad de recesión a la severidad esperada dadas las condiciones actuales</td>
+<td>[EBA/GL/2019/03] [E3]</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Retirar los costos indirectos</td>
+<td>Quedarse con el déficit de flujos de efectivo contractuales</td>
+<td>[F5]</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Convertir a un punto en el tiempo</td>
+<td>Condicionar la PD al estado del ciclo esperado</td>
+<td>[F14]</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Ponderar escenarios</td>
+<td>Calcular la pérdida en cada escenario y ponderar, no promediar variables</td>
+<td>[F2][F3]</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Extender a la vida remanente</td>
+<td>Construir la estructura temporal para etapa 2 y 3 (cap. 22)</td>
+<td>[F7]</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Descontar</td>
+<td>Aplicar la tasa de interés efectiva</td>
+<td>[F1][F3]</td>
+</tr>
+</tbody>
+</table>
+<p>Los pasos 1 a 5 <strong>restan</strong> casi siempre; los pasos 6 y 7 pueden restar o sumar según el
+momento del ciclo y la forma de la no linealidad; los pasos 8 y 9 aplican solo a la medición
+de vida remanente. Ese orden importa: convertir a un punto en el tiempo antes de retirar el
+margen de conservadurismo mezcla dos ajustes que después nadie puede separar en la
+conciliación.</p>
+<h3 id="32-ejemplo-numerico-en-cascada">3.2 Ejemplo numérico en cascada<a class="hlink" href="#32-ejemplo-numerico-en-cascada" aria-label="enlace">#</a></h3>
+<p>Cliente corporativo sintético, grado interno 7, exposición de 50 millones, tasa de interés
+efectiva del 7 %, en etapa 1.</p>
+<table>
+<thead>
+<tr>
+<th>Paso</th>
+<th>Concepto</th>
+<th style="text-align: right;">PD a 12 meses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>PD IRB calibrada con margen de conservadurismo</td>
+<td style="text-align: right;">1,20 %</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Retiro del margen de conservadurismo (A + B + C = 22 pb)</td>
+<td style="text-align: right;">0,98 %</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Piso de PD del 0,05 %: no aplica en este grado</td>
+<td style="text-align: right;">0,98 %</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Retiro del ajuste conservador de calibración por años malos faltantes (6 pb)</td>
+<td style="text-align: right;"><strong>0,92 %</strong> (PD a través del ciclo insesgada)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Conversión a un punto en el tiempo, con <svg class="math-inline" style="width:4.1250em;height:1.0000em;vertical-align:-0.2500em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 66 16" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-3c1" transform="translate(0 0.78125)"/><use xlink:href="#DejaVuSans-3d" transform="translate(82.958984 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(186.230469 0.78125)"/><use xlink:href="#DejaVuSans-2c" transform="translate(249.853516 0.78125)"/><use xlink:href="#DejaVuSans-31" transform="translate(281.640625 0.78125)"/><use xlink:href="#DejaVuSans-34" transform="translate(345.263672 0.78125)"/></g></g></g></svg> y factor sistémico ponderado <svg class="math-inline" style="width:5.0000em;height:0.8750em;vertical-align:-0.1250em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 80 14" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-5a" transform="translate(0 0.78125)"/><use xlink:href="#DejaVuSans-3d" transform="translate(87.988281 0.78125)"/><use xlink:href="#DejaVuSans-2212" transform="translate(191.259766 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(275.048828 0.78125)"/><use xlink:href="#DejaVuSans-2c" transform="translate(338.671875 0.78125)"/><use xlink:href="#DejaVuSans-33" transform="translate(370.458984 0.78125)"/><use xlink:href="#DejaVuSans-35" transform="translate(434.082031 0.78125)"/></g></g></g></svg></td>
+<td style="text-align: right;">0,82 %</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Ponderación de tres escenarios (25 % expansión con <svg class="math-inline" style="width:5.0000em;height:0.8750em;vertical-align:-0.1250em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 80 14" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-5a" transform="translate(0 0.78125)"/><use xlink:href="#DejaVuSans-3d" transform="translate(87.988281 0.78125)"/><use xlink:href="#DejaVuSans-2b" transform="translate(191.259766 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(275.048828 0.78125)"/><use xlink:href="#DejaVuSans-2c" transform="translate(338.671875 0.78125)"/><use xlink:href="#DejaVuSans-38" transform="translate(370.458984 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(434.082031 0.78125)"/></g></g></g></svg>; 50 % central con <svg class="math-inline" style="width:5.0000em;height:0.8750em;vertical-align:-0.1250em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 80 14" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-5a" transform="translate(0 0.78125)"/><use xlink:href="#DejaVuSans-3d" transform="translate(87.988281 0.78125)"/><use xlink:href="#DejaVuSans-2212" transform="translate(191.259766 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(275.048828 0.78125)"/><use xlink:href="#DejaVuSans-2c" transform="translate(338.671875 0.78125)"/><use xlink:href="#DejaVuSans-33" transform="translate(370.458984 0.78125)"/><use xlink:href="#DejaVuSans-35" transform="translate(434.082031 0.78125)"/></g></g></g></svg>; 25 % recesión con <svg class="math-inline" style="width:5.0000em;height:0.8750em;vertical-align:-0.1250em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 80 14" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-5a" transform="translate(0 0.78125)"/><use xlink:href="#DejaVuSans-3d" transform="translate(87.988281 0.78125)"/><use xlink:href="#DejaVuSans-2212" transform="translate(191.259766 0.78125)"/><use xlink:href="#DejaVuSans-31" transform="translate(275.048828 0.78125)"/><use xlink:href="#DejaVuSans-2c" transform="translate(338.671875 0.78125)"/><use xlink:href="#DejaVuSans-35" transform="translate(370.458984 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(434.082031 0.78125)"/></g></g></g></svg>)</td>
+<td style="text-align: right;"><strong>1,12 %</strong></td>
+</tr>
+</tbody>
+</table>
+<p>La conversión del paso 4 usa la forma de Vasicek:</p>
+<div class="eq"><svg class="math-display" style="width:13.8125em;height:2.5000em;vertical-align:-1.0000em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 221 40" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 24) scale(0.1952 -0.1952)"><defs><path id="STIXSizeThreeSym-Regular-28" d="M 4269 -2214  L 4269 -2522  Q 2835 -1178 2000 838  Q 1165 2854 1165 5350  Q 1165 7878 2019 9990  Q 2874 12102 4269 13222  L 4269 12941  Q 3814 12467 3408 11785  Q 3002 11104 2646 10173  Q 2291 9242 2080 7990  Q 1869 6739 1869 5350  Q 1869 4218 2013 3190  Q 2157 2163 2381 1398  Q 2605 634 2934 -73  Q 3264 -781 3577 -1264  Q 3891 -1747 4269 -2214  z " transform="scale(0.015625)"/><path id="STIXSizeOneSym-Regular-221a" d="M 6970 9933  L 3373 -1888  L 3104 -1888  L 1626 2918  Q 1555 3149 1465 3251  Q 1376 3354 1229 3354  Q 1011 3354 794 3181  L 717 3309  L 1766 4115  L 1926 4115  L 3379 -602  L 3405 -602  L 6605 9933  L 6970 9933  z " transform="scale(0.015625)"/><path id="STIXSizeThreeSym-Regular-29" d="M 531 12915  L 531 13222  Q 1965 11872 2800 9869  Q 3635 7866 3635 5350  Q 3635 2835 2777 716  Q 1920 -1402 531 -2522  L 531 -2240  Q 986 -1766 1392 -1084  Q 1798 -403 2153 528  Q 2509 1459 2720 2710  Q 2931 3962 2931 5350  Q 2931 9990 531 12915  z " transform="scale(0.015625)"/></defs><use xlink:href="#DejaVuSans-Oblique-50" transform="translate(0 0.015625)"/><use xlink:href="#DejaVuSans-Oblique-44" transform="translate(60.302734 0.015625)"/><use xlink:href="#DejaVuSans-Oblique-50" transform="translate(137.304688 -16.390625) scale(0.7)"/><use xlink:href="#DejaVuSans-Oblique-49" transform="translate(179.516602 -16.390625) scale(0.7)"/><use xlink:href="#DejaVuSans-Oblique-54" transform="translate(200.161133 -16.390625) scale(0.7)"/><use xlink:href="#DejaVuSans-3d" transform="translate(265.136719 0.015625)"/><use xlink:href="#DejaVuSans-Oblique-4e" transform="translate(368.408203 0.015625)"/><use xlink:href="#STIXSizeThreeSym-Regular-28" transform="translate(443.212891 -47.240625) scale(0.823387)"/><use xlink:href="#DejaVuSans-Oblique-47" transform="translate(504.994125 58.370312) scale(0.7)"/><use xlink:href="#DejaVuSans-28" transform="translate(559.237289 58.370312) scale(0.7)"/><use xlink:href="#DejaVuSans-Oblique-50" transform="translate(586.54686 58.370312) scale(0.7)"/><use xlink:href="#DejaVuSans-Oblique-44" transform="translate(628.758774 58.370312) scale(0.7)"/><use xlink:href="#DejaVuSans-Oblique-54" transform="translate(682.660141 46.885937) scale(0.49)"/><use xlink:href="#DejaVuSans-Oblique-54" transform="translate(712.591293 46.885937) scale(0.49)"/><use xlink:href="#DejaVuSans-Oblique-43" transform="translate(742.522446 46.885937) scale(0.49)"/><use xlink:href="#DejaVuSans-29" transform="translate(778.650375 58.370312) scale(0.7)"/><use xlink:href="#DejaVuSans-2212" transform="translate(819.597641 58.370312) scale(0.7)"/><use xlink:href="#STIXSizeOneSym-Regular-221a" transform="translate(891.88768 55.789062) scale(0.409483)"/><use xlink:href="#DejaVuSans-Oblique-3c1" transform="translate(943.921822 58.425) scale(0.7)"/><use xlink:href="#DejaVuSans-Oblique-5a" transform="translate(1008.470389 58.370312) scale(0.7)"/><use xlink:href="#STIXSizeOneSym-Regular-221a" transform="translate(658.994125 -65.509375) scale(0.473556)"/><use xlink:href="#DejaVuSans-31" transform="translate(717.779845 -64.846875) scale(0.7)"/><use xlink:href="#DejaVuSans-2212" transform="translate(775.953673 -64.846875) scale(0.7)"/><use xlink:href="#DejaVuSans-Oblique-3c1" transform="translate(848.243712 -64.846875) scale(0.7)"/><use xlink:href="#STIXSizeThreeSym-Regular-29" transform="translate(1068.92449 -47.240625) scale(0.823387)"/><path d="M 935.171822 114.25  L 935.171822 118.625  L 997.105415 118.625  L 997.105415 114.25  L 935.171822 114.25  z "/><path d="M 504.994125 18.8125  L 504.994125 25.0625  L 1056.42449 25.0625  L 1056.42449 18.8125  L 504.994125 18.8125  z "/><path d="M 709.029845 3.8125  L 709.029845 8.1875  L 901.427306 8.1875  L 901.427306 3.8125  L 709.029845 3.8125  z "/></g></g></g></svg></div>
+<p><em>Ejemplo ilustrativo con datos sintéticos; las cifras no corresponden a ninguna institución.
+El cálculo completo está reproducido en el módulo de figuras.</em></p>
+<p><figure class="fig" id="fig-cap20_puente_pd"><div class="fig-svg"><svg preserveAspectRatio="xMidYMid meet" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 494.868438 278.849028" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 278.849028 
+L 494.868438 278.849028 
+L 494.868438 0 
+L 0 0 
+L 0 278.849028 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 52.591797 248.718203 
+L 476.671797 248.718203 
+L 476.671797 26.958203 
+L 52.591797 26.958203 
+L 52.591797 248.718203 
+z
+" style="fill: none"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(74.578565 261.404828)">PD IRB</text>
+      <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(70.532627 271.258903)">con MoC</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(134.889288 261.404828)">Retiro</text>
+      <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(130.122851 271.258903)">del MoC</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(185.574324 261.404828)">Ajuste de</text>
+      <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(182.237199 271.258903)">calibración</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(239.263734 261.404828)">PD a través</text>
+      <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(246.534734 271.258903)">del ciclo</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(298.376145 261.404828)">Conversión</text>
+      <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(312.31177 271.258903)">a PIT</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6"/>
+     <g id="text_6">
+      <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(347.456556 261.404828)">Ponderación de</text>
+      <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(357.831618 271.258903)">escenarios</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_7"/>
+     <g id="text_7">
+      <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(418.554841 261.404828)">PD IFRS 9</text>
+      <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(418.589216 271.258903)">12 meses</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_8">
+      <path d="M 52.591797 248.718203 
+L 476.671797 248.718203 
+" clip-path="url(#p9b374f8a77)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_9"/>
+     <g id="text_8">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="46.591797" y="252.327461" transform="rotate(-0 46.591797 252.327461)">0.0 %</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_10">
+      <path d="M 52.591797 218.130617 
+L 476.671797 218.130617 
+" clip-path="url(#p9b374f8a77)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_11"/>
+     <g id="text_9">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="46.591797" y="221.739875" transform="rotate(-0 46.591797 221.739875)">0.2 %</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_12">
+      <path d="M 52.591797 187.543031 
+L 476.671797 187.543031 
+" clip-path="url(#p9b374f8a77)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_13"/>
+     <g id="text_10">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="46.591797" y="191.152289" transform="rotate(-0 46.591797 191.152289)">0.4 %</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_14">
+      <path d="M 52.591797 156.955445 
+L 476.671797 156.955445 
+" clip-path="url(#p9b374f8a77)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_15"/>
+     <g id="text_11">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="46.591797" y="160.564702" transform="rotate(-0 46.591797 160.564702)">0.6 %</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_16">
+      <path d="M 52.591797 126.367858 
+L 476.671797 126.367858 
+" clip-path="url(#p9b374f8a77)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_17"/>
+     <g id="text_12">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="46.591797" y="129.977116" transform="rotate(-0 46.591797 129.977116)">0.8 %</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_18">
+      <path d="M 52.591797 95.780272 
+L 476.671797 95.780272 
+" clip-path="url(#p9b374f8a77)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_19"/>
+     <g id="text_13">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="46.591797" y="99.38953" transform="rotate(-0 46.591797 99.38953)">1.0 %</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_20">
+      <path d="M 52.591797 65.192686 
+L 476.671797 65.192686 
+" clip-path="url(#p9b374f8a77)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_21"/>
+     <g id="text_14">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="46.591797" y="68.801944" transform="rotate(-0 46.591797 68.801944)">1.2 %</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_22">
+      <path d="M 52.591797 34.6051 
+L 476.671797 34.6051 
+" clip-path="url(#p9b374f8a77)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_23"/>
+     <g id="text_15">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="46.591797" y="38.214357" transform="rotate(-0 46.591797 38.214357)">1.4 %</text>
+     </g>
+    </g>
+    <g id="text_16">
+     <text style="font-size: 10px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="13.358437" y="137.838203" transform="rotate(-90 13.358437 137.838203)">PD a 12 meses</text>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 52.591797 248.718203 
+L 52.591797 26.958203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 52.591797 248.718203 
+L 476.671797 248.718203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 71.868161 248.718203 
+L 106.916094 248.718203 
+L 106.916094 65.192686 
+L 71.868161 65.192686 
+z
+" clip-path="url(#p9b374f8a77)" style="fill: var(--s1, #2a78d6)"/>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="89.392127" y="59.839858" transform="rotate(-0 89.392127 59.839858)">1,20 %</text>
+   </g>
+   <g id="patch_6">
+    <path d="M 130.281384 65.192686 
+L 165.329318 65.192686 
+L 165.329318 98.839031 
+L 130.281384 98.839031 
+z
+" clip-path="url(#p9b374f8a77)" style="fill: var(--st-good, #0ca30c)"/>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="147.805351" y="59.839858" transform="rotate(-0 147.805351 59.839858)">-0,22 pp</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 188.694607 98.839031 
+L 223.742541 98.839031 
+L 223.742541 108.015307 
+L 188.694607 108.015307 
+z
+" clip-path="url(#p9b374f8a77)" style="fill: var(--st-good, #0ca30c)"/>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="206.218574" y="93.486203" transform="rotate(-0 206.218574 93.486203)">-0,06 pp</text>
+   </g>
+   <g id="patch_8">
+    <path d="M 247.10783 248.718203 
+L 282.155764 248.718203 
+L 282.155764 108.015307 
+L 247.10783 108.015307 
+z
+" clip-path="url(#p9b374f8a77)" style="fill: var(--s1, #2a78d6)"/>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="264.631797" y="102.662479" transform="rotate(-0 264.631797 102.662479)">0,92 %</text>
+   </g>
+   <g id="patch_9">
+    <path d="M 305.521053 108.015307 
+L 340.568987 108.015307 
+L 340.568987 123.657558 
+L 305.521053 123.657558 
+z
+" clip-path="url(#p9b374f8a77)" style="fill: var(--st-good, #0ca30c)"/>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="323.04502" y="102.662479" transform="rotate(-0 323.04502 102.662479)">-0,10 pp</text>
+   </g>
+   <g id="patch_10">
+    <path d="M 363.934276 123.657558 
+L 398.98221 123.657558 
+L 398.98221 77.358736 
+L 363.934276 77.358736 
+z
+" clip-path="url(#p9b374f8a77)" style="fill: var(--st-critical, #d03b3b)"/>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="381.458243" y="72.005909" transform="rotate(-0 381.458243 72.005909)">+0,30 pp</text>
+   </g>
+   <g id="patch_11">
+    <path d="M 422.347499 248.718203 
+L 457.395433 248.718203 
+L 457.395433 77.358736 
+L 422.347499 77.358736 
+z
+" clip-path="url(#p9b374f8a77)" style="fill: var(--s1, #2a78d6)"/>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="439.871466" y="72.005909" transform="rotate(-0 439.871466 72.005909)">1,12 %</text>
+   </g>
+   <g id="text_24">
+    <text style="font-weight: 600; font-size: 11.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="52.591797" y="14.958203" transform="rotate(-0 52.591797 14.958203)">Del parámetro regulatorio al parámetro contable: cascada de la PD</text>
+   </g>
+   <g id="line2d_24">
+    <path d="M 123.271797 65.192686 
+L 172.338904 65.192686 
+" clip-path="url(#p9b374f8a77)" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_25">
+    <path d="M 181.68502 98.839031 
+L 230.752127 98.839031 
+" clip-path="url(#p9b374f8a77)" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_26">
+    <path d="M 298.511466 108.015307 
+L 347.578574 108.015307 
+" clip-path="url(#p9b374f8a77)" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_27">
+    <path d="M 356.924689 123.657558 
+L 405.991797 123.657558 
+" clip-path="url(#p9b374f8a77)" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p9b374f8a77">
+   <rect x="52.591797" y="26.958203" width="424.08" height="221.76"/>
+  </clipPath>
+ </defs>
+</svg></div><figcaption>Cascada de ajustes desde la PD IRB con margen de conservadurismo hasta la PD IFRS 9 de 12 meses del mismo cliente. Ejemplo ilustrativo con datos sintéticos; el cálculo está reproducido en el módulo de figuras.</figcaption></figure></p>
+<p>El resultado tiene dos lecturas que conviene subrayar, porque contradicen la intuición
+habitual de que "la PD contable siempre es más baja".</p>
+<p><strong>Primera: la conversión a un punto en el tiempo no es simétrica.</strong> Con el factor sistémico
+en su valor medio ponderado (<svg class="math-inline" style="width:5.0000em;height:0.8750em;vertical-align:-0.1250em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 80 14" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-5a" transform="translate(0 0.78125)"/><use xlink:href="#DejaVuSans-3d" transform="translate(87.988281 0.78125)"/><use xlink:href="#DejaVuSans-2212" transform="translate(191.259766 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(275.048828 0.78125)"/><use xlink:href="#DejaVuSans-2c" transform="translate(338.671875 0.78125)"/><use xlink:href="#DejaVuSans-33" transform="translate(370.458984 0.78125)"/><use xlink:href="#DejaVuSans-35" transform="translate(434.082031 0.78125)"/></g></g></g></svg>), la PD condicional es 0,82 %, inferior al 0,92 %
+promedio de largo plazo. Esto no es un error: en el modelo de Vasicek la PD condicional al
+estado <strong>medio</strong> del ciclo es menor que la PD <strong>promedio</strong> entre estados, porque la relación es
+convexa. Los años malos, poco frecuentes, arrastran el promedio hacia arriba.</p>
+<p><strong>Segunda: ponderar escenarios sube el resultado, y sube mucho.</strong> Con exactamente el mismo
+<svg class="math-inline" style="width:0.6875em;height:0.7500em;vertical-align:-0.0000em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 11 12" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-5a" transform="translate(0 0.09375)"/></g></g></g></svg> medio, calcular la PD en cada uno de los tres escenarios y ponderar da 1,12 % frente al
+0,82 % del escenario central: <strong>30 puntos base de diferencia atribuibles solo a la
+convexidad</strong>. Es la misma demostración del ITG con otro instrumento [F2]: el escenario de
+recesión, con peso del 25 %, aporta una PD condicional del 2,64 % que ningún promedio de
+variables económicas habría producido.</p>
+<h3 id="33-de-la-pd-a-la-ecl-y-comparacion-con-la-perdida-esperada-regulatoria">3.3 De la PD a la ECL, y comparación con la pérdida esperada regulatoria<a class="hlink" href="#33-de-la-pd-a-la-ecl-y-comparacion-con-la-perdida-esperada-regulatoria" aria-label="enlace">#</a></h3>
+<p>Completando el ejemplo con una severidad y una exposición coherentes con cada marco:</p>
+<table>
+<thead>
+<tr>
+<th>Concepto</th>
+<th style="text-align: right;">Marco IRB</th>
+<th style="text-align: right;">Marco IFRS 9 (etapa 1)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PD a 12 meses</td>
+<td style="text-align: right;">1,20 %</td>
+<td style="text-align: right;">1,12 %</td>
+</tr>
+<tr>
+<td>Severidad</td>
+<td style="text-align: right;">45 % (recesión, con pisos y costos indirectos)</td>
+<td style="text-align: right;">32 % (esperada, sin pisos ni costos indirectos)</td>
+</tr>
+<tr>
+<td>Exposición</td>
+<td style="text-align: right;">50,0</td>
+<td style="text-align: right;">50,0</td>
+</tr>
+<tr>
+<td>Resultado sin descuento</td>
+<td style="text-align: right;">270,0 miles</td>
+<td style="text-align: right;">179,3 miles</td>
+</tr>
+<tr>
+<td>Descuento a la tasa efectiva (7 %, incumplimiento medio a los 6 meses)</td>
+<td style="text-align: right;">no aplica</td>
+<td style="text-align: right;">×0,9667</td>
+</tr>
+<tr>
+<td><strong>Importe reconocido</strong></td>
+<td style="text-align: right;"><strong>270,0 miles de pérdida esperada regulatoria</strong></td>
+<td style="text-align: right;"><strong>173,3 miles de provisión</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>Ejemplo ilustrativo con datos sintéticos.</em></p>
+<p>La pérdida esperada regulatoria resulta un 56 % superior a la provisión contable del mismo
+cliente en la misma fecha, y <strong>cada punto de esa diferencia está explicado por un ajuste
+documentado</strong>. Ese cuadro, replicado a nivel de cartera, es exactamente la conciliación que
+pide un revisor cuando pregunta por qué la provisión no coincide con la pérdida esperada.</p>
+<div class="box box-alerta">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">El escalar de cartera</span></div>
+<div class="box-b">
+<p>La forma rápida de construir el puente es estimar un único factor —"la PD contable es el 78 %
+de la regulatoria"— y aplicarlo a toda la cartera. La PRA criticó explícitamente esta práctica:
+<em>"we continue to see use of approximate approaches such as portfolio level scalars"</em> en lugar
+de cálculos a nivel de componente, PD o severidad específicamente [F23]. El problema no es
+solo de precisión: un escalar no se puede desagregar, no se puede validar por segmento y no
+sobrevive a un cambio de composición de la cartera.</p>
+</div>
+</div>
+<div class="box box-checklist">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Revisar el puente de parámetros</span></div>
+<div class="box-b">
+<ul>
+<li>¿Existe un documento que liste los nueve ajustes, con el importe de cada uno y su
+  justificación, por segmento de calibración?</li>
+<li>¿La conciliación entre la pérdida esperada regulatoria y la provisión cuadra al último
+  decimal, o hay una partida "otros" que absorbe la diferencia?</li>
+<li>¿Los ajustes se aplican al parámetro o al resultado? Si se aplican al resultado, ¿por qué?</li>
+<li>¿Se retiró el margen de conservadurismo <strong>completo</strong>, incluidas las categorías B y C, o solo
+  la parte fácil de identificar?</li>
+<li>¿La conversión a un punto en el tiempo se hace con un modelo documentado y validado, o con un
+  factor heredado de un ejercicio antiguo?</li>
+<li>¿Alguien puede recalcular el puente desde los insumos en un plazo razonable, o depende de
+  una hoja de cálculo de una sola persona?</li>
+</ul>
+</div>
+</div>
+<h2 id="4-perdida-esperada-regulatoria-frente-a-provisiones-contables">4. Pérdida esperada regulatoria frente a provisiones contables<a class="hlink" href="#4-perdida-esperada-regulatoria-frente-a-provisiones-contables" aria-label="enlace">#</a></h2>
+<h3 id="41-la-comparacion-y-su-tratamiento-asimetrico">4.1 La comparación y su tratamiento asimétrico<a class="hlink" href="#41-la-comparacion-y-su-tratamiento-asimetrico" aria-label="enlace">#</a></h3>
+<p>Las dos magnitudes no solo se comparan conceptualmente: se comparan en el cálculo del capital,
+y el resultado de esa comparación entra directamente en los ratios.</p>
+<div class="box box-regulatorio">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Tratamiento de las provisiones bajo IRB</span></div>
+<div class="box-b">
+<p>Bajo el enfoque IRB no hay distinción entre provisiones genéricas y específicas: el total de
+provisiones elegibles se compara contra la <strong>pérdida esperada regulatoria</strong>. El <strong>déficit</strong>
+—provisiones por debajo de la pérdida esperada— se deduce del capital de nivel 1 ordinario; el
+<strong>exceso</strong> puede añadirse al capital de nivel 2 hasta el <strong>0,6 % de los activos ponderados por
+riesgo de crédito bajo IRB</strong> [BCBS d386] [F16]. La decisión final del Comité de Basilea de
+marzo de 2017 fue <em>"retain the current treatment of provisions under both the SA and IRB
+frameworks for an interim period"</em> [BCBS d401] [F17]. El dosier de esta guía advierte que el
+texto del capítulo <strong>CRE35 del marco consolidado no pudo verificarse directamente</strong> y que este
+contenido se reconstruye a partir de d386 y d401.</p>
+</div>
+</div>
+<p>El tratamiento es <strong>asimétrico y deliberadamente asimétrico</strong>: el déficit se castiga euro por
+euro contra el capital de mejor calidad; el exceso se premia parcialmente, con un tope, y en el
+capital de peor calidad.</p>
+<p><figure class="fig" id="fig-cap20_el_provisiones"><div class="fig-svg"><svg preserveAspectRatio="xMidYMid meet" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 529.118273 247.228516" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 247.228516 
+L 529.118273 247.228516 
+L 529.118273 0 
+L 0 0 
+L 0 247.228516 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 43.57125 226.758203 
+L 252.471705 226.758203 
+L 252.471705 26.958203 
+L 43.57125 26.958203 
+L 43.57125 226.758203 
+z
+" style="fill: none"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="82.740085" y="239.596797" transform="rotate(-0 82.740085 239.596797)">EL regulatoria</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="148.021477" y="239.596797" transform="rotate(-0 148.021477 239.596797)">Provisiones</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_3">
+      <path d="M 43.57125 226.758203 
+L 252.471705 226.758203 
+" clip-path="url(#p2ea0731fef)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_3">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="37.57125" y="230.367461" transform="rotate(-0 37.57125 230.367461)">0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_5">
+      <path d="M 43.57125 194.532397 
+L 252.471705 194.532397 
+" clip-path="url(#p2ea0731fef)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_4">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="37.57125" y="198.141654" transform="rotate(-0 37.57125 198.141654)">100</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_7">
+      <path d="M 43.57125 162.30659 
+L 252.471705 162.30659 
+" clip-path="url(#p2ea0731fef)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_5">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="37.57125" y="165.915848" transform="rotate(-0 37.57125 165.915848)">200</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_9">
+      <path d="M 43.57125 130.080784 
+L 252.471705 130.080784 
+" clip-path="url(#p2ea0731fef)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_6">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="37.57125" y="133.690042" transform="rotate(-0 37.57125 133.690042)">300</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_11">
+      <path d="M 43.57125 97.854977 
+L 252.471705 97.854977 
+" clip-path="url(#p2ea0731fef)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_12"/>
+     <g id="text_7">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="37.57125" y="101.464235" transform="rotate(-0 37.57125 101.464235)">400</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_13">
+      <path d="M 43.57125 65.629171 
+L 252.471705 65.629171 
+" clip-path="url(#p2ea0731fef)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_14"/>
+     <g id="text_8">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="37.57125" y="69.238429" transform="rotate(-0 37.57125 69.238429)">500</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_15">
+      <path d="M 43.57125 33.403364 
+L 252.471705 33.403364 
+" clip-path="url(#p2ea0731fef)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_16"/>
+     <g id="text_9">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="37.57125" y="37.012622" transform="rotate(-0 37.57125 37.012622)">600</text>
+     </g>
+    </g>
+    <g id="text_10">
+     <text style="font-size: 10px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="13.358438" y="126.858203" transform="rotate(-90 13.358438 126.858203)">Millones</text>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 43.57125 226.758203 
+L 43.57125 26.958203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 43.57125 226.758203 
+L 252.471705 226.758203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 66.419737 226.758203 
+L 99.060433 226.758203 
+L 99.060433 91.409816 
+L 66.419737 91.409816 
+z
+" clip-path="url(#p2ea0731fef)" style="fill: var(--s1, #2a78d6)"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 131.701129 226.758203 
+L 164.341825 226.758203 
+L 164.341825 126.858203 
+L 131.701129 126.858203 
+z
+" clip-path="url(#p2ea0731fef)" style="fill: var(--s2, #eb6834)"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 148.021477 95.202162 
+Q 148.021477 109.137553 148.021477 123.072943 
+" style="fill: none; stroke: var(--st-critical, #d03b3b); stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 145.921477 99.402162 
+L 148.021477 95.202162 
+L 150.121477 99.402162 
+" style="fill: none; stroke: var(--st-critical, #d03b3b); stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 150.121477 118.872943 
+L 148.021477 123.072943 
+L 145.921477 118.872943 
+" style="fill: none; stroke: var(--st-critical, #d03b3b); stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink2, #52514e)" transform="translate(168.911523 105.96656)">Déficit 110</text>
+    <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink2, #52514e)" transform="translate(168.911523 117.15796)">deducción de CET1</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 600; font-size: 11.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="43.57125" y="14.958203" transform="rotate(-0 43.57125 14.958203)">Déficit de provisiones</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_8">
+    <path d="M 309.47625 226.758203 
+L 518.376705 226.758203 
+L 518.376705 26.958203 
+L 309.47625 26.958203 
+L 309.47625 226.758203 
+z
+" style="fill: none"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_3">
+     <g id="line2d_17"/>
+     <g id="text_13">
+      <text style="font-size: 9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="348.645085" y="239.596797" transform="rotate(-0 348.645085 239.596797)">EL regulatoria</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_18"/>
+     <g id="text_14">
+      <text style="font-size: 9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="413.926477" y="239.596797" transform="rotate(-0 413.926477 239.596797)">Provisiones</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_8">
+     <g id="line2d_19">
+      <path d="M 309.47625 226.758203 
+L 518.376705 226.758203 
+" clip-path="url(#p873e6add4c)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_20"/>
+     <g id="text_15">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="303.47625" y="230.367461" transform="rotate(-0 303.47625 230.367461)">0</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_21">
+      <path d="M 309.47625 194.532397 
+L 518.376705 194.532397 
+" clip-path="url(#p873e6add4c)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_22"/>
+     <g id="text_16">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="303.47625" y="198.141654" transform="rotate(-0 303.47625 198.141654)">100</text>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_23">
+      <path d="M 309.47625 162.30659 
+L 518.376705 162.30659 
+" clip-path="url(#p873e6add4c)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_24"/>
+     <g id="text_17">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="303.47625" y="165.915848" transform="rotate(-0 303.47625 165.915848)">200</text>
+     </g>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_25">
+      <path d="M 309.47625 130.080784 
+L 518.376705 130.080784 
+" clip-path="url(#p873e6add4c)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_26"/>
+     <g id="text_18">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="303.47625" y="133.690042" transform="rotate(-0 303.47625 133.690042)">300</text>
+     </g>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_27">
+      <path d="M 309.47625 97.854977 
+L 518.376705 97.854977 
+" clip-path="url(#p873e6add4c)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_28"/>
+     <g id="text_19">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="303.47625" y="101.464235" transform="rotate(-0 303.47625 101.464235)">400</text>
+     </g>
+    </g>
+    <g id="ytick_13">
+     <g id="line2d_29">
+      <path d="M 309.47625 65.629171 
+L 518.376705 65.629171 
+" clip-path="url(#p873e6add4c)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_30"/>
+     <g id="text_20">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="303.47625" y="69.238429" transform="rotate(-0 303.47625 69.238429)">500</text>
+     </g>
+    </g>
+    <g id="ytick_14">
+     <g id="line2d_31">
+      <path d="M 309.47625 33.403364 
+L 518.376705 33.403364 
+" clip-path="url(#p873e6add4c)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_32"/>
+     <g id="text_21">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="303.47625" y="37.012622" transform="rotate(-0 303.47625 37.012622)">600</text>
+     </g>
+    </g>
+    <g id="text_22">
+     <text style="font-size: 10px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="279.263438" y="126.858203" transform="rotate(-90 279.263438 126.858203)">Millones</text>
+    </g>
+   </g>
+   <g id="patch_9">
+    <path d="M 309.47625 226.758203 
+L 309.47625 26.958203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 309.47625 226.758203 
+L 518.376705 226.758203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 332.324737 226.758203 
+L 364.965433 226.758203 
+L 364.965433 91.409816 
+L 332.324737 91.409816 
+z
+" clip-path="url(#p873e6add4c)" style="fill: var(--s1, #2a78d6)"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 397.606129 226.758203 
+L 430.246825 226.758203 
+L 430.246825 65.629171 
+L 397.606129 65.629171 
+z
+" clip-path="url(#p873e6add4c)" style="fill: var(--s2, #eb6834)"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 413.926477 87.622584 
+Q 413.926477 78.520426 413.926477 69.418267 
+" style="fill: none; stroke: var(--st-good, #0ca30c); stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 416.026477 83.422584 
+L 413.926477 87.622584 
+L 411.826477 83.422584 
+" style="fill: none; stroke: var(--st-good, #0ca30c); stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 411.826477 73.618267 
+L 413.926477 69.418267 
+L 416.026477 73.618267 
+" style="fill: none; stroke: var(--st-good, #0ca30c); stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink2, #52514e)" transform="translate(434.816523 69.756343)">Exceso 80</text>
+    <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink2, #52514e)" transform="translate(434.816523 80.947743)">admisible en nivel 2</text>
+    <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink2, #52514e)" transform="translate(434.816523 92.139143)">(tope 180)</text>
+   </g>
+   <g id="text_24">
+    <text style="font-weight: 600; font-size: 11.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="309.47625" y="14.958203" transform="rotate(-0 309.47625 14.958203)">Exceso de provisiones</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p2ea0731fef">
+   <rect x="43.57125" y="26.958203" width="208.900455" height="199.8"/>
+  </clipPath>
+  <clipPath id="p873e6add4c">
+   <rect x="309.47625" y="26.958203" width="208.900455" height="199.8"/>
+  </clipPath>
+ </defs>
+</svg></div><figcaption>Comparación agregada entre pérdida esperada regulatoria y provisiones contables, con el tratamiento del déficit y del exceso en capital. Ejemplo ilustrativo con datos sintéticos; el tope del 0,6 % de los activos ponderados por riesgo de crédito IRB procede de BCBS d386.</figcaption></figure></p>
+<p><strong>Ejemplo.</strong> Cartera IRB con 30.000 millones de activos ponderados por riesgo de crédito y una
+pérdida esperada regulatoria de 420 millones.</p>
+<ul>
+<li>Si las provisiones contables admisibles son 310 millones, hay un <strong>déficit de 110 millones</strong>
+  que se deduce íntegramente del capital de nivel 1 ordinario. Con un ratio del 12 %, esa
+  deducción equivale a algo más de 900 millones de activos ponderados en términos de consumo de
+  capital.</li>
+<li>Si las provisiones son 500 millones, hay un <strong>exceso de 80 millones</strong>. El tope es
+  <svg class="math-inline" style="width:10.6250em;height:0.8750em;vertical-align:-0.1250em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 170 14" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-30" transform="translate(0 0.78125)"/><use xlink:href="#DejaVuSans-2c" transform="translate(63.623047 0.78125)"/><use xlink:href="#DejaVuSans-36" transform="translate(95.410156 0.78125)"/><use xlink:href="#DejaVuSans-25" transform="translate(175.268879 0.78125)"/><use xlink:href="#DejaVuSans-d7" transform="translate(289.770833 0.78125)"/><use xlink:href="#DejaVuSans-33" transform="translate(393.042317 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(456.665364 0.78125)"/><use xlink:href="#DejaVuSans-2e" transform="translate(520.288411 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(552.07552 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(615.698567 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(679.321614 0.78125)"/><use xlink:href="#DejaVuSans-3d" transform="translate(762.427083 0.78125)"/><use xlink:href="#DejaVuSans-31" transform="translate(865.698567 0.78125)"/><use xlink:href="#DejaVuSans-38" transform="translate(929.321614 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(992.944661 0.78125)"/></g></g></g></svg> millones, de modo que el exceso completo se admite en capital
+  de nivel 2.</li>
+</ul>
+<p><em>Ejemplo ilustrativo con datos sintéticos.</em></p>
+<div class="box box-economico">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Por qué esta comparación gobierna la conversación entre riesgos y finanzas</span></div>
+<div class="box-b">
+<p>Una decisión que aumenta la provisión contable —un ajuste fuera de modelo, un cambio de
+umbral de transferencia entre etapas— reduce el resultado del ejercicio, pero también reduce el
+déficit y, por esa vía, <strong>libera capital de nivel 1 ordinario</strong>. Un director financiero que
+solo mira la cuenta de resultados y un director de riesgos que solo mira el ratio de capital
+están viendo dos mitades del mismo efecto. La cifra que ordena la discusión es el impacto
+conjunto en el ratio, no cada mitad por separado.</p>
+</div>
+</div>
+<h3 id="42-el-impacto-de-la-transicion-y-sus-disposiciones-transitorias">4.2 El impacto de la transición y sus disposiciones transitorias<a class="hlink" href="#42-el-impacto-de-la-transicion-y-sus-disposiciones-transitorias" aria-label="enlace">#</a></h3>
+<p>El Comité de Basilea identificó desde el inicio la tensión: los modelos de pérdida esperada
+generan típicamente provisiones más altas que los de pérdida incurrida, por la evaluación
+prospectiva y el concepto de vida remanente, creando presión a la baja sobre los ratios de
+capital en la transición [F16]. La respuesta fue un régimen transitorio con dos variantes: el
+<strong>enfoque estático</strong>, que calcula el ajuste una sola vez en la fecha de transición y distribuye
+el impacto del primer día, y el <strong>enfoque dinámico</strong>, recalculado periódicamente para reflejar
+la evolución de las provisiones, especialmente relevante para las etapas 1 y 2; el periodo de
+transición no puede exceder <strong>cinco años</strong> y la reincorporación se amortiza de forma lineal
+[BCBS d401, párr. 96A(f)-(g)] [F17]. En la Unión Europea esto se instrumentó por el artículo
+473a del CRR, con la obligación de publicar en paralelo dos conjuntos de métricas —capital y
+ratios transitorios frente a "totalmente cargados"— [EBA/GL/2018/01] [F20].</p>
+<p>Para un banco que hoy dirige modelos, el interés de este régimen ya no es su vigencia sino su
+lección: <strong>un cambio metodológico en la ECL tiene efecto en capital, y ese efecto necesita su
+propio plan de comunicación al supervisor y al mercado</strong>.</p>
+<h2 id="5-sinergias-reales-y-tensiones-organizativas">5. Sinergias reales y tensiones organizativas<a class="hlink" href="#5-sinergias-reales-y-tensiones-organizativas" aria-label="enlace">#</a></h2>
+<h3 id="51-lo-que-si-conviene-compartir">5.1 Lo que sí conviene compartir<a class="hlink" href="#51-lo-que-si-conviene-compartir" aria-label="enlace">#</a></h3>
+<ul>
+<li><strong>Una sola definición de incumplimiento</strong> y una sola marca de incumplimiento en el almacén de
+  datos.</li>
+<li><strong>Un solo motor de datos de referencia</strong>: exposición, colateral, calendario contractual,
+  calificación interna, fecha de originación.</li>
+<li><strong>Un solo modelo de ordenamiento</strong>: el puntaje y el grado deben ser los mismos; lo que cambia
+  es la calibración del nivel, no la ordenación de los clientes.</li>
+<li><strong>Una sola gobernanza de datos de recuperación</strong>: los flujos de un proceso de recuperación
+  alimentan la severidad regulatoria y la contable con distintas convenciones, pero con los
+  mismos hechos.</li>
+<li><strong>Un solo inventario de modelos</strong> y un solo marco de riesgo de modelo.</li>
+</ul>
+<h3 id="52-lo-que-no-se-puede-compartir-y-hay-que-separar-explicitamente">5.2 Lo que no se puede compartir y hay que separar explícitamente<a class="hlink" href="#52-lo-que-no-se-puede-compartir-y-hay-que-separar-explicitamente" aria-label="enlace">#</a></h3>
+<ul>
+<li>La <strong>calibración del nivel</strong>: promedio de largo plazo con margen frente a estimación
+  condicionada e insesgada.</li>
+<li>El <strong>conjunto de escenarios</strong>: el escenario de recesión de la severidad regulatoria no es el
+  escenario adverso de la ECL, aunque los equipos tiendan a reutilizarlo.</li>
+<li>El <strong>calendario</strong>: la ECL se calcula en el cierre contable, con plazos de días; los parámetros
+  regulatorios se recalibran una vez al año. Un modelo compartido con dos calendarios genera
+  versiones inconsistentes salvo que la gobernanza de versiones sea explícita.</li>
+<li>La <strong>propiedad del resultado</strong>: la provisión es un número de estados financieros. El área de
+  modelos lo produce, pero no lo posee.</li>
+</ul>
+<div class="box box-practica">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Las tres fricciones que aparecen siempre</span></div>
+<div class="box-b">
+<p><strong>Primera: la titularidad del ajuste fuera de modelo.</strong> Riesgos lo calcula, finanzas lo firma,
+y en la práctica nadie lo posee. El Banco Central Europeo encontró que solo 30 bancos de su
+muestra cumplían estándares satisfactorios de gobierno de estos ajustes, con falta de
+asignación clara de tareas y procedimientos de escalamiento en el <strong>44 %</strong> de los bancos [F22].
+<strong>Segunda: el calendario.</strong> El cierre contable no espera a la recalibración anual del modelo
+regulatorio; cuando ambos se cruzan, alguien acaba usando una versión del parámetro que ya no
+existe. <strong>Tercera: el lenguaje.</strong> El mismo término significa cosas distintas en las dos
+funciones —"pérdida esperada", "severidad", "exposición"—, y las reuniones avanzan durante
+media hora antes de que alguien note que se está hablando de dos números distintos. La solución
+barata es un glosario común con la convención de cada marco al lado de cada término; la cara es
+descubrirlo en la auditoría.</p>
+</div>
+</div>
+<p>Un dato para dimensionar el peso de lo que se decide fuera del modelo: en la cartera
+corporativa de las entidades de la Unión Europea, los ajustes fuera de modelo representaban en
+promedio el <strong>26,3 %</strong> de la ECL total, con mediana del <strong>24,9 %</strong>, y en casos individuales más
+del 50 % a nivel de cartera [EBA/Rep/2023/36, figura 12 y párr. 52] [F21]. En una gobernanza
+donde la cuarta parte del resultado no sale del modelo, la discusión sobre quién posee ese
+cuarto no es burocrática.</p>
+<h2 id="6-mexico-nif-c-16-y-la-arquitectura-de-reservas">6. México: NIF C-16 y la arquitectura de reservas<a class="hlink" href="#6-mexico-nif-c-16-y-la-arquitectura-de-reservas" aria-label="enlace">#</a></h2>
+<p>Para un banco con supervisión dual, la pregunta obligada es si el marco mexicano replica IFRS 9
+o se aparta de él. Lo que esta guía puede afirmar con respaldo verificado es lo siguiente.</p>
+<p><strong>Verificado.</strong> El Consejo Mexicano de Normas de Información Financiera declara expresamente
+que <em>"La NIF de instrumentos financieros son convergentes con la IFRS 9 y entraron en vigor en
+2018"</em> [F28]. La estructura temática de la NIF C-16 replica el modelo de tres etapas: modelo
+general de deterioro, estimación de la pérdida crediticia esperada, transferencias de etapa 1 a
+2 y de 2 a 3, excepciones al modelo, y determinación de la pérdida esperada de forma
+individual, colectiva y simplificada [F27]. Del lado prudencial, la Comisión Nacional Bancaria
+y de Valores creó una vía de autorización específica: el <strong>Anexo 15 Bis</strong> de la Circular Única
+de Bancos se titula literalmente "Requisitos mínimos para el uso de metodologías internas de
+reservas basadas en la NIF C-16, para determinar la estimación preventiva para riesgos
+crediticios por nivel de riesgo de crédito", y el artículo 139 Bis 3, fracción II, exige
+realizar <strong>al menos cada 18 meses</strong> una evaluación técnica de cumplimiento independiente,
+interna o externa, de esas metodologías [M20]. Es decir: en México, la metodología interna de
+<strong>reservas</strong> basada en la norma contable tiene su propio anexo y su propio régimen de
+evaluación independiente, distinto del de las metodologías de calificación de cartera comercial
+(Anexo 26) y del de capital por calificaciones internas (Anexo 32-A) [M4][M5].</p>
+<div class="box box-alerta">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Lo que no está verificado sobre la NIF C-16</span></div>
+<div class="box-b">
+<p>El dosier de esta guía <strong>no pudo acceder al texto completo del boletín normativo</strong> —las Normas
+de Información Financiera mexicanas no se publican íntegras y de forma gratuita— y por tanto
+<strong>no verifica ninguna diferencia técnica específica</strong> frente a IFRS 9 en: la definición exacta
+de incremento significativo del riesgo de crédito y si existe una presunción de 30 días
+idéntica; el tratamiento de la exención de riesgo crediticio bajo; la definición de
+incumplimiento utilizada; el alcance de la excepción de facilidades revolventes; o cualquier
+divergencia de reconocimiento inicial, medición o descuento. Dada la declaración expresa de
+convergencia, la presunción de trabajo razonable es que las diferencias, si existen, son de
+detalle y no conceptuales —<strong>pero eso no está confirmado</strong>. Para cualquier análisis contable
+formal en México hay que obtener el boletín y hacer la comparación párrafo por párrafo.</p>
+</div>
+</div>
+<p>La consecuencia de gestión es la misma que en el capítulo 3: el mismo activo se mide dos veces
+con dos marcos, y la única arquitectura que sobrevive es la que produce <strong>un cálculo por marco
+desde un mismo conjunto de hechos</strong>, no un cálculo derivado del otro por reglas de mapeo. Una
+provisión local obtenida como un porcentaje de la provisión del grupo es indefendible ante
+cualquiera de los dos supervisores.</p>
+<h2 id="7-que-mira-el-supervisor-que-mira-el-auditor">7. Qué mira el supervisor, qué mira el auditor<a class="hlink" href="#7-que-mira-el-supervisor-que-mira-el-auditor" aria-label="enlace">#</a></h2>
+<p><strong>El supervisor prudencial</strong> mira si el puente está documentado y si el conservadurismo
+regulatorio salió de verdad del parámetro contable; si los ajustes fuera de modelo se calculan
+a nivel de parámetro y no de ECL total —expectativa explícita del Banco Central Europeo y de la
+PRA [F22][F23]—; si los riesgos capturados en esos ajustes se reflejan también en las
+transferencias entre etapas [F22]; y si el impacto conjunto en el ratio de capital está
+comprendido y presupuestado.</p>
+<p><strong>El auditor</strong> mira otra cosa: la evidencia. Que exista un expediente por juicio significativo,
+que los escenarios estén aprobados por el órgano que dice la política, que la conciliación
+cuadre, que los controles sobre los datos funcionen y que el modelo esté validado. El Consejo
+de Información Financiera británico revisó las metodologías de auditoría de las cuatro grandes
+firmas y encontró metodologías generalmente bien diseñadas pero con oportunidades de mejora en
+la orientación sobre <strong>cómo auditar los aspectos de juicio del incremento significativo del
+riesgo de crédito</strong>, calificando IFRS 9 como <em>"a complex area to audit"</em> y señalando
+<em>"instances of poor application across the audit firms"</em> [F26].</p>
+<div class="box box-clave">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Idea clave</span></div>
+<div class="box-b">
+<p>IRB y IFRS 9 no son dos versiones del mismo modelo: son dos preguntas distintas hechas a los
+mismos datos. Compartir insumos, ordenamiento y definición de incumplimiento es obligatorio;
+compartir calibración es un error. Y el puente entre ambos no es un factor: es una lista de
+nueve ajustes que alguien tiene que poder recalcular y defender.</p>
+</div>
+</div>
+<div class="box box-entrevista">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Pregunta de panel</span></div>
+<div class="box-b">
+<p><em>"Su pérdida esperada regulatoria en la cartera corporativa es 420 millones y su provisión
+contable, 310. El director financiero dice que las provisiones están bien y el director de
+riesgos dice que la pérdida esperada está bien. ¿Quién tiene razón?"</em></p>
+<p>Los dos, y esa es la respuesta que buscan. Las magnitudes miden cosas distintas: una incorpora
+margen de conservadurismo, pisos, severidad de recesión y costos indirectos, y no descuenta; la
+otra es una estimación insesgada, condicionada al escenario ponderado y descontada. La
+diferencia de 110 millones <strong>no es un error, es una conciliación</strong> —y la pregunta correcta es
+si esa conciliación está documentada línea por línea—. A partir de ahí, la respuesta de
+dirección añade tres cosas: que el déficit de 110 millones se deduce del capital de nivel 1
+ordinario y por tanto tiene un costo concreto; que si la conciliación no explica los 110
+millones, el problema no es de nivel sino de gobierno; y que la pregunta que sí debería
+preocupar a ambos directores es si la brecha se está moviendo en el tiempo por razones que
+nadie ha decidido.</p>
+</div>
+</div>
+<h3 id="fuentes-de-este-capitulo-19">Fuentes de este capítulo<a class="hlink" href="#fuentes-de-este-capitulo-19" aria-label="enlace">#</a></h3>
+<ul>
+<li><strong>[F1]</strong> IASB, <em>IFRS 9 Financial Instruments — Project Summary</em>, julio 2014 (párrafos 5.5.3,
+  5.5.5, 5.5.10 y los tres elementos del 5.5.17, citados textualmente).
+  https://www.ifrs.org/content/dam/ifrs/project/fi-impairment/ifrs-standard/published-documents/project-summary-july-2014.pdf</li>
+<li><strong>[F2]</strong> ITG, <em>Staff Paper AP1 — Forward-looking scenarios</em>, 11 de diciembre de 2015 (no
+  linealidad; ejemplo 92 frente a 70; método 3).
+  https://www.ifrs.org/content/dam/ifrs/meetings/2015/december/itg/impairment-of-financial-instruments/ap1-forward-looking-scenarios.pdf</li>
+<li><strong>[F3]</strong> ITG, <em>Meeting Summary</em>, 11 de diciembre de 2015 (escenario único; tasa de descuento;
+  alcance del párrafo 5.5.20).
+  https://www.ifrs.org/-/media/feature/meetings/2015/december/itg/itg-meeting-summary-11-december-final.pdf</li>
+<li><strong>[F5]</strong> ITG, <em>Staff Paper AP3 — Measurement of expected credit losses for revolving credit
+  facilities</em>, 16 de septiembre de 2015.
+  https://www.ifrs.org/content/dam/ifrs/meetings/2015/september/itg/impairment-of-financial-instruments/ap3-measurement-of-expected-credit-losses-for-revolving-credit-facilities.pdf</li>
+<li><strong>[F6]</strong> ITG, <em>Staff Paper AP2 — Scope of paragraph 5.5.20 of IFRS 9</em>, 11 de diciembre de 2015.
+  https://www.ifrs.org/content/dam/ifrs/meetings/2015/december/itg/impairment-of-financial-instruments/ap2-scope-of-paragraph-5520-of-ifrs-9.pdf</li>
+<li><strong>[F7]</strong> ITG, <em>Staff Paper AP1 — The maximum period to consider</em>, 22 de abril de 2015 (párrafo
+  5.5.19).
+  https://www.ifrs.org/content/dam/ifrs/meetings/2015/april/itg/impairment-of-financial-instruments/ap1-the-maximum-period-to-consider.pdf</li>
+<li><strong>[F11]</strong> IASB, <em>Staff Paper AP27B — Feedback analysis: Significant Increases in Credit Risk</em>,
+  febrero 2024 (definición de incumplimiento no prescrita).
+  https://www.ifrs.org/content/dam/ifrs/meetings/2024/february/iasb/ap27b-feedback-analysis-sicr.pdf</li>
+<li><strong>[F13]</strong> IFRS Foundation, texto de IFRS 9 con acceso restringido (verificado en el dosier).
+  https://www.ifrs.org/content/dam/ifrs/publications/html-standards/english/2024/issued/ifrs9.html</li>
+<li><strong>[F14]</strong> BCBS, <em>Guidance on credit risk and accounting for expected credit losses</em> (d350),
+  diciembre 2015. https://www.bis.org/bcbs/publ/d350.pdf</li>
+<li><strong>[F16]</strong> BCBS, <em>Regulatory treatment of accounting provisions</em> (d386, documento consultivo,
+  octubre 2016). https://www.bis.org/bcbs/publ/d386.pdf</li>
+<li><strong>[F17]</strong> BCBS, <em>Regulatory treatment of accounting provisions — interim approach and
+  transitional arrangements</em> (d401), marzo 2017. https://www.bis.org/bcbs/publ/d401.pdf</li>
+<li><strong>[F19]</strong> EBA/GL/2017/06 — <em>Guidelines on credit institutions' credit risk management
+  practices and accounting for expected credit losses</em>, 20 de septiembre de 2017.
+  https://www.eba.europa.eu/</li>
+<li><strong>[F20]</strong> EBA/GL/2018/01 — <em>Guidelines on uniform disclosure of IFRS 9 or analogous ECL
+  transitional arrangements</em>, 12 de enero de 2018 (art. 473a CRR).
+  https://www.eba.europa.eu/</li>
+<li><strong>[F21]</strong> EBA, <em>IFRS 9 Implementation by EU institutions — 2023 Monitoring Report</em>
+  (EBA/Rep/2023/36), noviembre 2023 (figura 12: overlays en cartera corporativa).
+  https://www.eba.europa.eu/</li>
+<li><strong>[F22]</strong> BCE, <em>IFRS 9 overlays and model improvements for novel risks</em>, julio 2024.
+  https://www.bankingsupervision.europa.eu/ecb/pub/pdf/ssm.IFRS9novelrisks_202407~5e0eb30b5c.en.pdf</li>
+<li><strong>[F23]</strong> PRA, carta de David Bailey, <em>Thematic feedback on accounting for IFRS 9 expected
+  credit losses (ECL) and climate risk</em>, 27 de septiembre de 2024.
+  https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/letter/2024/thematic-feedback-on-accounting-for-ifrs-9-ecl-and-climate-risk.pdf</li>
+<li><strong>[F26]</strong> FRC, <em>IFRS 9 Banking Audit Methodology Thematic Review</em>, 24 de febrero de 2023.
+  https://www.frc.org.uk/news-and-events/news/2023/02/frc-publishes-ifrs-9-banking-audit-methodology-thematic/</li>
+<li><strong>[F27]</strong> CINIF, <em>Deterioro de Instrumentos Financieros por Cobrar</em> (presentación), 1 de agosto
+  de 2023. https://www.cinif.org.mx/files/Presentacion_Deterioro_IFC.pdf</li>
+<li><strong>[F28]</strong> CINIF, folleto <em>Instrumentos Financieros</em>.
+  https://cinif.org.mx/assets/eventos/Folleto_INSTRUMENTOS_FINANCIEROS.PDF</li>
+<li><strong>[B1]</strong> CRE31 — <em>IRB approach: risk weight functions</em>.
+  https://www.bis.org/basel_framework/chapter/CRE/31.htm</li>
+<li><strong>[B2]</strong> CRE32 — <em>IRB approach: risk components</em> (CRE32.3 suelo de PD; CRE32.16-32.17 pisos de
+  LGD; CRE32.36 suelo de EAD; CRE32.44-32.51 vencimiento).
+  https://www.bis.org/basel_framework/chapter/CRE/32.htm</li>
+<li><strong>[E1]</strong> EBA/GL/2017/16 — <em>Guidelines on PD estimation, LGD estimation and the treatment of
+  defaulted exposures</em> (§42-47 margen de conservadurismo; §82, §85-86 tasa de largo plazo;
+  §113, §132 costos y pérdida económica). https://www.eba.europa.eu/</li>
+<li><strong>[E2]</strong> EBA/GL/2016/07 — <em>Guidelines on the application of the definition of default</em>.
+  https://www.eba.europa.eu/</li>
+<li><strong>[E3]</strong> EBA/GL/2019/03 — <em>Guidelines on the estimation of LGD appropriate for an economic
+  downturn</em>. https://www.eba.europa.eu/</li>
+<li><strong>[L1]</strong> Reglamento Delegado (UE) 2021/930 — norma técnica sobre la naturaleza, severidad y
+  duración de una recesión económica (arts. 2-4).
+  https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0930</li>
+<li><strong>[L2]</strong> Reglamento Delegado (UE) 2022/439 — RTS sobre la metodología de evaluación IRB (art.
+  10, independencia de la validación).
+  https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32022R0439</li>
+<li><strong>[R15]</strong> Bank of England, SS4/24 — <em>Credit risk: internal ratings based approach</em> (§2.12-2.13
+  atestación; §9.7-9.12 margen de conservadurismo).
+  https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/supervisory-statement/2024/credit-risk-internal-ratings-based-approach-supervisory-statement.pdf</li>
+<li><strong>[R19]</strong> legislation.gov.uk, artículo 143 CRR — permiso para usar el enfoque IRB.
+  https://www.legislation.gov.uk/eur/2013/575/article/143</li>
+<li><strong>[R22]</strong> legislation.gov.uk, artículo 179 CRR — requisitos generales de estimación y margen de
+  conservadurismo. https://www.legislation.gov.uk/eur/2013/575/article/179</li>
+<li><strong>[M4]</strong> Anexo 26 CUB — metodologías internas basadas en probabilidades de incumplimiento para
+  cartera comercial (definición de incumplimiento; espejo ABM).
+  https://www.abm.org.mx/legislacion-y-regulacion/juridico/anexoscub/CUB_Anexo26.pdf</li>
+<li><strong>[M5]</strong> Anexo 32-A CUB — método interno básico de calificaciones internas (espejo ABM).
+  https://www.abm.org.mx/legislacion-y-regulacion/juridico/anexoscub/CUB_Anexo32A.pdf</li>
+<li><strong>[M20]</strong> DOF/sidof, Resolución que modifica las Disposiciones de carácter general aplicables a
+  las instituciones de crédito, 30 de diciembre de 2021, código 5639748 (título del Anexo 15 Bis
+  y artículo 139 Bis 3, fracción II). https://sidof.segob.gob.mx/notas/docFuente/5639748</li>
+</ul></section><nav class="pager"><a href="cap-19-slotting.html"><span class="dir">← Anterior</span><span class="nm">19. Slotting y modelización de exposiciones especiales</span></a><a class="next" href="cap-21-sicr.html"><span class="dir">Siguiente →</span><span class="nm">21. Incremento significativo del riesgo de crédito y clasificación por etapas</span></a></nav></div></main>
+</div>
+<button class="top" id="top" aria-label="Volver arriba">↑</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

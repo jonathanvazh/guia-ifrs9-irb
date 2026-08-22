@@ -1,0 +1,2489 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2. Productos de crédito Wholesale y su perfil de riesgo · Modelos IFRS 9 e IRB para cartera Wholesale</title>
+<meta name="description" content="Qué es cada producto, para qué lo usa el cliente, cómo se estructura y —lo que importa aquí— qué implica para la PD, la LGD y el EAD, y qué campos hay que capturar para poder modelarlo.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><path id="DejaVuSans-Oblique-44" d="M 1081 4666  L 2438 4666  Q 3519 4666 4070 4208  Q 4622 3750 4622 2847  Q 4622 2250 4412 1698  Q 4203 1147 3834 769  Q 3463 381 2891 190  Q 2319 0 1538 0  L 172 0  L 1081 4666  z M 1613 4147  L 909 519  L 1734 519  Q 2794 519 3375 1128  Q 3956 1738 3956 2847  Q 3956 3519 3581 3833  Q 3206 4147 2406 4147  L 1613 4147  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-4f" d="M 2919 4238  Q 2400 4238 2003 3986  Q 1606 3734 1313 3219  Q 1125 2891 1026 2522  Q 928 2153 928 1778  Q 928 1128 1239 775  Q 1550 422 2119 422  Q 2631 422 3032 676  Q 3434 931 3719 1434  Q 3909 1772 4009 2142  Q 4109 2513 4109 2881  Q 4109 3528 3796 3883  Q 3484 4238 2919 4238  z M 2100 -91  Q 1241 -91 748 418  Q 256 928 256 1813  Q 256 2319 448 2847  Q 641 3375 978 3788  Q 1375 4272 1862 4511  Q 2350 4750 2938 4750  Q 3794 4750 4287 4245  Q 4781 3741 4781 2869  Q 4781 2331 4593 1812  Q 4406 1294 4056 872  Q 3656 384 3173 146  Q 2691 -91 2100 -91  z " transform="scale(0.015625)"/><path id="DejaVuSans-3d" d="M 678 2906  L 4684 2906  L 4684 2381  L 678 2381  L 678 2906  z M 678 1631  L 4684 1631  L 4684 1100  L 678 1100  L 678 1631  z " transform="scale(0.015625)"/><path id="DejaVuSans-28" d="M 1984 4856  Q 1566 4138 1362 3434  Q 1159 2731 1159 2009  Q 1159 1288 1364 580  Q 1569 -128 1984 -844  L 1484 -844  Q 1016 -109 783 600  Q 550 1309 550 2009  Q 550 2706 781 3412  Q 1013 4119 1484 4856  L 1984 4856  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-4e" d="M 1081 4666  L 1931 4666  L 3219 666  L 4000 4666  L 4616 4666  L 3706 0  L 2853 0  L 1569 4025  L 788 0  L 172 0  L 1081 4666  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-50" d="M 1081 4666  L 2541 4666  Q 3178 4666 3512 4369  Q 3847 4072 3847 3500  Q 3847 2731 3353 2303  Q 2859 1875 1966 1875  L 1172 1875  L 806 0  L 172 0  L 1081 4666  z M 1613 4147  L 1275 2394  L 2069 2394  Q 2606 2394 2893 2669  Q 3181 2944 3181 3456  Q 3181 3784 2986 3965  Q 2791 4147 2438 4147  L 1613 4147  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-56" d="M 1319 0  L 500 4666  L 1119 4666  L 1797 653  L 4063 4666  L 4750 4666  L 2053 0  L 1319 0  z " transform="scale(0.015625)"/><path id="DejaVuSans-30" d="M 2034 4250  Q 1547 4250 1301 3770  Q 1056 3291 1056 2328  Q 1056 1369 1301 889  Q 1547 409 2034 409  Q 2525 409 2770 889  Q 3016 1369 3016 2328  Q 3016 3291 2770 3770  Q 2525 4250 2034 4250  z M 2034 4750  Q 2819 4750 3233 4129  Q 3647 3509 3647 2328  Q 3647 1150 3233 529  Q 2819 -91 2034 -91  Q 1250 -91 836 529  Q 422 1150 422 2328  Q 422 3509 836 4129  Q 1250 4750 2034 4750  z " transform="scale(0.015625)"/><path id="DejaVuSans-2212" d="M 678 2272  L 4684 2272  L 4684 1741  L 678 1741  L 678 2272  z " transform="scale(0.015625)"/><path id="DejaVuSans-31" d="M 794 531  L 1825 531  L 1825 4091  L 703 3866  L 703 4441  L 1819 4666  L 2450 4666  L 2450 531  L 3481 531  L 3481 0  L 794 0  L 794 531  z " transform="scale(0.015625)"/><path id="DejaVuSans-29" d="M 513 4856  L 1013 4856  Q 1481 4119 1714 3412  Q 1947 2706 1947 2009  Q 1947 1309 1714 600  Q 1481 -109 1013 -844  L 513 -844  Q 928 -128 1133 580  Q 1338 1288 1338 2009  Q 1338 2731 1133 3434  Q 928 4138 513 4856  z " transform="scale(0.015625)"/><path id="DejaVuSans-2f" d="M 1625 4666  L 2156 4666  L 531 -594  L 0 -594  L 1625 4666  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-4d" d="M 1081 4666  L 2028 4666  L 2572 1522  L 4378 4666  L 5350 4666  L 4441 0  L 3828 0  L 4622 4091  L 2791 897  L 2175 897  L 1581 4103  L 788 0  L 172 0  L 1081 4666  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-4c" d="M 1075 4666  L 1709 4666  L 909 525  L 3181 525  L 3078 0  L 172 0  L 1075 4666  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-45" d="M 1081 4666  L 4031 4666  L 3928 4134  L 1606 4134  L 1338 2753  L 3566 2753  L 3463 2222  L 1234 2222  L 909 531  L 3284 531  L 3181 0  L 172 0  L 1081 4666  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-41" d="M 2356 4666  L 3072 4666  L 3938 0  L 3278 0  L 3084 1197  L 984 1197  L 325 0  L -341 0  L 2356 4666  z M 2584 4044  L 1275 1722  L 2988 1722  L 2584 4044  z " transform="scale(0.015625)"/><path id="DejaVuSans-2b" d="M 2944 4013  L 2944 2272  L 4684 2272  L 4684 1741  L 2944 1741  L 2944 0  L 2419 0  L 2419 1741  L 678 1741  L 678 2272  L 2419 2272  L 2419 4013  L 2944 4013  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-43" d="M 4447 4306  L 4319 3641  Q 4019 3944 3683 4091  Q 3347 4238 2956 4238  Q 2422 4238 2017 3981  Q 1613 3725 1319 3200  Q 1131 2863 1032 2486  Q 934 2109 934 1728  Q 934 1091 1264 756  Q 1594 422 2222 422  Q 2656 422 3056 561  Q 3456 700 3834 978  L 3688 231  Q 3316 72 2936 -9  Q 2556 -91 2175 -91  Q 1278 -91 773 396  Q 269 884 269 1753  Q 269 2309 461 2846  Q 653 3384 1013 3828  Q 1394 4300 1883 4525  Q 2372 4750 3022 4750  Q 3422 4750 3780 4639  Q 4138 4528 4447 4306  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-46" d="M 1081 4666  L 3756 4666  L 3653 4134  L 1606 4134  L 1338 2759  L 3188 2759  L 3084 2228  L 1234 2228  L 800 0  L 172 0  L 1081 4666  z " transform="scale(0.015625)"/><path id="DejaVuSans-22c5" d="M 684 2619  L 1344 2619  L 1344 1825  L 684 1825  L 684 2619  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-3c4" d="M 2103 638  Q 2188 488 2525 488  L 2800 488  L 2706 0  L 2363 0  Q 1800 0 1600 300  Q 1403 606 1534 1269  L 1856 2925  L 541 2925  L 653 3500  L 3881 3500  L 3769 2925  L 2444 2925  L 2113 1234  Q 2025 781 2103 638  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-74" d="M 2706 3500  L 2619 3053  L 1472 3053  L 1100 1153  Q 1081 1047 1072 975  Q 1063 903 1063 863  Q 1063 663 1183 572  Q 1303 481 1569 481  L 2150 481  L 2053 0  L 1503 0  Q 991 0 739 200  Q 488 400 488 806  Q 488 878 497 964  Q 506 1050 525 1153  L 897 3053  L 409 3053  L 500 3500  L 978 3500  L 1172 4494  L 1747 4494  L 1556 3500  L 2706 3500  z " transform="scale(0.015625)"/><path id="DejaVuSans-34" d="M 2419 4116  L 825 1625  L 2419 1625  L 2419 4116  z M 2253 4666  L 3047 4666  L 3047 1625  L 3713 1625  L 3713 1100  L 3047 1100  L 3047 0  L 2419 0  L 2419 1100  L 313 1100  L 313 1709  L 2253 4666  z " transform="scale(0.015625)"/><path id="DejaVuSans-2c" d="M 750 794  L 1409 794  L 1409 256  L 897 -744  L 494 -744  L 750 256  L 750 794  z " transform="scale(0.015625)"/><path id="DejaVuSans-35" d="M 691 4666  L 3169 4666  L 3169 4134  L 1269 4134  L 1269 2991  Q 1406 3038 1543 3061  Q 1681 3084 1819 3084  Q 2600 3084 3056 2656  Q 3513 2228 3513 1497  Q 3513 744 3044 326  Q 2575 -91 1722 -91  Q 1428 -91 1123 -41  Q 819 9 494 109  L 494 744  Q 775 591 1075 516  Q 1375 441 1709 441  Q 2250 441 2565 725  Q 2881 1009 2881 1497  Q 2881 1984 2565 2268  Q 2250 2553 1709 2553  Q 1456 2553 1204 2497  Q 953 2441 691 2322  L 691 4666  z " transform="scale(0.015625)"/><path id="DejaVuSans-d7" d="M 4488 3438  L 3059 2003  L 4488 575  L 4116 197  L 2681 1631  L 1247 197  L 878 575  L 2303 2003  L 878 3438  L 1247 3816  L 2681 2381  L 4116 3816  L 4488 3438  z " transform="scale(0.015625)"/><path id="DejaVuSans-37" d="M 525 4666  L 3525 4666  L 3525 4397  L 1831 0  L 1172 0  L 2766 4134  L 525 4134  L 525 4666  z " transform="scale(0.015625)"/><path id="DejaVuSans-36" d="M 2113 2584  Q 1688 2584 1439 2293  Q 1191 2003 1191 1497  Q 1191 994 1439 701  Q 1688 409 2113 409  Q 2538 409 2786 701  Q 3034 994 3034 1497  Q 3034 2003 2786 2293  Q 2538 2584 2113 2584  z M 3366 4563  L 3366 3988  Q 3128 4100 2886 4159  Q 2644 4219 2406 4219  Q 1781 4219 1451 3797  Q 1122 3375 1075 2522  Q 1259 2794 1537 2939  Q 1816 3084 2150 3084  Q 2853 3084 3261 2657  Q 3669 2231 3669 1497  Q 3669 778 3244 343  Q 2819 -91 2113 -91  Q 1303 -91 875 529  Q 447 1150 447 2328  Q 447 3434 972 4092  Q 1497 4750 2381 4750  Q 2619 4750 2861 4703  Q 3103 4656 3366 4563  z " transform="scale(0.015625)"/><path id="DejaVuSans-32" d="M 1228 531  L 3431 531  L 3431 0  L 469 0  L 469 531  Q 828 903 1448 1529  Q 2069 2156 2228 2338  Q 2531 2678 2651 2914  Q 2772 3150 2772 3378  Q 2772 3750 2511 3984  Q 2250 4219 1831 4219  Q 1534 4219 1204 4116  Q 875 4013 500 3803  L 500 4441  Q 881 4594 1212 4672  Q 1544 4750 1819 4750  Q 2544 4750 2975 4387  Q 3406 4025 3406 3419  Q 3406 3131 3298 2873  Q 3191 2616 2906 2266  Q 2828 2175 2409 1742  Q 1991 1309 1228 531  z " transform="scale(0.015625)"/><path id="DejaVuSans-33" d="M 2597 2516  Q 3050 2419 3304 2112  Q 3559 1806 3559 1356  Q 3559 666 3084 287  Q 2609 -91 1734 -91  Q 1441 -91 1130 -33  Q 819 25 488 141  L 488 750  Q 750 597 1062 519  Q 1375 441 1716 441  Q 2309 441 2620 675  Q 2931 909 2931 1356  Q 2931 1769 2642 2001  Q 2353 2234 1838 2234  L 1294 2234  L 1294 2753  L 1863 2753  Q 2328 2753 2575 2939  Q 2822 3125 2822 3475  Q 2822 3834 2567 4026  Q 2313 4219 1838 4219  Q 1578 4219 1281 4162  Q 984 4106 628 3988  L 628 4550  Q 988 4650 1302 4700  Q 1616 4750 1894 4750  Q 2613 4750 3031 4423  Q 3450 4097 3450 3541  Q 3450 3153 3228 2886  Q 3006 2619 2597 2516  z " transform="scale(0.015625)"/><path id="DejaVuSans-25" d="M 4653 2053  Q 4381 2053 4226 1822  Q 4072 1591 4072 1178  Q 4072 772 4226 539  Q 4381 306 4653 306  Q 4919 306 5073 539  Q 5228 772 5228 1178  Q 5228 1588 5073 1820  Q 4919 2053 4653 2053  z M 4653 2450  Q 5147 2450 5437 2106  Q 5728 1763 5728 1178  Q 5728 594 5436 251  Q 5144 -91 4653 -91  Q 4153 -91 3862 251  Q 3572 594 3572 1178  Q 3572 1766 3864 2108  Q 4156 2450 4653 2450  z M 1428 4353  Q 1159 4353 1004 4120  Q 850 3888 850 3481  Q 850 3069 1003 2837  Q 1156 2606 1428 2606  Q 1700 2606 1854 2837  Q 2009 3069 2009 3481  Q 2009 3884 1853 4118  Q 1697 4353 1428 4353  z M 4250 4750  L 4750 4750  L 1831 -91  L 1331 -91  L 4250 4750  z M 1428 4750  Q 1922 4750 2215 4408  Q 2509 4066 2509 3481  Q 2509 2891 2217 2550  Q 1925 2209 1428 2209  Q 931 2209 642 2551  Q 353 2894 353 3481  Q 353 4063 643 4406  Q 934 4750 1428 4750  z " transform="scale(0.015625)"/><path id="DejaVuSans-38" d="M 2034 2216  Q 1584 2216 1326 1975  Q 1069 1734 1069 1313  Q 1069 891 1326 650  Q 1584 409 2034 409  Q 2484 409 2743 651  Q 3003 894 3003 1313  Q 3003 1734 2745 1975  Q 2488 2216 2034 2216  z M 1403 2484  Q 997 2584 770 2862  Q 544 3141 544 3541  Q 544 4100 942 4425  Q 1341 4750 2034 4750  Q 2731 4750 3128 4425  Q 3525 4100 3525 3541  Q 3525 3141 3298 2862  Q 3072 2584 2669 2484  Q 3125 2378 3379 2068  Q 3634 1759 3634 1313  Q 3634 634 3220 271  Q 2806 -91 2034 -91  Q 1263 -91 848 271  Q 434 634 434 1313  Q 434 1759 690 2068  Q 947 2378 1403 2484  z M 1172 3481  Q 1172 3119 1398 2916  Q 1625 2713 2034 2713  Q 2441 2713 2670 2916  Q 2900 3119 2900 3481  Q 2900 3844 2670 4047  Q 2441 4250 2034 4250  Q 1625 4250 1398 4047  Q 1172 3844 1172 3481  z " transform="scale(0.015625)"/><path id="DejaVuSans-3e" d="M 678 3150  L 678 3719  L 4684 2266  L 4684 1747  L 678 294  L 678 863  L 3897 2003  L 678 3150  z " transform="scale(0.015625)"/><path id="DejaVuSans-3c" d="M 4684 3150  L 1459 2003  L 4684 863  L 4684 294  L 678 1747  L 678 2266  L 4684 3719  L 4684 3150  z " transform="scale(0.015625)"/><path id="DejaVuSans-6d" d="M 3328 2828  Q 3544 3216 3844 3400  Q 4144 3584 4550 3584  Q 5097 3584 5394 3201  Q 5691 2819 5691 2113  L 5691 0  L 5113 0  L 5113 2094  Q 5113 2597 4934 2840  Q 4756 3084 4391 3084  Q 3944 3084 3684 2787  Q 3425 2491 3425 1978  L 3425 0  L 2847 0  L 2847 2094  Q 2847 2600 2669 2842  Q 2491 3084 2119 3084  Q 1678 3084 1418 2786  Q 1159 2488 1159 1978  L 1159 0  L 581 0  L 581 3500  L 1159 3500  L 1159 2956  Q 1356 3278 1631 3431  Q 1906 3584 2284 3584  Q 2666 3584 2933 3390  Q 3200 3197 3328 2828  z " transform="scale(0.015625)"/><path id="DejaVuSans-61" d="M 2194 1759  Q 1497 1759 1228 1600  Q 959 1441 959 1056  Q 959 750 1161 570  Q 1363 391 1709 391  Q 2188 391 2477 730  Q 2766 1069 2766 1631  L 2766 1759  L 2194 1759  z M 3341 1997  L 3341 0  L 2766 0  L 2766 531  Q 2569 213 2275 61  Q 1981 -91 1556 -91  Q 1019 -91 701 211  Q 384 513 384 1019  Q 384 1609 779 1909  Q 1175 2209 1959 2209  L 2766 2209  L 2766 2266  Q 2766 2663 2505 2880  Q 2244 3097 1772 3097  Q 1472 3097 1187 3025  Q 903 2953 641 2809  L 641 3341  Q 956 3463 1253 3523  Q 1550 3584 1831 3584  Q 2591 3584 2966 3190  Q 3341 2797 3341 1997  z " transform="scale(0.015625)"/><path id="DejaVuSans-78" d="M 3513 3500  L 2247 1797  L 3578 0  L 2900 0  L 1881 1375  L 863 0  L 184 0  L 1544 1831  L 300 3500  L 978 3500  L 1906 2253  L 2834 3500  L 3513 3500  z " transform="scale(0.015625)"/></defs></svg>
+<div class="progress"><i id="bar"></i></div>
+<button class="navtoggle" id="navtoggle" aria-label="Índice">☰</button>
+<div class="app">
+<aside class="nav">
+  <div class="nav-head">
+    <p class="brand"><a href="index.html" style="color:inherit;text-decoration:none">Modelos IFRS 9 e IRB para cartera Wholesale</a><small>Guía técnica exhaustiva · PRA · CNBV · Basilea 3.1</small></p>
+    <div class="nav-tools">
+      <input class="search" id="q" type="search" placeholder="Buscar en toda la guía…  /"
+             autocomplete="off" spellcheck="false">
+      <button class="btn" id="theme" aria-label="Cambiar tema">☾</button>
+    </div>
+  </div>
+  <nav class="toc"><div class="toc-part">Cómo usar esta guía</div>
+<a class="l2" href="cap-00-mapa.html">0. Cómo usar esta guía</a>
+<div class="toc-part">El universo Wholesale</div>
+<a class="l2" href="cap-01-universo.html">1. El universo Wholesale: segmentación y clases de exposición</a>
+<a class="l2 cur" href="cap-02-productos.html">2. Productos de crédito Wholesale y su perfil de riesgo</a>
+<a class="l3" href="#1-el-producto-es-un-parametro-del-modelo-no-una-etiqueta">1. El producto es un parámetro del modelo, no una etiqueta</a>
+<a class="l3" href="#2-credito-simple-y-prestamo-a-plazo-term-loan">2. Crédito simple y préstamo a plazo (term loan)</a>
+<a class="l4" href="#21-que-es-y-para-que-se-usa">2.1 Qué es y para qué se usa</a>
+<a class="l4" href="#22-covenants">2.2 Covenants</a>
+<a class="l4" href="#23-que-implica-para-pd-lgd-y-ead">2.3 Qué implica para PD, LGD y EAD</a>
+<a class="l3" href="#3-linea-de-credito-revolvente-revolving-credit-facility-rcf">3. Línea de crédito revolvente (revolving credit facility, RCF)</a>
+<a class="l4" href="#31-que-es">3.1 Qué es</a>
+<a class="l4" href="#32-por-que-la-rcf-obliga-a-modelar-el-ccf">3.2 Por qué la RCF obliga a modelar el CCF</a>
+<a class="l4" href="#33-el-comportamiento-de-disposicion-antes-del-incumplimiento">3.3 El comportamiento de disposición antes del incumplimiento</a>
+<a class="l4" href="#34-los-ccf-supervisores">3.4 Los CCF supervisores</a>
+<a class="l3" href="#4-capital-de-trabajo-sobregiros-y-lineas-estacionales">4. Capital de trabajo, sobregiros y líneas estacionales</a>
+<a class="l3" href="#5-financiamiento-de-comercio-exterior-trade-finance">5. Financiamiento de comercio exterior (trade finance)</a>
+<a class="l4" href="#51-carta-de-credito-documentaria-documentary-letter-of-credit">5.1 Carta de crédito documentaria (documentary letter of credit)</a>
+<a class="l4" href="#52-carta-de-credito-contingente-standby-letter-of-credit-sblc">5.2 Carta de crédito contingente (standby letter of credit, SBLC)</a>
+<a class="l4" href="#53-cobranza-documentaria-aceptaciones-y-confirmacion">5.3 Cobranza documentaria, aceptaciones y confirmación</a>
+<a class="l4" href="#54-mitigante-o-exposicion-la-distincion-que-hay-que-hacer-bien">5.4 Mitigante o exposición: la distinción que hay que hacer bien</a>
+<a class="l3" href="#6-garantias-avales-y-fianzas-tecnicas">6. Garantías, avales y fianzas técnicas</a>
+<a class="l3" href="#7-factoraje-factoraje-inverso-y-descuento">7. Factoraje, factoraje inverso y descuento</a>
+<a class="l4" href="#71-factoraje-factoring">7.1 Factoraje (factoring)</a>
+<a class="l4" href="#72-riesgo-de-dilucion">7.2 Riesgo de dilución</a>
+<a class="l4" href="#73-riesgo-de-fraude">7.3 Riesgo de fraude</a>
+<a class="l4" href="#74-factoraje-inverso-o-confirmacion-de-pagos-reverse-factoring-confirm">7.4 Factoraje inverso o confirmación de pagos (reverse factoring, confirming)</a>
+<a class="l4" href="#75-descuento-de-documentos">7.5 Descuento de documentos</a>
+<a class="l3" href="#8-arrendamiento-financiero-y-operativo-leasing">8. Arrendamiento financiero y operativo (leasing)</a>
+<a class="l3" href="#9-credito-sindicado-y-club-deals">9. Crédito sindicado y club deals</a>
+<a class="l4" href="#91-estructura">9.1 Estructura</a>
+<a class="l4" href="#92-por-que-cambia-la-lgd">9.2 Por qué cambia la LGD</a>
+<a class="l3" href="#10-financiamiento-de-adquisiciones-y-credito-apalancado-leveraged-fina">10. Financiamiento de adquisiciones y crédito apalancado (leveraged finance)</a>
+<a class="l4" href="#101-que-es">10.1 Qué es</a>
+<a class="l4" href="#102-rasgos-de-riesgo">10.2 Rasgos de riesgo</a>
+<a class="l3" href="#11-derivados-y-riesgo-de-credito-de-contraparte-counterparty-credit-ri">11. Derivados y riesgo de crédito de contraparte (counterparty credit risk, CCR)</a>
+<a class="l4" href="#111-por-que-la-exposicion-es-estocastica-y-bidireccional">11.1 Por qué la exposición es estocástica y bidireccional</a>
+<a class="l4" href="#112-como-se-mide-y-por-que-aqui-solo-se-enuncia">11.2 Cómo se mide, y por qué aquí solo se enuncia</a>
+<a class="l3" href="#12-lineas-de-liquidez-a-vehiculos-y-apoyos-a-bursatilizaciones">12. Líneas de liquidez a vehículos y apoyos a bursatilizaciones</a>
+<a class="l3" href="#13-tabla-maestra-producto-exposicion-colateral-y-datos">13. Tabla maestra: producto, exposición, colateral y datos</a>
+<a class="l3" href="#14-que-mira-el-regulador-y-errores-frecuentes">14. Qué mira el regulador y errores frecuentes</a>
+<a class="l4" href="#fuentes-de-este-capitulo-1">Fuentes de este capítulo</a>
+<a class="l2" href="cap-03-especializado.html">3. Financiamiento especializado: project finance, activos, materias primas e inmuebles</a>
+<a class="l2" href="cap-04-contrapartes.html">4. Bancos, soberanos, entidades financieras no bancarias y fondos</a>
+<div class="toc-part">Los insumos</div>
+<a class="l2" href="cap-05-default.html">5. La definición de incumplimiento</a>
+<a class="l2" href="cap-06-datos.html">6. Arquitectura de datos para modelos wholesale</a>
+<a class="l2" href="cap-07-estados-financieros.html">7. Estados financieros corporativos para el analista de crédito</a>
+<a class="l2" href="cap-08-razones-sector.html">8. Razones financieras, industria y sentido económico</a>
+<a class="l2" href="cap-09-buro-cualitativas.html">9. Buró de crédito, información externa y variables cualitativas</a>
+<div class="toc-part">Modelos IRB de PD</div>
+<a class="l2" href="cap-10-marco-capital.html">10. El marco de capital: estándar, F-IRB, A-IRB y el output floor</a>
+<a class="l2" href="cap-11-arquitectura-pd.html">11. Arquitectura de un modelo de PD corporativo</a>
+<a class="l2" href="cap-12-desarrollo-pd.html">12. Desarrollo estadístico de un modelo de PD, paso a paso</a>
+<a class="l2" href="cap-13-estadistica.html">13. Estadística para seleccionar y validar modelos</a>
+<a class="l2" href="cap-14-calibracion.html">14. Calibración, filosofía de calificación y margen de conservadurismo</a>
+<a class="l2" href="cap-15-ldp.html">15. Carteras de bajo incumplimiento</a>
+<div class="toc-part">LGD, EAD y mitigantes</div>
+<a class="l2" href="cap-16-lgd.html">16. Modelos de LGD</a>
+<a class="l2" href="cap-17-ead.html">17. Modelos de EAD y factores de conversión</a>
+<a class="l2" href="cap-18-colaterales.html">18. Colaterales y mitigantes del riesgo de crédito</a>
+<a class="l2" href="cap-19-slotting.html">19. Slotting y modelización de exposiciones especiales</a>
+<div class="toc-part">IFRS 9 de punta a punta</div>
+<a class="l2" href="cap-20-ifrs9-vs-irb.html">20. IFRS 9 frente a IRB: las diferencias que gobiernan todo lo demás</a>
+<a class="l2" href="cap-21-sicr.html">21. Incremento significativo del riesgo de crédito y clasificación por etapas</a>
+<a class="l2" href="cap-22-pd-ifrs9.html">22. &#x27;PD IFRS 9: estructuras temporales y matrices de transición&#x27;</a>
+<a class="l2" href="cap-23-macro.html">23. &#x27;PD IFRS 9: modelos macroeconómicos, escenarios y ponderación&#x27;</a>
+<a class="l2" href="cap-24-lgd-ead-ifrs9.html">24. LGD y EAD bajo IFRS 9</a>
+<a class="l2" href="cap-25-ecl.html">25. El cálculo de la pérdida crediticia esperada</a>
+<a class="l2" href="cap-26-overlays.html">26. Ajustes fuera de modelo (overlays) y gobierno de la ECL</a>
+<a class="l2" href="cap-27-impacto.html">27. Impacto en provisiones: sensibilidad, migración y volatilidad</a>
+<div class="toc-part">Del modelo al negocio</div>
+<a class="l2" href="cap-28-rwa.html">28. De los parámetros al capital: RWA, pérdida esperada y provisiones</a>
+<a class="l2" href="cap-29-raroc.html">29. Rentabilidad ajustada por riesgo: RAROC, pricing y valor presente neto</a>
+<a class="l2" href="cap-30-stress.html">30. Pruebas de estrés, ICAAP y planeación</a>
+<a class="l2" href="cap-31-organizacion.html">31. El área de modelos frente a riesgos, negocio, finanzas y operaciones</a>
+<div class="toc-part">Gobierno y regulación</div>
+<a class="l2" href="cap-32-mrm.html">32. Gestión del riesgo de modelo</a>
+<a class="l2" href="cap-33-autorizacion.html">33. Documentación, use test, roll-out y autorización ante PRA y CNBV</a>
+<a class="l2" href="cap-34-monitoreo.html">34. Monitoreo continuo, redesarrollo y remediación</a>
+<div class="toc-part">Frontera</div>
+<a class="l2" href="cap-35-innovacion.html">35. &quot;Frontera: técnicas innovadoras aplicables a wholesale&quot;</a>
+<div class="toc-part">Anexos</div>
+<a class="l2" href="cap-36-ejercicios.html">36. Ejercicios y casos con soluciones</a>
+<a class="l2" href="cap-37-entrevistas.html">37. Banco de preguntas para un rol de dirección</a>
+<a class="l2" href="cap-38-formulario.html">38. Formulario, glosario español-inglés y referencias</a></nav>
+</aside>
+<main><div class="wrap"><section class="chapter"><p class="eyebrow">Capítulo 2</p><h2 class="ch-title">Productos de crédito Wholesale y su perfil de riesgo</h2><p class="lede">Qué es cada producto, para qué lo usa el cliente, cómo se estructura y —lo que importa aquí— qué implica para la PD, la LGD y el EAD, y qué campos hay que capturar para poder modelarlo.</p><h2 id="1-el-producto-es-un-parametro-del-modelo-no-una-etiqueta">1. El producto es un parámetro del modelo, no una etiqueta<a class="hlink" href="#1-el-producto-es-un-parametro-del-modelo-no-una-etiqueta" aria-label="enlace">#</a></h2>
+<p>La norma obliga a que el sistema de calificación tenga <strong>dos dimensiones</strong>: una que refleje el riesgo de incumplimiento del deudor y otra los factores específicos de la transacción; en el enfoque avanzado (<em>advanced IRB</em>, A-IRB), la calificación de la facilidad debe reflejar exclusivamente la severidad (<em>loss given default</em>, LGD) [CRE36.11-36.15][B5]. La Prudential Regulation Authority (PRA) añade que las exposiciones corporativas e institucionales deben calificarse sobre una <strong>escala común obligatoria</strong>, tanto a nivel de deudor como de facilidad [SS4/24 §7.2][R15].</p>
+<p>Esa arquitectura tiene una consecuencia práctica que se olvida a menudo: el producto entra en el modelo por tres puertas distintas.</p>
+<ul>
+<li><strong>Por el EAD</strong>, porque determina si hay importe no dispuesto, si el banco puede retirarlo, si el saldo puede crecer sin nueva aprobación y si la exposición es determinista o estocástica.</li>
+<li><strong>Por la LGD</strong>, porque determina la prelación, el colateral, la existencia de garantes y la estrategia de recuperación.</li>
+<li><strong>Por la PD</strong>, indirectamente pero de forma real, porque hay productos que se conceden solo a ciertos perfiles y porque algunos —el sobregiro, la línea estacional— interactúan con la propia definición de incumplimiento (<em>default</em>).</li>
+</ul>
+<p>Un cuarto canal, menos evidente: cada producto <strong>genera un rastro de datos distinto</strong>. La línea revolvente genera series diarias de saldo y límite; la carta de crédito genera un evento binario de reclamación; el arrendamiento genera un valor residual. Si el banco no captura ese rastro, el modelo correspondiente no se puede estimar aunque la metodología esté clara.</p>
+<div class="box box-clave">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Idea clave</span></div>
+<div class="box-b">
+<p>Todo lo que en el capítulo 17 se llamará «modelo de EAD» y en el capítulo 16 «modelo de LGD» está <strong>decidido en el contrato</strong> mucho antes de que el modelador lo vea. La calidad del modelo no puede superar la calidad con la que se capturaron las características contractuales del producto.</p>
+</div>
+</div>
+<h2 id="2-credito-simple-y-prestamo-a-plazo-term-loan">2. Crédito simple y préstamo a plazo (<em>term loan</em>)<a class="hlink" href="#2-credito-simple-y-prestamo-a-plazo-term-loan" aria-label="enlace">#</a></h2>
+<h3 id="21-que-es-y-para-que-se-usa">2.1 Qué es y para qué se usa<a class="hlink" href="#21-que-es-y-para-que-se-usa" aria-label="enlace">#</a></h3>
+<p>Un importe único —o disponible en varias disposiciones dentro de un periodo de disponibilidad— que se entrega al acreditado y se devuelve conforme a un calendario pactado. Es el producto para financiar activos: una planta, una adquisición, una ampliación de capacidad, la refinanciación de deuda existente. En México se le llama habitualmente <strong>crédito simple</strong> cuando el destino está determinado y <strong>crédito en cuenta corriente</strong> cuando admite disposiciones y pagos múltiples.</p>
+<p>Las estructuras habituales:</p>
+<ul>
+<li><strong>Amortizable</strong> (<em>amortising</em>): principal repartido en cuotas periódicas, iguales o crecientes.</li>
+<li><strong>Con periodo de gracia</strong> (<em>grace period</em>): solo intereses durante los primeros años, típico cuando el activo financiado tarda en generar flujo.</li>
+<li><strong>Con pago final desproporcionado</strong> (<em>balloon</em>): amortización parcial y un pago grande al vencimiento.</li>
+<li><strong>Bullet</strong>: todo el principal al vencimiento. Es la estructura de la deuda de mercado y de buena parte del crédito a grandes empresas.</li>
+</ul>
+<p><figure class="fig" id="fig-cap02_amortizacion"><div class="fig-svg"><svg preserveAspectRatio="xMidYMid meet" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 565.381641 295.206547" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 295.206547 
+L 565.381641 295.206547 
+L 565.381641 0 
+L 0 0 
+L 0 295.206547 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 43.57125 260.174203 
+L 456.49125 260.174203 
+L 456.49125 43.958203 
+L 43.57125 43.958203 
+L 43.57125 260.174203 
+z
+" style="fill: none"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="62.340341" y="273.392719" transform="rotate(-0 62.340341 273.392719)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="137.416705" y="273.392719" transform="rotate(-0 137.416705 273.392719)">1</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="212.493068" y="273.392719" transform="rotate(-0 212.493068 273.392719)">2</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="287.569432" y="273.392719" transform="rotate(-0 287.569432 273.392719)">3</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="362.645795" y="273.392719" transform="rotate(-0 362.645795 273.392719)">4</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6"/>
+     <g id="text_6">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="437.722159" y="273.392719" transform="rotate(-0 437.722159 273.392719)">5</text>
+     </g>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 10px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="250.03125" y="287.366859" transform="rotate(-0 250.03125 287.366859)">Años desde la disposición</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_7">
+      <path d="M 43.57125 260.174203 
+L 456.49125 260.174203 
+" clip-path="url(#pc8bc47e9f0)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_8">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="37.57125" y="263.783461" transform="rotate(-0 37.57125 263.783461)">0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_9">
+      <path d="M 43.57125 221.564203 
+L 456.49125 221.564203 
+" clip-path="url(#pc8bc47e9f0)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_9">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="37.57125" y="225.173461" transform="rotate(-0 37.57125 225.173461)">20</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_11">
+      <path d="M 43.57125 182.954203 
+L 456.49125 182.954203 
+" clip-path="url(#pc8bc47e9f0)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_12"/>
+     <g id="text_10">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="37.57125" y="186.563461" transform="rotate(-0 37.57125 186.563461)">40</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_13">
+      <path d="M 43.57125 144.344203 
+L 456.49125 144.344203 
+" clip-path="url(#pc8bc47e9f0)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_14"/>
+     <g id="text_11">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="37.57125" y="147.953461" transform="rotate(-0 37.57125 147.953461)">60</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_15">
+      <path d="M 43.57125 105.734203 
+L 456.49125 105.734203 
+" clip-path="url(#pc8bc47e9f0)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_16"/>
+     <g id="text_12">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="37.57125" y="109.343461" transform="rotate(-0 37.57125 109.343461)">80</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_17">
+      <path d="M 43.57125 67.124203 
+L 456.49125 67.124203 
+" clip-path="url(#pc8bc47e9f0)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_18"/>
+     <g id="text_13">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="37.57125" y="70.733461" transform="rotate(-0 37.57125 70.733461)">100</text>
+     </g>
+    </g>
+    <g id="text_14">
+     <text style="font-size: 10px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="13.358438" y="152.066203" transform="rotate(-90 13.358438 152.066203)">Base 100 = importe original</text>
+    </g>
+   </g>
+   <g id="line2d_19">
+    <path d="M 62.340341 67.124203 
+L 136.665941 67.124203 
+L 137.416705 105.734203 
+L 211.742305 105.734203 
+L 212.493068 144.344203 
+L 286.818668 144.344203 
+L 287.569432 182.954203 
+L 361.895032 182.954203 
+L 362.645795 221.564203 
+L 436.971395 221.564203 
+L 437.722159 260.174203 
+L 437.722159 260.174203 
+" clip-path="url(#pc8bc47e9f0)" style="fill: none; stroke: var(--s1, #2a78d6); stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_20">
+    <path d="M 62.340341 67.124203 
+L 286.818668 67.124203 
+L 287.569432 131.474203 
+L 361.895032 131.474203 
+L 362.645795 195.824203 
+L 436.971395 195.824203 
+L 437.722159 260.174203 
+L 437.722159 260.174203 
+" clip-path="url(#pc8bc47e9f0)" style="fill: none; stroke: var(--s2, #eb6834); stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_21">
+    <path d="M 62.340341 67.124203 
+L 436.971395 67.124203 
+L 437.722159 260.174203 
+L 437.722159 260.174203 
+" clip-path="url(#pc8bc47e9f0)" style="fill: none; stroke: var(--s3, #1baf7a); stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_22">
+    <path d="M 62.340341 140.483203 
+L 73.601795 136.079481 
+L 79.607905 133.962082 
+L 84.86325 132.337118 
+L 89.367832 131.156658 
+L 93.872414 130.20271 
+L 98.376995 129.498441 
+L 102.130814 129.11481 
+L 105.884632 128.923034 
+L 109.63845 128.92635 
+L 113.392268 129.124701 
+L 117.146086 129.514742 
+L 121.650668 130.226329 
+L 126.15525 131.187022 
+L 130.659832 132.373489 
+L 135.915177 134.004337 
+L 141.921286 136.12674 
+L 149.428923 139.032285 
+L 165.194959 145.2106 
+L 171.201068 147.292352 
+L 176.456414 148.875874 
+L 180.960995 150.014269 
+L 185.465577 150.921185 
+L 189.970159 151.574598 
+L 193.723977 151.913816 
+L 197.477795 152.060128 
+L 201.231614 152.011066 
+L 204.985432 151.767457 
+L 208.73925 151.333413 
+L 213.243832 150.571718 
+L 217.748414 149.565007 
+L 222.252995 148.337728 
+L 227.508341 146.667161 
+L 233.51445 144.511355 
+L 241.77285 141.283937 
+L 255.286595 135.985219 
+L 261.292705 133.877954 
+L 266.54805 132.26485 
+L 271.052632 131.096475 
+L 275.557214 130.156071 
+L 280.061795 129.46648 
+L 283.815614 129.095689 
+L 287.569432 128.917076 
+L 291.32325 128.933655 
+L 295.077068 129.145147 
+L 298.830886 129.547982 
+L 303.335468 130.274165 
+L 307.84005 131.248292 
+L 312.344632 132.446704 
+L 317.599977 134.089222 
+L 323.606086 136.221512 
+L 331.864486 139.433166 
+L 346.128995 145.028187 
+L 352.135105 147.130324 
+L 357.39045 148.73745 
+L 361.895032 149.89975 
+L 366.399614 150.833354 
+L 370.904195 151.515586 
+L 374.658014 151.879946 
+L 378.411832 152.051973 
+L 382.16565 152.028762 
+L 385.919468 151.810706 
+L 389.673286 151.401485 
+L 394.177868 150.668026 
+L 398.68245 149.687211 
+L 403.187032 148.482861 
+L 408.442377 146.834555 
+L 414.448486 144.697383 
+L 422.706886 141.482391 
+L 436.971395 135.891307 
+L 437.722159 260.174203 
+L 437.722159 260.174203 
+" clip-path="url(#pc8bc47e9f0)" style="fill: none; stroke: var(--s4, #eda100); stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 43.57125 260.174203 
+L 43.57125 43.958203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 43.57125 260.174203 
+L 456.49125 260.174203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="141.170523" y="182.954203" transform="rotate(-0 141.170523 182.954203)">Vida media 3,0 años</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="403.937795" y="87.124203" transform="rotate(-0 403.937795 87.124203)">Vida media 5,0 años</text>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 600; font-size: 11.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="43.57125" y="14.958203" transform="rotate(-0 43.57125 14.958203)">Saldo vivo según estructura de amortización</text>
+   </g>
+   <g id="legend_1">
+    <g id="line2d_23">
+     <path d="M 47.37125 33.77642 
+L 54.49625 33.77642 
+L 61.62125 33.77642 
+" style="fill: none; stroke: var(--s1, #2a78d6); stroke-width: 2; stroke-linecap: round"/>
+    </g>
+    <g id="text_18">
+     <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="67.32125" y="37.10142" transform="rotate(-0 67.32125 37.10142)">5 pagos anuales iguales</text>
+    </g>
+    <g id="line2d_24">
+     <path d="M 196.383203 33.77642 
+L 203.508203 33.77642 
+L 210.633203 33.77642 
+" style="fill: none; stroke: var(--s2, #eb6834); stroke-width: 2; stroke-linecap: round"/>
+    </g>
+    <g id="text_19">
+     <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="216.333203" y="37.10142" transform="rotate(-0 216.333203 37.10142)">2 años de gracia + 3 pagos</text>
+    </g>
+    <g id="line2d_25">
+     <path d="M 361.316563 33.77642 
+L 368.441563 33.77642 
+L 375.566563 33.77642 
+" style="fill: none; stroke: var(--s3, #1baf7a); stroke-width: 2; stroke-linecap: round"/>
+    </g>
+    <g id="text_20">
+     <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="381.266563" y="37.10142" transform="rotate(-0 381.266563 37.10142)">Bullet</text>
+    </g>
+    <g id="line2d_26">
+     <path d="M 422.903281 33.77642 
+L 430.028281 33.77642 
+L 437.153281 33.77642 
+" style="fill: none; stroke: var(--s4, #eda100); stroke-width: 2; stroke-linecap: round"/>
+    </g>
+    <g id="text_21">
+     <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="442.853281" y="37.10142" transform="rotate(-0 442.853281 37.10142)">Revolvente (uso medio)</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pc8bc47e9f0">
+   <rect x="43.57125" y="43.958203" width="412.92" height="216.216"/>
+  </clipPath>
+ </defs>
+</svg></div><figcaption>Saldo vivo de cuatro estructuras con el mismo importe original. La vida media ponderada por los flujos de principal contractuales es de 3,0 años en la estructura de cinco pagos iguales, 4,0 en la de dos años de gracia y 5,0 en la bullet. Ejemplo ilustrativo con datos sintéticos.</figcaption></figure></p>
+<h3 id="22-covenants">2.2 Covenants<a class="hlink" href="#22-covenants" aria-label="enlace">#</a></h3>
+<p>Los compromisos contractuales (<em>covenants</em>) se agrupan en tres familias:</p>
+<ol>
+<li><strong>Financieros</strong> (<em>financial covenants</em>): apalancamiento máximo (deuda neta sobre resultado antes de intereses, impuestos, depreciación y amortización —<em>earnings before interest, taxes, depreciation and amortisation</em>, EBITDA—), cobertura mínima de intereses o del servicio de la deuda, patrimonio mínimo, inversión máxima. Se prueban trimestral o semestralmente contra los estados financieros.</li>
+<li><strong>De hacer</strong> (<em>affirmative covenants</em>): entregar información financiera en plazo, mantener seguros, mantener el giro, cumplir la ley, mantener el rango de la deuda.</li>
+<li><strong>De no hacer</strong> (<em>negative covenants</em>): no endeudarse por encima de un límite, no gravar activos (<em>negative pledge</em>), no vender activos esenciales, no cambiar de control, no repartir dividendos por encima de un porcentaje.</li>
+</ol>
+<p>Para el modelador, los covenants tienen dos usos y una trampa. <strong>Uso uno</strong>: son variables predictivas. El incumplimiento de covenants es un indicador de improbabilidad de pago (<em>unlikeliness to pay</em>, UTP) que las directrices europeas listan expresamente entre los indicadores internos adicionales [EBA/GL/2016/07 §58-63][E2], y la PRA espera que las entidades evalúen la UTP en cartera corporativa usando, entre otras señales, el incumplimiento de covenants [SS3/24][R12]. <strong>Uso dos</strong>: son un mecanismo de reducción de exposición, porque una dispensa (<em>waiver</em>) es la ocasión para renegociar garantías o recortar límites. <strong>La trampa</strong>: si el banco concede la dispensa y eso constituye una reestructuración forzosa (<em>forbearance</em>) con reducción material de la obligación financiera, puede ser en sí mismo un evento de incumplimiento; la prueba europea usa <svg class="math-inline" style="width:12.6875em;height:1.0000em;vertical-align:-0.1875em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 203 16" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 13) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-44" transform="translate(0 0.125)"/><use xlink:href="#DejaVuSans-Oblique-4f" transform="translate(77.001953 0.125)"/><use xlink:href="#DejaVuSans-3d" transform="translate(175.195312 0.125)"/><use xlink:href="#DejaVuSans-28" transform="translate(278.466797 0.125)"/><use xlink:href="#DejaVuSans-Oblique-4e" transform="translate(317.480469 0.125)"/><use xlink:href="#DejaVuSans-Oblique-50" transform="translate(392.285156 0.125)"/><use xlink:href="#DejaVuSans-Oblique-56" transform="translate(452.587891 0.125)"/><use xlink:href="#DejaVuSans-30" transform="translate(520.996094 -16.28125) scale(0.7)"/><use xlink:href="#DejaVuSans-2212" transform="translate(587.749023 0.125)"/><use xlink:href="#DejaVuSans-Oblique-4e" transform="translate(691.020508 0.125)"/><use xlink:href="#DejaVuSans-Oblique-50" transform="translate(765.825195 0.125)"/><use xlink:href="#DejaVuSans-Oblique-56" transform="translate(826.12793 0.125)"/><use xlink:href="#DejaVuSans-31" transform="translate(894.536133 -16.28125) scale(0.7)"/><use xlink:href="#DejaVuSans-29" transform="translate(941.806641 0.125)"/><use xlink:href="#DejaVuSans-2f" transform="translate(980.820312 0.125)"/><use xlink:href="#DejaVuSans-Oblique-4e" transform="translate(1014.511719 0.125)"/><use xlink:href="#DejaVuSans-Oblique-50" transform="translate(1089.316406 0.125)"/><use xlink:href="#DejaVuSans-Oblique-56" transform="translate(1149.619141 0.125)"/><use xlink:href="#DejaVuSans-30" transform="translate(1218.027344 -16.28125) scale(0.7)"/></g></g></g></svg> con umbral máximo del 1 % [EBA/GL/2016/07 §51-53][E2]. Esto se desarrolla en el capítulo 5.</p>
+<h3 id="23-que-implica-para-pd-lgd-y-ead">2.3 Qué implica para PD, LGD y EAD<a class="hlink" href="#23-que-implica-para-pd-lgd-y-ead" aria-label="enlace">#</a></h3>
+<p><strong>EAD.</strong> Mientras el crédito está totalmente dispuesto y no hay línea adicional, el EAD es el saldo contable más los intereses devengados; no hay CCF que estimar. El matiz importante está en el <strong>periodo de disponibilidad</strong>: entre la firma y la disposición total, el importe no dispuesto es un compromiso y sí requiere factor de conversión crediticia (<em>credit conversion factor</em>, CCF). Muchos bancos no capturan bien esa fase porque el sistema de préstamos solo «ve» el crédito cuando ya está desembolsado.</p>
+<p><strong>Vencimiento efectivo.</strong> En A-IRB, <svg class="math-inline" style="width:0.8750em;height:0.7500em;vertical-align:-0.0000em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 12" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-4d" transform="translate(0 0.09375)"/></g></g></g></svg> es el promedio ponderado por tiempo de los flujos contractuales, con suelo de un año y tope de cinco [CRE32.46-32.51][B2][CRR art. 162(2)][L4]; en el enfoque básico (<em>foundation IRB</em>, F-IRB) es fijo en 2,5 años [CRE32.44][B2][CRR art. 162(1)][L4]. La figura anterior lo hace visible: la misma exposición nominal y el mismo cliente producen <svg class="math-inline" style="width:0.8750em;height:0.7500em;vertical-align:-0.0000em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 12" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-4d" transform="translate(0 0.09375)"/></g></g></g></svg> de 3,0 o de 5,0 años según el calendario. El coste de capital de conceder un <em>bullet</em> en vez de un amortizable es cuantificable antes de firmar y debería estar en la propuesta de crédito.</p>
+<p><strong>Vida esperada bajo IFRS 9.</strong> Para la Norma Internacional de Información Financiera 9 (<em>International Financial Reporting Standard 9</em>, IFRS 9), el calendario de amortización determina el perfil de exposición sobre el que se acumula la pérdida crediticia esperada (<em>expected credit loss</em>, ECL) a lo largo de la vida. Un crédito amortizable en etapa 2 tiene una ECL sustancialmente menor que un <em>bullet</em> del mismo importe y plazo, porque el saldo expuesto decrece. En el capítulo 24 se desarrolla; aquí interesa retener que el mismo campo —el calendario contractual— alimenta <svg class="math-inline" style="width:0.8750em;height:0.7500em;vertical-align:-0.0000em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 12" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-4d" transform="translate(0 0.09375)"/></g></g></g></svg> para capital y el perfil de EAD para provisiones, y <strong>tiene que ser el mismo dato</strong>.</p>
+<p><strong>LGD.</strong> El crédito a plazo suele ser la operación con garantías: hipoteca sobre el activo financiado, prenda sobre acciones, fideicomiso de garantía en México, cesión de flujos. La prelación y el rango del gravamen son los dos campos que más mueven la LGD y los que peor se capturan.</p>
+<div class="box box-llano">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">En palabras llanas</span></div>
+<div class="box-b">
+<p>El <em>bullet</em> concentra todo el riesgo al final; el amortizable lo va apagando. Si el cliente se deteriora en el año tres, en el amortizable el banco ya recuperó el 60 % del principal y en el <em>bullet</em> está expuesto al 100 %. Es la misma empresa y la misma PD: cambia únicamente el contrato.</p>
+</div>
+</div>
+<div class="box box-economico">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Sentido económico</span></div>
+<div class="box-b">
+<p>Un calendario de amortización es un mecanismo de mitigación de riesgo comprado con rentabilidad: reduce la exposición media y por tanto el capital y la ECL, pero también reduce el saldo medio sobre el que se cobra margen. La decisión de estructura no es «técnica»: es un canje explícito entre ingreso y capital que debe medirse con la rentabilidad ajustada por riesgo (capítulo 29).</p>
+</div>
+</div>
+<h2 id="3-linea-de-credito-revolvente-revolving-credit-facility-rcf">3. Línea de crédito revolvente (<em>revolving credit facility</em>, RCF)<a class="hlink" href="#3-linea-de-credito-revolvente-revolving-credit-facility-rcf" aria-label="enlace">#</a></h2>
+<h3 id="31-que-es">3.1 Qué es<a class="hlink" href="#31-que-es" aria-label="enlace">#</a></h3>
+<p>Un límite dentro del cual el cliente dispone, amortiza y vuelve a disponer libremente durante la vigencia. Es el producto de gestión de liquidez por excelencia: cubre estacionalidad de capital de trabajo, respalda programas de papel comercial y funciona como seguro de liquidez para grandes empresas, que a menudo mantienen una RCF grande <strong>sin usarla</strong> precisamente para poder usarla cuando el mercado se cierre.</p>
+<p>Distinciones que cambian todo:</p>
+<ul>
+<li><strong>Comprometida</strong> (<em>committed</em>): el banco está obligado contractualmente a desembolsar si el cliente cumple las condiciones de disposición. Se cobra una comisión de disponibilidad (<em>commitment fee</em>) sobre el saldo no dispuesto. El banco solo puede negarse invocando causas tasadas: incumplimiento de covenant, declaración falsa, evento material adverso.</li>
+<li><strong>No comprometida</strong> (<em>uncommitted</em>): el banco puede negarse a desembolsar discrecionalmente. Suele no haber comisión de disponibilidad.</li>
+<li><strong>Cancelable incondicionalmente</strong> (<em>unconditionally cancellable</em>, UCC): el banco puede reducir o cancelar el límite en cualquier momento, sin preaviso y sin causa.</li>
+</ul>
+<p>La combinación relevante para el capital no es «comprometida/no comprometida» sino <strong>si el banco puede retirar el límite antes de que el cliente lo use</strong>, y si además lo hace en la práctica.</p>
+<h3 id="32-por-que-la-rcf-obliga-a-modelar-el-ccf">3.2 Por qué la RCF obliga a modelar el CCF<a class="hlink" href="#32-por-que-la-rcf-obliga-a-modelar-el-ccf" aria-label="enlace">#</a></h3>
+<p>Si el compromiso total es <svg class="math-inline" style="width:0.5625em;height:0.7500em;vertical-align:-0.0000em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 9 12" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-4c" transform="translate(0 0.09375)"/></g></g></g></svg> y el saldo dispuesto en la fecha de referencia es <svg class="math-inline" style="width:1.2500em;height:0.9375em;vertical-align:-0.1875em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 15" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-44" transform="translate(0 0.09375)"/><use xlink:href="#DejaVuSans-30" transform="translate(77.001953 -16.3125) scale(0.7)"/></g></g></g></svg>, la exposición al incumplimiento se descompone como</p>
+<div class="eq"><svg class="math-display" style="width:15.0000em;height:1.2500em;vertical-align:-0.2500em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 240 20" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 16) scale(0.1952 -0.1952)"><use xlink:href="#DejaVuSans-Oblique-45" transform="translate(0 0.125)"/><use xlink:href="#DejaVuSans-Oblique-41" transform="translate(63.183594 0.125)"/><use xlink:href="#DejaVuSans-Oblique-44" transform="translate(131.591797 0.125)"/><use xlink:href="#DejaVuSans-3d" transform="translate(228.076172 0.125)"/><use xlink:href="#DejaVuSans-Oblique-44" transform="translate(331.347656 0.125)"/><use xlink:href="#DejaVuSans-30" transform="translate(408.349609 -16.28125) scale(0.7)"/><use xlink:href="#DejaVuSans-2b" transform="translate(475.102539 0.125)"/><use xlink:href="#DejaVuSans-Oblique-43" transform="translate(578.374023 0.125)"/><use xlink:href="#DejaVuSans-Oblique-43" transform="translate(648.198242 0.125)"/><use xlink:href="#DejaVuSans-Oblique-46" transform="translate(718.022461 0.125)"/><use xlink:href="#DejaVuSans-22c5" transform="translate(795.024414 0.125)"/><use xlink:href="#DejaVuSans-28" transform="translate(846.293945 0.125)"/><use xlink:href="#DejaVuSans-Oblique-4c" transform="translate(885.307617 0.125)"/><use xlink:href="#DejaVuSans-2212" transform="translate(960.50293 0.125)"/><use xlink:href="#DejaVuSans-Oblique-44" transform="translate(1063.774414 0.125)"/><use xlink:href="#DejaVuSans-30" transform="translate(1140.776367 -16.28125) scale(0.7)"/><use xlink:href="#DejaVuSans-29" transform="translate(1188.046875 0.125)"/></g></g></g></svg></div>
+<p>donde el factor de conversión es, en su versión realizada sobre una cohorte de acreditados que incumplieron,</p>
+<div class="eq"><svg class="math-display" style="width:7.2500em;height:2.0625em;vertical-align:-0.6875em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 116 33" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 22) scale(0.1952 -0.1952)"><defs><path id="STIXSizeFiveSym-Regular-302" d="M -1005 3859  L -1037 3661  L -8461 4826  L -15872 3661  L -15904 3859  L -8454 5222  L -1005 3859  z " transform="scale(0.015625)"/></defs><use xlink:href="#STIXSizeFiveSym-Regular-302" transform="translate(234.901367 38.640625) scale(0.846953)"/><use xlink:href="#DejaVuSans-Oblique-43" transform="translate(0 0.546875)"/><use xlink:href="#DejaVuSans-Oblique-43" transform="translate(69.824219 0.546875)"/><use xlink:href="#DejaVuSans-Oblique-46" transform="translate(139.648438 0.546875)"/><use xlink:href="#DejaVuSans-3d" transform="translate(216.650391 0.546875)"/><use xlink:href="#DejaVuSans-Oblique-44" transform="translate(319.921875 56.524844) scale(0.7)"/><use xlink:href="#DejaVuSans-Oblique-3c4" transform="translate(373.823242 45.040469) scale(0.49)"/><use xlink:href="#DejaVuSans-2212" transform="translate(418.875488 56.524844) scale(0.7)"/><use xlink:href="#DejaVuSans-Oblique-44" transform="translate(491.165527 56.524844) scale(0.7)"/><use xlink:href="#DejaVuSans-30" transform="translate(545.066895 45.040469) scale(0.49)"/><use xlink:href="#DejaVuSans-Oblique-4c" transform="translate(342.921875 -37.940625) scale(0.7)"/><use xlink:href="#DejaVuSans-2212" transform="translate(395.558594 -37.940625) scale(0.7)"/><use xlink:href="#DejaVuSans-Oblique-44" transform="translate(467.848633 -37.940625) scale(0.7)"/><use xlink:href="#DejaVuSans-30" transform="translate(521.75 -49.425) scale(0.49)"/><path d="M 319.921875 19.34375  L 319.921875 25.59375  L 578.15625 25.59375  L 578.15625 19.34375  L 319.921875 19.34375  z "/></g></g></g></svg></div>
+<p>con <svg class="math-inline" style="width:1.2500em;height:0.9375em;vertical-align:-0.1875em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 15" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-44" transform="translate(0 0.09375)"/><use xlink:href="#DejaVuSans-Oblique-3c4" transform="translate(77.001953 -16.3125) scale(0.7)"/></g></g></g></svg> el saldo dispuesto en el momento del incumplimiento. Todo el problema del capítulo 17 está en esa fracción: qué fecha de referencia se elige, qué se hace con los casos en que <svg class="math-inline" style="width:3.0625em;height:0.9375em;vertical-align:-0.1875em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 49 15" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-4c" transform="translate(0 0.09375)"/><use xlink:href="#DejaVuSans-3d" transform="translate(75.195312 0.09375)"/><use xlink:href="#DejaVuSans-Oblique-44" transform="translate(178.466797 0.09375)"/><use xlink:href="#DejaVuSans-30" transform="translate(255.46875 -16.3125) scale(0.7)"/></g></g></g></svg> (denominador cero), qué se hace con los CCF negativos (el cliente amortizó antes de incumplir) y qué se hace con los superiores a uno (el cliente excedió el límite).</p>
+<div class="box box-regulatorio">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">CRR art. 182 · CRE36.89-36.99</span></div>
+<div class="box-b">
+<p>Las estimaciones propias de CCF deben hacerse por grado o conjunto de facilidades, con el promedio ponderado por incumplimiento de los CCF realizados; deben incorporar ajustes de recesión cuando resulten más conservadores; deben <strong>considerar la posibilidad de disposiciones adicionales hasta y después del evento de incumplimiento</strong>; deben tener en cuenta las políticas de seguimiento de cuentas y procesamiento de pagos; y exigen sistemas para monitorear importes de la facilidad y saldos dispuestos frente a líneas comprometidas <strong>al menos diariamente</strong> [CRR art. 182][R17]. Basilea añade el horizonte fijo de doce meses [CRE36.93] y segmentos homogéneos [CRE36.94], con un histórico mínimo de siete años para corporativos y soberanos [CRE36.98][B5].</p>
+</div>
+</div>
+<h3 id="33-el-comportamiento-de-disposicion-antes-del-incumplimiento">3.3 El comportamiento de disposición antes del incumplimiento<a class="hlink" href="#33-el-comportamiento-de-disposicion-antes-del-incumplimiento" aria-label="enlace">#</a></h3>
+<p>Este es el hecho estilizado central del producto: <strong>los clientes que van a incumplir disponen más</strong>. A medida que se deteriora el acceso a liquidez alternativa, el cliente agota las líneas disponibles; y a medida que el banco lo detecta, intenta reducir el límite. Las dos fuerzas compiten, y quién gane depende del tipo de línea.</p>
+<p><figure class="fig" id="fig-cap02_revolvente_perfil"><div class="fig-svg"><svg preserveAspectRatio="xMidYMid meet" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 529.741557 247.310547" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M -0 247.310547 
+L 529.741557 247.310547 
+L 529.741557 0 
+L -0 0 
+L -0 247.310547 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 43.57125 212.678203 
+L 260.074494 212.678203 
+L 260.074494 43.958203 
+L 43.57125 43.958203 
+L 43.57125 212.678203 
+z
+" style="fill: none"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="45.211426" y="225.896719" transform="rotate(-0 45.211426 225.896719)">−25</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="86.215828" y="225.896719" transform="rotate(-0 86.215828 225.896719)">−20</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="127.220231" y="225.896719" transform="rotate(-0 127.220231 225.896719)">−15</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="168.224633" y="225.896719" transform="rotate(-0 168.224633 225.896719)">−10</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="209.229035" y="225.896719" transform="rotate(-0 209.229035 225.896719)">−5</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6"/>
+     <g id="text_6">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="250.233437" y="225.896719" transform="rotate(-0 250.233437 225.896719)">0</text>
+     </g>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 10px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="151.822872" y="239.470859" transform="rotate(-0 151.822872 239.470859)">Meses hasta el incumplimiento</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_7">
+      <path d="M 43.57125 212.678203 
+L 260.074494 212.678203 
+" clip-path="url(#p1186ef9ccb)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_8">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="37.57125" y="216.287461" transform="rotate(-0 37.57125 216.287461)">0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_9">
+      <path d="M 43.57125 183.335594 
+L 260.074494 183.335594 
+" clip-path="url(#p1186ef9ccb)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_9">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="37.57125" y="186.944852" transform="rotate(-0 37.57125 186.944852)">20</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_11">
+      <path d="M 43.57125 153.992986 
+L 260.074494 153.992986 
+" clip-path="url(#p1186ef9ccb)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_12"/>
+     <g id="text_10">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="37.57125" y="157.602244" transform="rotate(-0 37.57125 157.602244)">40</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_13">
+      <path d="M 43.57125 124.650377 
+L 260.074494 124.650377 
+" clip-path="url(#p1186ef9ccb)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_14"/>
+     <g id="text_11">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="37.57125" y="128.259635" transform="rotate(-0 37.57125 128.259635)">60</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_15">
+      <path d="M 43.57125 95.307768 
+L 260.074494 95.307768 
+" clip-path="url(#p1186ef9ccb)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_16"/>
+     <g id="text_12">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="37.57125" y="98.917026" transform="rotate(-0 37.57125 98.917026)">80</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_17">
+      <path d="M 43.57125 65.96516 
+L 260.074494 65.96516 
+" clip-path="url(#p1186ef9ccb)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_18"/>
+     <g id="text_13">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="37.57125" y="69.574417" transform="rotate(-0 37.57125 69.574417)">100</text>
+     </g>
+    </g>
+    <g id="text_14">
+     <text style="font-size: 10px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="13.358437" y="128.318203" transform="rotate(-90 13.358437 128.318203)">Base 100 = límite inicial</text>
+    </g>
+   </g>
+   <g id="line2d_19">
+    <path d="M 53.412307 65.96516 
+L 61.613187 65.96516 
+L 69.814067 65.96516 
+L 78.014948 65.96516 
+L 86.215828 65.96516 
+L 94.416709 65.96516 
+L 102.617589 65.96516 
+L 110.81847 65.96516 
+L 119.01935 65.96516 
+L 127.220231 65.96516 
+L 135.421111 65.96516 
+L 143.621991 65.96516 
+L 151.822872 65.96516 
+L 160.023752 65.96516 
+L 168.224633 65.96516 
+L 176.425513 65.96516 
+L 184.626394 65.96516 
+L 192.827274 65.96516 
+L 201.028155 65.96516 
+L 209.229035 65.96516 
+L 217.429915 65.96516 
+L 225.630796 65.96516 
+L 233.831676 65.96516 
+L 242.032557 65.96516 
+L 250.233437 65.96516 
+" clip-path="url(#p1186ef9ccb)" style="fill: none; stroke: var(--s2, #eb6834); stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_20">
+    <path d="M 53.412307 147.291996 
+L 61.613187 151.051386 
+L 69.814067 144.5791 
+L 78.014948 143.141869 
+L 86.215828 151.502177 
+L 94.416709 148.266303 
+L 102.617589 142.321535 
+L 110.81847 142.221419 
+L 119.01935 139.504072 
+L 127.220231 140.22791 
+L 135.421111 132.437418 
+L 143.621991 130.354341 
+L 151.822872 130.050862 
+L 160.023752 123.869241 
+L 168.224633 123.131661 
+L 176.425513 124.489643 
+L 184.626394 117.601385 
+L 192.827274 119.019582 
+L 201.028155 110.332882 
+L 209.229035 110.728568 
+L 217.429915 108.753071 
+L 225.630796 108.155508 
+L 233.831676 100.036408 
+L 242.032557 102.730318 
+L 250.233437 102.080576 
+" clip-path="url(#p1186ef9ccb)" style="fill: none; stroke: var(--s1, #2a78d6); stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="FillBetweenPolyCollection_1">
+    <defs>
+     <path id="m382b0e7750" d="M 53.412307 -181.345387 
+L 53.412307 -100.018551 
+L 61.613187 -96.259161 
+L 69.814067 -102.731447 
+L 78.014948 -104.168678 
+L 86.215828 -95.80837 
+L 94.416709 -99.044244 
+L 102.617589 -104.989011 
+L 110.81847 -105.089128 
+L 119.01935 -107.806475 
+L 127.220231 -107.082637 
+L 135.421111 -114.873129 
+L 143.621991 -116.956206 
+L 151.822872 -117.259685 
+L 160.023752 -123.441306 
+L 168.224633 -124.178886 
+L 176.425513 -122.820904 
+L 184.626394 -129.709162 
+L 192.827274 -128.290965 
+L 201.028155 -136.977665 
+L 209.229035 -136.581979 
+L 217.429915 -138.557476 
+L 225.630796 -139.155039 
+L 233.831676 -147.274139 
+L 242.032557 -144.580229 
+L 250.233437 -145.229971 
+L 250.233437 -181.345387 
+L 250.233437 -181.345387 
+L 242.032557 -181.345387 
+L 233.831676 -181.345387 
+L 225.630796 -181.345387 
+L 217.429915 -181.345387 
+L 209.229035 -181.345387 
+L 201.028155 -181.345387 
+L 192.827274 -181.345387 
+L 184.626394 -181.345387 
+L 176.425513 -181.345387 
+L 168.224633 -181.345387 
+L 160.023752 -181.345387 
+L 151.822872 -181.345387 
+L 143.621991 -181.345387 
+L 135.421111 -181.345387 
+L 127.220231 -181.345387 
+L 119.01935 -181.345387 
+L 110.81847 -181.345387 
+L 102.617589 -181.345387 
+L 94.416709 -181.345387 
+L 86.215828 -181.345387 
+L 78.014948 -181.345387 
+L 69.814067 -181.345387 
+L 61.613187 -181.345387 
+L 53.412307 -181.345387 
+z
+"/>
+    </defs>
+    <g clip-path="url(#p1186ef9ccb)">
+     <use xlink:href="#m382b0e7750" x="0" y="247.310547" style="fill: var(--s2, #eb6834); fill-opacity: 0.12"/>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 43.57125 212.678203 
+L 43.57125 43.958203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 43.57125 212.678203 
+L 260.074494 212.678203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 600; font-size: 11.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="43.57125" y="14.958203" transform="rotate(-0 43.57125 14.958203)">Línea comprometida</text>
+   </g>
+   <g id="legend_1">
+    <g id="line2d_21">
+     <path d="M 47.37125 34.0139 
+L 54.49625 34.0139 
+L 61.62125 34.0139 
+" style="fill: none; stroke: var(--s2, #eb6834); stroke-width: 2; stroke-linecap: round"/>
+    </g>
+    <g id="text_16">
+     <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="67.32125" y="37.3389" transform="rotate(-0 67.32125 37.3389)">Límite autorizado</text>
+    </g>
+    <g id="line2d_22">
+     <path d="M 164.561172 34.0139 
+L 171.686172 34.0139 
+L 178.811172 34.0139 
+" style="fill: none; stroke: var(--s1, #2a78d6); stroke-width: 2; stroke-linecap: round"/>
+    </g>
+    <g id="text_17">
+     <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="184.511172" y="37.3389" transform="rotate(-0 184.511172 37.3389)">Saldo dispuesto</text>
+    </g>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_5">
+    <path d="M 303.88437 212.678203 
+L 520.387614 212.678203 
+L 520.387614 43.958203 
+L 303.88437 43.958203 
+L 303.88437 212.678203 
+z
+" style="fill: none"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_7">
+     <g id="line2d_23"/>
+     <g id="text_18">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="305.524546" y="225.896719" transform="rotate(-0 305.524546 225.896719)">−25</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_24"/>
+     <g id="text_19">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="346.528948" y="225.896719" transform="rotate(-0 346.528948 225.896719)">−20</text>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_25"/>
+     <g id="text_20">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="387.53335" y="225.896719" transform="rotate(-0 387.53335 225.896719)">−15</text>
+     </g>
+    </g>
+    <g id="xtick_10">
+     <g id="line2d_26"/>
+     <g id="text_21">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="428.537753" y="225.896719" transform="rotate(-0 428.537753 225.896719)">−10</text>
+     </g>
+    </g>
+    <g id="xtick_11">
+     <g id="line2d_27"/>
+     <g id="text_22">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="469.542155" y="225.896719" transform="rotate(-0 469.542155 225.896719)">−5</text>
+     </g>
+    </g>
+    <g id="xtick_12">
+     <g id="line2d_28"/>
+     <g id="text_23">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="510.546557" y="225.896719" transform="rotate(-0 510.546557 225.896719)">0</text>
+     </g>
+    </g>
+    <g id="text_24">
+     <text style="font-size: 10px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="412.135992" y="239.470859" transform="rotate(-0 412.135992 239.470859)">Meses hasta el incumplimiento</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_7">
+     <g id="line2d_29">
+      <path d="M 303.88437 212.678203 
+L 520.387614 212.678203 
+" clip-path="url(#p4bb018828a)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_30"/>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_31">
+      <path d="M 303.88437 183.335594 
+L 520.387614 183.335594 
+" clip-path="url(#p4bb018828a)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_32"/>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_33">
+      <path d="M 303.88437 153.992986 
+L 520.387614 153.992986 
+" clip-path="url(#p4bb018828a)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_34"/>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_35">
+      <path d="M 303.88437 124.650377 
+L 520.387614 124.650377 
+" clip-path="url(#p4bb018828a)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_36"/>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_37">
+      <path d="M 303.88437 95.307768 
+L 520.387614 95.307768 
+" clip-path="url(#p4bb018828a)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_38"/>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_39">
+      <path d="M 303.88437 65.96516 
+L 520.387614 65.96516 
+" clip-path="url(#p4bb018828a)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_40"/>
+    </g>
+   </g>
+   <g id="line2d_41">
+    <path d="M 313.725426 65.96516 
+L 321.926307 65.96516 
+L 330.127187 65.96516 
+L 338.328068 65.96516 
+L 346.528948 65.96516 
+L 354.729829 65.96516 
+L 362.930709 65.96516 
+L 371.13159 65.96516 
+L 379.33247 65.96516 
+L 387.53335 65.96516 
+L 395.734231 65.96516 
+L 403.935111 65.96516 
+L 412.135992 65.96516 
+L 420.336872 70.953403 
+L 428.537753 75.941647 
+L 436.738633 80.92989 
+L 444.939514 85.918134 
+L 453.140394 90.906377 
+L 461.341274 95.894621 
+L 469.542155 100.882864 
+L 477.743035 105.871107 
+L 485.943916 110.859351 
+L 494.144796 115.847594 
+L 502.345677 120.835838 
+L 510.546557 125.824081 
+" clip-path="url(#p4bb018828a)" style="fill: none; stroke: var(--s2, #eb6834); stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_42">
+    <path d="M 313.725426 153.170415 
+L 321.926307 150.143414 
+L 330.127187 150.109218 
+L 338.328068 149.339237 
+L 346.528948 148.531575 
+L 354.729829 142.618087 
+L 362.930709 149.04873 
+L 371.13159 148.150697 
+L 379.33247 147.660285 
+L 387.53335 141.92716 
+L 395.734231 138.735135 
+L 403.935111 140.570966 
+L 412.135992 140.800822 
+L 420.336872 138.806663 
+L 428.537753 132.530248 
+L 436.738633 130.357325 
+L 444.939514 129.133251 
+L 453.140394 130.993016 
+L 461.341274 126.821156 
+L 469.542155 125.784811 
+L 477.743035 124.276949 
+L 485.943916 121.315602 
+L 494.144796 122.323037 
+L 502.345677 120.835838 
+L 510.546557 125.824081 
+" clip-path="url(#p4bb018828a)" style="fill: none; stroke: var(--s1, #2a78d6); stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="FillBetweenPolyCollection_2">
+    <defs>
+     <path id="me3df056021" d="M 313.725426 -181.345387 
+L 313.725426 -94.140132 
+L 321.926307 -97.167133 
+L 330.127187 -97.201329 
+L 338.328068 -97.97131 
+L 346.528948 -98.778972 
+L 354.729829 -104.69246 
+L 362.930709 -98.261817 
+L 371.13159 -99.159849 
+L 379.33247 -99.650262 
+L 387.53335 -105.383387 
+L 395.734231 -108.575412 
+L 403.935111 -106.739581 
+L 412.135992 -106.509725 
+L 420.336872 -108.503883 
+L 428.537753 -114.780299 
+L 436.738633 -116.953222 
+L 444.939514 -118.177296 
+L 453.140394 -116.317531 
+L 461.341274 -120.489391 
+L 469.542155 -121.525736 
+L 477.743035 -123.033598 
+L 485.943916 -125.994945 
+L 494.144796 -124.98751 
+L 502.345677 -126.474709 
+L 510.546557 -121.486465 
+L 510.546557 -121.486465 
+L 510.546557 -121.486465 
+L 502.345677 -126.474709 
+L 494.144796 -131.462952 
+L 485.943916 -136.451196 
+L 477.743035 -141.439439 
+L 469.542155 -146.427683 
+L 461.341274 -151.415926 
+L 453.140394 -156.40417 
+L 444.939514 -161.392413 
+L 436.738633 -166.380657 
+L 428.537753 -171.3689 
+L 420.336872 -176.357144 
+L 412.135992 -181.345387 
+L 403.935111 -181.345387 
+L 395.734231 -181.345387 
+L 387.53335 -181.345387 
+L 379.33247 -181.345387 
+L 371.13159 -181.345387 
+L 362.930709 -181.345387 
+L 354.729829 -181.345387 
+L 346.528948 -181.345387 
+L 338.328068 -181.345387 
+L 330.127187 -181.345387 
+L 321.926307 -181.345387 
+L 313.725426 -181.345387 
+z
+"/>
+    </defs>
+    <g clip-path="url(#p4bb018828a)">
+     <use xlink:href="#me3df056021" x="0" y="247.310547" style="fill: var(--s2, #eb6834); fill-opacity: 0.12"/>
+    </g>
+   </g>
+   <g id="patch_6">
+    <path d="M 303.88437 212.678203 
+L 303.88437 43.958203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 303.88437 212.678203 
+L 520.387614 212.678203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_25">
+    <text style="font-weight: 600; font-size: 11.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="303.88437" y="14.958203" transform="rotate(-0 303.88437 14.958203)">Línea cancelable sin condiciones</text>
+   </g>
+   <g id="legend_2">
+    <g id="line2d_43">
+     <path d="M 307.68437 34.0139 
+L 314.80937 34.0139 
+L 321.93437 34.0139 
+" style="fill: none; stroke: var(--s2, #eb6834); stroke-width: 2; stroke-linecap: round"/>
+    </g>
+    <g id="text_26">
+     <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="327.63437" y="37.3389" transform="rotate(-0 327.63437 37.3389)">Límite autorizado</text>
+    </g>
+    <g id="line2d_44">
+     <path d="M 424.874292 34.0139 
+L 431.999292 34.0139 
+L 439.124292 34.0139 
+" style="fill: none; stroke: var(--s1, #2a78d6); stroke-width: 2; stroke-linecap: round"/>
+    </g>
+    <g id="text_27">
+     <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="444.824292" y="37.3389" transform="rotate(-0 444.824292 37.3389)">Saldo dispuesto</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p1186ef9ccb">
+   <rect x="43.57125" y="43.958203" width="216.503244" height="168.72"/>
+  </clipPath>
+  <clipPath id="p4bb018828a">
+   <rect x="303.88437" y="43.958203" width="216.503244" height="168.72"/>
+  </clipPath>
+ </defs>
+</svg></div><figcaption>Perfil ilustrativo del saldo dispuesto y del límite autorizado en los 24 meses anteriores al incumplimiento. Izquierda: línea comprometida, el banco no puede reducir el límite. Derecha: línea cancelable, el banco recorta el límite al detectar deterioro. Datos sintéticos generados con semilla fija; no corresponden a ninguna institución.</figcaption></figure></p>
+<p>De la figura se leen tres cosas que aparecen sistemáticamente en los datos reales:</p>
+<ol>
+<li><strong>La utilización crece al acercarse el incumplimiento</strong>, sobre todo en los últimos seis a nueve meses.</li>
+<li><strong>En la línea cancelable, el límite baja</strong>, de modo que el CCF medido contra el límite vigente en la fecha de referencia puede ser engañosamente alto o bajo según qué límite se use. Definir si el denominador usa el límite en <svg class="math-inline" style="width:0.8750em;height:0.9375em;vertical-align:-0.1875em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 15" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-74" transform="translate(0 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(39.208984 -15.625) scale(0.7)"/></g></g></g></svg> o el límite vigente en <svg class="math-inline" style="width:0.6250em;height:0.5625em;vertical-align:-0.0000em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 10 9" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 9) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-3c4" transform="translate(0 0.3125)"/></g></g></g></svg> es una decisión metodológica con impacto material.</li>
+<li><strong>La convergencia final</strong>: el dispuesto tiende al límite. Por eso la norma impone un suelo.</li>
+</ol>
+<div class="box box-regulatorio">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">CRR art. 166(8c)</span></div>
+<div class="box-b">
+<p>El valor de exposición de un compromiso revolvente bajo IRB no puede ser inferior a la suma de: «(a) el importe dispuesto del compromiso revolvente; (b) el 50 % del importe de la exposición fuera de balance de la parte no dispuesta restante del compromiso revolvente, calculado usando el SA-CCF aplicable» [L4]. Es el mismo suelo que Basilea expresa como «importe dentro de balance más el 50 % de la exposición fuera de balance» [CRE32.36][B2]. Además, el CRR3 restringe el uso de modelos internos de CCF a las facilidades revolventes [L4, verificación indirecta].</p>
+</div>
+</div>
+<div class="box box-ejemplo">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Ejemplo ilustrativo con datos sintéticos</span></div>
+<div class="box-b">
+<p>Una RCF comprometida con límite <svg class="math-inline" style="width:3.7500em;height:0.8125em;vertical-align:-0.0625em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 60 13" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-4c" transform="translate(0 0.78125)"/><use xlink:href="#DejaVuSans-3d" transform="translate(75.195312 0.78125)"/><use xlink:href="#DejaVuSans-31" transform="translate(178.466797 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(242.089844 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(305.712891 0.78125)"/></g></g></g></svg> y saldo dispuesto en la fecha de referencia <svg class="math-inline" style="width:3.7500em;height:0.9375em;vertical-align:-0.1875em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 60 15" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-44" transform="translate(0 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(77.001953 -15.625) scale(0.7)"/><use xlink:href="#DejaVuSans-3d" transform="translate(143.754883 0.78125)"/><use xlink:href="#DejaVuSans-34" transform="translate(247.026367 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(310.649414 0.78125)"/></g></g></g></svg>. El SA-CCF aplicable es el 75 % (resto de líneas de crédito, art. 166 CRR, régimen vigente en el Reino Unido) [R33].</p>
+<p><strong>Suelo regulatorio:</strong> <svg class="math-inline" style="width:20.1250em;height:0.8750em;vertical-align:-0.1250em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 322 14" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-34" transform="translate(0 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(63.623047 0.78125)"/><use xlink:href="#DejaVuSans-2b" transform="translate(146.728516 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(250 0.78125)"/><use xlink:href="#DejaVuSans-2c" transform="translate(313.623047 0.78125)"/><use xlink:href="#DejaVuSans-35" transform="translate(345.410156 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(409.033203 0.78125)"/><use xlink:href="#DejaVuSans-d7" transform="translate(492.138672 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(595.410156 0.78125)"/><use xlink:href="#DejaVuSans-2c" transform="translate(659.033203 0.78125)"/><use xlink:href="#DejaVuSans-37" transform="translate(690.820312 0.78125)"/><use xlink:href="#DejaVuSans-35" transform="translate(754.443359 0.78125)"/><use xlink:href="#DejaVuSans-d7" transform="translate(837.548828 0.78125)"/><use xlink:href="#DejaVuSans-36" transform="translate(940.820312 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(1004.443359 0.78125)"/><use xlink:href="#DejaVuSans-3d" transform="translate(1087.548828 0.78125)"/><use xlink:href="#DejaVuSans-34" transform="translate(1190.820312 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(1254.443359 0.78125)"/><use xlink:href="#DejaVuSans-2b" transform="translate(1337.548828 0.78125)"/><use xlink:href="#DejaVuSans-32" transform="translate(1440.820312 0.78125)"/><use xlink:href="#DejaVuSans-32" transform="translate(1504.443359 0.78125)"/><use xlink:href="#DejaVuSans-2c" transform="translate(1568.066406 0.78125)"/><use xlink:href="#DejaVuSans-35" transform="translate(1599.853516 0.78125)"/><use xlink:href="#DejaVuSans-3d" transform="translate(1682.958984 0.78125)"/><use xlink:href="#DejaVuSans-36" transform="translate(1786.230469 0.78125)"/><use xlink:href="#DejaVuSans-32" transform="translate(1849.853516 0.78125)"/><use xlink:href="#DejaVuSans-2c" transform="translate(1913.476562 0.78125)"/><use xlink:href="#DejaVuSans-35" transform="translate(1945.263672 0.78125)"/></g></g></g></svg>.</p>
+<p><strong>Caso A — el modelo estima <svg class="math-inline" style="width:6.5625em;height:0.8750em;vertical-align:-0.1250em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 105 14" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-43" transform="translate(0 0.78125)"/><use xlink:href="#DejaVuSans-Oblique-43" transform="translate(69.824219 0.78125)"/><use xlink:href="#DejaVuSans-Oblique-46" transform="translate(139.648438 0.78125)"/><use xlink:href="#DejaVuSans-3d" transform="translate(216.650391 0.78125)"/><use xlink:href="#DejaVuSans-36" transform="translate(319.921875 0.78125)"/><use xlink:href="#DejaVuSans-33" transform="translate(383.544922 0.78125)"/><use xlink:href="#DejaVuSans-2c" transform="translate(447.167969 0.78125)"/><use xlink:href="#DejaVuSans-33" transform="translate(478.955078 0.78125)"/><use xlink:href="#DejaVuSans-25" transform="translate(558.813801 0.78125)"/></g></g></g></svg>:</strong> <svg class="math-inline" style="width:14.6875em;height:0.8750em;vertical-align:-0.1250em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 235 14" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-45" transform="translate(0 0.78125)"/><use xlink:href="#DejaVuSans-Oblique-41" transform="translate(63.183594 0.78125)"/><use xlink:href="#DejaVuSans-Oblique-44" transform="translate(131.591797 0.78125)"/><use xlink:href="#DejaVuSans-3d" transform="translate(228.076172 0.78125)"/><use xlink:href="#DejaVuSans-34" transform="translate(331.347656 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(394.970703 0.78125)"/><use xlink:href="#DejaVuSans-2b" transform="translate(478.076172 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(581.347656 0.78125)"/><use xlink:href="#DejaVuSans-2c" transform="translate(644.970703 0.78125)"/><use xlink:href="#DejaVuSans-36" transform="translate(676.757812 0.78125)"/><use xlink:href="#DejaVuSans-33" transform="translate(740.380859 0.78125)"/><use xlink:href="#DejaVuSans-33" transform="translate(804.003906 0.78125)"/><use xlink:href="#DejaVuSans-d7" transform="translate(887.109375 0.78125)"/><use xlink:href="#DejaVuSans-36" transform="translate(990.380859 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(1054.003906 0.78125)"/><use xlink:href="#DejaVuSans-3d" transform="translate(1137.109375 0.78125)"/><use xlink:href="#DejaVuSans-37" transform="translate(1240.380859 0.78125)"/><use xlink:href="#DejaVuSans-38" transform="translate(1304.003906 0.78125)"/><use xlink:href="#DejaVuSans-2c" transform="translate(1367.626953 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(1399.414062 0.78125)"/></g></g></g></svg>. Como <svg class="math-inline" style="width:5.6875em;height:0.8750em;vertical-align:-0.1250em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 91 14" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-37" transform="translate(0 0.78125)"/><use xlink:href="#DejaVuSans-38" transform="translate(63.623047 0.78125)"/><use xlink:href="#DejaVuSans-2c" transform="translate(127.246094 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(159.033203 0.78125)"/><use xlink:href="#DejaVuSans-3e" transform="translate(242.138672 0.78125)"/><use xlink:href="#DejaVuSans-36" transform="translate(345.410156 0.78125)"/><use xlink:href="#DejaVuSans-32" transform="translate(409.033203 0.78125)"/><use xlink:href="#DejaVuSans-2c" transform="translate(472.65625 0.78125)"/><use xlink:href="#DejaVuSans-35" transform="translate(504.443359 0.78125)"/></g></g></g></svg>, se aplica la estimación propia.</p>
+<p><strong>Caso B — el modelo estima <svg class="math-inline" style="width:5.6250em;height:0.8125em;vertical-align:-0.0625em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 90 13" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-43" transform="translate(0 0.78125)"/><use xlink:href="#DejaVuSans-Oblique-43" transform="translate(69.824219 0.78125)"/><use xlink:href="#DejaVuSans-Oblique-46" transform="translate(139.648438 0.78125)"/><use xlink:href="#DejaVuSans-3d" transform="translate(216.650391 0.78125)"/><use xlink:href="#DejaVuSans-32" transform="translate(319.921875 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(383.544922 0.78125)"/><use xlink:href="#DejaVuSans-25" transform="translate(463.403645 0.78125)"/></g></g></g></svg>:</strong> <svg class="math-inline" style="width:14.0000em;height:0.8750em;vertical-align:-0.1250em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 224 14" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-45" transform="translate(0 0.78125)"/><use xlink:href="#DejaVuSans-Oblique-41" transform="translate(63.183594 0.78125)"/><use xlink:href="#DejaVuSans-Oblique-44" transform="translate(131.591797 0.78125)"/><use xlink:href="#DejaVuSans-3d" transform="translate(228.076172 0.78125)"/><use xlink:href="#DejaVuSans-34" transform="translate(331.347656 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(394.970703 0.78125)"/><use xlink:href="#DejaVuSans-2b" transform="translate(478.076172 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(581.347656 0.78125)"/><use xlink:href="#DejaVuSans-2c" transform="translate(644.970703 0.78125)"/><use xlink:href="#DejaVuSans-32" transform="translate(676.757812 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(740.380859 0.78125)"/><use xlink:href="#DejaVuSans-d7" transform="translate(823.486328 0.78125)"/><use xlink:href="#DejaVuSans-36" transform="translate(926.757812 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(990.380859 0.78125)"/><use xlink:href="#DejaVuSans-3d" transform="translate(1073.486328 0.78125)"/><use xlink:href="#DejaVuSans-35" transform="translate(1176.757812 0.78125)"/><use xlink:href="#DejaVuSans-32" transform="translate(1240.380859 0.78125)"/><use xlink:href="#DejaVuSans-2c" transform="translate(1304.003906 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(1335.791016 0.78125)"/></g></g></g></svg>. Como <svg class="math-inline" style="width:5.6875em;height:0.8750em;vertical-align:-0.1250em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 91 14" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-35" transform="translate(0 0.78125)"/><use xlink:href="#DejaVuSans-32" transform="translate(63.623047 0.78125)"/><use xlink:href="#DejaVuSans-2c" transform="translate(127.246094 0.78125)"/><use xlink:href="#DejaVuSans-30" transform="translate(159.033203 0.78125)"/><use xlink:href="#DejaVuSans-3c" transform="translate(242.138672 0.78125)"/><use xlink:href="#DejaVuSans-36" transform="translate(345.410156 0.78125)"/><use xlink:href="#DejaVuSans-32" transform="translate(409.033203 0.78125)"/><use xlink:href="#DejaVuSans-2c" transform="translate(472.65625 0.78125)"/><use xlink:href="#DejaVuSans-35" transform="translate(504.443359 0.78125)"/></g></g></g></svg>, <strong>se aplica el suelo</strong>: <svg class="math-inline" style="width:5.5625em;height:0.8750em;vertical-align:-0.1250em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 89 14" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-45" transform="translate(0 0.78125)"/><use xlink:href="#DejaVuSans-Oblique-41" transform="translate(63.183594 0.78125)"/><use xlink:href="#DejaVuSans-Oblique-44" transform="translate(131.591797 0.78125)"/><use xlink:href="#DejaVuSans-3d" transform="translate(228.076172 0.78125)"/><use xlink:href="#DejaVuSans-36" transform="translate(331.347656 0.78125)"/><use xlink:href="#DejaVuSans-32" transform="translate(394.970703 0.78125)"/><use xlink:href="#DejaVuSans-2c" transform="translate(458.59375 0.78125)"/><use xlink:href="#DejaVuSans-35" transform="translate(490.380859 0.78125)"/></g></g></g></svg>. El modelo se ha vuelto irrelevante para esa facilidad.</p>
+<p>Las cifras son sintéticas; los porcentajes regulatorios sí son normativos.</p>
+</div>
+</div>
+<div class="box box-economico">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Sentido económico</span></div>
+<div class="box-b">
+<p>El suelo del 50 % convierte al CCF en un parámetro con techo de utilidad. Si el banco gestiona bien sus líneas y su CCF observado es bajo, no se lo reconocen íntegramente en capital de Pilar 1. La consecuencia de gestión es que <strong>el valor de recortar líneas no dispuestas se cobra en otra parte</strong>: en la ECL de IFRS 9 —donde no hay suelo equivalente y donde la vida esperada del compromiso importa— y en la pérdida real. Un banco que solo mire el capital de Pilar 1 gestionará mal sus líneas no dispuestas.</p>
+</div>
+</div>
+<h3 id="34-los-ccf-supervisores">3.4 Los CCF supervisores<a class="hlink" href="#34-los-ccf-supervisores" aria-label="enlace">#</a></h3>
+<p><figure class="fig" id="fig-cap02_ccf_supervisores"><div class="fig-svg"><svg preserveAspectRatio="xMidYMid meet" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 598.729906 244.482547" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M -0 244.482547 
+L 598.729906 244.482547 
+L 598.729906 0 
+L -0 0 
+L -0 244.482547 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 180.049906 209.450203 
+L 592.969906 209.450203 
+L 592.969906 26.498203 
+L 180.049906 26.498203 
+L 180.049906 209.450203 
+z
+" style="fill: none"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 180.049906 209.450203 
+L 180.049906 26.498203 
+" clip-path="url(#p5f65881bda)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_2"/>
+     <g id="text_1">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="180.049906" y="222.668719" transform="rotate(-0 180.049906 222.668719)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 269.815124 209.450203 
+L 269.815124 26.498203 
+" clip-path="url(#p5f65881bda)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_2">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="269.815124" y="222.668719" transform="rotate(-0 269.815124 222.668719)">20</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 359.580341 209.450203 
+L 359.580341 26.498203 
+" clip-path="url(#p5f65881bda)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_3">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="359.580341" y="222.668719" transform="rotate(-0 359.580341 222.668719)">40</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 449.345558 209.450203 
+L 449.345558 26.498203 
+" clip-path="url(#p5f65881bda)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_4">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="449.345558" y="222.668719" transform="rotate(-0 449.345558 222.668719)">60</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 539.110776 209.450203 
+L 539.110776 26.498203 
+" clip-path="url(#p5f65881bda)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_5">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="539.110776" y="222.668719" transform="rotate(-0 539.110776 222.668719)">80</text>
+     </g>
+    </g>
+    <g id="text_6">
+     <text style="font-size: 10px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="386.509906" y="236.642859" transform="rotate(-0 386.509906 236.642859)">Factor de conversión aplicado al importe no dispuesto</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_11">
+      <path d="M 180.049906 52.750674 
+L 592.969906 52.750674 
+" clip-path="url(#p5f65881bda)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_12"/>
+     <g id="text_7">
+      <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(5.76 51.856408)">Líneas incondicionalmente cancelables</text>
+      <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(73.81825 61.486527)">con seguimiento activo</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_13">
+      <path d="M 180.049906 117.974203 
+L 592.969906 117.974203 
+" clip-path="url(#p5f65881bda)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_14"/>
+     <g id="text_8">
+      <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(8.079313 117.251937)">Cartas de crédito a corto plazo ligadas</text>
+      <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(46.851875 126.882056)">al movimiento de mercancías</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_15">
+      <path d="M 180.049906 183.197733 
+L 592.969906 183.197733 
+" clip-path="url(#p5f65881bda)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_16"/>
+     <g id="text_9">
+      <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="174.049906" y="186.637061" transform="rotate(-0 174.049906 186.637061)">Resto de líneas de crédito, NIF y RUF</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 180.049906 209.450203 
+L 180.049906 26.498203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 180.049906 209.450203 
+L 592.969906 209.450203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 180.049906 34.814203 
+L 180.049906 34.814203 
+L 180.049906 70.687144 
+L 180.049906 70.687144 
+z
+" clip-path="url(#p5f65881bda)" style="fill: var(--seq2, #9ec5f4); stroke: var(--c-surface, #fcfcfb); stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 180.049906 100.037733 
+L 269.815124 100.037733 
+L 269.815124 135.910674 
+L 180.049906 135.910674 
+z
+" clip-path="url(#p5f65881bda)" style="fill: var(--s1, #2a78d6); stroke: var(--c-surface, #fcfcfb); stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 180.049906 165.261262 
+L 516.669471 165.261262 
+L 516.669471 201.134203 
+L 180.049906 201.134203 
+z
+" clip-path="url(#p5f65881bda)" style="fill: var(--seq12, #0d366b); stroke: var(--c-surface, #fcfcfb); stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 600; font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="187.049906" y="55.37208" transform="rotate(-0 187.049906 55.37208)">0 %</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 600; font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="276.815124" y="120.595609" transform="rotate(-0 276.815124 120.595609)">20 %</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 600; font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="523.669471" y="185.819139" transform="rotate(-0 523.669471 185.819139)">75 %</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 600; font-size: 11.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="180.049906" y="14.498203" transform="rotate(-0 180.049906 14.498203)">CCF supervisores para corporativos e instituciones</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p5f65881bda">
+   <rect x="180.049906" y="26.498203" width="412.92" height="182.952"/>
+  </clipPath>
+ </defs>
+</svg></div><figcaption>Factores de conversión supervisores para corporativos e instituciones del art. 166 CRR en su versión vigente en el Reino Unido [R33]. Estos valores son normativos, no ilustrativos. Está pendiente de verificar si cambian bajo las reglas finales de Basilea 3.1 (PS1/26) desde el 1 de enero de 2027.</figcaption></figure></p>
+<p>Los tres tramos verificados son: <strong>0 %</strong> para líneas de crédito incondicionalmente cancelables con seguimiento activo de la situación del deudor, y para derechos de cobro revolventes no dispuestos con cancelación automática; <strong>20 %</strong> para cartas de crédito a corto plazo ligadas al movimiento de mercancías; y <strong>75 %</strong> para el resto de líneas de crédito y para las facilidades de emisión de pagarés y de aseguramiento revolvente (<em>note issuance facilities</em> y <em>revolving underwriting facilities</em>) [R33].</p>
+<div class="box box-alerta">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Los tres errores de captura que más daño hacen</span></div>
+<div class="box-b">
+<ol>
+<li><strong>Tratar una línea no comprometida o cancelable como comprometida.</strong> Si el sistema no distingue, el banco aplica un CCF del 75 % a exposiciones que merecen 0 % y consume capital sin razón; peor aún, la población del modelo de CCF mezcla dos comportamientos incompatibles.</li>
+<li><strong>Tratar una línea comprometida como cancelable.</strong> El error inverso, más peligroso: subestima el EAD justo en el producto que más crece antes del incumplimiento. El 0 % exige, además del carácter cancelable, <strong>seguimiento activo de la situación del deudor</strong> [R33]; si el banco no puede evidenciar ese seguimiento, no le corresponde el 0 % aunque el contrato lo permita.</li>
+<li><strong>No capturar el límite autorizado, o capturar solo el vigente hoy.</strong> Sin la serie histórica de límites no hay denominador y no hay CCF. Y sin marca temporal no se puede saber si el límite bajó porque el banco lo recortó o porque el cliente lo renunció. El artículo 182 exige, precisamente, monitoreo diario de importes de facilidad y saldos dispuestos [R17].</li>
+</ol>
+</div>
+</div>
+<h2 id="4-capital-de-trabajo-sobregiros-y-lineas-estacionales">4. Capital de trabajo, sobregiros y líneas estacionales<a class="hlink" href="#4-capital-de-trabajo-sobregiros-y-lineas-estacionales" aria-label="enlace">#</a></h2>
+<p><strong>Crédito de capital de trabajo</strong> (<em>working capital</em>). Financia el ciclo de conversión de efectivo: inventarios y cuentas por cobrar menos proveedores. Suele instrumentarse como línea revolvente a plazos cortos renovables, o como una serie de disposiciones a 30, 60 o 90 días. Su rasgo distintivo es que <strong>el vencimiento contractual no describe la exposición económica</strong>: una línea a 90 días renovada durante ocho años es, en la práctica, financiación permanente. Es uno de los focos de la discusión sobre vida esperada bajo IFRS 9.</p>
+<p><strong>Cuenta de cheques con sobregiro</strong> (<em>overdraft</em>). El cliente puede quedar en descubierto hasta un límite. Tres consecuencias:</p>
+<ul>
+<li>El saldo puede ser negativo o positivo, y el EAD solo existe cuando es deudor. La serie es diaria y muy volátil.</li>
+<li>El sobregiro interactúa con la definición de incumplimiento. La CUB, en el Anexo 32-A, es explícita: si el sobregiro está autorizado con límite conocido, el exceso no regularizado durante 90 días o más constituye incumplimiento; <strong>si no está autorizado, el límite se considera cero</strong> y aplica el mismo umbral de 90 días [M5]. El artículo 178(2) del CRR remite igualmente a reglas de cómputo específicas para descubiertos [L4][R10].</li>
+<li>El cómputo de días de mora empieza cuando cualquier importe de principal, interés o comisión vence, y hay que excluir moras «técnicas» por errores de sistema o retrasos de procesamiento [SS3/24][R12]. En sobregiros, esa distinción es donde más ruido se genera.</li>
+</ul>
+<p><strong>Líneas estacionales.</strong> Agroindustria, comercio minorista, turismo, importadores de temporada. La utilización sigue un patrón anual con picos previsibles. Para el modelo de CCF esto tiene una implicación operativa concreta: si la fecha de referencia de las cohortes es siempre el 31 de diciembre, se está midiendo el CCF desde un punto sistemáticamente alto o bajo del ciclo estacional, y la estimación queda sesgada. La solución práctica es usar múltiples fechas de referencia dentro del año y analizar el sesgo, en línea con la exigencia de analizar los sesgos entre ventanas solapadas y no solapadas [EBA/GL/2017/16 §80][E1].</p>
+<h2 id="5-financiamiento-de-comercio-exterior-trade-finance">5. Financiamiento de comercio exterior (<em>trade finance</em>)<a class="hlink" href="#5-financiamiento-de-comercio-exterior-trade-finance" aria-label="enlace">#</a></h2>
+<p>Es la familia de productos peor tratada en los modelos, por dos razones: la exposición es contingente y la documentación vive en sistemas transaccionales separados del sistema de crédito.</p>
+<h3 id="51-carta-de-credito-documentaria-documentary-letter-of-credit">5.1 Carta de crédito documentaria (<em>documentary letter of credit</em>)<a class="hlink" href="#51-carta-de-credito-documentaria-documentary-letter-of-credit" aria-label="enlace">#</a></h3>
+<p>El banco emisor, por cuenta del ordenante (el importador), se obliga <strong>irrevocablemente</strong> a pagar al beneficiario (el exportador) contra la presentación de documentos conformes. No paga contra la mercancía: paga contra papeles.</p>
+<p><figure class="fig" id="fig-cap02_carta_credito"><div class="fig-svg"><svg preserveAspectRatio="xMidYMid meet" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 448.285906 269.110203" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 269.110203 
+L 448.285906 269.110203 
+L 448.285906 0 
+L 0 0 
+L 0 269.110203 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 6.222219 263.350203 
+L 430.302219 263.350203 
+L 430.302219 24.958203 
+L 6.222219 24.958203 
+L 6.222219 263.350203 
+z
+" style="fill: none"/>
+   </g>
+   <g id="matplotlib.axis_1"/>
+   <g id="matplotlib.axis_2"/>
+   <g id="patch_3">
+    <path d="M 148.17073 91.707963 
+Q 218.263101 91.707963 287.125636 91.707963 
+" clip-path="url(#pba47cc1361)" style="fill: none; stroke: var(--c-ink2, #52514e); stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 282.325636 89.307963 
+L 287.125636 91.707963 
+L 282.325636 94.107963 
+z
+" clip-path="url(#pba47cc1361)" style="fill: var(--c-ink2, #52514e); stroke: var(--c-ink2, #52514e); stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 86.797419 119.932039 
+Q 86.797419 146.539414 86.797419 171.91695 
+" clip-path="url(#pba47cc1361)" style="fill: none; stroke: var(--c-ink2, #52514e); stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 89.197419 167.11695 
+L 86.797419 171.91695 
+L 84.397419 167.11695 
+z
+" clip-path="url(#pba47cc1361)" style="fill: var(--c-ink2, #52514e); stroke: var(--c-ink2, #52514e); stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 148.17073 194.216523 
+Q 218.263101 194.216523 287.125636 194.216523 
+" clip-path="url(#pba47cc1361)" style="fill: none; stroke: var(--c-ink2, #52514e); stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 282.325636 191.816523 
+L 287.125636 194.216523 
+L 282.325636 196.616523 
+z
+" clip-path="url(#pba47cc1361)" style="fill: var(--c-ink2, #52514e); stroke: var(--c-ink2, #52514e); stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 334.884219 173.144207 
+Q 334.884219 146.536833 334.884219 121.159296 
+" clip-path="url(#pba47cc1361)" style="fill: none; stroke: var(--c-ink2, #52514e); stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 332.484219 125.959296 
+L 334.884219 121.159296 
+L 337.284219 125.959296 
+z
+" clip-path="url(#pba47cc1361)" style="fill: var(--c-ink2, #52514e); stroke: var(--c-ink2, #52514e); stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 368.810619 119.932039 
+Q 368.810619 146.539414 368.810619 171.91695 
+" clip-path="url(#pba47cc1361)" style="fill: none; stroke: var(--c-ink2, #52514e); stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 371.210619 167.11695 
+L 368.810619 171.91695 
+L 366.410619 167.11695 
+z
+" clip-path="url(#pba47cc1361)" style="fill: var(--c-ink2, #52514e); stroke: var(--c-ink2, #52514e); stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 288.353708 209.712003 
+Q 218.261336 209.712003 149.398802 209.712003 
+" clip-path="url(#pba47cc1361)" style="fill: none; stroke: var(--c-ink2, #52514e); stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 154.198802 212.112003 
+L 149.398802 209.712003 
+L 154.198802 207.312003 
+z
+" clip-path="url(#pba47cc1361)" style="fill: var(--c-ink2, #52514e); stroke: var(--c-ink2, #52514e); stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 35.059659 118.407867 
+L 138.535179 118.407867 
+Q 147.016779 118.407867 147.016779 113.640027 
+L 147.016779 69.775899 
+Q 147.016779 65.008059 138.535179 65.008059 
+L 35.059659 65.008059 
+Q 26.578059 65.008059 26.578059 69.775899 
+L 26.578059 113.640027 
+Q 26.578059 118.407867 35.059659 118.407867 
+L 35.059659 118.407867 
+z
+" clip-path="url(#pba47cc1361)" style="fill: none; stroke: var(--s1, #2a78d6); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 35.059659 228.068187 
+L 138.535179 228.068187 
+Q 147.016779 228.068187 147.016779 223.300347 
+L 147.016779 179.436219 
+Q 147.016779 174.668379 138.535179 174.668379 
+L 35.059659 174.668379 
+Q 26.578059 174.668379 26.578059 179.436219 
+L 26.578059 223.300347 
+Q 26.578059 228.068187 35.059659 228.068187 
+L 35.059659 228.068187 
+z
+" clip-path="url(#pba47cc1361)" style="fill: none; stroke: var(--s2, #eb6834); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 297.989259 118.407867 
+L 401.464779 118.407867 
+Q 409.946379 118.407867 409.946379 113.640027 
+L 409.946379 69.775899 
+Q 409.946379 65.008059 401.464779 65.008059 
+L 297.989259 65.008059 
+Q 289.507659 65.008059 289.507659 69.775899 
+L 289.507659 113.640027 
+Q 289.507659 118.407867 297.989259 118.407867 
+L 297.989259 118.407867 
+z
+" clip-path="url(#pba47cc1361)" style="fill: none; stroke: var(--s3, #1baf7a); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 297.989259 228.068187 
+L 401.464779 228.068187 
+Q 409.946379 228.068187 409.946379 223.300347 
+L 409.946379 179.436219 
+Q 409.946379 174.668379 401.464779 174.668379 
+L 297.989259 174.668379 
+Q 289.507659 174.668379 289.507659 179.436219 
+L 289.507659 223.300347 
+Q 289.507659 228.068187 297.989259 228.068187 
+L 297.989259 228.068187 
+z
+" clip-path="url(#pba47cc1361)" style="fill: none; stroke: var(--s4, #eda100); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 8.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="218.262219" y="258.626693" transform="rotate(-0 218.262219 258.626693)">Riesgo del banco emisor: el ordenante. Riesgo del confirmador: el banco emisor y su soberano.</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 600; font-size: 11.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="6.222219" y="14.958203" transform="rotate(-0 6.222219 14.958203)">Carta de crédito documentaria: quién asume qué riesgo</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 9.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink, #0b0b0b)" transform="translate(62.331887 89.095594)">Ordenante</text>
+    <text style="font-size: 9.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink, #0b0b0b)" transform="translate(57.5752 99.397582)">(importador)</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 9.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink, #0b0b0b)" transform="translate(55.410325 198.755914)">Banco emisor</text>
+    <text style="font-size: 9.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink, #0b0b0b)" transform="translate(43.6602 209.057902)">(riesgo del cliente)</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 9.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink, #0b0b0b)" transform="translate(322.487831 89.095594)">Beneficiario</text>
+    <text style="font-size: 9.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink, #0b0b0b)" transform="translate(320.790863 99.397582)">(exportador)</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 9.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink, #0b0b0b)" transform="translate(306.138425 198.755914)">Banco confirmador</text>
+    <text style="font-size: 9.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink, #0b0b0b)" transform="translate(327.054769 209.057902)">/ avisador</text>
+   </g>
+   <g id="text_7">
+    <g id="patch_13">
+     <path d="M 155.216828 89.675837 
+L 281.307609 89.675837 
+L 281.307609 77.052649 
+L 155.216828 77.052649 
+z
+" style="fill: var(--c-surface, #fcfcfb)"/>
+    </g>
+    <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="218.262219" y="85.737306" transform="rotate(-0 218.262219 85.737306)">1. Contrato de compraventa</text>
+   </g>
+   <g id="text_8">
+    <g id="patch_14">
+     <path d="M 3.61 157.871176 
+L 82.586219 157.871176 
+L 82.586219 135.20507 
+L 3.61 135.20507 
+z
+" style="fill: var(--c-surface, #fcfcfb)"/>
+    </g>
+    <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink2, #52514e)" transform="translate(32.598719 143.889726)">2. Solicitud</text>
+    <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink2, #52514e)" transform="translate(5.76 153.932645)">y línea de crédito</text>
+   </g>
+   <g id="text_9">
+    <g id="patch_15">
+     <path d="M 138.235859 187.416557 
+L 298.288578 187.416557 
+L 298.288578 174.793369 
+L 138.235859 174.793369 
+z
+" style="fill: var(--c-surface, #fcfcfb)"/>
+    </g>
+    <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="218.262219" y="183.478026" transform="rotate(-0 218.262219 183.478026)">3. Emisión del crédito documentario</text>
+   </g>
+   <g id="text_10">
+    <g id="patch_16">
+     <path d="M 268.532681 157.664776 
+L 328.552619 157.664776 
+L 328.552619 135.41147 
+L 268.532681 135.41147 
+z
+" style="fill: var(--c-surface, #fcfcfb)"/>
+    </g>
+    <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink2, #52514e)" transform="translate(285.041994 144.096126)">4. Aviso y</text>
+    <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink2, #52514e)" transform="translate(270.682681 153.726245)">confirmación</text>
+   </g>
+   <g id="text_11">
+    <g id="patch_17">
+     <path d="M 375.142219 152.849717 
+L 444.675906 152.849717 
+L 444.675906 140.226529 
+L 375.142219 140.226529 
+z
+" style="fill: var(--c-surface, #fcfcfb)"/>
+    </g>
+    <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="377.292219" y="148.911186" transform="rotate(-0 377.292219 148.911186)">5. Documentos</text>
+   </g>
+   <g id="text_12">
+    <g id="patch_18">
+     <path d="M 128.423797 230.327117 
+L 308.100641 230.327117 
+L 308.100641 217.703929 
+L 128.423797 217.703929 
+z
+" style="fill: var(--c-surface, #fcfcfb)"/>
+    </g>
+    <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="218.262219" y="226.388586" transform="rotate(-0 218.262219 226.388586)">6. Reembolso y traspaso de documentos</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pba47cc1361">
+   <rect x="6.222219" y="24.958203" width="424.08" height="238.392"/>
+  </clipPath>
+ </defs>
+</svg></div><figcaption>Flujo de una carta de crédito documentaria y reparto del riesgo entre los bancos participantes. Esquema conceptual del autor.</figcaption></figure></p>
+<p>Los papeles del banco:</p>
+<ul>
+<li><strong>Banco emisor.</strong> Asume riesgo de crédito frente a <strong>su cliente, el ordenante</strong>. Si el beneficiario presenta documentos conformes, el emisor paga, y si el ordenante no le reembolsa, tiene una exposición dispuesta. Antes de la presentación, la carta es una <strong>exposición contingente</strong> del emisor.</li>
+<li><strong>Banco avisador</strong> (<em>advising bank</em>). Solo transmite y autentica. <strong>No asume riesgo de crédito.</strong></li>
+<li><strong>Banco confirmador</strong> (<em>confirming bank</em>). Añade su propio compromiso de pago frente al beneficiario. Asume riesgo frente al <strong>banco emisor</strong> —no frente al importador— y, de forma inseparable, riesgo país del soberano del emisor. Esta es la distinción que más veces se pierde en la captura de datos: una carta confirmada genera <strong>dos</strong> exposiciones de crédito en el sistema bancario, con dos deudores distintos.</li>
+</ul>
+<h3 id="52-carta-de-credito-contingente-standby-letter-of-credit-sblc">5.2 Carta de crédito contingente (<em>standby letter of credit</em>, SBLC)<a class="hlink" href="#52-carta-de-credito-contingente-standby-letter-of-credit-sblc" aria-label="enlace">#</a></h3>
+<p>Formalmente es una carta de crédito; funcionalmente es una garantía. El beneficiario cobra presentando una declaración de incumplimiento del ordenante. A diferencia de la documentaria, <strong>su ejecución es una mala noticia</strong>: la documentaria se ejecuta porque el comercio funcionó, la SBLC se ejecuta porque algo falló. Eso cambia la correlación entre la reclamación y el deterioro del cliente: la probabilidad de que se reclame la SBLC está positivamente correlacionada con el incumplimiento del ordenante, lo que hace que su CCF efectivo tienda a ser alto y a comportarse mal en recesión —justo el caso en que la norma exige estimaciones apropiadas para una recesión económica [CRE36.90][B5].</p>
+<h3 id="53-cobranza-documentaria-aceptaciones-y-confirmacion">5.3 Cobranza documentaria, aceptaciones y confirmación<a class="hlink" href="#53-cobranza-documentaria-aceptaciones-y-confirmacion" aria-label="enlace">#</a></h3>
+<p><strong>Cobranza documentaria</strong> (<em>documentary collection</em>). El banco gestiona el cobro y la entrega de documentos, pero <strong>no se obliga a pagar</strong>. No hay exposición de crédito —salvo que el banco anticipe fondos, en cuyo caso ya no es cobranza sino financiación—. Confundir cobranza con carta de crédito e inflar la exposición contingente es un error frecuente en las tablas de productos.</p>
+<p><strong>Aceptación bancaria</strong> (<em>banker's acceptance</em>). Una letra girada sobre el banco y aceptada por él: el banco se convierte en obligado principal a plazo. Es una exposición <strong>dispuesta y cierta</strong> desde la aceptación, no contingente, aunque el flujo de caja no se produzca hasta el vencimiento. Si el banco además descuenta la aceptación en el mercado, mantiene la obligación de pago frente al tenedor.</p>
+<p><strong>Carta de crédito confirmada.</strong> Ya descrita: doble exposición. Para el banco confirmador, el análisis de LGD es el de una exposición interbancaria senior no garantizada, con toda la carga de riesgo país; para el emisor, la LGD es la de un crédito a su cliente, normalmente con la mercancía o los documentos como garantía real y con margen en efectivo si se pidió.</p>
+<h3 id="54-mitigante-o-exposicion-la-distincion-que-hay-que-hacer-bien">5.4 Mitigante o exposición: la distinción que hay que hacer bien<a class="hlink" href="#54-mitigante-o-exposicion-la-distincion-que-hay-que-hacer-bien" aria-label="enlace">#</a></h3>
+<p>Una carta de crédito <strong>es un mitigante</strong> cuando el banco es acreedor del beneficiario y la carta emitida por un tercero respalda el cobro: entonces el riesgo se traslada, total o parcialmente, del cliente al banco emisor, y su reconocimiento se rige por las reglas de protección crediticia (con enfoque de ajuste de LGD por defecto, o de sustitución de parámetros si se cumplen las condiciones estrictas del párrafo 31(a)(ii) de las directrices) [EBA/GL/2020/05 §31-36][E4].</p>
+<p>Una carta de crédito <strong>es una exposición</strong> cuando el banco es el emisor o el confirmador: hay un compromiso propio que puede convertirse en desembolso. En ese caso hay que asignarle una clase de exposición, un CCF y una LGD.</p>
+<p>En México, la definición de cartera crediticia comercial de la CUB incluye expresamente los créditos «directos o <strong>contingentes</strong>» [M6], de modo que el perímetro regulatorio ya contempla estas exposiciones; el problema es de sistemas, no de norma.</p>
+<div class="box box-alerta">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Doble contabilización y doble omisión</span></div>
+<div class="box-b">
+<p>El error simétrico más caro del <em>trade finance</em>: (i) <strong>doble contabilización</strong>, cuando el sistema registra la carta de crédito como exposición contingente y, al pagarse, registra también el crédito resultante sin cancelar la contingente, inflando el EAD; y (ii) <strong>doble omisión</strong>, cuando la exposición contingente vive solo en el sistema transaccional de comercio exterior y nunca llega al motor de riesgo, de modo que el consumo de línea del cliente está subestimado y el banco concede más crédito del que cree. La conciliación mensual entre el sistema de comercio exterior y el motor de exposiciones, por cliente y por operación, no es un control contable: es un control de modelo.</p>
+</div>
+</div>
+<div class="box box-llano">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">En palabras llanas</span></div>
+<div class="box-b">
+<p>Carta de crédito documentaria: «yo, banco, pago si llegan los papeles correctos». Carta de crédito contingente: «yo, banco, pago si mi cliente falla». Cobranza documentaria: «yo, banco, solo hago de mensajero». Solo en los dos primeros hay riesgo de crédito para el banco, y el segundo es el peligroso porque se ejecuta precisamente cuando el cliente está mal.</p>
+</div>
+</div>
+<h2 id="6-garantias-avales-y-fianzas-tecnicas">6. Garantías, avales y fianzas técnicas<a class="hlink" href="#6-garantias-avales-y-fianzas-tecnicas" aria-label="enlace">#</a></h2>
+<p><strong>Aval y garantía bancaria</strong> (<em>guarantee</em>). El banco se obliga a pagar si el cliente no cumple una obligación —financiera o de otro tipo— frente a un tercero. Igual que la SBLC en su lógica de riesgo.</p>
+<p><strong>Fianza de cumplimiento</strong> (<em>performance bond</em>). Garantiza que el cliente ejecutará una obra o un contrato conforme a lo pactado. Se emite típicamente por un porcentaje del valor del contrato.</p>
+<p><strong>Fianza de licitación</strong> (<em>bid bond</em>). Garantiza que el licitante mantendrá su oferta y firmará si gana. Importe pequeño, plazo corto.</p>
+<p><strong>Fianza de anticipo</strong> (<em>advance payment bond</em>). Garantiza la devolución del anticipo recibido si el contratista no ejecuta.</p>
+<p>Perfil de riesgo. Estas fianzas tienen una probabilidad de reclamación baja pero <strong>fuertemente correlacionada con el desempeño operativo del cliente</strong>, no con su liquidez. Una constructora puede estar financieramente sana y aun así fallar la ejecución de una obra. Eso significa que las variables financieras que alimentan un modelo de PD explican mal la reclamación de una fianza; hacen falta variables de negocio (concentración de contratos, historial de ejecución, capacidad técnica). Además, cuando el banco paga una fianza, nace un derecho de repetición contra el cliente cuya recuperación es incierta y suele litigarse: la LGD realizada de una fianza ejecutada es habitualmente peor que la de un crédito ordinario del mismo cliente, porque llega en el peor momento y sin garantías dedicadas.</p>
+<h2 id="7-factoraje-factoraje-inverso-y-descuento">7. Factoraje, factoraje inverso y descuento<a class="hlink" href="#7-factoraje-factoraje-inverso-y-descuento" aria-label="enlace">#</a></h2>
+<h3 id="71-factoraje-factoring">7.1 Factoraje (<em>factoring</em>)<a class="hlink" href="#71-factoraje-factoring" aria-label="enlace">#</a></h3>
+<p>El banco adquiere derechos de cobro (facturas) del cliente. Dos modalidades:</p>
+<ul>
+<li><strong>Con recurso</strong> (<em>with recourse</em>): si el deudor de la factura no paga, el banco se cobra del cedente. <strong>El riesgo de crédito es del cedente</strong>; la factura es un colateral.</li>
+<li><strong>Sin recurso</strong> (<em>non-recourse</em>): el banco asume la insolvencia del deudor de la factura. <strong>El riesgo de crédito es del deudor cedido</strong>, aunque el cliente comercial siga siendo el cedente.</li>
+</ul>
+<p>La pregunta «¿quién es el deudor real del riesgo?» tiene, por tanto, una respuesta contractual, no comercial. Y determina a quién se califica, contra qué escala, y qué exposición se agrega a qué grupo de riesgo. Un banco que califica siempre al cedente en operaciones sin recurso está subestimando la concentración con los grandes deudores cedidos, que pueden ser los mismos en decenas de operaciones.</p>
+<h3 id="72-riesgo-de-dilucion">7.2 Riesgo de dilución<a class="hlink" href="#72-riesgo-de-dilucion" aria-label="enlace">#</a></h3>
+<p>Es el riesgo específico del factoraje y del descuento de documentos: la factura se reduce o se extingue <strong>sin que nadie incumpla</strong>, por devoluciones de mercancía, descuentos comerciales, notas de crédito, compensaciones entre las partes, disputas de calidad o errores de facturación. No es riesgo de crédito del deudor: es riesgo de que el derecho de cobro no valiera lo que decía valer.</p>
+<p>La norma lo trata como parámetro separado. En F-IRB, los valores supervisores para derechos de cobro corporativos adquiridos son del 40 % de LGD para el tramo senior cuando no hay estimaciones de PD conformes, 100 % para el subordinado y <strong>100 % para el riesgo de dilución</strong> en el CRR consolidado [L4]; el texto vigente en el Reino Unido recoge un 75 % para dilución [R32]. La divergencia entre ambas cifras está identificada en los dosieres y <strong>conviene verificarla contra el texto aplicable en cada jurisdicción antes de parametrizar el motor</strong>. La PRA confirmó, además, que PS1/26 enmienda las disposiciones sobre riesgo de dilución y el tratamiento a nivel de facilidad [R3].</p>
+<p>Para modelar dilución hacen falta datos que casi nunca están en el sistema de crédito: importe facturado original, importe efectivamente cobrado, motivo del ajuste y fecha. Sin el motivo no se puede separar dilución de impago.</p>
+<h3 id="73-riesgo-de-fraude">7.3 Riesgo de fraude<a class="hlink" href="#73-riesgo-de-fraude" aria-label="enlace">#</a></h3>
+<p>En factoraje y descuento, el fraude no es una anécdota: es un modo de pérdida estructural. Facturas duplicadas cedidas a dos financiadores, facturas emitidas a partes relacionadas sin operación real, cesiones sin notificación al deudor que luego paga al cedente. La mitigación es operativa —verificación con el deudor, notificación de la cesión, límites por deudor cedido, control de concentración— y su calidad debería ser un factor de riesgo explícito en el modelo, no un supuesto implícito. Conviene recordar que el fraude figura entre los indicadores internos de improbabilidad de pago de las directrices europeas [EBA/GL/2016/07 §58-63][E2].</p>
+<h3 id="74-factoraje-inverso-o-confirmacion-de-pagos-reverse-factoring-confirm">7.4 Factoraje inverso o confirmación de pagos (<em>reverse factoring</em>, <em>confirming</em>)<a class="hlink" href="#74-factoraje-inverso-o-confirmacion-de-pagos-reverse-factoring-confirm" aria-label="enlace">#</a></h3>
+<p>Aquí quien contrata es el <strong>comprador</strong>, típicamente una gran empresa: el banco se compromete a pagar anticipadamente a los proveedores que lo soliciten, sobre facturas que el comprador ha aprobado, y el comprador paga al banco al vencimiento. El riesgo de crédito es, casi siempre, <strong>del comprador</strong>, no del proveedor: el banco anticipa porque el comprador ya reconoció la deuda.</p>
+<p>Dos implicaciones:</p>
+<ol>
+<li><strong>De exposición.</strong> El programa genera un límite frente al comprador que puede utilizarse por miles de facturas de cientos de proveedores. La exposición es revolvente en la práctica y estacional en muchos sectores. Hay que capturar el límite del programa, el dispuesto agregado y el plazo medio de las facturas.</li>
+<li><strong>Contable, y ha sido tema de discusión.</strong> La cuestión es si el pasivo del comprador sigue siendo una cuenta por pagar comercial o se ha transformado en deuda financiera. La distinción cambia el apalancamiento medido —y por tanto las variables de cualquier modelo de PD basado en razones financieras— sin que cambie nada económico. Ha habido varios casos de empresas cuya situación real de endeudamiento estaba oculta en programas de confirmación clasificados como proveedores. <strong>Criterio de práctica de mercado y del autor:</strong> en el análisis de crédito conviene reclasificar como deuda financiera los saldos de programas de confirmación cuando el plazo concedido excede sustancialmente el plazo comercial habitual del sector. El detalle normativo contable de esta cuestión <strong>no está verificado en los dosieres de esta guía</strong> y no debe citarse como norma.</li>
+</ol>
+<h3 id="75-descuento-de-documentos">7.5 Descuento de documentos<a class="hlink" href="#75-descuento-de-documentos" aria-label="enlace">#</a></h3>
+<p>Anticipo sobre pagarés, letras o contra-recibos, generalmente con recurso. Su perfil es el del factoraje con recurso: riesgo del cedente, dilución y fraude en segundo plano. Su relevancia práctica es que constituye una parte importante de la financiación de empresas medianas en México y que su plazo corto y su alta rotación producen series de datos ricas —pero también un número enorme de operaciones pequeñas que hay que agregar correctamente al nivel de deudor para no distorsionar el conteo de acreditados en la estimación de PD [EBA/GL/2017/16 §73][E1].</p>
+<h2 id="8-arrendamiento-financiero-y-operativo-leasing">8. Arrendamiento financiero y operativo (<em>leasing</em>)<a class="hlink" href="#8-arrendamiento-financiero-y-operativo-leasing" aria-label="enlace">#</a></h2>
+<p><strong>Arrendamiento financiero.</strong> Económicamente es un crédito con la propiedad del activo como garantía: el arrendatario paga cuotas y al final ejerce una opción de compra normalmente simbólica. El CRR es explícito en la medición: para activos arrendados, el valor de exposición son los <strong>pagos mínimos de arrendamiento descontados</strong> [CRR art. 166][R33].</p>
+<p><strong>Arrendamiento operativo.</strong> El arrendador conserva el riesgo y el beneficio del activo; al final del contrato el activo vuelve y hay que revenderlo o recolocarlo.</p>
+<p><strong>El valor residual es un riesgo distinto del riesgo de crédito.</strong> Si al término del contrato el activo vale menos de lo previsto, el arrendador pierde, aunque el cliente haya pagado todas las cuotas puntualmente. Es riesgo de mercado del activo —camiones, aeronaves, maquinaria, equipos de cómputo—, no riesgo de incumplimiento del arrendatario. La regulación mexicana lo separa con claridad: en el método básico, la severidad supervisora del arrendamiento financiero es del <strong>50 % para los flujos y del 100 % para el valor residual</strong> cuando existe riesgo residual [M5]. Es decir, se supone que el valor residual no garantizado se pierde íntegramente.</p>
+<p>Consecuencias para el modelador:</p>
+<ul>
+<li>Hay que <strong>descomponer la exposición</strong> en componente de flujos y componente de valor residual, y modelarlas por separado. Un único parámetro de LGD para el contrato completo mezcla dos riesgos con distribuciones distintas.</li>
+<li>La correlación entre el incumplimiento del cliente y el valor del activo puede ser alta cuando ambos dependen del mismo sector (una crisis del transporte deprime a la vez la solvencia del transportista y el precio de los camiones). La norma exige considerar esa dependencia entre el riesgo del deudor y el del colateral y tratarla de forma conservadora [CRE36.84][B5].</li>
+<li>La estimación de LGD <strong>no puede basarse únicamente en el valor de mercado estimado del colateral</strong> [CRE36.85][B5]: hay que apoyarse en tasas de recuperación históricas realizadas.</li>
+</ul>
+<h2 id="9-credito-sindicado-y-club-deals">9. Crédito sindicado y <em>club deals</em><a class="hlink" href="#9-credito-sindicado-y-club-deals" aria-label="enlace">#</a></h2>
+<h3 id="91-estructura">9.1 Estructura<a class="hlink" href="#91-estructura" aria-label="enlace">#</a></h3>
+<p>Un <strong>crédito sindicado</strong> es una única operación con un único contrato, financiada por varios bancos. Sus piezas:</p>
+<ul>
+<li><strong>Banco agente</strong> (<em>agent bank</em>): administra el crédito, recibe y distribuye pagos, monitorea covenants, convoca a los prestamistas. Cobra comisión de agencia; <strong>no asume riesgo adicional</strong> por ser agente, pero sí responsabilidad operativa y reputacional.</li>
+<li><strong>Bancos organizadores</strong> (<em>mandated lead arrangers</em>): estructuran y colocan. Pueden asumir riesgo de aseguramiento si comprometen la totalidad antes de colocarla.</li>
+<li><strong>Participantes</strong>: aportan su parte y comparten las mismas condiciones.</li>
+<li><strong>Cláusulas colectivas</strong>: mayorías necesarias para dispensas y modificaciones, cláusula de reparto proporcional de cobros (<em>pro rata sharing</em>), <em>cross-default</em>, y —clave— <strong>transferibilidad</strong>: si un participante puede vender su parte, a quién y con qué consentimiento.</li>
+</ul>
+<p>Un <strong><em>club deal</em></strong> es lo mismo con menos bancos, sin fase de sindicación abierta y con condiciones negociadas entre todos desde el inicio. Es la forma habitual en mercados medianos.</p>
+<h3 id="92-por-que-cambia-la-lgd">9.2 Por qué cambia la LGD<a class="hlink" href="#92-por-que-cambia-la-lgd" aria-label="enlace">#</a></h3>
+<p>Cuatro razones concretas:</p>
+<ol>
+<li><strong>La decisión de reestructurar no es del banco.</strong> Se necesita una mayoría; un acreedor minoritario puede quedar arrastrado por una solución que no habría elegido. Eso alarga los procesos de recuperación y aumenta los costes.</li>
+<li><strong>El reparto proporcional de cobros elimina la ventaja de cobrar primero.</strong> En un crédito bilateral, el banco que actúa rápido recupera más; en un sindicado, comparte.</li>
+<li><strong>La transferibilidad crea una salida con precio observable.</strong> Si el banco puede vender su participación en el mercado secundario, la LGD realizada deja de ser la de un proceso de recuperación y pasa a ser <svg class="math-inline" style="width:0.6875em;height:0.7500em;vertical-align:-0.0000em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 11 12" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-31" transform="translate(0 0.09375)"/></g></g></g></svg> menos el precio de venta. Y aquí aparece un vínculo con la definición de incumplimiento: la venta de obligaciones crediticias con pérdida económica material es un indicador de improbabilidad de pago, con la fórmula <svg class="math-inline" style="width:6.0000em;height:1.0000em;vertical-align:-0.1875em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 96 16" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 13) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-4c" transform="translate(0 0.125)"/><use xlink:href="#DejaVuSans-3d" transform="translate(75.195312 0.125)"/><use xlink:href="#DejaVuSans-28" transform="translate(178.466797 0.125)"/><use xlink:href="#DejaVuSans-Oblique-45" transform="translate(217.480469 0.125)"/><use xlink:href="#DejaVuSans-2212" transform="translate(300.146484 0.125)"/><use xlink:href="#DejaVuSans-Oblique-50" transform="translate(403.417969 0.125)"/><use xlink:href="#DejaVuSans-29" transform="translate(463.720703 0.125)"/><use xlink:href="#DejaVuSans-2f" transform="translate(502.734375 0.125)"/><use xlink:href="#DejaVuSans-Oblique-45" transform="translate(536.425781 0.125)"/></g></g></g></svg> y un tope del 5 % [EBA/GL/2016/07 §41-48][E2]. Vender la posición no siempre es neutral a efectos de la definición de default.</li>
+<li><strong>La documentación es mejor.</strong> Los sindicados suelen tener paquetes de covenants y garantías más robustos que los bilaterales del mismo cliente, lo que empuja la LGD a la baja —salvo en el crédito apalancado, donde ocurre lo contrario, como se ve a continuación.</li>
+</ol>
+<p>Para la captura de datos: hay que registrar <strong>el importe total de la operación y la participación del banco</strong>, la condición de agente, la existencia de garantías compartidas y su rango, y si la participación es transferible. Estimar LGD mezclando participaciones sindicadas y créditos bilaterales sin una variable que los distinga produce un modelo que no discrimina donde más importa.</p>
+<h2 id="10-financiamiento-de-adquisiciones-y-credito-apalancado-leveraged-fina">10. Financiamiento de adquisiciones y crédito apalancado (<em>leveraged finance</em>)<a class="hlink" href="#10-financiamiento-de-adquisiciones-y-credito-apalancado-leveraged-fina" aria-label="enlace">#</a></h2>
+<h3 id="101-que-es">10.1 Qué es<a class="hlink" href="#101-que-es" aria-label="enlace">#</a></h3>
+<p>Financiamiento cuyo repago depende del flujo de caja de la empresa adquirida, con un nivel de apalancamiento muy superior al de un crédito corporativo ordinario. La forma canónica es la compra apalancada (<em>leveraged buyout</em>, LBO): un fondo de capital privado adquiere una empresa aportando capital por una fracción del precio y financiando el resto con deuda que queda en la propia empresa adquirida.</p>
+<p>La estructura típica combina varios tramos: deuda senior garantizada con distintas amortizaciones (<em>term loan A</em> amortizable, <em>term loan B</em> con amortización mínima y pago final), una línea revolvente para capital de trabajo, y tramos subordinados o entresuelo (<em>mezzanine</em>). La prelación entre tramos se documenta en un acuerdo entre acreedores (<em>intercreditor agreement</em>) que en la práctica determina la LGD de cada uno.</p>
+<h3 id="102-rasgos-de-riesgo">10.2 Rasgos de riesgo<a class="hlink" href="#102-rasgos-de-riesgo" aria-label="enlace">#</a></h3>
+<ul>
+<li><strong>Apalancamiento alto.</strong> En la práctica de mercado se habla de operaciones apalancadas cuando la deuda total supera múltiplos de EBITDA que ningún banco define igual —los umbrales concretos son convenciones internas de cada entidad y de cada supervisor, y <strong>no hay una cifra normativa verificada en los dosieres de esta guía</strong>, por lo que no debe citarse ninguna como norma.</li>
+<li><strong>Covenant-lite.</strong> Estructuras sin covenants financieros de mantenimiento (probados cada trimestre) y solo con covenants de incurrencia (probados cuando la empresa hace algo: endeudarse más, repartir dividendos). El efecto sobre el riesgo no es que la empresa sea peor, sino que <strong>el banco se entera más tarde</strong>: desaparece el disparador temprano que permitía renegociar antes del deterioro grave. Empíricamente eso tiende a retrasar el reconocimiento del incumplimiento y a empeorar la LGD, porque cuando el problema aflora ya se consumió más caja.</li>
+<li><strong>Amortización mínima y refinanciación.</strong> El repago descansa en la refinanciación al vencimiento, es decir, en que el mercado esté abierto. Añade riesgo de refinanciación, que la PRA ha señalado explícitamente como área de atención en carteras corporativas de menor calidad crediticia, donde observó progreso limitado en los marcos centralizados de riesgo de refinanciación [Dear CFO 2024][R29].</li>
+<li><strong>Correlación con el ciclo de crédito.</strong> Es la cartera que peor se comporta en recesión y la que más se beneficia de la expansión, lo que la convierte en candidata natural a ajustes por recesión en la LGD.</li>
+</ul>
+<div class="box box-dato">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Dato verificado</span></div>
+<div class="box-b">
+<p>Según el <em>Financial Stability Report</em> de la Reserva Federal de noviembre de 2025, el saldo de préstamos apalancados (<em>leveraged loans</em>) en Estados Unidos ascendía a <strong>1,441 billones de dólares</strong> (<em>trillion</em>), con un crecimiento interanual del 6,4 %, frente a 1,875 billones de préstamos bancarios a corporativos (−7,8 %) y 8,654 billones en bonos y papel comercial (+2,7 %). Cualitativamente, la tasa de incumplimiento de préstamos apalancados ponderada por volumen se mantenía «bien por debajo de su mediana histórica» a mediados de 2025, aunque incluyendo canjes en dificultades (<em>distressed exchanges</em>) seguía «elevada respecto a su historia». Fuente: Federal Reserve, <em>Financial Stability Report</em>, noviembre 2025.</p>
+</div>
+</div>
+<div class="box box-economico">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Sentido económico</span></div>
+<div class="box-b">
+<p>El crédito apalancado es el producto donde la calificación de facilidad y la calificación de deudor más se separan. Dos tramos del mismo LBO tienen <strong>la misma PD</strong> —incumple la empresa, no el tramo— y LGD radicalmente distintas. Si el sistema de calificación no tiene una dimensión de facilidad bien construida, el banco no puede fijar precio ni capital correctamente en este producto, y acabará sistemáticamente sobrepreciando el tramo senior y subpreciando el subordinado.</p>
+</div>
+</div>
+<h2 id="11-derivados-y-riesgo-de-credito-de-contraparte-counterparty-credit-ri">11. Derivados y riesgo de crédito de contraparte (<em>counterparty credit risk</em>, CCR)<a class="hlink" href="#11-derivados-y-riesgo-de-credito-de-contraparte-counterparty-credit-ri" aria-label="enlace">#</a></h2>
+<h3 id="111-por-que-la-exposicion-es-estocastica-y-bidireccional">11.1 Por qué la exposición es estocástica y bidireccional<a class="hlink" href="#111-por-que-la-exposicion-es-estocastica-y-bidireccional" aria-label="enlace">#</a></h3>
+<p>En un crédito, la exposición está acotada por el importe concedido y la conoce el banco. En un derivado, la exposición es el <strong>valor de reposición</strong> del contrato, que depende de variables de mercado futuras: puede ser cero, positiva o negativa, y cambia cada día.</p>
+<ul>
+<li><strong>Estocástica</strong>: hoy no se sabe cuánto valdrá el contrato dentro de dos años; solo se puede describir su distribución.</li>
+<li><strong>Bidireccional</strong>: si el valor de mercado es negativo para el banco, quien tiene riesgo de crédito es la contraparte, no el banco. La exposición crediticia del banco es <svg class="math-inline" style="width:5.1250em;height:1.0000em;vertical-align:-0.1875em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 82 16" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 13) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-6d" transform="translate(0 0.125)"/><use xlink:href="#DejaVuSans-61" transform="translate(97.412109 0.125)"/><use xlink:href="#DejaVuSans-78" transform="translate(158.691406 0.125)"/><use xlink:href="#DejaVuSans-28" transform="translate(217.871094 0.125)"/><use xlink:href="#DejaVuSans-Oblique-56" transform="translate(256.884766 0.125)"/><use xlink:href="#DejaVuSans-Oblique-74" transform="translate(325.292969 -16.28125) scale(0.7)"/><use xlink:href="#DejaVuSans-2c" transform="translate(355.473633 0.125)"/><use xlink:href="#DejaVuSans-30" transform="translate(406.743164 0.125)"/><use xlink:href="#DejaVuSans-29" transform="translate(470.366211 0.125)"/></g></g></g></svg>.</li>
+</ul>
+<p><figure class="fig" id="fig-cap02_perfil_ccr"><div class="fig-svg"><svg preserveAspectRatio="xMidYMid meet" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 473.231172 294.806547" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 294.806547 
+L 473.231172 294.806547 
+L 473.231172 0 
+L 0 0 
+L 0 294.806547 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 54.551172 260.174203 
+L 467.471172 260.174203 
+L 467.471172 43.958203 
+L 54.551172 43.958203 
+L 54.551172 260.174203 
+z
+" style="fill: none"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="73.320263" y="273.392719" transform="rotate(-0 73.320263 273.392719)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="148.396626" y="273.392719" transform="rotate(-0 148.396626 273.392719)">1</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="223.47299" y="273.392719" transform="rotate(-0 223.47299 273.392719)">2</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="298.549354" y="273.392719" transform="rotate(-0 298.549354 273.392719)">3</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="373.625717" y="273.392719" transform="rotate(-0 373.625717 273.392719)">4</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6"/>
+     <g id="text_6">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="448.702081" y="273.392719" transform="rotate(-0 448.702081 273.392719)">5</text>
+     </g>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 10px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="261.011172" y="286.966859" transform="rotate(-0 261.011172 286.966859)">Años desde la contratación</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_7">
+      <path d="M 54.551172 249.167428 
+L 467.471172 249.167428 
+" clip-path="url(#pbc54a2c982)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_8">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="48.551172" y="252.776686" transform="rotate(-0 48.551172 252.776686)">−10.0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_9">
+      <path d="M 54.551172 224.892122 
+L 467.471172 224.892122 
+" clip-path="url(#pbc54a2c982)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_9">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="48.551172" y="228.50138" transform="rotate(-0 48.551172 228.50138)">−7.5</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_11">
+      <path d="M 54.551172 200.616816 
+L 467.471172 200.616816 
+" clip-path="url(#pbc54a2c982)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_12"/>
+     <g id="text_10">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="48.551172" y="204.226074" transform="rotate(-0 48.551172 204.226074)">−5.0</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_13">
+      <path d="M 54.551172 176.341509 
+L 467.471172 176.341509 
+" clip-path="url(#pbc54a2c982)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_14"/>
+     <g id="text_11">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="48.551172" y="179.950767" transform="rotate(-0 48.551172 179.950767)">−2.5</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_15">
+      <path d="M 54.551172 152.066203 
+L 467.471172 152.066203 
+" clip-path="url(#pbc54a2c982)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_16"/>
+     <g id="text_12">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="48.551172" y="155.675461" transform="rotate(-0 48.551172 155.675461)">0.0</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_17">
+      <path d="M 54.551172 127.790897 
+L 467.471172 127.790897 
+" clip-path="url(#pbc54a2c982)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_18"/>
+     <g id="text_13">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="48.551172" y="131.400155" transform="rotate(-0 48.551172 131.400155)">2.5</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_19">
+      <path d="M 54.551172 103.51559 
+L 467.471172 103.51559 
+" clip-path="url(#pbc54a2c982)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_20"/>
+     <g id="text_14">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="48.551172" y="107.124848" transform="rotate(-0 48.551172 107.124848)">5.0</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_21">
+      <path d="M 54.551172 79.240284 
+L 467.471172 79.240284 
+" clip-path="url(#pbc54a2c982)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_22"/>
+     <g id="text_15">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="48.551172" y="82.849542" transform="rotate(-0 48.551172 82.849542)">7.5</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_23">
+      <path d="M 54.551172 54.964978 
+L 467.471172 54.964978 
+" clip-path="url(#pbc54a2c982)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_24"/>
+     <g id="text_16">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="48.551172" y="58.574236" transform="rotate(-0 48.551172 58.574236)">10.0</text>
+     </g>
+    </g>
+    <g id="text_17">
+     <text style="font-size: 10px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="13.358438" y="152.066203" transform="rotate(-90 13.358438 152.066203)">Valor de mercado, % del nocional</text>
+    </g>
+   </g>
+   <g id="line2d_25">
+    <path d="M 73.320263 152.062592 
+L 76.448445 128.951297 
+L 79.576626 119.651491 
+L 82.704808 112.702889 
+L 85.83299 107.001849 
+L 88.961172 102.117064 
+L 92.089354 97.825459 
+L 95.217536 93.993422 
+L 98.345717 90.53319 
+L 101.473899 87.383316 
+L 104.602081 84.498703 
+L 107.730263 81.845042 
+L 110.858445 79.39547 
+L 113.986626 77.128458 
+L 117.114808 75.026421 
+L 120.24299 73.074752 
+L 123.371172 71.261155 
+L 126.499354 69.57515 
+L 129.627536 68.007712 
+L 132.755717 66.550998 
+L 135.883899 65.198135 
+L 139.012081 63.943054 
+L 142.140263 62.780365 
+L 145.268445 61.705247 
+L 148.396626 60.71337 
+L 151.524808 59.800823 
+L 154.65299 58.964057 
+L 157.781172 58.199839 
+L 160.909354 57.505214 
+L 164.037536 56.877468 
+L 167.165717 56.314104 
+L 170.293899 55.812817 
+L 173.422081 55.371468 
+L 176.550263 54.988076 
+L 179.678445 54.660794 
+L 182.806626 54.387899 
+L 185.934808 54.167779 
+L 189.06299 53.998925 
+L 192.191172 53.879921 
+L 195.319354 53.809432 
+L 198.447536 53.786203 
+L 201.575717 53.809048 
+L 204.703899 53.876847 
+L 207.832081 53.988538 
+L 210.960263 54.143116 
+L 214.088445 54.339627 
+L 217.216626 54.577162 
+L 220.344808 54.854858 
+L 223.47299 55.171892 
+L 226.601172 55.527479 
+L 229.729354 55.92087 
+L 232.857536 56.351349 
+L 235.985717 56.818228 
+L 239.113899 57.320854 
+L 242.242081 57.858594 
+L 245.370263 58.430847 
+L 248.498445 59.037032 
+L 251.626626 59.676591 
+L 254.754808 60.34899 
+L 257.88299 61.053711 
+L 261.011172 61.790259 
+L 264.139354 62.558153 
+L 267.267536 63.356934 
+L 270.395717 64.186153 
+L 273.523899 65.045382 
+L 276.652081 65.934203 
+L 279.780263 66.852215 
+L 282.908445 67.799028 
+L 286.036626 68.774266 
+L 289.164808 69.777563 
+L 292.29299 70.808566 
+L 295.421172 71.866932 
+L 298.549354 72.952329 
+L 301.677536 74.064434 
+L 304.805717 75.202933 
+L 307.933899 76.367522 
+L 311.062081 77.557906 
+L 314.190263 78.773796 
+L 317.318445 80.014914 
+L 320.446626 81.280986 
+L 323.574808 82.571749 
+L 326.70299 83.886943 
+L 329.831172 85.226319 
+L 332.959354 86.589631 
+L 336.087536 87.97664 
+L 339.215717 89.387115 
+L 342.343899 90.820827 
+L 345.472081 92.277555 
+L 348.600263 93.757084 
+L 351.728445 95.259202 
+L 354.856626 96.783703 
+L 357.984808 98.330386 
+L 361.11299 99.899053 
+L 364.241172 101.489513 
+L 367.369354 103.101577 
+L 370.497536 104.735062 
+L 373.625717 106.389787 
+L 376.753899 108.065576 
+L 379.882081 109.762257 
+L 383.010263 111.479661 
+L 386.138445 113.217622 
+L 389.266626 114.975979 
+L 392.394808 116.754574 
+L 395.52299 118.55325 
+L 398.651172 120.371855 
+L 401.779354 122.210241 
+L 404.907536 124.06826 
+L 408.035717 125.945768 
+L 411.163899 127.842625 
+L 414.292081 129.758693 
+L 417.420263 131.693835 
+L 420.548445 133.647919 
+L 423.676626 135.620814 
+L 426.804808 137.61239 
+L 429.93299 139.622523 
+L 433.061172 141.651088 
+L 436.189354 143.697963 
+L 439.317536 145.763028 
+L 442.445717 147.846167 
+L 445.573899 149.947263 
+L 448.702081 152.066203 
+" clip-path="url(#pbc54a2c982)" style="fill: none; stroke: var(--s2, #eb6834); stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_26">
+    <path d="M 73.320263 152.065468 
+L 76.448445 147.361349 
+L 79.576626 145.468448 
+L 82.704808 144.054116 
+L 85.83299 142.893715 
+L 88.961172 141.899456 
+L 92.089354 141.025935 
+L 95.217536 140.245954 
+L 98.345717 139.541652 
+L 101.473899 138.90052 
+L 104.602081 138.31338 
+L 107.730263 137.773249 
+L 110.858445 137.274658 
+L 113.986626 136.813226 
+L 117.114808 136.385373 
+L 120.24299 135.988127 
+L 123.371172 135.618984 
+L 126.499354 135.275811 
+L 129.627536 134.956771 
+L 132.755717 134.660269 
+L 135.883899 134.384905 
+L 139.012081 134.129443 
+L 142.140263 133.892787 
+L 145.268445 133.673955 
+L 148.396626 133.472067 
+L 151.524808 133.286325 
+L 154.65299 133.116008 
+L 157.781172 132.960458 
+L 160.909354 132.819072 
+L 164.037536 132.6913 
+L 167.165717 132.576631 
+L 170.293899 132.474598 
+L 173.422081 132.384765 
+L 176.550263 132.306729 
+L 179.678445 132.240113 
+L 182.806626 132.184568 
+L 185.934808 132.139764 
+L 189.06299 132.105395 
+L 192.191172 132.081173 
+L 195.319354 132.066825 
+L 198.447536 132.062097 
+L 201.575717 132.066747 
+L 204.703899 132.080547 
+L 207.832081 132.103281 
+L 210.960263 132.134744 
+L 214.088445 132.174742 
+L 217.216626 132.223091 
+L 220.344808 132.279613 
+L 223.47299 132.344143 
+L 226.601172 132.41652 
+L 229.729354 132.496592 
+L 232.857536 132.584212 
+L 235.985717 132.679242 
+L 239.113899 132.781547 
+L 242.242081 132.891 
+L 245.370263 133.007477 
+L 248.498445 133.130861 
+L 251.626626 133.261039 
+L 254.754808 133.3979 
+L 257.88299 133.54134 
+L 261.011172 133.691259 
+L 264.139354 133.847557 
+L 267.267536 134.010143 
+L 270.395717 134.178924 
+L 273.523899 134.353813 
+L 276.652081 134.534725 
+L 279.780263 134.721579 
+L 282.908445 134.914295 
+L 286.036626 135.112797 
+L 289.164808 135.31701 
+L 292.29299 135.526863 
+L 295.421172 135.742285 
+L 298.549354 135.963209 
+L 301.677536 136.189569 
+L 304.805717 136.421301 
+L 307.933899 136.658344 
+L 311.062081 136.900637 
+L 314.190263 137.148122 
+L 317.318445 137.400741 
+L 320.446626 137.65844 
+L 323.574808 137.921164 
+L 326.70299 138.188862 
+L 329.831172 138.461481 
+L 332.959354 138.738972 
+L 336.087536 139.021287 
+L 339.215717 139.308377 
+L 342.343899 139.600198 
+L 345.472081 139.896703 
+L 348.600263 140.19785 
+L 351.728445 140.503594 
+L 354.856626 140.813894 
+L 357.984808 141.128708 
+L 361.11299 141.447998 
+L 364.241172 141.771724 
+L 367.369354 142.099846 
+L 370.497536 142.432329 
+L 373.625717 142.769135 
+L 376.753899 143.110228 
+L 379.882081 143.455574 
+L 383.010263 143.805138 
+L 386.138445 144.158886 
+L 389.266626 144.516786 
+L 392.394808 144.878804 
+L 395.52299 145.24491 
+L 398.651172 145.615073 
+L 401.779354 145.989261 
+L 404.907536 146.367446 
+L 408.035717 146.749598 
+L 411.163899 147.135688 
+L 414.292081 147.525688 
+L 417.420263 147.919571 
+L 420.548445 148.317309 
+L 423.676626 148.718876 
+L 426.804808 149.124245 
+L 429.93299 149.533392 
+L 433.061172 149.94629 
+L 436.189354 150.362915 
+L 439.317536 150.783242 
+L 442.445717 151.207249 
+L 445.573899 151.63491 
+L 448.702081 152.066203 
+" clip-path="url(#pbc54a2c982)" style="fill: none; stroke: var(--s1, #2a78d6); stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_27">
+    <path d="M 73.320263 152.069814 
+L 76.448445 175.181109 
+L 79.576626 184.480915 
+L 82.704808 191.429517 
+L 85.83299 197.130557 
+L 88.961172 202.015342 
+L 92.089354 206.306948 
+L 95.217536 210.138985 
+L 98.345717 213.599216 
+L 101.473899 216.749091 
+L 104.602081 219.633703 
+L 107.730263 222.287364 
+L 110.858445 224.736937 
+L 113.986626 227.003948 
+L 117.114808 229.105986 
+L 120.24299 231.057655 
+L 123.371172 232.871252 
+L 126.499354 234.557257 
+L 129.627536 236.124694 
+L 132.755717 237.581408 
+L 135.883899 238.934271 
+L 139.012081 240.189352 
+L 142.140263 241.352042 
+L 145.268445 242.427159 
+L 148.396626 243.419036 
+L 151.524808 244.331583 
+L 154.65299 245.168349 
+L 157.781172 245.932567 
+L 160.909354 246.627193 
+L 164.037536 247.254938 
+L 167.165717 247.818302 
+L 170.293899 248.31959 
+L 173.422081 248.760938 
+L 176.550263 249.14433 
+L 179.678445 249.471612 
+L 182.806626 249.744508 
+L 185.934808 249.964627 
+L 189.06299 250.133481 
+L 192.191172 250.252485 
+L 195.319354 250.322974 
+L 198.447536 250.346203 
+L 201.575717 250.323358 
+L 204.703899 250.255559 
+L 207.832081 250.143868 
+L 210.960263 249.98929 
+L 214.088445 249.79278 
+L 217.216626 249.555245 
+L 220.344808 249.277549 
+L 223.47299 248.960514 
+L 226.601172 248.604927 
+L 229.729354 248.211536 
+L 232.857536 247.781058 
+L 235.985717 247.314178 
+L 239.113899 246.811553 
+L 242.242081 246.273812 
+L 245.370263 245.701559 
+L 248.498445 245.095374 
+L 251.626626 244.455815 
+L 254.754808 243.783417 
+L 257.88299 243.078695 
+L 261.011172 242.342148 
+L 264.139354 241.574253 
+L 267.267536 240.775473 
+L 270.395717 239.946253 
+L 273.523899 239.087025 
+L 276.652081 238.198203 
+L 279.780263 237.280192 
+L 282.908445 236.333378 
+L 286.036626 235.358141 
+L 289.164808 234.354843 
+L 292.29299 233.32384 
+L 295.421172 232.265474 
+L 298.549354 231.180077 
+L 301.677536 230.067972 
+L 304.805717 228.929473 
+L 307.933899 227.764884 
+L 311.062081 226.5745 
+L 314.190263 225.35861 
+L 317.318445 224.117492 
+L 320.446626 222.85142 
+L 323.574808 221.560658 
+L 326.70299 220.245463 
+L 329.831172 218.906087 
+L 332.959354 217.542775 
+L 336.087536 216.155766 
+L 339.215717 214.745292 
+L 342.343899 213.311579 
+L 345.472081 211.854851 
+L 348.600263 210.375322 
+L 351.728445 208.873204 
+L 354.856626 207.348703 
+L 357.984808 205.80202 
+L 361.11299 204.233353 
+L 364.241172 202.642893 
+L 367.369354 201.030829 
+L 370.497536 199.397344 
+L 373.625717 197.74262 
+L 376.753899 196.06683 
+L 379.882081 194.37015 
+L 383.010263 192.652746 
+L 386.138445 190.914784 
+L 389.266626 189.156427 
+L 392.394808 187.377832 
+L 395.52299 185.579156 
+L 398.651172 183.760551 
+L 401.779354 181.922165 
+L 404.907536 180.064147 
+L 408.035717 178.186638 
+L 411.163899 176.289781 
+L 414.292081 174.373713 
+L 417.420263 172.438571 
+L 420.548445 170.484487 
+L 423.676626 168.511593 
+L 426.804808 166.520016 
+L 429.93299 164.509883 
+L 433.061172 162.481319 
+L 436.189354 160.434444 
+L 439.317536 158.369378 
+L 442.445717 156.286239 
+L 445.573899 154.185143 
+L 448.702081 152.066203 
+" clip-path="url(#pbc54a2c982)" style="fill: none; stroke: var(--s3, #1baf7a); stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_28">
+    <path d="M 54.551172 152.066203 
+L 467.471172 152.066203 
+" clip-path="url(#pbc54a2c982)" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 54.551172 260.174203 
+L 54.551172 43.958203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 54.551172 260.174203 
+L 467.471172 260.174203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink2, #52514e)" transform="translate(229.47299 117.249062)">El banco tiene riesgo</text>
+    <text style="font-size: 9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink2, #52514e)" transform="translate(229.47299 127.327093)">solo por encima de cero</text>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 600; font-size: 11.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="54.551172" y="14.958203" transform="rotate(-0 54.551172 14.958203)">Exposición de una permuta de tipos a 5 años</text>
+   </g>
+   <g id="legend_1">
+    <g id="line2d_29">
+     <path d="M 58.351172 33.77642 
+L 65.476172 33.77642 
+L 72.601172 33.77642 
+" style="fill: none; stroke: var(--s2, #eb6834); stroke-width: 2; stroke-linecap: round"/>
+    </g>
+    <g id="text_20">
+     <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="78.301172" y="37.10142" transform="rotate(-0 78.301172 37.10142)">Percentil 97,5 % (PFE)</text>
+    </g>
+    <g id="line2d_30">
+     <path d="M 197.408906 33.77642 
+L 204.533906 33.77642 
+L 211.658906 33.77642 
+" style="fill: none; stroke: var(--s1, #2a78d6); stroke-width: 2; stroke-linecap: round"/>
+    </g>
+    <g id="text_21">
+     <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="217.358906" y="37.10142" transform="rotate(-0 217.358906 37.10142)">Exposición esperada</text>
+    </g>
+    <g id="line2d_31">
+     <path d="M 329.632578 33.77642 
+L 336.757578 33.77642 
+L 343.882578 33.77642 
+" style="fill: none; stroke: var(--s3, #1baf7a); stroke-width: 2; stroke-linecap: round"/>
+    </g>
+    <g id="text_22">
+     <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="349.582578" y="37.10142" transform="rotate(-0 349.582578 37.10142)">Percentil 2,5 %</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pbc54a2c982">
+   <rect x="54.551172" y="43.958203" width="412.92" height="216.216"/>
+  </clipPath>
+ </defs>
+</svg></div><figcaption>Perfil de la distribución del valor de mercado de una permuta de tipos de interés a cinco años: exposición esperada y percentiles 2,5 % y 97,5 %. El banco solo tiene riesgo de crédito en la parte positiva. Ejemplo ilustrativo con parámetros sintéticos; el perfil combina el efecto de difusión (la incertidumbre crece con el tiempo) y el de amortización (quedan menos flujos por descontar).</figcaption></figure></p>
+<p>La forma de joroba de la figura es característica y explica por qué el vencimiento importa de otro modo que en el crédito: la exposición máxima esperada no está ni al principio ni al final, sino en el tercio inicial de la vida del contrato.</p>
+<h3 id="112-como-se-mide-y-por-que-aqui-solo-se-enuncia">11.2 Cómo se mide, y por qué aquí solo se enuncia<a class="hlink" href="#112-como-se-mide-y-por-que-aqui-solo-se-enuncia" aria-label="enlace">#</a></h3>
+<p>Para el capital regulatorio, la exposición de derivados se calcula con el <strong>enfoque estandarizado para el riesgo de crédito de contraparte</strong> (<em>standardised approach for counterparty credit risk</em>, SA-CCR) o, con permiso, con el método de modelos internos. El valor así obtenido es el que después entra como EAD en la fórmula IRB, junto con la PD y la LGD del deudor. Hay además un requerimiento <strong>adicional</strong> por el ajuste de valuación por crédito (<em>credit valuation adjustment</em>, CVA), que captura la pérdida de valor de mercado del propio derivado cuando se deteriora la calidad crediticia de la contraparte, y que se calcula con un marco propio.</p>
+<div class="box box-regulatorio">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">CRR art. 465(4) · disposición transitoria</span></div>
+<div class="box-b">
+<p>El texto consolidado del CRR contiene una medida transitoria que fija el <strong>factor alfa igual a 1 para las exposiciones de derivados hasta el 31 de diciembre de 2029</strong> [L4]. Es un ejemplo de por qué el tratamiento de capital de los derivados no puede tratarse como una nota al pie del modelo de crédito: tiene su propio articulado, su propio calendario y su propio impacto en RWA.</p>
+</div>
+</div>
+<p>El vencimiento también se trata de forma específica: para derivados sujetos a un acuerdo marco de compensación, el suelo de <svg class="math-inline" style="width:0.8750em;height:0.7500em;vertical-align:-0.0000em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 12" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-4d" transform="translate(0 0.09375)"/></g></g></g></svg> es de un año; para derivados colateralizados y préstamo con margen, diez días; para operaciones con reposición diaria de margen y derecho de liquidación inmediata puede bajarse hasta un día [CRR art. 162(2)-(3)][L4].</p>
+<div class="box box-llano">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">En palabras llanas</span></div>
+<div class="box-b">
+<p>En un préstamo, el banco sabe cuánto le deben. En un derivado, el banco sabe cuánto le deben <strong>hoy</strong> y solo tiene una distribución de probabilidad de cuánto le deberán mañana; y la mitad de esa distribución es dinero que el banco debe, no que le deben. Por eso el riesgo de contraparte no se mide con un CCF ni con un límite dispuesto: se simula.</p>
+</div>
+</div>
+<p>El desarrollo del CCR excede el alcance de esta guía, centrada en el crédito. Lo que hay que retener para no equivocarse: <strong>la PD del deudor es la misma</strong> —el modelo de PD corporativo se usa igual para el crédito y para el derivado—, pero el EAD se calcula con otro marco y el capital incluye un componente adicional que el modelo de crédito no ve.</p>
+<h2 id="12-lineas-de-liquidez-a-vehiculos-y-apoyos-a-bursatilizaciones">12. Líneas de liquidez a vehículos y apoyos a bursatilizaciones<a class="hlink" href="#12-lineas-de-liquidez-a-vehiculos-y-apoyos-a-bursatilizaciones" aria-label="enlace">#</a></h2>
+<p>Un banco que patrocina un programa de pagarés respaldados por activos (<em>asset-backed commercial paper</em>, ABCP) o que participa en una bursatilización suele otorgar apoyos: <strong>líneas de liquidez</strong> que permiten al vehículo repagar los pagarés si no consigue renovarlos, <strong>cartas de crédito</strong> que cubren pérdidas hasta un importe, o mejoras crediticias explícitas.</p>
+<p>Tres advertencias, sin entrar al detalle del marco de titulización:</p>
+<ol>
+<li><strong>La línea de liquidez «pura» no existe en la práctica.</strong> Está pensada para cubrir un desajuste temporal de caja, pero si los activos del vehículo se deterioran, la línea se dispone y no se repaga: se convierte en exposición crediticia. La correlación entre disposición y deterioro es máxima.</li>
+<li><strong>El marco aplicable no es el IRB corporativo.</strong> Las posiciones de titulización son una clase de exposición separada [CRR art. 147(2)][L4] con su propio marco de cálculo. Aplicarles la fórmula corporativa es un error de clasificación, no de calibración.</li>
+<li><strong>El riesgo reputacional de apoyo implícito.</strong> Si el banco apoya un vehículo más allá de su obligación contractual, la exposición efectiva excede la registrada. Es un riesgo que no se modela pero que debe estar en el ICAAP.</li>
+</ol>
+<h2 id="13-tabla-maestra-producto-exposicion-colateral-y-datos">13. Tabla maestra: producto, exposición, colateral y datos<a class="hlink" href="#13-tabla-maestra-producto-exposicion-colateral-y-datos" aria-label="enlace">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Producto</th>
+<th>¿EAD contingente?</th>
+<th>¿Requiere CCF?</th>
+<th>Colateral / mitigante típico</th>
+<th>Dato crítico que hay que capturar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Crédito simple amortizable</td>
+<td>Solo en periodo de disponibilidad</td>
+<td>Sí, durante la disponibilidad</td>
+<td>Hipoteca, prenda, fideicomiso de garantía</td>
+<td>Calendario contractual completo de principal e intereses</td>
+</tr>
+<tr>
+<td>Crédito simple <em>bullet</em></td>
+<td>Igual</td>
+<td>Igual</td>
+<td>Igual</td>
+<td>Fecha única de vencimiento; opciones de prórroga</td>
+</tr>
+<tr>
+<td>Línea revolvente comprometida</td>
+<td>Sí</td>
+<td><strong>Sí, es el caso central</strong></td>
+<td>Negative pledge, garantías del grupo</td>
+<td>Límite autorizado con historia, dispuesto diario, tipo de compromiso</td>
+</tr>
+<tr>
+<td>Línea revolvente cancelable (UCC)</td>
+<td>Sí</td>
+<td>Sí, con CCF distinto (0 % supervisor si hay seguimiento activo) [R33]</td>
+<td>Escaso</td>
+<td>Evidencia documentada del seguimiento activo del deudor</td>
+</tr>
+<tr>
+<td>Sobregiro en cuenta</td>
+<td>Sí</td>
+<td>Sí</td>
+<td>Compensación de saldos</td>
+<td>Límite autorizado (o cero si no autorizado) y saldo diario [M5]</td>
+</tr>
+<tr>
+<td>Línea estacional</td>
+<td>Sí</td>
+<td>Sí, con cuidado en las fechas de referencia</td>
+<td>Inventario, cuentas por cobrar</td>
+<td>Perfil mensual de utilización</td>
+</tr>
+<tr>
+<td>Carta de crédito documentaria (emisor)</td>
+<td>Sí</td>
+<td>Sí (20 % supervisor si es a corto plazo y ligada a mercancías) [R33]</td>
+<td>Mercancía, documentos, margen en efectivo</td>
+<td>Importe, vigencia, si está confirmada, si hay margen</td>
+</tr>
+<tr>
+<td>Carta de crédito confirmada (confirmador)</td>
+<td>Sí</td>
+<td>Sí</td>
+<td>Riesgo del banco emisor</td>
+<td>Identidad y país del banco emisor</td>
+</tr>
+<tr>
+<td>Cobranza documentaria</td>
+<td><strong>No</strong></td>
+<td>No</td>
+<td>—</td>
+<td>Marca explícita para no confundirla con crédito documentario</td>
+</tr>
+<tr>
+<td>Aceptación bancaria</td>
+<td>No: exposición cierta</td>
+<td>No</td>
+<td>Documentos comerciales</td>
+<td>Fecha de aceptación y de vencimiento</td>
+</tr>
+<tr>
+<td>Carta de crédito contingente (SBLC)</td>
+<td>Sí</td>
+<td>Sí</td>
+<td>Contragarantías, margen</td>
+<td>Objeto garantizado y condiciones de reclamación</td>
+</tr>
+<tr>
+<td>Fianza de cumplimiento / licitación / anticipo</td>
+<td>Sí</td>
+<td>Sí</td>
+<td>Contragarantía del cliente y de los socios</td>
+<td>Porcentaje del contrato garantizado; plazo de la obra</td>
+</tr>
+<tr>
+<td>Factoraje con recurso</td>
+<td>No (es financiación)</td>
+<td>Solo si hay línea revolvente</td>
+<td>Facturas cedidas</td>
+<td>Cedente como deudor del riesgo; importe facturado vs cobrado</td>
+</tr>
+<tr>
+<td>Factoraje sin recurso</td>
+<td>No</td>
+<td>Solo si hay línea</td>
+<td>Facturas cedidas</td>
+<td><strong>Deudor cedido</strong> como deudor del riesgo; motivo de cada ajuste (dilución)</td>
+</tr>
+<tr>
+<td>Factoraje inverso / confirmación</td>
+<td>Sí, a nivel de programa</td>
+<td>Sí</td>
+<td>Riesgo del comprador</td>
+<td>Límite del programa, dispuesto agregado, plazo de las facturas</td>
+</tr>
+<tr>
+<td>Arrendamiento financiero</td>
+<td>No</td>
+<td>No</td>
+<td>El propio activo</td>
+<td>Pagos mínimos, valor residual <strong>separado</strong> [R33][M5]</td>
+</tr>
+<tr>
+<td>Arrendamiento operativo</td>
+<td>No</td>
+<td>No</td>
+<td>El propio activo</td>
+<td>Valor residual, mercado secundario del activo</td>
+</tr>
+<tr>
+<td>Crédito sindicado</td>
+<td>Según tramos</td>
+<td>Según tramos</td>
+<td>Paquete compartido con rango</td>
+<td>Importe total, participación propia, condición de agente, transferibilidad</td>
+</tr>
+<tr>
+<td>Crédito apalancado / adquisiciones</td>
+<td>Sí en el revolvente</td>
+<td>Sí en el revolvente</td>
+<td>Prenda de acciones, garantía sobre activos, acuerdo entre acreedores</td>
+<td>Tramo y prelación; presencia de covenants de mantenimiento</td>
+</tr>
+<tr>
+<td>Derivados</td>
+<td>Sí, pero no vía CCF</td>
+<td><strong>No</strong>: se mide con SA-CCR o modelo interno</td>
+<td>Acuerdo marco de compensación, colateral con márgenes</td>
+<td>Acuerdo de compensación, acuerdo de colateral, umbrales de márgenes</td>
+</tr>
+<tr>
+<td>Línea de liquidez a vehículo</td>
+<td>Sí</td>
+<td>Sí (marco de titulización)</td>
+<td>Activos del vehículo</td>
+<td>Clase de exposición correcta: no es corporativo</td>
+</tr>
+</tbody>
+</table>
+<div class="box box-checklist">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Checklist de datos por facilidad</span></div>
+<div class="box-b">
+<p>Campos mínimos que deben existir, con historia y marca temporal, para que se puedan estimar LGD y EAD:
+1. Identificador único de facilidad, estable en el tiempo y trazable a través de renovaciones y reestructuraciones.
+2. Tipo de producto según un catálogo cerrado, no un texto libre.
+3. Carácter del compromiso: comprometido, no comprometido, cancelable incondicionalmente; y evidencia del seguimiento activo si se aplica el 0 %.
+4. Límite autorizado y su serie histórica, con fecha y motivo de cada cambio.
+5. Saldo dispuesto con la mayor frecuencia disponible (diaria en revolventes y sobregiros, por exigencia del art. 182 CRR [R17]).
+6. Calendario contractual de amortización y fecha de vencimiento, con las prórrogas ejercidas.
+7. Prelación y rango, incluida la existencia de acuerdos entre acreedores.
+8. Garantías vinculadas a la facilidad, con tipo, valor, fecha de valoración y rango.
+9. Garantes, con identificador propio y calificación propia.
+10. Divisa de la exposición y de la garantía, para detectar descalces [CRE36.84][B5].
+11. Para operaciones sindicadas: importe total, participación y condición de agente.
+12. Para factoraje: importe facturado, importe cobrado y motivo de la diferencia.</p>
+</div>
+</div>
+<h2 id="14-que-mira-el-regulador-y-errores-frecuentes">14. Qué mira el regulador y errores frecuentes<a class="hlink" href="#14-que-mira-el-regulador-y-errores-frecuentes" aria-label="enlace">#</a></h2>
+<ul>
+<li><strong>Consistencia entre el denominador de la LGD y el de la EAD.</strong> El Banco Central Europeo lo dice expresamente: la exposición usada para estimar el CCF debe ser consistente con el denominador usado en la estimación de LGD [EC1 §31, §97]. Si la LGD realizada se calcula sobre el saldo al incumplimiento y el CCF se estima con otro concepto de exposición, la pérdida esperada del sistema no cuadra consigo misma.</li>
+<li><strong>Catálogo de productos no homogéneo entre países.</strong> En bancos globales, la misma realidad económica se registra con códigos distintos en cada plataforma. Es la causa más común de que un modelo de CCF no sea replicable por el equipo de validación.</li>
+<li><strong>Exposiciones contingentes ausentes del motor.</strong> Ya descrito en la sección 5.</li>
+<li><strong>Facilidades sin fecha de origen y sin trazabilidad tras la reestructuración</strong>, lo que impide construir cohortes y, por tanto, medir CCF y LGD.</li>
+<li><strong>Confusión entre límite del cliente y límite de la facilidad.</strong> Muchos bancos gestionan un límite global de cliente del que cuelgan facilidades. Si el modelo de CCF usa el límite global como denominador, sobreestima el no dispuesto disponible.</li>
+</ul>
+<div class="box box-practica">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">En la práctica del banco</span></div>
+<div class="box-b">
+<p>La captura correcta de estos datos no depende del área de modelos: depende de operaciones, de la mesa de comercio exterior, del área de admisión y del sistema de garantías, que responden a jefes distintos con incentivos distintos. La palanca que funciona es convertir cada campo crítico en un <strong>indicador de calidad de datos con dueño nombrado</strong>, reportado al mismo comité donde se reportan los resultados del modelo. La PRA exige objetivos y estándares cuantificados y documentados para probar la exactitud de los datos, con conciliación de reportes y programas de auditoría cuantitativa [SS4/24 §6.2-6.3][R15]: eso solo se sostiene con propiedad del dato asignada.</p>
+</div>
+</div>
+<div class="box box-entrevista">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Pregunta de entrevista</span></div>
+<div class="box-b">
+<p>«Su modelo de CCF para líneas revolventes está sobreestimando el EAD de forma sistemática en el segmento de grandes corporativos. ¿Cómo lo investiga?»</p>
+<p>Lo que busca el panel es método, no una respuesta. Un buen esquema: (1) separar si el problema es de numerador (saldos al incumplimiento) o de denominador (límites); (2) revisar si la población mezcla líneas comprometidas y cancelables, y si los recortes de límite previos al incumplimiento están contaminando la medición; (3) comprobar la fecha de referencia de las cohortes y el posible sesgo estacional; (4) revisar el tratamiento de los casos límite —denominador cero, CCF negativos, CCF superiores a uno— y qué acotación se aplica; (5) verificar si el suelo del art. 166(8c) está haciendo que la comparación entre estimado y realizado sea irrelevante para parte de la cartera; (6) comprobar si la sobreestimación viene del margen de conservadurismo y no del modelo, lo que sería una conclusión distinta y perfectamente aceptable. Mención adicional de valor: contrastar con el uso interno del parámetro, porque una sobreestimación sistemática en capital que no se corrige en gestión debilita el <em>use test</em> [CRE36.60][B5].</p>
+</div>
+</div>
+<div class="box box-clave">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Idea clave</span></div>
+<div class="box-b">
+<p>En wholesale, <strong>la mayor parte de la incertidumbre del EAD no está en el modelo estadístico: está en si el contrato permite al cliente disponer más y al banco impedirlo</strong>. Esa pregunta se contesta leyendo el contrato y capturando tres campos —tipo de compromiso, límite y dispuesto con historia—. Un banco que capture bien esos tres campos tendrá un modelo de EAD mediocre pero utilizable; uno que los capture mal no tendrá modelo, tendrá un supuesto.</p>
+</div>
+</div>
+<h3 id="fuentes-de-este-capitulo-1">Fuentes de este capítulo<a class="hlink" href="#fuentes-de-este-capitulo-1" aria-label="enlace">#</a></h3>
+<p><strong>Basilea (bis.org)</strong>
+- [B2] CRE32 — <em>IRB approach: risk components for each asset class</em> (vencimiento, EAD, suelo del 50 %). https://www.bis.org/basel_framework/chapter/CRE/32.htm
+- [B5] CRE36 — <em>IRB approach: minimum requirements</em> (estructura bidimensional, estimación de EAD y CCF, históricos, colateral, use test). https://www.bis.org/basel_framework/chapter/CRE/36.htm</p>
+<p><strong>Unión Europea</strong>
+- [L4] Reglamento (UE) 2024/1623 (CRR3) y CRR consolidado — arts. 147(2), 161, 162, 166, 178, 465(4). https://eur-lex.europa.eu/eli/reg/2024/1623/oj/eng
+- [E1] EBA/GL/2017/16, <em>Guidelines on PD estimation, LGD estimation and the treatment of defaulted exposures</em>. https://www.eba.europa.eu/sites/default/files/documents/10180/2033363/6b062012-45d6-4655-af04-801d26493ed0/Guidelines%20on%20PD%20and%20LGD%20estimation%20(EBA-GL-2017-16).pdf
+- [E2] EBA/GL/2016/07, <em>Guidelines on the application of the definition of default under Article 178 CRR</em>. https://www.eba.europa.eu/sites/default/files/documents/10180/1597103/004d3356-a9dc-49d1-aab1-3591f4d42cbb/Final%20Report%20on%20Guidelines%20on%20default%20definition%20(EBA-GL-2016-07).pdf
+- [E4] EBA/GL/2020/05, <em>Guidelines on credit risk mitigation for institutions applying the IRB approach with own estimates of LGDs</em>. https://www.eba.europa.eu/sites/default/files/document_library/Publications/Guidelines/2020/Guidelines%20on%20Credit%20Risk%20Mitigation%20for%20institutions%20applying%20the%20IRB%20approach%20with%20own%20estimates%20of%20LGDs/883366/Guidelines%20on%20CRM%20for%20A-IRB%20institutions.pdf
+- [EC1] BCE, <em>Guide to internal models — risk-type-specific chapters</em> (septiembre 2018). https://www.bankingsupervision.europa.eu/framework/legal-framework/public-consultations/pdf/internal_models_risk_type_chapters/ssm.guide_to_internal_models_risk_type_chapters_201809.en.pdf</p>
+<p><strong>Reino Unido</strong>
+- [R3] Bank of England, <em>PS1/26 – Implementation of Basel 3.1: Final rules</em> (20 enero 2026). https://www.bankofengland.co.uk/prudential-regulation/publication/2026/january/implementation-of-the-basel-3-1-final-rules-policy-statement
+- [R10] legislation.gov.uk, art. 178 CRR. https://www.legislation.gov.uk/eur/2013/575/article/178
+- [R12] Bank of England, SS3/24, <em>Credit risk: definition of default</em>. https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/supervisory-statement/2024/credit-risk-definition-of-default-supervisory-statement.pdf
+- [R15] Bank of England, SS4/24, <em>Credit risk internal ratings based approach</em>. https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/supervisory-statement/2024/credit-risk-internal-ratings-based-approach-supervisory-statement.pdf
+- [R17] legislation.gov.uk, art. 182 CRR (<em>Requirements specific to own conversion factor estimates</em>). https://www.legislation.gov.uk/eur/2013/575/article/182
+- [R29] Bank of England, <em>Thematic feedback on accounting for IFRS 9 ECL and climate risk</em> (Dear CFO, 27 septiembre 2024). https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/letter/2024/thematic-feedback-on-accounting-for-ifrs-9-ecl-and-climate-risk.pdf
+- [R32] legislation.gov.uk, art. 161 CRR (valores de LGD en F-IRB). https://www.legislation.gov.uk/eur/2013/575/article/161
+- [R33] legislation.gov.uk, art. 166 CRR (valor de exposición y factores de conversión). https://www.legislation.gov.uk/eur/2013/575/article/166</p>
+<p><strong>México</strong>
+- [M5] Anexo 32-A de la CUB, <em>Requisitos mínimos para métodos basados en calificaciones internas, método básico</em> (mirror ABM). https://www.abm.org.mx/legislacion-y-regulacion/juridico/anexoscub/CUB_Anexo32A.pdf
+- [M6] Circular Única de Bancos, texto completo (mirror ABM). https://www.abm.org.mx/legislacion-y-regulacion/juridico/cnbv/CircularUnicadeBancos.pdf</p>
+<p><strong>Mercado</strong>
+- Federal Reserve, <em>Financial Stability Report</em>, noviembre 2025 — <em>Borrowing by Businesses and Households</em>. https://www.federalreserve.gov/publications/november-2025-financial-stability-report-borrowing-by-business-and-households.htm</p></section><nav class="pager"><a href="cap-01-universo.html"><span class="dir">← Anterior</span><span class="nm">1. El universo Wholesale: segmentación y clases de exposición</span></a><a class="next" href="cap-03-especializado.html"><span class="dir">Siguiente →</span><span class="nm">3. Financiamiento especializado: project finance, activos, materias primas e inmuebles</span></a></nav></div></main>
+</div>
+<button class="top" id="top" aria-label="Volver arriba">↑</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

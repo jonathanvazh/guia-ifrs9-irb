@@ -1,0 +1,2123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4. Bancos, soberanos, entidades financieras no bancarias y fondos · Modelos IFRS 9 e IRB para cartera Wholesale</title>
+<meta name="description" content="Cinco familias de contraparte que comparten formulario de estados financieros y no comparten casi nada más. Qué las hace distintas, qué datos las describen y hasta dónde deja la norma modelizarlas.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><path id="DejaVuSans-Oblique-52" d="M 1613 4147  L 1294 2491  L 2106 2491  Q 2584 2491 2879 2755  Q 3175 3019 3175 3444  Q 3175 3784 2976 3965  Q 2778 4147 2406 4147  L 1613 4147  z M 2772 2241  Q 2972 2194 3105 2009  Q 3238 1825 3413 1275  L 3809 0  L 3144 0  L 2778 1197  Q 2638 1659 2453 1815  Q 2269 1972 1888 1972  L 1191 1972  L 806 0  L 172 0  L 1081 4666  L 2503 4666  Q 3150 4666 3495 4373  Q 3841 4081 3841 3531  Q 3841 3044 3547 2687  Q 3253 2331 2772 2241  z " transform="scale(0.015625)"/><path id="DejaVuSans-Oblique-5a" d="M 838 4666  L 4500 4666  L 4409 4184  L 794 531  L 3769 531  L 3669 0  L -141 0  L -50 481  L 3566 4134  L 738 4134  L 838 4666  z " transform="scale(0.015625)"/></defs></svg>
+<div class="progress"><i id="bar"></i></div>
+<button class="navtoggle" id="navtoggle" aria-label="Índice">☰</button>
+<div class="app">
+<aside class="nav">
+  <div class="nav-head">
+    <p class="brand"><a href="index.html" style="color:inherit;text-decoration:none">Modelos IFRS 9 e IRB para cartera Wholesale</a><small>Guía técnica exhaustiva · PRA · CNBV · Basilea 3.1</small></p>
+    <div class="nav-tools">
+      <input class="search" id="q" type="search" placeholder="Buscar en toda la guía…  /"
+             autocomplete="off" spellcheck="false">
+      <button class="btn" id="theme" aria-label="Cambiar tema">☾</button>
+    </div>
+  </div>
+  <nav class="toc"><div class="toc-part">Cómo usar esta guía</div>
+<a class="l2" href="cap-00-mapa.html">0. Cómo usar esta guía</a>
+<div class="toc-part">El universo Wholesale</div>
+<a class="l2" href="cap-01-universo.html">1. El universo Wholesale: segmentación y clases de exposición</a>
+<a class="l2" href="cap-02-productos.html">2. Productos de crédito Wholesale y su perfil de riesgo</a>
+<a class="l2" href="cap-03-especializado.html">3. Financiamiento especializado: project finance, activos, materias primas e inmuebles</a>
+<a class="l2 cur" href="cap-04-contrapartes.html">4. Bancos, soberanos, entidades financieras no bancarias y fondos</a>
+<a class="l3" href="#1-soberanos">1. Soberanos</a>
+<a class="l4" href="#11-por-que-se-modelan-distinto">1.1 Por qué se modelan distinto</a>
+<a class="l4" href="#12-el-marco-de-calificacion-soberana">1.2 El marco de calificación soberana</a>
+<a class="l4" href="#13-el-tratamiento-regulatorio-suelo-de-pd-y-prohibicion-de-modelizar">1.3 El tratamiento regulatorio: suelo de PD y prohibición de modelizar</a>
+<a class="l4" href="#14-el-efecto-techo-soberano-sovereign-ceiling">1.4 El efecto techo soberano (sovereign ceiling)</a>
+<a class="l3" href="#2-bancos-e-instituciones">2. Bancos e instituciones</a>
+<a class="l4" href="#21-que-hace-distinta-la-modelizacion-de-un-banco">2.1 Qué hace distinta la modelización de un banco</a>
+<a class="l4" href="#22-las-metricas-que-se-usan">2.2 Las métricas que se usan</a>
+<a class="l4" href="#23-la-jerarquia-de-acreedores-y-su-efecto-en-la-lgd">2.3 La jerarquía de acreedores y su efecto en la LGD</a>
+<a class="l4" href="#24-el-multiplicador-de-correlacion-de-125">2.4 El multiplicador de correlación de 1,25</a>
+<a class="l4" href="#25-la-restriccion-del-enfoque-avanzado">2.5 La restricción del enfoque avanzado</a>
+<a class="l3" href="#3-entidades-financieras-no-bancarias">3. Entidades financieras no bancarias</a>
+<a class="l4" href="#31-que-son-y-por-que-rompen-el-modelo-corporativo">3.1 Qué son y por qué rompen el modelo corporativo</a>
+<a class="l4" href="#32-como-se-ajusta-el-analisis">3.2 Cómo se ajusta el análisis</a>
+<a class="l3" href="#4-fondos-y-vehiculos">4. Fondos y vehículos</a>
+<a class="l4" href="#41-el-problema">4.1 El problema</a>
+<a class="l4" href="#42-transparencia-frente-a-mandato">4.2 Transparencia frente a mandato</a>
+<a class="l3" href="#5-sector-publico-no-soberano">5. Sector público no soberano</a>
+<a class="l4" href="#51-la-familia">5.1 La familia</a>
+<a class="l4" href="#52-mexico">5.2 México</a>
+<a class="l3" href="#6-sintesis-comparativa">6. Síntesis comparativa</a>
+<a class="l4" href="#fuentes-de-este-capitulo-3">Fuentes de este capítulo</a>
+<div class="toc-part">Los insumos</div>
+<a class="l2" href="cap-05-default.html">5. La definición de incumplimiento</a>
+<a class="l2" href="cap-06-datos.html">6. Arquitectura de datos para modelos wholesale</a>
+<a class="l2" href="cap-07-estados-financieros.html">7. Estados financieros corporativos para el analista de crédito</a>
+<a class="l2" href="cap-08-razones-sector.html">8. Razones financieras, industria y sentido económico</a>
+<a class="l2" href="cap-09-buro-cualitativas.html">9. Buró de crédito, información externa y variables cualitativas</a>
+<div class="toc-part">Modelos IRB de PD</div>
+<a class="l2" href="cap-10-marco-capital.html">10. El marco de capital: estándar, F-IRB, A-IRB y el output floor</a>
+<a class="l2" href="cap-11-arquitectura-pd.html">11. Arquitectura de un modelo de PD corporativo</a>
+<a class="l2" href="cap-12-desarrollo-pd.html">12. Desarrollo estadístico de un modelo de PD, paso a paso</a>
+<a class="l2" href="cap-13-estadistica.html">13. Estadística para seleccionar y validar modelos</a>
+<a class="l2" href="cap-14-calibracion.html">14. Calibración, filosofía de calificación y margen de conservadurismo</a>
+<a class="l2" href="cap-15-ldp.html">15. Carteras de bajo incumplimiento</a>
+<div class="toc-part">LGD, EAD y mitigantes</div>
+<a class="l2" href="cap-16-lgd.html">16. Modelos de LGD</a>
+<a class="l2" href="cap-17-ead.html">17. Modelos de EAD y factores de conversión</a>
+<a class="l2" href="cap-18-colaterales.html">18. Colaterales y mitigantes del riesgo de crédito</a>
+<a class="l2" href="cap-19-slotting.html">19. Slotting y modelización de exposiciones especiales</a>
+<div class="toc-part">IFRS 9 de punta a punta</div>
+<a class="l2" href="cap-20-ifrs9-vs-irb.html">20. IFRS 9 frente a IRB: las diferencias que gobiernan todo lo demás</a>
+<a class="l2" href="cap-21-sicr.html">21. Incremento significativo del riesgo de crédito y clasificación por etapas</a>
+<a class="l2" href="cap-22-pd-ifrs9.html">22. &#x27;PD IFRS 9: estructuras temporales y matrices de transición&#x27;</a>
+<a class="l2" href="cap-23-macro.html">23. &#x27;PD IFRS 9: modelos macroeconómicos, escenarios y ponderación&#x27;</a>
+<a class="l2" href="cap-24-lgd-ead-ifrs9.html">24. LGD y EAD bajo IFRS 9</a>
+<a class="l2" href="cap-25-ecl.html">25. El cálculo de la pérdida crediticia esperada</a>
+<a class="l2" href="cap-26-overlays.html">26. Ajustes fuera de modelo (overlays) y gobierno de la ECL</a>
+<a class="l2" href="cap-27-impacto.html">27. Impacto en provisiones: sensibilidad, migración y volatilidad</a>
+<div class="toc-part">Del modelo al negocio</div>
+<a class="l2" href="cap-28-rwa.html">28. De los parámetros al capital: RWA, pérdida esperada y provisiones</a>
+<a class="l2" href="cap-29-raroc.html">29. Rentabilidad ajustada por riesgo: RAROC, pricing y valor presente neto</a>
+<a class="l2" href="cap-30-stress.html">30. Pruebas de estrés, ICAAP y planeación</a>
+<a class="l2" href="cap-31-organizacion.html">31. El área de modelos frente a riesgos, negocio, finanzas y operaciones</a>
+<div class="toc-part">Gobierno y regulación</div>
+<a class="l2" href="cap-32-mrm.html">32. Gestión del riesgo de modelo</a>
+<a class="l2" href="cap-33-autorizacion.html">33. Documentación, use test, roll-out y autorización ante PRA y CNBV</a>
+<a class="l2" href="cap-34-monitoreo.html">34. Monitoreo continuo, redesarrollo y remediación</a>
+<div class="toc-part">Frontera</div>
+<a class="l2" href="cap-35-innovacion.html">35. &quot;Frontera: técnicas innovadoras aplicables a wholesale&quot;</a>
+<div class="toc-part">Anexos</div>
+<a class="l2" href="cap-36-ejercicios.html">36. Ejercicios y casos con soluciones</a>
+<a class="l2" href="cap-37-entrevistas.html">37. Banco de preguntas para un rol de dirección</a>
+<a class="l2" href="cap-38-formulario.html">38. Formulario, glosario español-inglés y referencias</a></nav>
+</aside>
+<main><div class="wrap"><section class="chapter"><p class="eyebrow">Capítulo 4</p><h2 class="ch-title">Bancos, soberanos, entidades financieras no bancarias y fondos</h2><p class="lede">Cinco familias de contraparte que comparten formulario de estados financieros y no comparten casi nada más. Qué las hace distintas, qué datos las describen y hasta dónde deja la norma modelizarlas.</p><p>Un modelo de probabilidad de incumplimiento (<em>probability of default</em>, PD) corporativo se
+apoya en una intuición económica sencilla: la empresa incumple cuando el flujo de caja
+operativo deja de cubrir el servicio de la deuda y no hay activos líquidos ni acceso a
+mercado para cerrar la brecha. Apalancamiento, cobertura, margen y liquidez son buenas
+variables porque son buenas aproximaciones a esa mecánica.</p>
+<p>Esa intuición se rompe con cinco tipos de contraparte. Un soberano no quiebra: decide. Un
+banco tiene un apalancamiento de veinte veces por diseño y no por deterioro, y su
+incumplimiento lo decide una autoridad de resolución antes que un juez. Una arrendadora
+tiene "inventario" que en realidad es cartera de crédito. Un fondo no tiene balance propio
+en sentido económico: tiene un mandato. Y un municipio no tiene ingresos, tiene
+transferencias.</p>
+<p>Este capítulo recorre las cinco familias con el mismo esquema: qué mecanismo de
+incumplimiento las gobierna, qué información las describe, qué restricción regulatoria pesa
+sobre su modelización y qué decisión de arquitectura toma un banco global que no puede
+permitirse seis modelos separados.</p>
+<h2 id="1-soberanos">1. Soberanos<a class="hlink" href="#1-soberanos" aria-label="enlace">#</a></h2>
+<h3 id="11-por-que-se-modelan-distinto">1.1 Por qué se modelan distinto<a class="hlink" href="#11-por-que-se-modelan-distinto" aria-label="enlace">#</a></h3>
+<p>Cuatro rasgos separan a un soberano de cualquier otro deudor.</p>
+<p><strong>No existe un proceso de quiebra.</strong> No hay tribunal con jurisdicción sobre un Estado ni
+mecanismo que fuerce la liquidación de sus activos. La recuperación no resulta de un
+proceso concursal sino de una <strong>negociación</strong> entre el emisor y un colectivo disperso de
+acreedores, cuyo resultado depende de la coordinación de esos acreedores, de las cláusulas
+de acción colectiva de los bonos, de la jurisdicción del contrato y del interés del emisor
+en volver a los mercados.</p>
+<p><strong>Puede emitir la moneda en la que se endeuda.</strong> Un soberano con deuda denominada en su
+propia moneda y con banco central propio no enfrenta una restricción de liquidez en sentido
+estricto: enfrenta una decisión entre monetizar —con costo de inflación y de tipo de
+cambio— o incumplir. Por eso la distinción entre <strong>deuda en moneda local y deuda en moneda
+extranjera</strong> es la primera partición de cualquier marco de calificación soberana, y por eso
+históricamente las calificaciones en moneda local han tendido a ser iguales o mejores que
+las de moneda extranjera. La excepción relevante son los soberanos que han cedido su
+política monetaria a una unión monetaria o a un régimen de tipo de cambio rígido: para
+ellos, la deuda "local" es funcionalmente extranjera.</p>
+<p><strong>El incumplimiento es selectivo.</strong> Un Estado puede reestructurar sus bonos internacionales
+mientras sigue pagando sus bonos domésticos, o al revés; puede reestructurar la deuda con
+acreedores privados manteniendo el servicio a los organismos multilaterales; puede diferir
+el pago a proveedores sin tocar la deuda financiera. La definición de incumplimiento
+—incapacidad o falta de voluntad de pago, y 90 días de mora en una obligación material—
+tiene que aplicarse a un nivel de instrumento y no de deudor, o produce resultados absurdos.</p>
+<p><strong>La disposición a pagar es tan relevante como la capacidad.</strong> Es la única clase de
+exposición donde una variable política —la valoración que hace el gobierno del costo
+reputacional y económico del incumplimiento frente al costo del ajuste fiscal— es un
+determinante de primer orden. No hay proxy contable para eso.</p>
+<div class="box box-llano">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">En palabras llanas</span></div>
+<div class="box-b">
+<p>Un Estado no se declara en quiebra porque no hay quién lo declare. Paga si puede y si
+quiere. "Si puede" es aritmética fiscal y de reservas; "si quiere" es política. Y puede
+elegir a quién dejar de pagar sin dejar de pagar a todos.</p>
+</div>
+</div>
+<h3 id="12-el-marco-de-calificacion-soberana">1.2 El marco de calificación soberana<a class="hlink" href="#12-el-marco-de-calificacion-soberana" aria-label="enlace">#</a></h3>
+<p>En la práctica de mercado, el análisis se organiza en cinco bloques que combinan capacidad
+y disposición:</p>
+<ol>
+<li><strong>Fortaleza institucional y gobernanza</strong>: estabilidad y previsibilidad de las
+   instituciones, calidad de la formulación de política económica, independencia efectiva
+   del banco central, historial de cumplimiento y de reestructuras previas, respeto al
+   estado de derecho y a los derechos de los acreedores.</li>
+<li><strong>Estructura económica y perspectivas de crecimiento</strong>: nivel de renta por habitante,
+   tamaño y diversificación de la economía, dependencia de una materia prima o de un socio
+   comercial, crecimiento tendencial y demografía.</li>
+<li><strong>Posición externa</strong>: cuenta corriente, posición de inversión internacional neta,
+   reservas internacionales frente a las necesidades brutas de financiamiento externo,
+   composición por moneda y por plazo de la deuda externa, papel de la moneda en el sistema
+   internacional.</li>
+<li><strong>Posición fiscal</strong>: nivel y trayectoria de deuda pública sobre producto, saldo primario,
+   carga de intereses sobre ingresos, estructura de vencimientos, pasivos contingentes
+   —incluidos los del sistema bancario y los de las empresas públicas—, profundidad del
+   mercado local de deuda y base de inversionistas cautiva.</li>
+<li><strong>Política monetaria y flexibilidad cambiaria</strong>: régimen cambiario, credibilidad
+   antiinflacionaria, capacidad de actuar como prestamista de última instancia en su propia
+   moneda, desarrollo del sistema financiero doméstico.</li>
+</ol>
+<p>Los dos primeros bloques capturan sobre todo disposición y resiliencia estructural; los
+tres últimos, capacidad. La ponderación entre ellos es criterio del banco.</p>
+<h3 id="13-el-tratamiento-regulatorio-suelo-de-pd-y-prohibicion-de-modelizar">1.3 El tratamiento regulatorio: suelo de PD y prohibición de modelizar<a class="hlink" href="#13-el-tratamiento-regulatorio-suelo-de-pd-y-prohibicion-de-modelizar" aria-label="enlace">#</a></h3>
+<div class="box box-regulatorio">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Suelo de PD para soberanos</span></div>
+<div class="box-b">
+<p>La regla general de Basilea establece que la PD utilizada como insumo no puede ser inferior
+al <strong>0,05 %</strong>, y lo hace <strong>exceptuando expresamente a los soberanos</strong>: "salvo para
+soberanos, la PD mínima no debe ser inferior a 0,05 %" [CRE32.3] [B2]. El CRR consolidado
+concreta esa excepción con un suelo propio: el valor de PD utilizado como insumo "no será
+inferior al siguiente valor de suelo de PD: 0,05 %" para exposiciones corporativas
+estándar, y <strong>0,03 % para exposiciones a gobiernos centrales</strong> [art. 160 CRR] [L4].</p>
+</div>
+</div>
+<p>La razón económica del suelo diferenciado es que las tasas de incumplimiento observadas de
+soberanos con la máxima calidad crediticia son, en las ventanas históricas disponibles,
+indistinguibles de cero, y un suelo del 0,05 % impondría un consumo de capital que no
+refleja el riesgo. Pero conviene entender qué implica un suelo del 0,03 %: es una PD de tres
+por diez mil, es decir, un evento cada tres mil trescientos años-deudor. Ninguna muestra
+empírica sostiene una estimación así; el número es una convención prudencial, no un
+estimador.</p>
+<p><strong>El Reino Unido va más lejos.</strong> La propuesta del régimen de Basilea 3.1 británico es
+<strong>prohibir totalmente la modelización IRB de las exposiciones a gobiernos centrales y bancos
+centrales</strong>, exigiendo el enfoque estandarizado, con el argumento explícito de "falta de
+modelizabilidad y una ventaja comparativa insuficiente de las entidades respecto a los
+reguladores" [CP16/22 §4.67–4.69] [R6].</p>
+<div class="box box-alerta">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Estado de verificación de la restricción británica</span></div>
+<div class="box-b">
+<p>El dosier de esta guía advierte que los párrafos citados corresponden al documento de
+<strong>consulta</strong> CP16/22 (noviembre de 2022) y que <strong>no se pudo confirmar en fuente primaria
+completa</strong> si las reglas finales de PS1/26 —publicadas el 20 de enero de 2026, con entrada
+en vigor el 1 de enero de 2027— mantuvieron la propuesta sin cambios [R6][R31][R3]. Antes de
+apoyar una decisión de alcance de modelo en esta restricción, hay que leer el instrumento
+final. La dirección de viaje, en cambio, sí está confirmada cualitativamente en PS9/24:
+"restringir el uso del enfoque IRB de riesgo de crédito en áreas donde los activos
+ponderados por riesgo no pueden modelizarse de manera robusta y prudente" [R31].</p>
+</div>
+</div>
+<p>También conviene notar que el <strong>tratamiento de las exposiciones al soberano en moneda
+local</strong> es una de las discreciones nacionales más consecuentes del marco de capital
+—determina, entre otras cosas, cuánto capital consume la cartera de deuda pública doméstica
+de un banco—. <strong>El dosier regulatorio de esta guía no documenta el detalle de esa
+discrecionalidad ni las ponderaciones de riesgo del enfoque estandarizado aplicables a
+soberanos</strong>, ni en el marco británico ni en el mexicano. Es un dato pendiente de verificar
+contra la fuente primaria y no se afirma aquí ninguna cifra.</p>
+<h3 id="14-el-efecto-techo-soberano-sovereign-ceiling">1.4 El efecto techo soberano (<em>sovereign ceiling</em>)<a class="hlink" href="#14-el-efecto-techo-soberano-sovereign-ceiling" aria-label="enlace">#</a></h3>
+<p>La práctica tradicional de las agencias de calificación sostiene que ninguna entidad
+domiciliada en un país puede tener una calificación en moneda extranjera superior a la del
+soberano de ese país. La lógica es de riesgo de transferencia y convertibilidad: aunque una
+empresa tenga caja suficiente, un gobierno en crisis puede imponer controles de cambio que
+le impidan pagar en divisa. A eso se añade que un incumplimiento soberano viene acompañado
+de recesión, colapso del sistema bancario doméstico, subida de impuestos y ruptura de la
+cadena de pagos, de modo que la correlación entre el incumplimiento del soberano y el de
+sus corporativos es muy alta.</p>
+<p>En la práctica moderna el techo se ha vuelto poroso: se admiten excepciones para
+exportadores con ingresos y cuentas en el exterior, para filiales con garantía de matriz
+extranjera y para emisores con estructuras que sitúan el flujo fuera de la jurisdicción.</p>
+<p>Para un modelo interno, el efecto techo se implementa de una de dos formas, y la elección
+importa:</p>
+<ul>
+<li><strong>Como tope duro sobre la calificación interna</strong>: ningún deudor del país puede recibir un
+  grado mejor que el asignado al soberano. Es simple, defendible y pierde información.</li>
+<li><strong>Como factor de riesgo país dentro del modelo</strong>: una variable que desplaza el puntaje y
+  cuya intensidad se estima. Preserva la diferenciación dentro del país pero exige demostrar
+  empíricamente el efecto, lo que en países sin incumplimientos soberanos recientes es
+  difícil.</li>
+</ul>
+<p>En un banco con supervisión dual —Autoridad de Regulación Prudencial británica (<em>Prudential
+Regulation Authority</em>, PRA) y Comisión Nacional Bancaria y de Valores (CNBV) mexicana— esta
+decisión tiene una consecuencia adicional: el mismo grupo corporativo mexicano puede recibir
+una calificación distinta en el sistema global y en el sistema local si el techo se aplica
+en uno y no en el otro. La conciliación de esas dos calificaciones es un tema recurrente de
+comités y una de las preguntas favoritas del revisor.</p>
+<h2 id="2-bancos-e-instituciones">2. Bancos e instituciones<a class="hlink" href="#2-bancos-e-instituciones" aria-label="enlace">#</a></h2>
+<h3 id="21-que-hace-distinta-la-modelizacion-de-un-banco">2.1 Qué hace distinta la modelización de un banco<a class="hlink" href="#21-que-hace-distinta-la-modelizacion-de-un-banco" aria-label="enlace">#</a></h3>
+<p><strong>El balance es opaco por construcción.</strong> El activo de un banco son préstamos cuyo valor
+depende de estimaciones internas de deterioro y posiciones de mercado cuyo valor depende de
+modelos. Un analista externo no observa la calidad del activo: observa la afirmación del
+banco sobre la calidad del activo, filtrada por su política contable y por su ciclo de
+reconocimiento de pérdidas.</p>
+<p><strong>El apalancamiento estructural es enorme y no es una señal de deterioro.</strong> Veinte veces
+capital sobre activos es normal. Las razones financieras que discriminan en un modelo
+corporativo —deuda sobre resultado de explotación antes de amortizaciones, cobertura de
+intereses— no significan nada aquí: para un banco, los intereses no son un costo financiero
+sino el insumo de su negocio.</p>
+<p><strong>La dependencia del fondeo es el mecanismo de incumplimiento dominante.</strong> Los bancos
+raramente incumplen por insolvencia demostrada: incumplen porque el mercado deja de
+refinanciarlos. La transición de "solvente pero cuestionado" a "resuelto" puede ocurrir en
+días. Esto tiene una consecuencia estadística incómoda: el proceso de incumplimiento es
+discontinuo y depende de una variable —la confianza— que no está en los estados
+financieros.</p>
+<p><strong>El apoyo público implícito y el apoyo del grupo desplazan la PD observable.</strong> Durante
+décadas, la PD efectiva de los grandes bancos incorporó una expectativa de rescate. El
+marco de resolución posterior a la crisis financiera se diseñó justamente para eliminar esa
+expectativa, sustituyéndola por la recapitalización interna (<em>bail-in</em>): imponer pérdidas a
+accionistas y a determinados acreedores en lugar de al contribuyente. El efecto sobre la
+modelización es doble: baja la PD implícita asumida por el mercado para las entidades con
+respaldo creíble de un grupo o de un soberano fuerte, y <strong>sube significativamente la LGD
+esperada de la deuda no garantizada</strong>, porque el mecanismo de resolución existe precisamente
+para hacer que esa deuda absorba pérdidas.</p>
+<div class="box box-alerta">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Alcance del marco de resolución en esta guía</span></div>
+<div class="box-b">
+<p>El régimen de resolución bancaria y los requisitos de pasivos con capacidad de absorción de
+pérdidas <strong>no están cubiertos por los dosieres regulatorios de esta guía</strong>, que documentan
+el marco de riesgo de crédito (CRE31–CRE36, CRR, SS4/24, CUB). La descripción de la
+jerarquía de acreedores y del <em>bail-in</em> que sigue es <strong>criterio del autor sobre la mecánica
+económica</strong>, no una cita normativa, y sus cifras concretas deben verificarse contra la
+normativa de resolución aplicable en cada jurisdicción antes de usarse.</p>
+</div>
+</div>
+<h3 id="22-las-metricas-que-se-usan">2.2 Las métricas que se usan<a class="hlink" href="#22-las-metricas-que-se-usan" aria-label="enlace">#</a></h3>
+<p>El conjunto de indicadores que un analista de crédito bancario mira, agrupados por la
+pregunta que responden:</p>
+<table>
+<thead>
+<tr>
+<th>Dimensión</th>
+<th>Métricas</th>
+<th>Qué responde</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Solvencia</td>
+<td>Capital de nivel 1 ordinario (<em>common equity tier 1</em>, CET1) sobre activos ponderados; distancia al requerimiento combinado; razón de apalancamiento (capital de nivel 1 sobre exposición total sin ponderar)</td>
+<td>¿Cuánta pérdida absorbe antes de tocar a los acreedores?</td>
+</tr>
+<tr>
+<td>Liquidez y fondeo</td>
+<td>Razón de cobertura de liquidez (<em>liquidity coverage ratio</em>, LCR); razón de financiamiento estable neto (<em>net stable funding ratio</em>, NSFR); proporción de depósitos minoristas estables; concentración y plazo del fondeo mayorista; carga de activos (<em>asset encumbrance</em>)</td>
+<td>¿Sobrevive a un cierre del mercado mayorista?</td>
+</tr>
+<tr>
+<td>Calidad del activo</td>
+<td>Cartera vencida sobre cartera total; cobertura de reservas sobre cartera vencida; entradas netas a mora; exposición a sectores en tensión; concentración por deudor</td>
+<td>¿Está reconocida la pérdida que ya existe?</td>
+</tr>
+<tr>
+<td>Rentabilidad</td>
+<td>Retorno sobre activos ponderados por riesgo; margen de interés neto; razón de eficiencia; costo del riesgo</td>
+<td>¿Genera capital orgánicamente o lo consume?</td>
+</tr>
+<tr>
+<td>Apoyo</td>
+<td>Propiedad y solvencia del grupo; importancia sistémica local; capacidad fiscal del soberano</td>
+<td>¿Quién aparece si falla?</td>
+</tr>
+</tbody>
+</table>
+<div class="box box-economico">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Por qué la razón de apalancamiento y el LCR son complementarios, no redundantes</span></div>
+<div class="box-b">
+<p>El CET1 sobre activos ponderados mide solvencia <strong>condicionada al modelo de riesgo</strong>: si el
+modelo subestima el riesgo, la razón se ve bien y no lo está. La razón de apalancamiento no
+depende del modelo, por eso funciona como red de seguridad frente a errores de modelización.
+Y ninguna de las dos previene el evento que realmente mata bancos: el LCR y el NSFR miden si
+la entidad sobrevive a que el mercado deje de prestarle, que es la forma en que efectivamente
+ocurren los incumplimientos bancarios. Un modelo de PD de bancos que solo use métricas de
+capital está modelizando la causa equivocada.</p>
+</div>
+</div>
+<div class="box box-alerta">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">El indicador de calidad del activo es endógeno</span></div>
+<div class="box-b">
+<p>La cartera vencida y la cobertura de reservas son afirmaciones del propio deudor sobre su
+propia salud, elaboradas bajo su política contable y con su calendario de reconocimiento. En
+un banco que retrasa el reconocimiento, la cartera vencida cae justo antes de la crisis. Los
+modelos que ponderan mucho estas variables tienden a mostrar un desempeño excelente en
+retrospectiva y a fallar en el evento. El contraste con las entradas netas a mora, con las
+reestructuras y con los datos de la central de riesgos —cuando existe— es más informativo
+que el nivel del indicador.</p>
+</div>
+</div>
+<h3 id="23-la-jerarquia-de-acreedores-y-su-efecto-en-la-lgd">2.3 La jerarquía de acreedores y su efecto en la LGD<a class="hlink" href="#23-la-jerarquia-de-acreedores-y-su-efecto-en-la-lgd" aria-label="enlace">#</a></h3>
+<p>En un banco moderno, las pérdidas se asignan en un orden preestablecido: primero el capital
+de nivel 1 ordinario, después los instrumentos de capital adicional de nivel 1, después los
+instrumentos de nivel 2, después la deuda senior subordinada o "no preferente" emitida
+expresamente para absorber pérdidas, después la deuda senior preferente y los depósitos no
+cubiertos, y en último lugar —protegidos por el sistema de garantía— los depósitos
+cubiertos.</p>
+<p><figure class="fig" id="fig-cap04_cascada_banco"><div class="fig-svg"><svg preserveAspectRatio="xMidYMid meet" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 591.939094 261.174547" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 261.174547 
+L 591.939094 261.174547 
+L 591.939094 0 
+L 0 0 
+L 0 261.174547 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 152.398219 226.542203 
+L 576.478219 226.542203 
+L 576.478219 26.958203 
+L 152.398219 26.958203 
+L 152.398219 226.542203 
+z
+" style="fill: none"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 152.398219 226.542203 
+L 152.398219 26.958203 
+" clip-path="url(#pfdb94b87f6)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_2"/>
+     <g id="text_1">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="152.398219" y="239.760719" transform="rotate(-0 152.398219 239.760719)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 218.660719 226.542203 
+L 218.660719 26.958203 
+" clip-path="url(#pfdb94b87f6)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_2">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="218.660719" y="239.760719" transform="rotate(-0 218.660719 239.760719)">20</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 284.923219 226.542203 
+L 284.923219 26.958203 
+" clip-path="url(#pfdb94b87f6)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_3">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="284.923219" y="239.760719" transform="rotate(-0 284.923219 239.760719)">40</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 351.185719 226.542203 
+L 351.185719 26.958203 
+" clip-path="url(#pfdb94b87f6)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_4">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="351.185719" y="239.760719" transform="rotate(-0 351.185719 239.760719)">60</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 417.448219 226.542203 
+L 417.448219 26.958203 
+" clip-path="url(#pfdb94b87f6)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_5">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="417.448219" y="239.760719" transform="rotate(-0 417.448219 239.760719)">80</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_11">
+      <path d="M 483.710719 226.542203 
+L 483.710719 26.958203 
+" clip-path="url(#pfdb94b87f6)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_12"/>
+     <g id="text_6">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="483.710719" y="239.760719" transform="rotate(-0 483.710719 239.760719)">100</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_13">
+      <path d="M 549.973219 226.542203 
+L 549.973219 26.958203 
+" clip-path="url(#pfdb94b87f6)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_14"/>
+     <g id="text_7">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="549.973219" y="239.760719" transform="rotate(-0 549.973219 239.760719)">120</text>
+     </g>
+    </g>
+    <g id="text_8">
+     <text style="font-size: 10px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="364.438219" y="253.334859" transform="rotate(-0 364.438219 253.334859)">% del pasivo total y recursos propios</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_15">
+      <path d="M 152.398219 44.526638 
+L 576.478219 44.526638 
+" clip-path="url(#pfdb94b87f6)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_16"/>
+     <g id="text_9">
+      <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="146.398219" y="47.793966" transform="rotate(-0 146.398219 47.793966)">CET1</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_17">
+      <path d="M 152.398219 71.934493 
+L 576.478219 71.934493 
+" clip-path="url(#pfdb94b87f6)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_18"/>
+     <g id="text_10">
+      <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="146.398219" y="75.201821" transform="rotate(-0 146.398219 75.201821)">AT1 (capital adicional de nivel 1)</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_19">
+      <path d="M 152.398219 99.342348 
+L 576.478219 99.342348 
+" clip-path="url(#pfdb94b87f6)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_20"/>
+     <g id="text_11">
+      <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="146.398219" y="102.609676" transform="rotate(-0 146.398219 102.609676)">Tier 2</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_21">
+      <path d="M 152.398219 126.750203 
+L 576.478219 126.750203 
+" clip-path="url(#pfdb94b87f6)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_22"/>
+     <g id="text_12">
+      <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="146.398219" y="130.017531" transform="rotate(-0 146.398219 130.017531)">Senior no preferente (bail-in)</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_23">
+      <path d="M 152.398219 154.158058 
+L 576.478219 154.158058 
+" clip-path="url(#pfdb94b87f6)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_24"/>
+     <g id="text_13">
+      <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="146.398219" y="157.425386" transform="rotate(-0 146.398219 157.425386)">Senior preferente</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_25">
+      <path d="M 152.398219 181.565913 
+L 576.478219 181.565913 
+" clip-path="url(#pfdb94b87f6)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_26"/>
+     <g id="text_14">
+      <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="146.398219" y="185.005241" transform="rotate(-0 146.398219 185.005241)">Depósitos no cubiertos</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_27">
+      <path d="M 152.398219 208.973768 
+L 576.478219 208.973768 
+" clip-path="url(#pfdb94b87f6)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_28"/>
+     <g id="text_15">
+      <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="146.398219" y="212.413096" transform="rotate(-0 146.398219 212.413096)">Depósitos cubiertos (excluidos)</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 152.398219 226.542203 
+L 152.398219 26.958203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 152.398219 226.542203 
+L 576.478219 226.542203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 152.398219 53.023073 
+L 192.155719 53.023073 
+L 192.155719 36.030203 
+L 152.398219 36.030203 
+z
+" clip-path="url(#pfdb94b87f6)" style="fill: var(--seq12, #0d366b); stroke: var(--c-surface, #fcfcfb); stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 152.398219 80.430928 
+L 198.781969 80.430928 
+L 198.781969 63.438058 
+L 152.398219 63.438058 
+z
+" clip-path="url(#pfdb94b87f6)" style="fill: var(--seq10, #184f95); stroke: var(--c-surface, #fcfcfb); stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 152.398219 107.838783 
+L 207.064781 107.838783 
+L 207.064781 90.845913 
+L 152.398219 90.845913 
+z
+" clip-path="url(#pfdb94b87f6)" style="fill: var(--seq9, #1c5cab); stroke: var(--c-surface, #fcfcfb); stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 152.398219 135.246638 
+L 226.943531 135.246638 
+L 226.943531 118.253768 
+L 152.398219 118.253768 
+z
+" clip-path="url(#pfdb94b87f6)" style="fill: var(--s1, #2a78d6); stroke: var(--c-surface, #fcfcfb); stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 152.398219 162.654493 
+L 309.771656 162.654493 
+L 309.771656 145.661623 
+L 152.398219 145.661623 
+z
+" clip-path="url(#pfdb94b87f6)" style="fill: var(--seq5, #5598e7); stroke: var(--c-surface, #fcfcfb); stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 152.398219 190.062348 
+L 384.316969 190.062348 
+L 384.316969 173.069478 
+L 152.398219 173.069478 
+z
+" clip-path="url(#pfdb94b87f6)" style="fill: var(--seq4, #6da7ec); stroke: var(--c-surface, #fcfcfb); stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 152.398219 217.470203 
+L 483.710719 217.470203 
+L 483.710719 200.477333 
+L 152.398219 200.477333 
+z
+" clip-path="url(#pfdb94b87f6)" style="fill: var(--seq2, #9ec5f4); stroke: var(--c-surface, #fcfcfb); stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="196.131469" y="46.844513" transform="rotate(-0 196.131469 46.844513)">12.0%  (tramo 12.0%)</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="202.757719" y="74.252368" transform="rotate(-0 202.757719 74.252368)">14.0%  (tramo 2.0%)</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="211.040531" y="101.660223" transform="rotate(-0 211.040531 101.660223)">16.5%  (tramo 2.5%)</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="230.919281" y="129.068078" transform="rotate(-0 230.919281 129.068078)">22.5%  (tramo 6.0%)</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="313.747406" y="156.475933" transform="rotate(-0 313.747406 156.475933)">47.5%  (tramo 25.0%)</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="388.292719" y="183.883788" transform="rotate(-0 388.292719 183.883788)">70.0%  (tramo 22.5%)</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="487.686469" y="211.291643" transform="rotate(-0 487.686469 211.291643)">100.0%  (tramo 30.0%)</text>
+   </g>
+   <g id="text_23">
+    <text style="font-weight: 600; font-size: 11.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="152.398219" y="14.958203" transform="rotate(-0 152.398219 14.958203)">Pérdida acumulada necesaria para agotar cada tramo del pasivo</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pfdb94b87f6">
+   <rect x="152.398219" y="26.958203" width="424.08" height="199.584"/>
+  </clipPath>
+ </defs>
+</svg></div><figcaption>Jerarquía de absorción de pérdidas del pasivo de un banco: pérdida acumulada necesaria para agotar cada tramo. Estructura de pasivo ilustrativa con datos sintéticos elaborada por el autor; no corresponde a ninguna institución.</figcaption></figure></p>
+<p>La lectura del gráfico es la que importa para la LGD: en la estructura ilustrativa, una
+pérdida tiene que superar el <strong>22,5 %</strong> del pasivo total antes de tocar la deuda senior
+preferente, pero basta que supere el <strong>12 %</strong> para eliminar por completo a los accionistas.
+De ahí dos consecuencias operativas:</p>
+<ol>
+<li><strong>La LGD de una exposición a un banco depende del tramo, no del emisor.</strong> Un préstamo
+   interbancario senior, un bono senior no preferente y un instrumento de nivel 2 del mismo
+   emisor tienen la misma PD y severidades radicalmente distintas. El sistema de
+   calificación debe ser bidimensional —deudor y facilidad— y en el enfoque avanzado la
+   calificación de facilidad debe reflejar exclusivamente la severidad [CRE36.11–36.15] [B5].</li>
+<li><strong>El grosor del colchón subordinado es una variable de riesgo por derecho propio.</strong> Dos
+   bancos con idéntico CET1 y distinta emisión de deuda con capacidad de absorción ofrecen
+   protecciones muy distintas a su acreedor senior.</li>
+</ol>
+<p>En el enfoque fundacional, la norma resuelve la cuestión por decreto: severidad supervisora
+del <strong>45 %</strong> para exposiciones senior sin protección financiada elegible frente a gobiernos,
+bancos centrales, entidades financieras, gobiernos regionales, autoridades locales y
+entidades del sector público, frente al <strong>40 %</strong> aplicable a corporativos del sector no
+financiero, y <strong>75 %</strong> para exposiciones subordinadas [art. 161(1) CRR] [L4]; en el marco
+británico vigente, el valor de la exposición senior sin garantía elegible es del <strong>45 %</strong> y
+el de las subordinadas del <strong>75 %</strong> [art. 161 CRR, versión británica] [R32].</p>
+<div class="box box-economico">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Cinco puntos porcentuales que dicen algo</span></div>
+<div class="box-b">
+<p>Que la severidad supervisora sea 45 % para entidades financieras y 40 % para corporativos no
+es un descuido de redacción: recoge que la recuperación sobre un banco fallido es peor que
+sobre una empresa industrial fallida. Una empresa tiene activos tangibles que se venden; un
+banco fallido tiene una cartera de préstamos cuyo valor se desploma precisamente en el
+escenario en el que hay que venderla, y una franquicia que desaparece con la confianza.</p>
+</div>
+</div>
+<h3 id="24-el-multiplicador-de-correlacion-de-125">2.4 El multiplicador de correlación de 1,25<a class="hlink" href="#24-el-multiplicador-de-correlacion-de-125" aria-label="enlace">#</a></h3>
+<div class="box box-regulatorio">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">CRE31.7 · Basilea consolidado / art. 153 CRR</span></div>
+<div class="box-b">
+<p>La correlación de activos <svg class="math-inline" style="width:0.7500em;height:0.7500em;vertical-align:-0.0000em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-52" transform="translate(0 0.09375)"/></g></g></g></svg> se multiplica por <strong>1,25</strong> para (i) instituciones financieras
+<strong>reguladas</strong> con activos consolidados iguales o superiores a <strong>100.000 millones de dólares
+estadounidenses</strong>, y (ii) instituciones financieras <strong>no reguladas</strong>, con independencia de
+su tamaño —entendiendo por tales las entidades cuya actividad principal sea gestión de
+activos, préstamo, arrendamiento, titulización, negociación por cuenta propia o actividades
+afines— [CRE31.7] [B1]. El artículo 153 del CRR consolidado reproduce literalmente el
+multiplicador: "el coeficiente de correlación R […] se multiplicará por 1,25" [L4].</p>
+</div>
+</div>
+<div class="box box-alerta">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Dos umbrales distintos que no son el mismo</span></div>
+<div class="box-b">
+<p>Basilea define el umbral de "institución financiera grande" en <strong>100.000 millones de
+dólares</strong> de activos consolidados [CRE31.7] [B1]. El CRR, por su parte, define "gran entidad
+del sector financiero regulada" mediante un umbral de activos totales iguales o superiores a
+<strong>70.000 millones de euros</strong>, a nivel individual o consolidado [art. 142(1)(4) CRR] [L4]. No
+son la misma cifra ni la misma moneda. En una implementación multijurisdiccional hay que
+decidir qué umbral se aplica en qué entidad legal y documentarlo; no es un detalle de
+calibración, es una regla de asignación de exposiciones.</p>
+</div>
+</div>
+<p><strong>El fundamento económico</strong> del recargo es la correlación con el factor sistémico. La
+función de ponderación de riesgo de Basilea se deriva de un modelo de un solo factor: cada
+deudor incumple cuando su valor de activos cae por debajo de un umbral, y todos los valores
+de activos comparten un factor común <svg class="math-inline" style="width:0.6875em;height:0.7500em;vertical-align:-0.0000em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 11 12" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-5a" transform="translate(0 0.09375)"/></g></g></g></svg> con intensidad <svg class="math-inline" style="width:0.7500em;height:0.7500em;vertical-align:-0.0000em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-52" transform="translate(0 0.09375)"/></g></g></g></svg>. La calibración base de <svg class="math-inline" style="width:0.7500em;height:0.7500em;vertical-align:-0.0000em;overflow:visible;" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style></defs><g><g></g><g><g transform="translate(0 12) scale(0.16 -0.16)"><use xlink:href="#DejaVuSans-Oblique-52" transform="translate(0 0.09375)"/></g></g></g></svg>
+—entre 12 % y 24 %, decreciente en la PD [CRE31.5] [B1]— se estimó para deudores
+corporativos ordinarios.</p>
+<p>Las instituciones financieras no encajan en esa calibración por tres motivos acumulativos:</p>
+<ol>
+<li><strong>Su activo son créditos a la economía.</strong> Su valor cae exactamente cuando cae el factor
+   sistémico, sin el amortiguador idiosincrásico que tiene una empresa industrial con un
+   producto propio y un mercado propio.</li>
+<li><strong>Están interconectadas entre sí.</strong> Se prestan mutuamente, se compensan derivados, se
+   fondean en los mismos mercados y mantienen las mismas exposiciones. Su incumplimiento no
+   es independiente condicionado al factor común: hay un canal de contagio directo, deudor a
+   deudor, que el modelo de un solo factor no captura y que el multiplicador aproxima de
+   forma tosca.</li>
+<li><strong>Comparten el mismo mecanismo de disparo.</strong> El evento que las mata —el cierre del
+   mercado de fondeo mayorista— es único y afecta a todas a la vez.</li>
+</ol>
+<p>Que el recargo se aplique a las <strong>no reguladas con independencia de su tamaño</strong> añade una
+capa: allí no hay requerimientos de capital ni de liquidez, ni supervisión, ni acceso a
+prestamista de última instancia. El regulador supone que la fragilidad sistémica está
+presente y que ninguna restricción prudencial la contiene.</p>
+<p><figure class="fig" id="fig-cap04_correlacion_125"><div class="fig-svg"><svg preserveAspectRatio="xMidYMid meet" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 535.50125 237.518547" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 237.518547 
+L 535.50125 237.518547 
+L 535.50125 0 
+L 0 0 
+L 0 237.518547 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 43.57125 202.886203 
+L 264.82625 202.886203 
+L 264.82625 58.958203 
+L 43.57125 58.958203 
+L 43.57125 202.886203 
+z
+" style="fill: none"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      
+      <g style="fill: var(--c-muted, #898781)" transform="translate(65.735608 216.104719)">
+       <text>
+        <tspan x="0" y="-0.064063" style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)">1</tspan>
+        <tspan x="6.044189" y="-0.064063" style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)">0</tspan>
+        <tspan x="12.184082" y="-3.892188" style="font-size: 6.65px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)">−</tspan>
+        <tspan x="17.756055" y="-3.892188" style="font-size: 6.65px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)">1</tspan>
+       </text>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      
+      <g style="fill: var(--c-muted, #898781)" transform="translate(145.83875 216.104719)">
+       <text>
+        <tspan x="0" y="-0.976562" style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)">1</tspan>
+        <tspan x="6.044189" y="-0.976562" style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)">0</tspan>
+        <tspan x="12.184082" y="-4.804688" style="font-size: 6.65px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)">0</tspan>
+       </text>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      
+      <g style="fill: var(--c-muted, #898781)" transform="translate(223.139392 216.104719)">
+       <text>
+        <tspan x="0" y="-0.064063" style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)">1</tspan>
+        <tspan x="6.044189" y="-0.064063" style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)">0</tspan>
+        <tspan x="12.184082" y="-3.892188" style="font-size: 6.65px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)">1</tspan>
+       </text>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <defs>
+       <path id="m04aeaac2d1" d="M 0 0 
+L 0 2 
+" style="stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </defs>
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="46.137089" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="53.628295" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="59.749057" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="64.924086" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="69.406901" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="73.361024" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_10">
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="100.16792" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_11">
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="113.779887" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_12">
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="123.437732" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_13">
+     <g id="line2d_13">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="130.928938" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_14">
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="137.049699" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_15">
+     <g id="line2d_15">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="142.224729" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_16">
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="146.707544" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_17">
+     <g id="line2d_17">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="150.661667" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_18">
+     <g id="line2d_18">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="177.468562" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_19">
+     <g id="line2d_19">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="191.08053" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_20">
+     <g id="line2d_20">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="200.738374" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_21">
+     <g id="line2d_21">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="208.22958" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_22">
+     <g id="line2d_22">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="214.350342" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_23">
+     <g id="line2d_23">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="219.525371" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_24">
+     <g id="line2d_24">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="224.008186" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_25">
+     <g id="line2d_25">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="227.962309" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_26">
+     <g id="line2d_26">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="254.769205" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_4">
+     <text style="font-size: 10px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="154.19875" y="229.678859" transform="rotate(-0 154.19875 229.678859)">PD (%, escala log)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_27">
+      <path d="M 43.57125 180.511157 
+L 264.82625 180.511157 
+" clip-path="url(#p82bcc2a221)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_28"/>
+     <g id="text_5">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="37.57125" y="184.120415" transform="rotate(-0 37.57125 184.120415)">50</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_29">
+      <path d="M 43.57125 154.426358 
+L 264.82625 154.426358 
+" clip-path="url(#p82bcc2a221)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_30"/>
+     <g id="text_6">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="37.57125" y="158.035616" transform="rotate(-0 37.57125 158.035616)">100</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_31">
+      <path d="M 43.57125 128.341559 
+L 264.82625 128.341559 
+" clip-path="url(#p82bcc2a221)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_32"/>
+     <g id="text_7">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="37.57125" y="131.950817" transform="rotate(-0 37.57125 131.950817)">150</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_33">
+      <path d="M 43.57125 102.25676 
+L 264.82625 102.25676 
+" clip-path="url(#p82bcc2a221)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_34"/>
+     <g id="text_8">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="37.57125" y="105.866018" transform="rotate(-0 37.57125 105.866018)">200</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_35">
+      <path d="M 43.57125 76.171962 
+L 264.82625 76.171962 
+" clip-path="url(#p82bcc2a221)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_36"/>
+     <g id="text_9">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="37.57125" y="79.781219" transform="rotate(-0 37.57125 79.781219)">250</text>
+     </g>
+    </g>
+    <g id="text_10">
+     <text style="font-size: 10px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="13.358438" y="130.922203" transform="rotate(-90 13.358438 130.922203)">RW (%)</text>
+    </g>
+   </g>
+   <g id="line2d_37">
+    <path d="M 53.628295 196.344021 
+L 61.89436 194.714616 
+L 70.160425 192.844419 
+L 77.508038 190.960914 
+L 84.855651 188.853774 
+L 92.203264 186.510947 
+L 99.550877 183.924744 
+L 106.898491 181.093677 
+L 114.246104 178.02445 
+L 122.512168 174.308278 
+L 131.696685 169.902097 
+L 142.718105 164.346489 
+L 174.863912 147.980003 
+L 186.803783 141.90242 
+L 193.232945 138.377265 
+L 197.825203 135.641342 
+L 202.417461 132.652711 
+L 207.009719 129.352677 
+L 210.683526 126.457285 
+L 214.357332 123.320165 
+L 218.949591 119.059233 
+L 223.541849 114.451397 
+L 229.052559 108.561792 
+L 245.584688 90.541948 
+L 249.258495 86.969973 
+L 252.932301 83.753472 
+L 254.769205 82.31149 
+L 254.769205 82.31149 
+" clip-path="url(#p82bcc2a221)" style="fill: none; stroke: var(--s1, #2a78d6); stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_38">
+    <path d="M 53.628295 192.666249 
+L 60.975909 190.734622 
+L 68.323522 188.560521 
+L 74.752683 186.445061 
+L 81.181845 184.119794 
+L 87.611006 181.576919 
+L 94.040168 178.812206 
+L 100.469329 175.82617 
+L 107.816942 172.151248 
+L 115.164555 168.217508 
+L 123.43062 163.527961 
+L 133.533588 157.524014 
+L 158.331782 142.652879 
+L 167.516299 137.48171 
+L 179.45617 131.064436 
+L 188.640686 126.070809 
+L 194.151396 122.849277 
+L 198.743655 119.925632 
+L 203.335913 116.706 
+L 207.009719 113.873599 
+L 210.683526 110.78684 
+L 214.357332 107.43447 
+L 218.031139 103.820785 
+L 222.623397 98.971388 
+L 228.134107 92.779465 
+L 241.910882 77.052615 
+L 245.584688 73.242014 
+L 249.258495 69.784219 
+L 252.01385 67.487854 
+L 254.769205 65.500385 
+L 254.769205 65.500385 
+" clip-path="url(#p82bcc2a221)" style="fill: none; stroke: var(--s2, #eb6834); stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 43.57125 202.886203 
+L 43.57125 58.958203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 43.57125 202.886203 
+L 264.82625 202.886203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 600; font-size: 11.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="43.57125" y="14.958203" transform="rotate(-0 43.57125 14.958203)">Ponderación de riesgo</text>
+   </g>
+   <g id="legend_1">
+    <g id="line2d_39">
+     <path d="M 47.37125 35.193641 
+L 54.49625 35.193641 
+L 61.62125 35.193641 
+" style="fill: none; stroke: var(--s1, #2a78d6); stroke-width: 2; stroke-linecap: round"/>
+    </g>
+    <g id="text_12">
+     <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="67.32125" y="38.518641" transform="rotate(-0 67.32125 38.518641)">Correlación estándar R</text>
+    </g>
+    <g id="line2d_40">
+     <path d="M 47.37125 49.13786 
+L 54.49625 49.13786 
+L 61.62125 49.13786 
+" style="fill: none; stroke: var(--s2, #eb6834); stroke-width: 2; stroke-linecap: round"/>
+    </g>
+    <g id="text_13">
+     <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="67.32125" y="52.46286" transform="rotate(-0 67.32125 52.46286)">R × 1,25 (CRE31.7)</text>
+    </g>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_5">
+    <path d="M 308.48625 202.886203 
+L 529.74125 202.886203 
+L 529.74125 58.958203 
+L 308.48625 58.958203 
+L 308.48625 202.886203 
+z
+" style="fill: none"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_27">
+     <g id="line2d_41"/>
+     <g id="text_14">
+      
+      <g style="fill: var(--c-muted, #898781)" transform="translate(330.650608 216.104719)">
+       <text>
+        <tspan x="0" y="-0.064063" style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)">1</tspan>
+        <tspan x="6.044189" y="-0.064063" style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)">0</tspan>
+        <tspan x="12.184082" y="-3.892188" style="font-size: 6.65px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)">−</tspan>
+        <tspan x="17.756055" y="-3.892188" style="font-size: 6.65px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)">1</tspan>
+       </text>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_28">
+     <g id="line2d_42"/>
+     <g id="text_15">
+      
+      <g style="fill: var(--c-muted, #898781)" transform="translate(410.75375 216.104719)">
+       <text>
+        <tspan x="0" y="-0.976562" style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)">1</tspan>
+        <tspan x="6.044189" y="-0.976562" style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)">0</tspan>
+        <tspan x="12.184082" y="-4.804688" style="font-size: 6.65px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)">0</tspan>
+       </text>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_29">
+     <g id="line2d_43"/>
+     <g id="text_16">
+      
+      <g style="fill: var(--c-muted, #898781)" transform="translate(488.054392 216.104719)">
+       <text>
+        <tspan x="0" y="-0.064063" style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)">1</tspan>
+        <tspan x="6.044189" y="-0.064063" style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)">0</tspan>
+        <tspan x="12.184082" y="-3.892188" style="font-size: 6.65px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)">1</tspan>
+       </text>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_30">
+     <g id="line2d_44">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="311.052089" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_31">
+     <g id="line2d_45">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="318.543295" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_32">
+     <g id="line2d_46">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="324.664057" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_33">
+     <g id="line2d_47">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="329.839086" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_34">
+     <g id="line2d_48">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="334.321901" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_35">
+     <g id="line2d_49">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="338.276024" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_36">
+     <g id="line2d_50">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="365.08292" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_37">
+     <g id="line2d_51">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="378.694887" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_38">
+     <g id="line2d_52">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="388.352732" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_39">
+     <g id="line2d_53">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="395.843938" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_40">
+     <g id="line2d_54">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="401.964699" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_41">
+     <g id="line2d_55">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="407.139729" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_42">
+     <g id="line2d_56">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="411.622544" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_43">
+     <g id="line2d_57">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="415.576667" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_44">
+     <g id="line2d_58">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="442.383562" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_45">
+     <g id="line2d_59">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="455.99553" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_46">
+     <g id="line2d_60">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="465.653374" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_47">
+     <g id="line2d_61">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="473.14458" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_48">
+     <g id="line2d_62">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="479.265342" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_49">
+     <g id="line2d_63">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="484.440371" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_50">
+     <g id="line2d_64">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="488.923186" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_51">
+     <g id="line2d_65">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="492.877309" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_52">
+     <g id="line2d_66">
+      <g>
+       <use xlink:href="#m04aeaac2d1" x="519.684205" y="202.886203" style="fill: var(--c-muted, #898781); stroke: var(--c-muted, #898781); stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_17">
+     <text style="font-size: 10px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="419.11375" y="229.678859" transform="rotate(-0 419.11375 229.678859)">PD (%, escala log)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_6">
+     <g id="line2d_67">
+      <path d="M 308.48625 187.715696 
+L 529.74125 187.715696 
+" clip-path="url(#pc5d4140f1b)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_68"/>
+     <g id="text_18">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="302.48625" y="191.324954" transform="rotate(-0 302.48625 191.324954)">15</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_69">
+      <path d="M 308.48625 158.44108 
+L 529.74125 158.44108 
+" clip-path="url(#pc5d4140f1b)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_70"/>
+     <g id="text_19">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="302.48625" y="162.050338" transform="rotate(-0 302.48625 162.050338)">20</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_71">
+      <path d="M 308.48625 129.166464 
+L 529.74125 129.166464 
+" clip-path="url(#pc5d4140f1b)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_72"/>
+     <g id="text_20">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="302.48625" y="132.775722" transform="rotate(-0 302.48625 132.775722)">25</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_73">
+      <path d="M 308.48625 99.891848 
+L 529.74125 99.891848 
+" clip-path="url(#pc5d4140f1b)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_74"/>
+     <g id="text_21">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="302.48625" y="103.501106" transform="rotate(-0 302.48625 103.501106)">30</text>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_75">
+      <path d="M 308.48625 70.617233 
+L 529.74125 70.617233 
+" clip-path="url(#pc5d4140f1b)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_76"/>
+     <g id="text_22">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="302.48625" y="74.22649" transform="rotate(-0 302.48625 74.22649)">35</text>
+     </g>
+    </g>
+    <g id="text_23">
+     <text style="font-size: 10px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="284.317813" y="130.922203" transform="rotate(-90 284.317813 130.922203)">Diferencia (%)</text>
+    </g>
+   </g>
+   <g id="line2d_77">
+    <path d="M 318.543295 65.500385 
+L 324.972457 66.392869 
+L 331.401618 67.532763 
+L 337.83078 68.931644 
+L 343.34149 70.345968 
+L 348.8522 71.967254 
+L 354.362909 73.803359 
+L 359.873619 75.862006 
+L 365.384329 78.150532 
+L 370.895039 80.675569 
+L 376.405749 83.442637 
+L 381.916459 86.455652 
+L 387.427168 89.716345 
+L 392.937878 93.2236 
+L 398.448588 96.972741 
+L 404.87775 101.640223 
+L 411.306911 106.601614 
+L 418.654524 112.588333 
+L 426.920589 119.644653 
+L 438.86046 130.187189 
+L 453.555686 143.123488 
+L 461.821751 150.103954 
+L 470.087816 156.77069 
+L 479.272332 163.850993 
+L 500.39672 179.974215 
+L 507.744333 185.943427 
+L 514.173495 191.426318 
+L 519.684205 196.344021 
+L 519.684205 196.344021 
+" clip-path="url(#pc5d4140f1b)" style="fill: none; stroke: var(--s2, #eb6834); stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 308.48625 202.886203 
+L 308.48625 58.958203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 308.48625 202.886203 
+L 529.74125 202.886203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_24">
+    <text style="font-weight: 600; font-size: 11.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="308.48625" y="46.958203" transform="rotate(-0 308.48625 46.958203)">Incremento relativo del RW</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p82bcc2a221">
+   <rect x="43.57125" y="58.958203" width="221.255" height="143.928"/>
+  </clipPath>
+  <clipPath id="pc5d4140f1b">
+   <rect x="308.48625" y="58.958203" width="221.255" height="143.928"/>
+  </clipPath>
+ </defs>
+</svg></div><figcaption>Efecto del multiplicador de correlación de 1,25 sobre la ponderación de riesgo. Calculado con la función de Basilea (CRE31.5, CRE31.6 y la fórmula de K del dosier [B1][B6]) para LGD de 45 % y vencimiento efectivo M de 2,5 años.</figcaption></figure></p>
+<div class="box box-economico">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Dónde muerde el multiplicador</span></div>
+<div class="box-b">
+<p>El incremento relativo de la ponderación de riesgo <strong>no es uniforme</strong>: es máximo en las PD
+bajas —del orden del 35 % adicional— y decrece de forma monótona conforme la PD sube, hasta
+situarse por debajo del 15 % en la zona de PD elevadas. Tiene sentido: cuando la PD ya es
+alta, el capital lo domina el componente idiosincrásico y la correlación importa menos; en
+PD bajas, casi todo el capital regulatorio es capital contra el escenario sistémico, y por
+eso multiplicar la correlación por 1,25 es allí donde más cuesta. La consecuencia de
+negocio: el recargo golpea con más fuerza precisamente a las contrapartes financieras de
+mejor calidad, que es donde vive la mayor parte del volumen interbancario.</p>
+</div>
+</div>
+<h3 id="25-la-restriccion-del-enfoque-avanzado">2.5 La restricción del enfoque avanzado<a class="hlink" href="#25-la-restriccion-del-enfoque-avanzado" aria-label="enlace">#</a></h3>
+<div class="box box-regulatorio">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Art. 151(8)/(9) CRR · CP16/22 §4.71–4.73</span></div>
+<div class="box-b">
+<p>El CRR consolidado obliga a aplicar los valores de severidad supervisora del artículo 161(1)
+y los factores de conversión estandarizados a las <strong>exposiciones a entidades del sector
+financiero</strong> y a los <strong>grandes corporativos</strong> —definidos como aquellos con ventas anuales
+consolidadas superiores a <strong>500 millones de euros</strong> [art. 142(1)(5a) CRR]—, salvo el
+supuesto excepcional del párrafo 9 [L4]. Es decir: el enfoque avanzado deja de estar
+disponible para bancos e instituciones financieras. El régimen británico de Basilea 3.1 va
+en la misma dirección: elimina el enfoque avanzado para "exposiciones a instituciones y
+corporativos financieros", manteniendo disponible el fundacional [CP16/22 §4.71–4.73]
+[R6], con un umbral propuesto para grandes corporativos de <strong>440 millones de libras</strong> de
+ingresos anuales consolidados medidos como media móvil de tres años [CP16/22 §4.55] [R6]
+—cifra <strong>no reconfirmada en las reglas finales de PS1/26</strong> según advierte el dosier—.</p>
+</div>
+</div>
+<p>La lectura de gestión es directa: para exposiciones a bancos, el esfuerzo de modelización
+tiene que concentrarse en la PD, porque la severidad y los factores de conversión los fija
+la norma. Un proyecto de mejora de la LGD de contrapartes financieras es, hoy, un proyecto
+sin retorno regulatorio —aunque conserve valor para la pérdida esperada contable bajo la
+NIIF 9 y para el precio, que no están sujetos a esa restricción—.</p>
+<h2 id="3-entidades-financieras-no-bancarias">3. Entidades financieras no bancarias<a class="hlink" href="#3-entidades-financieras-no-bancarias" aria-label="enlace">#</a></h2>
+<h3 id="31-que-son-y-por-que-rompen-el-modelo-corporativo">3.1 Qué son y por qué rompen el modelo corporativo<a class="hlink" href="#31-que-son-y-por-que-rompen-el-modelo-corporativo" aria-label="enlace">#</a></h3>
+<p>Bajo la etiqueta de entidades financieras no bancarias (<em>non-bank financial institutions</em>,
+NBFI) conviven negocios muy distintos: arrendadoras financieras y operativas, financieras
+automotrices —a menudo cautivas de un fabricante—, sociedades financieras de objeto
+múltiple (sofomes) en México, plataformas de crédito digital, aseguradoras, casas de bolsa,
+sociedades de factoraje y prestamistas especializados.</p>
+<p>Lo que tienen en común es que <strong>su activo es crédito y su pasivo es deuda</strong>, y eso vuelve
+engañosas casi todas las variables de un modelo corporativo genérico:</p>
+<ul>
+<li><strong>El apalancamiento no significa lo mismo.</strong> Una arrendadora con deuda de seis veces sus
+  recursos propios no está sobreendeudada: está financiando activos productivos con un
+  calce razonable. Un fabricante con la misma razón está en dificultades. Un modelo entrenado
+  mayoritariamente con empresas industriales aplicará el coeficiente industrial al balance
+  financiero y castigará sistemáticamente a todo el sector.</li>
+<li><strong>El "inventario" es cartera de crédito.</strong> Las razones de rotación y los días de
+  inventario son ininterpretables. El equivalente económico correcto son las métricas de
+  calidad de cartera: mora, castigos, cosechas, cobertura de reservas.</li>
+<li><strong>El margen bruto no existe.</strong> La rentabilidad se mide por margen financiero neto sobre
+  activos productivos y por costo del riesgo, no por margen sobre ventas.</li>
+<li><strong>El riesgo dominante es de fondeo, no de operación.</strong> Una NBFI no capta depósitos: se
+  fondea en el mercado, con bancos o con emisiones. Su vulnerabilidad es el descalce entre
+  el plazo de su cartera y el plazo de su pasivo, la concentración de sus líneas bancarias y
+  la existencia de covenants financieros cuyo incumplimiento acelera el vencimiento. La
+  historia reciente del sector no bancario mexicano ilustra el punto: los episodios de
+  tensión llegaron por el lado del pasivo, no por un deterioro súbito del activo.</li>
+</ul>
+<h3 id="32-como-se-ajusta-el-analisis">3.2 Cómo se ajusta el análisis<a class="hlink" href="#32-como-se-ajusta-el-analisis" aria-label="enlace">#</a></h3>
+<p>Cuatro ajustes, en orden de impacto:</p>
+<ol>
+<li><strong>Segmentar.</strong> Separar las NBFI en un segmento propio del modelo corporativo, con su
+   propio conjunto de variables o, como mínimo, con transformaciones y umbrales propios. La
+   directriz europea exige que los sistemas de calificación cubran exposiciones "donde los
+   deudores o facilidades muestran factores comunes de riesgo y solvencia"
+   [EBA/GL/2017/16 §12] [E1]: una arrendadora y una fábrica de autopartes no los muestran.</li>
+<li><strong>Sustituir las variables de balance industrial por variables de intermediario
+   financiero</strong>: capital tangible sobre activos, calidad de cartera y su tendencia, cobertura
+   de reservas, margen financiero neto, costo del riesgo, calce de plazos y de moneda,
+   concentración del fondeo, líneas comprometidas disponibles frente a vencimientos de doce
+   meses.</li>
+<li><strong>Reconocer explícitamente el soporte de la matriz</strong> cuando exista —típico en financieras
+   automotrices cautivas—, con la cautela de que un soporte no contractual es una opinión,
+   no una garantía. Si el soporte se reconoce mediante la sustitución de PD y severidad por
+   las del garante, hay que cumplir las condiciones aplicables: protección elegible, costos
+   directos de ejecución insignificantes y garante no incumplido [EBA/GL/2020/05 §31(a)(ii),
+   §36(b)] [E4].</li>
+<li><strong>Verificar la clasificación regulatoria antes que la estadística.</strong> La pregunta previa a
+   cualquier análisis es si la contraparte es una "institución financiera" a efectos del
+   multiplicador de 1,25 [CRE31.7] [B1]. La mayoría de las NBFI lo son —préstamo,
+   arrendamiento, gestión de activos, titulización están expresamente en la lista— y muchas
+   son <strong>no reguladas</strong>, en cuyo caso el recargo se aplica sin umbral de tamaño.</li>
+</ol>
+<div class="box box-alerta">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">El error de clasificación más caro de esta cartera</span></div>
+<div class="box-b">
+<p>Una sofom no regulada, una arrendadora independiente o una plataforma de crédito digital
+clasificadas como "corporativo" en el motor de cálculo no reciben el multiplicador de 1,25.
+El error es silencioso —nada falla, los informes cuadran—, se propaga a todas las
+exposiciones del segmento y es exactamente el tipo de hallazgo que una revisión supervisora
+de modelos internos convierte en una limitación con obligación de remediación. Merece un
+control específico de conciliación entre el campo de sector económico, el campo de tipo de
+contraparte regulatoria y el marcador de entidad regulada.</p>
+</div>
+</div>
+<p>En México, esta familia tiene además una referencia normativa propia para la evaluación
+cualitativa: el <strong>Anexo 21 de la CUB</strong> —"Lineamientos para evaluar la calidad crediticia de
+las entidades financieras"— aplica a contrapartes financieras y contiene los nueve grados de
+riesgo (A-1 a E) con descriptores cualitativos de liquidez, capitalización, calidad de
+cartera y rentabilidad, <strong>sin tabla numérica de porcentajes de reserva</strong> [M22]. Es
+significativo que el propio regulador mexicano haya construido una escala de descriptores
+específica para entidades financieras en lugar de reutilizar la de cartera comercial
+general: confirma que el problema de comparabilidad descrito en esta sección es reconocido
+normativamente.</p>
+<h2 id="4-fondos-y-vehiculos">4. Fondos y vehículos<a class="hlink" href="#4-fondos-y-vehiculos" aria-label="enlace">#</a></h2>
+<h3 id="41-el-problema">4.1 El problema<a class="hlink" href="#41-el-problema" aria-label="enlace">#</a></h3>
+<p>Un fondo de inversión, un fondo de cobertura, un vehículo de titulización o un fideicomiso
+no tienen un negocio: tienen una cartera y un mandato. Su capacidad de pago no depende de
+generar caja operativa sino del valor y la liquidez de los activos que mantienen y del
+apalancamiento con el que los mantienen. Y ese apalancamiento puede cambiar en días sin que
+nada en los estados financieros anuales lo anticipe.</p>
+<p>Además, el riesgo relevante suele ser de contraparte más que de crédito clásico: la
+exposición típica del banco a un fondo de cobertura no es un préstamo a plazo sino una
+posición en derivados, un préstamo de valores o financiación con margen, donde la exposición
+al incumplimiento fluctúa con el mercado y está mitigada por colateral con llamadas
+diarias. El deterioro no llega por la vía de un impago sino por la vía de un movimiento de
+mercado que la garantía no alcanza a cubrir.</p>
+<h3 id="42-transparencia-frente-a-mandato">4.2 Transparencia frente a mandato<a class="hlink" href="#42-transparencia-frente-a-mandato" aria-label="enlace">#</a></h3>
+<p>Hay dos formas de tratar una exposición a un vehículo:</p>
+<p><strong>Enfoque de transparencia (<em>look-through</em>).</strong> Se miran los activos subyacentes reales y se
+trata la exposición como si fuera una exposición proporcional a esos activos. Es el enfoque
+más preciso y exige información suficiente y suficientemente frecuente sobre la composición
+real de la cartera: un reporte de posiciones que llegue con dos meses de retraso no permite
+un tratamiento de transparencia significativo para un fondo que rota diariamente.</p>
+<p><strong>Enfoque de mandato.</strong> Cuando no hay información suficiente para mirar a través, se usan
+los límites del documento constitutivo —el mandato— y se supone que el fondo está invertido
+en la composición <strong>más adversa</strong> que su mandato le permite. Un fondo con mandato para
+invertir hasta el 30 % en instrumentos de alto rendimiento se trata como si tuviera el 30 %
+en alto rendimiento, aunque hoy tenga cero.</p>
+<p>La elección entre ambos no es libre y tiene una jerarquía regulatoria, con un tratamiento
+residual —típicamente muy punitivo— para el caso de que no exista ni transparencia ni
+mandato utilizable.</p>
+<div class="box box-alerta">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Estado de verificación</span></div>
+<div class="box-b">
+<p>El tratamiento regulatorio de las inversiones en fondos —la jerarquía formal entre enfoque
+de transparencia, enfoque de mandato y enfoque residual, sus condiciones de elegibilidad y
+las ponderaciones asociadas— vive en un capítulo del marco de Basilea que <strong>no está cubierto
+por los dosieres de esta guía</strong>, que documentan CRE31–CRE36. La exposición conceptual
+anterior es correcta en sustancia como descripción de práctica de mercado, pero <strong>las reglas
+concretas, incluidos los porcentajes y las condiciones de elegibilidad, quedan pendientes de
+verificar contra la fuente primaria</strong> y no se citan aquí.</p>
+</div>
+</div>
+<p>Para los vehículos de titulización aplica un marco distinto y propio, que además queda
+expresamente fuera del agregado de pérdida esperada IRB: los bancos agregan los importes de
+pérdida esperada de las exposiciones tratadas bajo IRB <strong>excluyendo titulizaciones</strong>
+[CRE35.1] [B4].</p>
+<h2 id="5-sector-publico-no-soberano">5. Sector público no soberano<a class="hlink" href="#5-sector-publico-no-soberano" aria-label="enlace">#</a></h2>
+<h3 id="51-la-familia">5.1 La familia<a class="hlink" href="#51-la-familia" aria-label="enlace">#</a></h3>
+<p>Entidades federativas y estados, municipios, organismos descentralizados, organismos
+autónomos y empresas productivas del Estado. Su rasgo común es que no son el soberano
+—no emiten moneda, no tienen la última palabra fiscal— pero tampoco son empresas: sus
+ingresos son, en proporción variable, transferencias del gobierno central, y su capacidad de
+ajuste está limitada por la rigidez del gasto —nómina, pensiones, servicios obligatorios—.</p>
+<p>Los impulsores de riesgo son distintos de los de un corporativo:</p>
+<ul>
+<li><strong>Composición del ingreso</strong>: proporción de ingresos propios frente a transferencias, y
+  previsibilidad de la fórmula de transferencia.</li>
+<li><strong>Rigidez del gasto</strong> y capacidad efectiva de ajuste.</li>
+<li><strong>Nivel y estructura del endeudamiento</strong> en relación con los ingresos disponibles, y la
+  carga del servicio de deuda sobre esos ingresos.</li>
+<li><strong>Pasivos contingentes</strong>, especialmente pensiones y organismos descentralizados.</li>
+<li><strong>Marco institucional</strong>: reglas de disciplina financiera, límites legales al
+  endeudamiento, registros públicos de deuda, alternancia política y calidad de la gestión.</li>
+<li><strong>Estructura de la fuente de pago</strong>: qué mecanismo asegura que el pago ocurra antes de que
+  el dinero llegue a la tesorería del ente.</li>
+</ul>
+<p>Este último punto es el que domina la severidad, y por una razón sencilla: un municipio no
+se liquida. No hay activos que ejecutar ni proceso concursal; la recuperación depende
+íntegramente de la calidad jurídica del mecanismo de cobro.</p>
+<h3 id="52-mexico">5.2 México<a class="hlink" href="#52-mexico" aria-label="enlace">#</a></h3>
+<p>Lo verificado en el dosier regulatorio de esta guía es lo siguiente:</p>
+<ul>
+<li>Los <strong>créditos a entidades federativas y municipios</strong> constituyen una de las categorías
+  con <strong>metodología de calificación diferenciada</strong> dentro de la cartera crediticia comercial
+  de la CUB, junto con proyectos de inversión con fuente de pago propia, fiduciarios y
+  entidades financieras [M15][M12].</li>
+<li>La CNBV <strong>modificó la metodología de calificación de cartera comercial con efecto a partir
+  de enero de 2022, incluyendo específicamente créditos a estados y municipios</strong> [M12].</li>
+<li>Existe una <strong>serie de reporte regulatorio propia</strong> dentro del catálogo CUIFE para
+  entidades financieras (R04 C-0458 al 462) y para proyectos de inversión (R04 C-0483 al
+  485), separadas de la serie general de créditos comerciales [M18].</li>
+<li>Para <strong>contrapartes financieras</strong>, el Anexo 21 de la CUB fija los lineamientos de
+  evaluación de calidad crediticia con nueve grados de riesgo y descriptores cualitativos
+  [M22].</li>
+</ul>
+<div class="box box-alerta">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Lo que no está verificado sobre el sector público subnacional mexicano</span></div>
+<div class="box-b">
+<p>El dosier documenta un bloqueo de acceso a los dominios primarios de la CNBV y del DOF, y
+deja sin verificar puntos centrales:
+- <strong>El contenido de la metodología de calificación aplicable a entidades federativas y
+  municipios</strong> —factores, pesos, umbrales, tablas de puntaje— no está verificado. Se
+  confirma que la metodología diferenciada existe; no su contenido.
+- <strong>La tabla oficial de rangos de porcentaje de reserva por grado de riesgo (A-1 a E)</strong> para
+  cartera comercial no pudo localizarse en los Anexos 20, 21, 22, 23 ni 28; se presume que
+  reside en el artículo 131 de la CUB o en un anexo no revisado [M3][M22][M23][M24][M25].
+- <strong>La mecánica habitual de la fuente de pago</strong> —afectación de participaciones federales y
+  constitución de un fideicomiso maestro de administración y pago que retiene el flujo antes
+  de que llegue a la tesorería del ente— es práctica de mercado ampliamente conocida en
+  México y es lo que sostiene la severidad baja de esta cartera, pero <strong>no está verificada
+  contra la CUB ni contra ninguna fuente primaria en los dosieres de esta guía</strong>. Se enuncia
+  aquí como descripción del funcionamiento comercial habitual, con la etiqueta de <strong>dato
+  pendiente de verificar contra la fuente primaria</strong>, y no debe presentarse como requisito
+  normativo ni como base de una estimación de LGD sin verificación previa.</p>
+</div>
+</div>
+<p>Conviene además distinguir dos cosas que se confunden en los comités: la <strong>afectación de una
+fuente de pago</strong> no elimina el riesgo del deudor, lo transforma. Reduce la probabilidad de
+que un impago ocurra por decisión discrecional del ente y mejora la recuperación, pero deja
+intactos el riesgo de que el flujo afectado se reduzca —porque la fórmula de transferencia
+cambia o porque la recaudación cae— y el riesgo legal de que el mecanismo sea impugnado.
+Tratarla como una garantía real de valor cierto es un error de valoración habitual.</p>
+<h2 id="6-sintesis-comparativa">6. Síntesis comparativa<a class="hlink" href="#6-sintesis-comparativa" aria-label="enlace">#</a></h2>
+<p><figure class="fig" id="fig-cap04_mapa_drivers"><div class="fig-svg"><svg preserveAspectRatio="xMidYMid meet" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 503.120906 287.914194" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 287.914194 
+L 503.120906 287.914194 
+L 503.120906 0 
+L 0 0 
+L 0 287.914194 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 73.280906 259.346203 
+L 497.360906 259.346203 
+L 497.360906 26.498203 
+L 73.280906 26.498203 
+L 73.280906 259.346203 
+z
+" style="fill: none"/>
+   </g>
+   <g clip-path="url(#p6c3ee3ed77)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAk0AAAFECAYAAAA6HQoNAAAGjklEQVR4nO3YoW0bUBhG0aQyb1GARygxMymrZzCMVBKUBaqyDmFkEsnQMxiWmIV0BIOwTpBOEOmCKC95OmeCDzw9Xf3XX3/+fb6Cd+pyPo6eAC9arrejJ0xns7oZPWEqh/1u9ISpfBo9AADgIxBNAACBaAIACEQTAEAgmgAAAtEEABCIJgCAQDQBAASiCQAgEE0AAIFoAgAIRBMAQCCaAAAC0QQAEIgmAIBANAEABKIJACAQTQAAgWgCAAhEEwBAIJoAAALRBAAQiCYAgEA0AQAEogkAIBBNAACBaAIACEQTAEAgmgAAAtEEABCIJgCAQDQBAASiCQAgEE0AAIFoAgAIRBMAQCCaAAAC0QQAEIgmAIBANAEABKIJACAQTQAAgWgCAAhEEwBAIJoAAILF6AHA27m9ux89YSqH/W70hOkczqMXwMtcmgAAAtEEABCIJgCAQDQBAASiCQAgEE0AAIFoAgAIRBMAQCCaAAAC0QQAEIgmAIBANAEABKIJACAQTQAAgWgCAAhEEwBAIJoAAALRBAAQiCYAgEA0AQAEogkAIBBNAACBaAIACEQTAEAgmgAAAtEEABCIJgCAQDQBAASiCQAgEE0AAIFoAgAIRBMAQCCaAAAC0QQAEIgmAIBANAEABKIJACAQTQAAgWgCAAhEEwBAIJoAAALRBAAQiCYAgEA0AQAEogkAIBBNAADBYvSA2VzOx9ETpnJ7dz96wlQO+93oCVPxPl+fN8p75tIEABCIJgCAQDQBAASiCQAgEE0AAIFoAgAIRBMAQCCaAAAC0QQAEIgmAIBANAEABKIJACAQTQAAgWgCAAhEEwBAIJoAAALRBAAQiCYAgEA0AQAEogkAIBBNAACBaAIACEQTAEAgmgAAAtEEABCIJgCAQDQBAASiCQAgEE0AAIFoAgAIRBMAQCCaAAAC0QQAEIgmAIBANAEABKIJACAQTQAAgWgCAAhEEwBAIJoAAALRBAAQiCYAgEA0AQAEogkAIBBNAADB4nI+jt4A8CEd9rvRE6azXG9HT4AXuTQBAASiCQAgEE0AAIFoAgAIRBMAQCCaAAAC0QQAEIgmAIBANAEABKIJACAQTQAAgWgCAAhEEwBAIJoAAALRBAAQiCYAgEA0AQAEogkAIBBNAACBaAIACEQTAEAgmgAAAtEEABCIJgCAQDQBAASiCQAgEE0AAIFoAgAIRBMAQCCaAAAC0QQAEIgmAIBANAEABKIJACAQTQAAgWgCAAhEEwBAIJoAAALRBAAQiCYAgEA0AQAEogkAIBBNAACBaAIACEQTAECwWK63ozdM5XI+jp4wldPj0+gJAB/WZnUzesJUXJoAAALRBAAQiCYAgEA0AQAEogkAIBBNAACBaAIACEQTAEAgmgAAAtEEABCIJgCAQDQBAASiCQAgEE0AAIFoAgAIRBMAQCCaAAAC0QQAEIgmAIBANAEABKIJACAQTQAAgWgCAAhEEwBAIJoAAALRBAAQiCYAgEA0AQAEogkAIBBNAACBaAIACEQTAEAgmgAAAtEEABCIJgCAQDQBAASiCQAgEE0AAIFoAgAIRBMAQCCaAAAC0QQAEIgmAIBANAEABKIJACAQTQAAwWKzuhm9YSqnq+3oCVO5nI+jJ0zl9PBr9ISpPPz5N3rCdE6PT6MnTOXHt8+jJ0zFpQkAIBBNAACBaAIACEQTAEAgmgAAAtEEABCIJgCAQDQBAASiCQAgEE0AAIFoAgAIRBMAQCCaAAAC0QQAEIgmAIBANAEABKIJACAQTQAAgWgCAAhEEwBAIJoAAALRBAAQiCYAgEA0AQAEogkAIBBNAACBaAIACEQTAEAgmgAAAtEEABCIJgCAQDQBAASiCQAgEE0AAIFoAgAIRBMAQCCaAAAC0QQAEIgmAIBANAEABKIJACAQTQAAgWgCAAhEEwBAIJoAAILrL99/P48eMZPlejt6wlQ2q5vRE4A3dHp8Gj1hKv7Q1+XSBAAQiCYAgEA0AQAEogkAIBBNAACBaAIACEQTAEAgmgAAAtEEABCIJgCAQDQBAASiCQAgEE0AAIFoAgAIRBMAQCCaAAAC0QQAEIgmAIBANAEABKIJACAQTQAAgWgCAAhEEwBAIJoAAALRBAAQiCYAgEA0AQAEogkAIBBNAACBaAIACEQTAEAgmgAAAtEEABCIJgCAQDQBAASiCQAgEE0AAIFoAgAIRBMAQCCaAAAC0QQAEIgmAIBANAEABKIJACAQTQAAwX9ycDNBzK64FQAAAABJRU5ErkJggg==" id="imageba5739b209" transform="scale(1 -1) translate(0 -233.28)" x="73.280906" y="-26.066203" width="424.08" height="233.28"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 7.9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="103.572335" y="271.348969" transform="rotate(-0 103.572335 271.348969)">Apalancamiento</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 7.9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(144.144122 271.348969)">Liquidez y</text>
+      <text style="font-size: 7.9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(150.489426 280.195241)">fondeo</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font-size: 7.9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(195.874041 271.664969)">Riesgo político</text>
+      <text style="font-size: 7.9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(211.591338 280.511241)">y legal</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="font-size: 7.9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(263.220656 271.348969)">Calidad del</text>
+      <text style="font-size: 7.9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(273.327719 280.195241)">activo</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <text style="font-size: 7.9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="345.903763" y="271.348969" transform="rotate(-0 345.903763 271.348969)">Apoyo externo</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6"/>
+     <g id="text_6">
+      <text style="font-size: 7.9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(384.905425 271.348969)">Gobierno y</text>
+      <text style="font-size: 7.9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(379.245816 280.195241)">transparencia</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_7"/>
+     <g id="text_7">
+      <text style="font-size: 7.9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(446.572064 271.348969)">Estructura</text>
+      <text style="font-size: 7.9px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(444.642735 280.195241)">contractual</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_8"/>
+     <g id="text_8">
+      <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="67.280906" y="46.397531" transform="rotate(-0 67.280906 46.397531)">Corporativo</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_9"/>
+     <g id="text_9">
+      <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="67.280906" y="79.661531" transform="rotate(-0 67.280906 79.661531)">Soberano</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_10"/>
+     <g id="text_10">
+      <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="67.280906" y="112.925531" transform="rotate(-0 67.280906 112.925531)">Banco</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_11"/>
+     <g id="text_11">
+      <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="67.280906" y="146.189531" transform="rotate(-0 67.280906 146.189531)">NBFI</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_12"/>
+     <g id="text_12">
+      <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="67.280906" y="179.453531" transform="rotate(-0 67.280906 179.453531)">Fondo</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_13"/>
+     <g id="text_13">
+      <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(5.76 208.727938)">Sector público</text>
+      <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(15.680906 218.358056)">subnacional</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_14"/>
+     <g id="text_14">
+      <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(20.900031 241.819938)">Financiam.</text>
+      <text style="font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-muted, #898781)" transform="translate(9.085781 251.450056)">especializado</text>
+     </g>
+    </g>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="103.572335" y="45.282516" transform="rotate(-0 103.572335 45.282516)">alto</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="164.155192" y="45.282516" transform="rotate(-0 164.155192 45.282516)">medio</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink, #0b0b0b)" x="224.738049" y="45.282516" transform="rotate(-0 224.738049 45.282516)">bajo</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink, #0b0b0b)" x="285.320906" y="45.282516" transform="rotate(-0 285.320906 45.282516)">bajo</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink, #0b0b0b)" x="345.903763" y="45.282516" transform="rotate(-0 345.903763 45.282516)">bajo</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="406.486621" y="45.282516" transform="rotate(-0 406.486621 45.282516)">medio</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink, #0b0b0b)" x="467.069478" y="45.282516" transform="rotate(-0 467.069478 45.282516)">bajo</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink, #0b0b0b)" x="103.572335" y="78.546516" transform="rotate(-0 103.572335 78.546516)">bajo</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="164.155192" y="78.546516" transform="rotate(-0 164.155192 78.546516)">medio</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="224.738049" y="78.546516" transform="rotate(-0 224.738049 78.546516)">alto</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink, #0b0b0b)" x="285.320906" y="78.546516" transform="rotate(-0 285.320906 78.546516)">–</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink, #0b0b0b)" x="345.903763" y="78.546516" transform="rotate(-0 345.903763 78.546516)">bajo</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="406.486621" y="78.546516" transform="rotate(-0 406.486621 78.546516)">medio</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink, #0b0b0b)" x="467.069478" y="78.546516" transform="rotate(-0 467.069478 78.546516)">–</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="103.572335" y="111.810516" transform="rotate(-0 103.572335 111.810516)">medio</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="164.155192" y="111.810516" transform="rotate(-0 164.155192 111.810516)">alto</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="224.738049" y="111.810516" transform="rotate(-0 224.738049 111.810516)">medio</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="285.320906" y="111.810516" transform="rotate(-0 285.320906 111.810516)">alto</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="345.903763" y="111.810516" transform="rotate(-0 345.903763 111.810516)">alto</text>
+   </g>
+   <g id="text_34">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="406.486621" y="111.810516" transform="rotate(-0 406.486621 111.810516)">medio</text>
+   </g>
+   <g id="text_35">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink, #0b0b0b)" x="467.069478" y="111.810516" transform="rotate(-0 467.069478 111.810516)">bajo</text>
+   </g>
+   <g id="text_36">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="103.572335" y="145.074516" transform="rotate(-0 103.572335 145.074516)">alto</text>
+   </g>
+   <g id="text_37">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="164.155192" y="145.074516" transform="rotate(-0 164.155192 145.074516)">alto</text>
+   </g>
+   <g id="text_38">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink, #0b0b0b)" x="224.738049" y="145.074516" transform="rotate(-0 224.738049 145.074516)">bajo</text>
+   </g>
+   <g id="text_39">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="285.320906" y="145.074516" transform="rotate(-0 285.320906 145.074516)">alto</text>
+   </g>
+   <g id="text_40">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="345.903763" y="145.074516" transform="rotate(-0 345.903763 145.074516)">alto</text>
+   </g>
+   <g id="text_41">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="406.486621" y="145.074516" transform="rotate(-0 406.486621 145.074516)">medio</text>
+   </g>
+   <g id="text_42">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="467.069478" y="145.074516" transform="rotate(-0 467.069478 145.074516)">medio</text>
+   </g>
+   <g id="text_43">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="103.572335" y="178.338516" transform="rotate(-0 103.572335 178.338516)">medio</text>
+   </g>
+   <g id="text_44">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="164.155192" y="178.338516" transform="rotate(-0 164.155192 178.338516)">alto</text>
+   </g>
+   <g id="text_45">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink, #0b0b0b)" x="224.738049" y="178.338516" transform="rotate(-0 224.738049 178.338516)">bajo</text>
+   </g>
+   <g id="text_46">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="285.320906" y="178.338516" transform="rotate(-0 285.320906 178.338516)">alto</text>
+   </g>
+   <g id="text_47">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink, #0b0b0b)" x="345.903763" y="178.338516" transform="rotate(-0 345.903763 178.338516)">bajo</text>
+   </g>
+   <g id="text_48">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="406.486621" y="178.338516" transform="rotate(-0 406.486621 178.338516)">alto</text>
+   </g>
+   <g id="text_49">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="467.069478" y="178.338516" transform="rotate(-0 467.069478 178.338516)">alto</text>
+   </g>
+   <g id="text_50">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="103.572335" y="211.602516" transform="rotate(-0 103.572335 211.602516)">medio</text>
+   </g>
+   <g id="text_51">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="164.155192" y="211.602516" transform="rotate(-0 164.155192 211.602516)">medio</text>
+   </g>
+   <g id="text_52">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="224.738049" y="211.602516" transform="rotate(-0 224.738049 211.602516)">alto</text>
+   </g>
+   <g id="text_53">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink, #0b0b0b)" x="285.320906" y="211.602516" transform="rotate(-0 285.320906 211.602516)">bajo</text>
+   </g>
+   <g id="text_54">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="345.903763" y="211.602516" transform="rotate(-0 345.903763 211.602516)">alto</text>
+   </g>
+   <g id="text_55">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="406.486621" y="211.602516" transform="rotate(-0 406.486621 211.602516)">alto</text>
+   </g>
+   <g id="text_56">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="467.069478" y="211.602516" transform="rotate(-0 467.069478 211.602516)">alto</text>
+   </g>
+   <g id="text_57">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="103.572335" y="244.866516" transform="rotate(-0 103.572335 244.866516)">medio</text>
+   </g>
+   <g id="text_58">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="164.155192" y="244.866516" transform="rotate(-0 164.155192 244.866516)">medio</text>
+   </g>
+   <g id="text_59">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="224.738049" y="244.866516" transform="rotate(-0 224.738049 244.866516)">alto</text>
+   </g>
+   <g id="text_60">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="285.320906" y="244.866516" transform="rotate(-0 285.320906 244.866516)">alto</text>
+   </g>
+   <g id="text_61">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="345.903763" y="244.866516" transform="rotate(-0 345.903763 244.866516)">medio</text>
+   </g>
+   <g id="text_62">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink, #0b0b0b)" x="406.486621" y="244.866516" transform="rotate(-0 406.486621 244.866516)">bajo</text>
+   </g>
+   <g id="text_63">
+    <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-surface, #fcfcfb)" x="467.069478" y="244.866516" transform="rotate(-0 467.069478 244.866516)">alto</text>
+   </g>
+   <g id="text_64">
+    <text style="font-weight: 600; font-size: 11.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="73.280906" y="14.498203" transform="rotate(-0 73.280906 14.498203)">Peso relativo de cada impulsor de riesgo por tipo de contraparte</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p6c3ee3ed77">
+   <rect x="73.280906" y="26.498203" width="424.08" height="232.848"/>
+  </clipPath>
+ </defs>
+</svg></div><figcaption>Peso relativo de cada impulsor de riesgo por tipo de contraparte. Mapa esquemático ilustrativo, elaborado con criterio del autor; no procede de una estimación empírica.</figcaption></figure></p>
+<table>
+<thead>
+<tr>
+<th>Contraparte</th>
+<th>Principales impulsores de riesgo</th>
+<th>Fuentes de datos</th>
+<th>Enfoque de modelación recomendado</th>
+<th>Restricción regulatoria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Corporativo</strong></td>
+<td>Apalancamiento, cobertura, margen, tamaño, sector, experiencia de pago</td>
+<td>Estados financieros auditados, buró de crédito, comportamiento interno, datos sectoriales</td>
+<td>Modelo estadístico de PD con módulo cualitativo; severidad propia si está permitida</td>
+<td>A-IRB no disponible para grandes corporativos: ventas &gt; 500 M EUR [art. 151(8) CRR] [L4]; propuesta de 440 M GBP en el Reino Unido [R6]</td>
+</tr>
+<tr>
+<td><strong>Soberano</strong></td>
+<td>Institucionalidad, posición externa y fiscal, régimen monetario, disposición a pagar</td>
+<td>Estadísticas oficiales, organismos multilaterales, calificaciones externas, mercado de deuda</td>
+<td>Marco experto con escala mapeada a calificaciones externas; muy pocos incumplimientos internos</td>
+<td>Suelo de PD del 0,03 % [art. 160 CRR] [L4]; excepción expresa al suelo del 0,05 % [CRE32.3] [B2]; propuesta británica de prohibir IRB [CP16/22 §4.67–4.69] [R6]</td>
+</tr>
+<tr>
+<td><strong>Banco / institución</strong></td>
+<td>Capital, liquidez y estructura de fondeo, calidad del activo, apoyo del grupo o soberano</td>
+<td>Estados financieros y divulgación del Pilar 3, requerimientos de liquidez, calificaciones externas, señales de mercado</td>
+<td>Modelo híbrido: cuantitativo sobre métricas prudenciales + apoyo + señales de mercado; severidad supervisora</td>
+<td>Multiplicador de correlación de 1,25 [CRE31.7] [B1]; A-IRB no disponible, severidad del art. 161(1) [L4]</td>
+</tr>
+<tr>
+<td><strong>NBFI</strong></td>
+<td>Calidad y concentración de cartera, calce de plazos, dependencia y concentración del fondeo, capital tangible, soporte de matriz</td>
+<td>Estados financieros, reportes regulatorios locales, buró, información del emisor</td>
+<td>Segmento propio dentro del modelo corporativo, con variables de intermediario</td>
+<td>Multiplicador de 1,25 también si no está regulada, sin umbral de tamaño [CRE31.7] [B1]</td>
+</tr>
+<tr>
+<td><strong>Fondo / vehículo</strong></td>
+<td>Composición y liquidez de la cartera, apalancamiento, mandato, gobierno, colateral y márgenes</td>
+<td>Reportes al inversionista, documento constitutivo, información de custodio y de márgenes</td>
+<td>Transparencia si hay datos; mandato en caso contrario</td>
+<td>Marco propio de inversiones en fondos: <strong>no cubierto por los dosieres de esta guía</strong>; titulizaciones excluidas del agregado de EL [CRE35.1] [B4]</td>
+</tr>
+<tr>
+<td><strong>Sector público subnacional</strong></td>
+<td>Composición del ingreso, rigidez del gasto, endeudamiento y su servicio, pasivos contingentes, calidad de la fuente de pago</td>
+<td>Cuentas públicas, registros de deuda, información del fiduciario, reportes regulatorios</td>
+<td>Marco experto con escala propia; severidad muy baja si la fuente de pago está bien estructurada</td>
+<td>Metodología diferenciada en la CUB, <strong>contenido no verificado</strong> [M12][M15]; Anexo 21 para contrapartes financieras [M22]</td>
+</tr>
+</tbody>
+</table>
+<div class="box box-practica">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">La fricción real de mantener seis modelos con equipos pequeños</span></div>
+<div class="box-b">
+<p>Sobre el papel, seis familias de contraparte piden seis modelos. En la realidad de un banco
+global, cada modelo cuesta un equipo de desarrollo, un ciclo de validación independiente,
+documentación conforme al <em>application pack</em> de ocho módulos [R21], un permiso o un cambio
+material, monitoreo anual, recalibración periódica y un dueño con nombre y apellido que
+responda ante el comité y ante el supervisor. Seis modelos son seis de todo eso, para
+carteras que en muchos casos representan cada una menos del 5 % de los activos ponderados.</p>
+<p>La aritmética empuja inevitablemente hacia la consolidación, y la consolidación de un grupo
+global empuja además hacia el modelo único: un solo motor, una sola escala maestra, un solo
+proceso de calificación en todas las geografías, con <strong>segmentos</strong> —no modelos separados—
+para soberanos, bancos, NBFI y sector público. Las ventajas son reales: comparabilidad de
+grados entre Londres y Ciudad de México, un solo inventario de modelos, una sola cadena de
+datos, y cumplimiento natural de la exigencia de que las descripciones de grado permitan
+asignar consistentemente el mismo grado "entre ubicaciones y departamentos"
+[CRE36.25–36.26] [B5].</p>
+<p>Los costos, que nadie pone en la presentación al comité, también son reales: (i) el modelo
+único tiende a estar dominado por el segmento con más observaciones —el corporativo— y los
+segmentos pequeños heredan variables y transformaciones que no les corresponden; (ii) el
+gobierno se vuelve pesado, porque cualquier cambio en el segmento de bancos abre un proceso
+de cambio material que afecta a toda la cartera; (iii) la especialización local se pierde:
+el analista de riesgo subnacional mexicano sabe cosas que ninguna variable global captura, y
+si el modelo no le deja espacio para expresarlas, se expresan como anulaciones —que luego
+hay que justificar una por una ante el revisor—.</p>
+<p>El equilibrio que funciona en la práctica: <strong>un motor y una escala maestra comunes, con
+segmentos de calibración diferenciados y plantillas cualitativas locales explícitamente
+reconocidas dentro del marco del modelo</strong>, no fuera de él. La expectativa supervisora de
+juicio experto documentado [EBA/GL/2017/16 §35] [E1] es, leída con cuidado, una autorización
+para hacer exactamente eso, siempre que quede escrito quién decide, con qué criterio y con
+qué registro.</p>
+</div>
+</div>
+<div class="box box-entrevista">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Pregunta de panel</span></div>
+<div class="box-b">
+<p><em>"Su cartera de instituciones financieras incluye bancos regulados grandes, bancos pequeños,
+sofomes no reguladas y dos casas de bolsa. ¿Cómo estructura el sistema de calificación y qué
+le preocupa más?"</em></p>
+<p>Lo que buscan: (1) que separes la <strong>clasificación regulatoria</strong> —quién recibe el
+multiplicador de 1,25 y por qué, distinguiendo regulada con umbral de activos de no regulada
+sin umbral [CRE31.7]— de la <strong>segmentación de modelación</strong>, que responde a homogeneidad de
+riesgo; (2) que reconozcas que la severidad para estas exposiciones está fijada por norma
+[art. 151(8), art. 161(1) CRR] y que por tanto el esfuerzo va a la PD; (3) que identifiques
+que el problema de datos es el número de incumplimientos, no el número de deudores, y que
+propongas cómo complementar con datos externos documentando su representatividad
+[EBA/GL/2017/16 §21]; (4) que menciones el control de calidad de la clasificación como
+riesgo operativo con impacto en capital. Lo que debería preocuparte más y conviene decirlo:
+que las variables contables de un banco son afirmaciones del propio deudor sobre su salud, y
+que el evento que lo mata —el cierre del fondeo— no está en ellas.</p>
+</div>
+</div>
+<div class="box box-clave">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Idea clave</span></div>
+<div class="box-b">
+<p>La contraparte determina el mecanismo de incumplimiento, y el mecanismo de incumplimiento
+determina qué información es predictiva. En un corporativo es el flujo de caja frente al
+servicio de la deuda; en un banco, el acceso al fondeo; en un soberano, la disposición a
+pagar; en una NBFI, el calce entre el plazo del activo y el del pasivo; en un fondo, el
+valor y la liquidez de la cartera; en un municipio, la calidad jurídica de la fuente de
+pago. Un modelo que no está construido alrededor del mecanismo correcto puede tener un
+excelente poder discriminante en la muestra y fallar exactamente en el evento que se
+construyó para anticipar.</p>
+</div>
+</div>
+<h3 id="fuentes-de-este-capitulo-3">Fuentes de este capítulo<a class="hlink" href="#fuentes-de-este-capitulo-3" aria-label="enlace">#</a></h3>
+<ul>
+<li><strong>[B1]</strong> CRE31 — <em>IRB approach: risk weight functions</em>, marco consolidado de Basilea
+  (§31.5 correlación de activos, §31.6 ajuste por vencimiento, §31.7 multiplicador de 1,25).
+  https://www.bis.org/basel_framework/chapter/CRE/31.htm (espejo oficial:
+  https://www.sif.admin.ch/dam/it/sd-web/OuYT8JJvqFWR/cre31.pdf)</li>
+<li><strong>[B2]</strong> CRE32 — <em>IRB approach: risk components for each asset class</em> (§32.3, suelo de PD
+  con excepción expresa para soberanos; §32.6–32.7, severidad supervisora).
+  https://www.bis.org/basel_framework/chapter/CRE/32.htm</li>
+<li><strong>[B4]</strong> CRE35 — <em>IRB approach: treatment of expected losses and provisions</em> (§35.1,
+  exclusión de titulizaciones del agregado de pérdida esperada).
+  https://www.sif.admin.ch/dam/it/sd-web/NIXt-DkWGTPn/cre35.pdf</li>
+<li><strong>[B5]</strong> CRE36 — <em>IRB approach: minimum requirements</em> (§36.11–36.15 estructura
+  bidimensional del sistema de calificación; §36.25–36.26 consistencia de asignación entre
+  ubicaciones). https://www.bis.org/basel_framework/chapter/CRE/36.htm</li>
+<li><strong>[B6]</strong> BCBS, <em>An Explanatory Note on the Basel II IRB Risk Weight Functions</em> (fórmula de
+  requerimiento de capital K). https://www.bis.org/bcbs/irbriskweight.pdf</li>
+<li><strong>[E1]</strong> EBA/GL/2017/16 — <em>Guidelines on PD estimation, LGD estimation and the treatment
+  of defaulted exposures</em> (§12 factores comunes de riesgo, §21 representatividad, §35 juicio
+  experto). https://www.eba.europa.eu/</li>
+<li><strong>[E4]</strong> EBA/GL/2020/05 — <em>Guidelines on credit risk mitigation for institutions applying
+  the IRB approach with own estimates of LGDs</em> (§31(a)(ii) enfoque de sustitución, §36(b)
+  costos de ejecución). https://www.eba.europa.eu/</li>
+<li><strong>[L4]</strong> Reglamento (UE) 2024/1623 (CRR3) y CRR consolidado: art. 142(1)(4) y (5a)
+  (umbrales de gran entidad financiera y de gran corporativo), art. 151(8)/(9) (restricción
+  del enfoque avanzado), art. 153 (multiplicador de 1,25), art. 160 (suelo de PD del 0,05 %
+  y del 0,03 % para gobiernos centrales), art. 161(1) (valores de severidad supervisora).
+  https://eur-lex.europa.eu/eli/reg/2024/1623/oj/eng</li>
+<li><strong>[R3]</strong> Bank of England, <em>PS1/26 – Implementation of Basel 3.1: Final rules</em>, 20 de enero
+  de 2026 (entrada en vigor 1 de enero de 2027).
+  https://www.bankofengland.co.uk/prudential-regulation/publication/2026/january/implementation-of-the-basel-3-1-final-rules-policy-statement</li>
+<li><strong>[R6]</strong> Bank of England, CP16/22 — <em>Credit risk – internal ratings based approach</em>
+  (§4.55 umbral de gran corporativo, §4.67–4.69 exposiciones soberanas, §4.71–4.73
+  instituciones y corporativos financieros).
+  https://www.bankofengland.co.uk/prudential-regulation/publication/2022/november/implementation-of-the-basel-3-1-standards/credit-risk-internal-rating-based</li>
+<li><strong>[R21]</strong> Bank of England, <em>Application under Article 143 for Permission to use the IRB
+  Approach</em>.
+  https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/authorisations/capital-requirements-regulation-permissions/internal-ratings-based-approach-crr-permission-application-pack.pdf</li>
+<li><strong>[R31]</strong> Bank of England, <em>PS9/24 – Implementation of the Basel 3.1 standards near-final
+  part 2</em>, septiembre de 2024.
+  https://www.bankofengland.co.uk/prudential-regulation/publication/2024/september/implementation-of-the-basel-3-1-standards-near-final-policy-statement-part-2</li>
+<li><strong>[R32]</strong> legislation.gov.uk, artículo 161 CRR (valores de severidad bajo el enfoque
+  fundacional, versión británica vigente).
+  https://www.legislation.gov.uk/eur/2013/575/article/161</li>
+<li><strong>[M3]</strong> Anexo 20 CUB (espejo ABM).
+  https://www.abm.org.mx/legislacion-y-regulacion/juridico/anexoscub/CUB_Anexo20.pdf</li>
+<li><strong>[M12]</strong> Banorte / GFNorte, Reporte Anual 2023, Anexo N.
+  https://investors.banorte.com/~/media/Files/B/Banorte-IR/financial-information/annual-reports/es/2024/AnexoN_BANORTE_2023%201.pdf</li>
+<li><strong>[M15]</strong> Scotiabank Inverlat, notas a los estados financieros (BMV).
+  https://bmv.com.mx/docs-pub/infinbnc/bncinfin_1415501_2024-03_2.pdf</li>
+<li><strong>[M18]</strong> CNBV, instructivo R04-C, catálogo CUIFE.
+  https://www.gob.mx/cms/uploads/attachment/file/935616/CUIFE_UC_R04_C-0451-0456_Cr_ditos_comerciales_Vigencia_202501.pdf</li>
+<li><strong>[M22]–[M25]</strong> Anexos 21, 22, 23 y 28 de la CUB (espejo ABM), citados en el dosier
+  <code>research/02_cnbv_mexico.md</code>. Anexo 21:
+  https://www.abm.org.mx/legislacion-y-regulacion/juridico/anexoscub/CUB_Anexo21.pdf</li>
+</ul></section><nav class="pager"><a href="cap-03-especializado.html"><span class="dir">← Anterior</span><span class="nm">3. Financiamiento especializado: project finance, activos, materias primas e inmuebles</span></a><a class="next" href="cap-05-default.html"><span class="dir">Siguiente →</span><span class="nm">5. La definición de incumplimiento</span></a></nav></div></main>
+</div>
+<button class="top" id="top" aria-label="Volver arriba">↑</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

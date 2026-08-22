@@ -1,0 +1,3166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>31. El área de modelos frente a riesgos, negocio, finanzas y operaciones · Modelos IFRS 9 e IRB para cartera Wholesale</title>
+<meta name="description" content="Un modelo correcto que nadie usa, que llega tarde al cierre o que no se puede defender ante el consejo ha fracasado. Este capítulo trata de la otra mitad del trabajo: la organización en la que el modelo vive.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs></defs></svg>
+<div class="progress"><i id="bar"></i></div>
+<button class="navtoggle" id="navtoggle" aria-label="Índice">☰</button>
+<div class="app">
+<aside class="nav">
+  <div class="nav-head">
+    <p class="brand"><a href="index.html" style="color:inherit;text-decoration:none">Modelos IFRS 9 e IRB para cartera Wholesale</a><small>Guía técnica exhaustiva · PRA · CNBV · Basilea 3.1</small></p>
+    <div class="nav-tools">
+      <input class="search" id="q" type="search" placeholder="Buscar en toda la guía…  /"
+             autocomplete="off" spellcheck="false">
+      <button class="btn" id="theme" aria-label="Cambiar tema">☾</button>
+    </div>
+  </div>
+  <nav class="toc"><div class="toc-part">Cómo usar esta guía</div>
+<a class="l2" href="cap-00-mapa.html">0. Cómo usar esta guía</a>
+<div class="toc-part">El universo Wholesale</div>
+<a class="l2" href="cap-01-universo.html">1. El universo Wholesale: segmentación y clases de exposición</a>
+<a class="l2" href="cap-02-productos.html">2. Productos de crédito Wholesale y su perfil de riesgo</a>
+<a class="l2" href="cap-03-especializado.html">3. Financiamiento especializado: project finance, activos, materias primas e inmuebles</a>
+<a class="l2" href="cap-04-contrapartes.html">4. Bancos, soberanos, entidades financieras no bancarias y fondos</a>
+<div class="toc-part">Los insumos</div>
+<a class="l2" href="cap-05-default.html">5. La definición de incumplimiento</a>
+<a class="l2" href="cap-06-datos.html">6. Arquitectura de datos para modelos wholesale</a>
+<a class="l2" href="cap-07-estados-financieros.html">7. Estados financieros corporativos para el analista de crédito</a>
+<a class="l2" href="cap-08-razones-sector.html">8. Razones financieras, industria y sentido económico</a>
+<a class="l2" href="cap-09-buro-cualitativas.html">9. Buró de crédito, información externa y variables cualitativas</a>
+<div class="toc-part">Modelos IRB de PD</div>
+<a class="l2" href="cap-10-marco-capital.html">10. El marco de capital: estándar, F-IRB, A-IRB y el output floor</a>
+<a class="l2" href="cap-11-arquitectura-pd.html">11. Arquitectura de un modelo de PD corporativo</a>
+<a class="l2" href="cap-12-desarrollo-pd.html">12. Desarrollo estadístico de un modelo de PD, paso a paso</a>
+<a class="l2" href="cap-13-estadistica.html">13. Estadística para seleccionar y validar modelos</a>
+<a class="l2" href="cap-14-calibracion.html">14. Calibración, filosofía de calificación y margen de conservadurismo</a>
+<a class="l2" href="cap-15-ldp.html">15. Carteras de bajo incumplimiento</a>
+<div class="toc-part">LGD, EAD y mitigantes</div>
+<a class="l2" href="cap-16-lgd.html">16. Modelos de LGD</a>
+<a class="l2" href="cap-17-ead.html">17. Modelos de EAD y factores de conversión</a>
+<a class="l2" href="cap-18-colaterales.html">18. Colaterales y mitigantes del riesgo de crédito</a>
+<a class="l2" href="cap-19-slotting.html">19. Slotting y modelización de exposiciones especiales</a>
+<div class="toc-part">IFRS 9 de punta a punta</div>
+<a class="l2" href="cap-20-ifrs9-vs-irb.html">20. IFRS 9 frente a IRB: las diferencias que gobiernan todo lo demás</a>
+<a class="l2" href="cap-21-sicr.html">21. Incremento significativo del riesgo de crédito y clasificación por etapas</a>
+<a class="l2" href="cap-22-pd-ifrs9.html">22. &#x27;PD IFRS 9: estructuras temporales y matrices de transición&#x27;</a>
+<a class="l2" href="cap-23-macro.html">23. &#x27;PD IFRS 9: modelos macroeconómicos, escenarios y ponderación&#x27;</a>
+<a class="l2" href="cap-24-lgd-ead-ifrs9.html">24. LGD y EAD bajo IFRS 9</a>
+<a class="l2" href="cap-25-ecl.html">25. El cálculo de la pérdida crediticia esperada</a>
+<a class="l2" href="cap-26-overlays.html">26. Ajustes fuera de modelo (overlays) y gobierno de la ECL</a>
+<a class="l2" href="cap-27-impacto.html">27. Impacto en provisiones: sensibilidad, migración y volatilidad</a>
+<div class="toc-part">Del modelo al negocio</div>
+<a class="l2" href="cap-28-rwa.html">28. De los parámetros al capital: RWA, pérdida esperada y provisiones</a>
+<a class="l2" href="cap-29-raroc.html">29. Rentabilidad ajustada por riesgo: RAROC, pricing y valor presente neto</a>
+<a class="l2" href="cap-30-stress.html">30. Pruebas de estrés, ICAAP y planeación</a>
+<a class="l2 cur" href="cap-31-organizacion.html">31. El área de modelos frente a riesgos, negocio, finanzas y operaciones</a>
+<a class="l3" href="#el-modelo-es-un-producto-y-tiene-clientes-internos">El modelo es un producto y tiene clientes internos</a>
+<a class="l3" href="#donde-encaja-el-area-de-modelos-la-ambiguedad-de-las-tres-lineas">Dónde encaja el área de modelos: la ambigüedad de las tres líneas</a>
+<a class="l3" href="#el-mapa-de-actores">El mapa de actores</a>
+<a class="l4" href="#primera-linea-negocio-y-originacion">Primera línea: negocio y originación</a>
+<a class="l4" href="#riesgo-de-credito-de-primera-linea">Riesgo de crédito de primera línea</a>
+<a class="l4" href="#riesgo-de-credito-de-segunda-linea">Riesgo de crédito de segunda línea</a>
+<a class="l4" href="#analitica-y-modelos">Analítica y modelos</a>
+<a class="l4" href="#validacion-independiente">Validación independiente</a>
+<a class="l4" href="#finanzas-y-contraloria">Finanzas y contraloría</a>
+<a class="l4" href="#tesoreria-y-planeacion-financiera">Tesorería y planeación financiera</a>
+<a class="l4" href="#regulatorio-y-relacion-con-supervisores">Regulatorio y relación con supervisores</a>
+<a class="l4" href="#tecnologia-y-datos">Tecnología y datos</a>
+<a class="l4" href="#operaciones-de-credito-recuperacion-y-juridico">Operaciones de crédito, recuperación y jurídico</a>
+<a class="l4" href="#auditoria-interna">Auditoría interna</a>
+<a class="l4" href="#el-consejo-y-sus-comites">El consejo y sus comités</a>
+<a class="l3" href="#la-tabla-de-doble-entrada">La tabla de doble entrada</a>
+<a class="l3" href="#el-cierre-mensual-donde-se-rompe-todo">El cierre mensual: dónde se rompe todo</a>
+<a class="l3" href="#los-puntos-de-friccion-estructurales">Los puntos de fricción estructurales</a>
+<a class="l4" href="#el-negocio-percibe-el-modelo-como-un-obstaculo">El negocio percibe el modelo como un obstáculo</a>
+<a class="l4" href="#finanzas-necesita-la-cifra-antes-de-que-exista">Finanzas necesita la cifra antes de que exista</a>
+<a class="l4" href="#tecnologia-no-prioriza-el-dato-de-riesgo">Tecnología no prioriza el dato de riesgo</a>
+<a class="l4" href="#validacion-reta-el-modelo-cuando-ya-no-hay-tiempo">Validación reta el modelo cuando ya no hay tiempo</a>
+<a class="l4" href="#el-regulador-pregunta-por-algo-que-depende-de-otra-area">El regulador pregunta por algo que depende de otra área</a>
+<a class="l4" href="#la-casa-matriz-centraliza-y-la-filial-pierde-control">La casa matriz centraliza y la filial pierde control</a>
+<a class="l3" href="#gestion-hacia-arriba-y-hacia-los-lados">Gestión hacia arriba y hacia los lados</a>
+<a class="l4" href="#traducir-un-hallazgo-tecnico-en-una-decision-de-negocio">Traducir un hallazgo técnico en una decisión de negocio</a>
+<a class="l4" href="#presentar-un-modelo-a-un-comite-no-tecnico">Presentar un modelo a un comité no técnico</a>
+<a class="l4" href="#construir-una-coalicion-para-un-programa-plurianual">Construir una coalición para un programa plurianual</a>
+<a class="l3" href="#la-organizacion-con-doble-reporte">La organización con doble reporte</a>
+<a class="l3" href="#indicadores-de-gestion-del-area-de-modelos">Indicadores de gestión del área de modelos</a>
+<a class="l3" href="#estructura-y-dimensionamiento-del-equipo">Estructura y dimensionamiento del equipo</a>
+<a class="l4" href="#perfiles">Perfiles</a>
+<a class="l4" href="#cuantos-modelos-por-persona">Cuántos modelos por persona</a>
+<a class="l4" href="#construir-o-comprar">Construir o comprar</a>
+<a class="l3" href="#conexion-con-el-resto-de-la-guia">Conexión con el resto de la guía</a>
+<a class="l4" href="#fuentes-de-este-capitulo-30">Fuentes de este capítulo</a>
+<div class="toc-part">Gobierno y regulación</div>
+<a class="l2" href="cap-32-mrm.html">32. Gestión del riesgo de modelo</a>
+<a class="l2" href="cap-33-autorizacion.html">33. Documentación, use test, roll-out y autorización ante PRA y CNBV</a>
+<a class="l2" href="cap-34-monitoreo.html">34. Monitoreo continuo, redesarrollo y remediación</a>
+<div class="toc-part">Frontera</div>
+<a class="l2" href="cap-35-innovacion.html">35. &quot;Frontera: técnicas innovadoras aplicables a wholesale&quot;</a>
+<div class="toc-part">Anexos</div>
+<a class="l2" href="cap-36-ejercicios.html">36. Ejercicios y casos con soluciones</a>
+<a class="l2" href="cap-37-entrevistas.html">37. Banco de preguntas para un rol de dirección</a>
+<a class="l2" href="cap-38-formulario.html">38. Formulario, glosario español-inglés y referencias</a></nav>
+</aside>
+<main><div class="wrap"><section class="chapter"><p class="eyebrow">Capítulo 31</p><h2 class="ch-title">El área de modelos frente a riesgos, negocio, finanzas y operaciones</h2><p class="lede">Un modelo correcto que nadie usa, que llega tarde al cierre o que no se puede defender ante el consejo ha fracasado. Este capítulo trata de la otra mitad del trabajo: la organización en la que el modelo vive.</p><h2 id="el-modelo-es-un-producto-y-tiene-clientes-internos">El modelo es un producto y tiene clientes internos<a class="hlink" href="#el-modelo-es-un-producto-y-tiene-clientes-internos" aria-label="enlace">#</a></h2>
+<p>Un modelo de PD corporativa toca, a lo largo de su vida, a doce o trece áreas del banco.
+Recibe datos de tecnología, calificaciones de la primera línea de riesgos, información de
+recuperaciones de la unidad de mora, escenarios de estudios económicos. Entrega parámetros
+a la segunda línea, provisión a finanzas, precios al negocio, proyecciones a tesorería,
+expedientes a validación, documentación al regulador e información de gestión al consejo.
+Ninguna de esas relaciones es opcional, y en ninguna manda el área de modelos.</p>
+<p>Esto tiene una consecuencia que conviene enunciar sin rodeos: a partir de cierto nivel de
+responsabilidad, <strong>los problemas del área de modelos dejan de ser técnicos</strong>. Un modelo se
+retrasa porque el campo que necesita no está en el almacén de datos y tecnología tiene otras
+prioridades. Un hallazgo de validación se queda abierto dos años porque su remediación
+depende de un sistema que pertenece a operaciones. Una aplicación IRB se cae porque el
+negocio no puede demostrar tres años de uso del sistema de calificación en decisiones de
+crédito. Ninguno de esos problemas se resuelve con estadística.</p>
+<p>El propósito de este capítulo es dar el mapa y las herramientas de esa segunda mitad del
+trabajo: quién es quién, qué necesita cada uno, dónde están las fricciones estructurales y
+cómo se gestionan hacia arriba, hacia abajo y hacia los lados.</p>
+<div class="box box-clave">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Idea clave</span></div>
+<div class="box-b">
+<p>El activo más valioso de un director de modelos no es su cartera de modelos: es su red de
+compromisos verificables con otras áreas. Un modelo sin un dueño de dato comprometido, sin
+un usuario que lo defienda y sin un validador que lo entienda es un modelo con fecha de
+caducidad.</p>
+</div>
+</div>
+<h2 id="donde-encaja-el-area-de-modelos-la-ambiguedad-de-las-tres-lineas">Dónde encaja el área de modelos: la ambigüedad de las tres líneas<a class="hlink" href="#donde-encaja-el-area-de-modelos-la-ambiguedad-de-las-tres-lineas" aria-label="enlace">#</a></h2>
+<p>El marco de las tres líneas de defensa es claro sobre el papel: la primera línea toma y
+gestiona el riesgo, la segunda lo supervisa y lo desafía, la tercera —auditoría interna—
+verifica que las dos primeras funcionan. El área de analítica y modelos encaja mal en ese
+esquema, y esa mala colocación es la fuente de la mitad de sus conflictos.</p>
+<p>Tres configuraciones reales, cada una con su lógica y su precio:</p>
+<p><strong>Modelos dentro de la segunda línea de riesgos.</strong> Es la configuración más común y la más
+fácil de defender ante el supervisor: los modelos son parte de la función de control de
+riesgos, independiente del negocio. Precio: el área queda lejos de los datos de
+originación y de la operativa, y el negocio la percibe como un órgano de control, no como
+un socio.</p>
+<p><strong>Modelos como función de servicio transversal.</strong> El área sirve a riesgos, a finanzas y al
+negocio como una unidad de analítica. Ventaja: cercanía a los usuarios, mejor use test.
+Precio: la independencia respecto del uso del modelo se difumina, y hay que construirla con
+barreras explícitas —quién estima frente a quién decide— porque la estructura ya no la da.</p>
+<p><strong>Modelos partido entre desarrollo y producción.</strong> El desarrollo vive en riesgos y la
+ejecución mensual en finanzas o en operaciones. Ventaja: el cierre contable lo gobierna
+quien responde por la cifra publicada. Precio: la brecha entre quien construye y quien
+ejecuta es donde nacen los errores de implementación, que son el tipo de riesgo de modelo
+más frecuente y menos glamuroso.</p>
+<p>Sea cual sea la configuración, <strong>la validación independiente nunca puede colgar de la misma
+cadena de mando que el desarrollo</strong>. SS1/23 lo establece como uno de sus cinco principios:
+un proceso de validación que proporcione «desafío efectivo, continuo e independiente al
+desarrollo y uso del modelo» [R27]. Las directrices de la EBA exigen, en el mismo sentido,
+que la validación tenga roles independientes del desarrollo del modelo y documentación
+integral de entradas, diseño y salidas [F19 §65-67], y procesos de evaluación de riesgo de
+crédito independientes de la función de originación [F19 §27]. En México, el Anexo 26 de la
+Circular Única de Bancos exige un área de evaluación de riesgos funcionalmente
+independiente y sitúa la vigilancia de las validaciones en Auditoría Interna [M4].</p>
+<div class="box box-regulatorio">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">SS1/23 · Principios de gestión del riesgo de modelo</span></div>
+<div class="box-b">
+<p>SS1/23 entró en vigor el <strong>17 de mayo de 2024</strong> y aplica a bancos, sociedades de crédito
+hipotecario y empresas de inversión designadas por la PRA que tengan aprobación de modelos
+internos para calcular capital regulatorio, incluyendo IRB de crédito; excluye
+expresamente cooperativas de crédito, aseguradoras, reaseguradoras y sucursales de terceros
+países [R27]. Sus cinco principios son: identificación de modelos y clasificación de
+riesgo; gobernanza, con un consejo que promueve la cultura de gestión del riesgo de modelo
+estableciendo un apetito de riesgo de modelo claro; desarrollo, implementación y uso;
+validación independiente; y mitigantes del riesgo de modelo. Se exigió a las entidades
+realizar autoevaluaciones antes de la implementación y preparar planes de remediación
+[R27].</p>
+<p>Léase el segundo principio con atención: el consejo debe fijar un <strong>apetito de riesgo de
+modelo</strong>. Eso convierte una cuestión que solía ser técnica en una decisión de gobierno con
+un número asociado, y da al área de modelos un lugar en la agenda del consejo que antes no
+tenía.</p>
+</div>
+</div>
+<h2 id="el-mapa-de-actores">El mapa de actores<a class="hlink" href="#el-mapa-de-actores" aria-label="enlace">#</a></h2>
+<p><figure class="fig" id="fig-cap31_mapa_actores"><div class="fig-svg"><svg preserveAspectRatio="xMidYMid meet" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 424.44 309.918203" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 309.918203 
+L 424.44 309.918203 
+L 424.44 0 
+L 0 0 
+L 0 309.918203 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 5.76 304.158203 
+L 418.68 304.158203 
+L 418.68 26.958203 
+L 5.76 26.958203 
+L 5.76 304.158203 
+z
+" style="fill: none"/>
+   </g>
+   <g id="matplotlib.axis_1"/>
+   <g id="matplotlib.axis_2"/>
+   <g id="patch_3">
+    <path d="M 212.22 134.24335 
+Q 212.22 97.59271 212.22 62.395514 
+" clip-path="url(#pc67dfe478b)" style="fill: none; stroke: var(--s4, #eda100); stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 210.02 66.795514 
+L 212.22 62.395514 
+L 214.42 66.795514 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s4, #eda100); stroke: var(--s4, #eda100); stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 108.114334 71.216009 
+Q 137.894688 111.584555 166.8122 150.783483 
+" clip-path="url(#pc67dfe478b)" style="fill: none; stroke: var(--s2, #eb6834); stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 165.970516 145.936673 
+L 166.8122 150.783483 
+L 162.429742 148.548744 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s2, #eb6834); stroke: var(--s2, #eb6834); stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 108.751331 126.402477 
+Q 137.895632 139.57126 165.715422 152.141566 
+" clip-path="url(#pc67dfe478b)" style="fill: none; stroke: var(--s2, #eb6834); stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 162.611627 148.324964 
+L 165.715422 152.141566 
+L 160.799863 152.334642 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s2, #eb6834); stroke: var(--s2, #eb6834); stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 108.751331 180.725468 
+Q 137.895632 167.556685 165.715422 154.986379 
+" clip-path="url(#pc67dfe478b)" style="fill: none; stroke: var(--s2, #eb6834); stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 160.799863 154.793303 
+L 165.715422 154.986379 
+L 162.611627 158.802981 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s2, #eb6834); stroke: var(--s2, #eb6834); stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 108.114334 235.911936 
+Q 137.894688 195.54339 166.8122 156.344462 
+" clip-path="url(#pc67dfe478b)" style="fill: none; stroke: var(--s2, #eb6834); stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 162.429742 158.579201 
+L 166.8122 156.344462 
+L 165.970516 161.191272 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s2, #eb6834); stroke: var(--s2, #eb6834); stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 256.765534 151.952321 
+Q 286.545888 111.583775 315.4634 72.384846 
+" clip-path="url(#pc67dfe478b)" style="fill: none; stroke: var(--s2, #eb6834); stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 311.080942 74.619585 
+L 315.4634 72.384846 
+L 314.621716 77.231657 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s2, #eb6834); stroke: var(--s2, #eb6834); stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 257.402531 152.73893 
+Q 286.546832 139.570147 314.366622 126.99984 
+" clip-path="url(#pc67dfe478b)" style="fill: none; stroke: var(--s2, #eb6834); stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 309.451063 126.806765 
+L 314.366622 126.99984 
+L 311.262827 130.816442 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s2, #eb6834); stroke: var(--s2, #eb6834); stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 257.402531 154.389015 
+Q 286.546832 167.557798 314.366622 180.128105 
+" clip-path="url(#pc67dfe478b)" style="fill: none; stroke: var(--s2, #eb6834); stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 311.262827 176.311503 
+L 314.366622 180.128105 
+L 309.451063 180.32118 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s2, #eb6834); stroke: var(--s2, #eb6834); stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 256.765534 155.175624 
+Q 286.545888 195.54417 315.4634 234.743098 
+" clip-path="url(#pc67dfe478b)" style="fill: none; stroke: var(--s2, #eb6834); stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 314.621716 229.896288 
+L 315.4634 234.743098 
+L 311.080942 232.508359 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s2, #eb6834); stroke: var(--s2, #eb6834); stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 187.165331 172.997811 
+Q 130.79263 218.865526 74.419929 264.733242 
+" clip-path="url(#pc67dfe478b)" style="fill: none; stroke: var(--s3, #1baf7a); stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 182.363866 174.068295 
+L 187.165331 172.997811 
+L 185.14084 177.481273 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s3, #1baf7a); stroke: var(--s3, #1baf7a); stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 79.221393 263.662757 
+L 74.419929 264.733242 
+L 76.44442 260.249779 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s3, #1baf7a); stroke: var(--s3, #1baf7a); stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 212.22 174.230628 
+Q 212.22 218.866668 212.22 263.502709 
+" clip-path="url(#pc67dfe478b)" style="fill: none; stroke: var(--s3, #1baf7a); stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 210.02 178.630628 
+L 212.22 174.230628 
+L 214.42 178.630628 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s3, #1baf7a); stroke: var(--s3, #1baf7a); stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 214.42 259.102709 
+L 212.22 263.502709 
+L 210.02 259.102709 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s3, #1baf7a); stroke: var(--s3, #1baf7a); stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 237.274669 172.997811 
+Q 293.64737 218.865526 350.020071 264.733242 
+" clip-path="url(#pc67dfe478b)" style="fill: none; stroke: var(--s3, #1baf7a); stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 239.29916 177.481273 
+L 237.274669 172.997811 
+L 242.076134 174.068295 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s3, #1baf7a); stroke: var(--s3, #1baf7a); stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 347.99558 260.249779 
+L 350.020071 264.733242 
+L 345.218607 263.662757 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s3, #1baf7a); stroke: var(--s3, #1baf7a); stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 174.23136 174.087434 
+L 250.20864 174.087434 
+Q 258.46704 174.087434 258.46704 168.756665 
+L 258.46704 138.37128 
+Q 258.46704 133.040511 250.20864 133.040511 
+L 174.23136 133.040511 
+Q 165.97296 133.040511 165.97296 138.37128 
+L 165.97296 168.756665 
+Q 165.97296 174.087434 174.23136 174.087434 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s2, #eb6834); opacity: 0.32; stroke: var(--s2, #eb6834); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 167.00526 62.14128 
+L 257.43474 62.14128 
+Q 265.69314 62.14128 265.69314 56.810511 
+L 265.69314 35.753972 
+Q 265.69314 30.423203 257.43474 30.423203 
+L 167.00526 30.423203 
+Q 158.74686 30.423203 158.74686 35.753972 
+L 158.74686 56.810511 
+Q 158.74686 62.14128 167.00526 62.14128 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s4, #eda100); opacity: 0.16; stroke: var(--s4, #eda100); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 11.12796 88.12878 
+L 101.55744 88.12878 
+Q 109.81584 88.12878 109.81584 82.798011 
+L 109.81584 56.410703 
+Q 109.81584 51.079934 101.55744 51.079934 
+L 11.12796 51.079934 
+Q 2.86956 51.079934 2.86956 56.410703 
+L 2.86956 82.798011 
+Q 2.86956 88.12878 11.12796 88.12878 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s5, #e87ba4); opacity: 0.16; stroke: var(--s5, #e87ba4); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 11.12796 144.101857 
+L 101.55744 144.101857 
+Q 109.81584 144.101857 109.81584 138.771088 
+L 109.81584 112.38378 
+Q 109.81584 107.053011 101.55744 107.053011 
+L 11.12796 107.053011 
+Q 2.86956 107.053011 2.86956 112.38378 
+L 2.86956 138.771088 
+Q 2.86956 144.101857 11.12796 144.101857 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s5, #e87ba4); opacity: 0.16; stroke: var(--s5, #e87ba4); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 11.12796 200.074934 
+L 101.55744 200.074934 
+Q 109.81584 200.074934 109.81584 194.744165 
+L 109.81584 168.356857 
+Q 109.81584 163.026088 101.55744 163.026088 
+L 11.12796 163.026088 
+Q 2.86956 163.026088 2.86956 168.356857 
+L 2.86956 194.744165 
+Q 2.86956 200.074934 11.12796 200.074934 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s5, #e87ba4); opacity: 0.16; stroke: var(--s5, #e87ba4); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 11.12796 256.048011 
+L 101.55744 256.048011 
+Q 109.81584 256.048011 109.81584 250.717242 
+L 109.81584 224.329934 
+Q 109.81584 218.999165 101.55744 218.999165 
+L 11.12796 218.999165 
+Q 2.86956 218.999165 2.86956 224.329934 
+L 2.86956 250.717242 
+Q 2.86956 256.048011 11.12796 256.048011 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s5, #e87ba4); opacity: 0.16; stroke: var(--s5, #e87ba4); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 322.88256 88.12878 
+L 413.31204 88.12878 
+Q 421.57044 88.12878 421.57044 82.798011 
+L 421.57044 56.410703 
+Q 421.57044 51.079934 413.31204 51.079934 
+L 322.88256 51.079934 
+Q 314.62416 51.079934 314.62416 56.410703 
+L 314.62416 82.798011 
+Q 314.62416 88.12878 322.88256 88.12878 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s1, #2a78d6); opacity: 0.16; stroke: var(--s1, #2a78d6); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 322.88256 144.101857 
+L 413.31204 144.101857 
+Q 421.57044 144.101857 421.57044 138.771088 
+L 421.57044 112.38378 
+Q 421.57044 107.053011 413.31204 107.053011 
+L 322.88256 107.053011 
+Q 314.62416 107.053011 314.62416 112.38378 
+L 314.62416 138.771088 
+Q 314.62416 144.101857 322.88256 144.101857 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s1, #2a78d6); opacity: 0.16; stroke: var(--s1, #2a78d6); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_23">
+    <path d="M 322.88256 200.074934 
+L 413.31204 200.074934 
+Q 421.57044 200.074934 421.57044 194.744165 
+L 421.57044 168.356857 
+Q 421.57044 163.026088 413.31204 163.026088 
+L 322.88256 163.026088 
+Q 314.62416 163.026088 314.62416 168.356857 
+L 314.62416 194.744165 
+Q 314.62416 200.074934 322.88256 200.074934 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s1, #2a78d6); opacity: 0.16; stroke: var(--s1, #2a78d6); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 322.88256 256.048011 
+L 413.31204 256.048011 
+Q 421.57044 256.048011 421.57044 250.717242 
+L 421.57044 224.329934 
+Q 421.57044 218.999165 413.31204 218.999165 
+L 322.88256 218.999165 
+Q 314.62416 218.999165 314.62416 224.329934 
+L 314.62416 250.717242 
+Q 314.62416 256.048011 322.88256 256.048011 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s1, #2a78d6); opacity: 0.16; stroke: var(--s1, #2a78d6); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 26.61246 300.693203 
+L 117.04194 300.693203 
+Q 125.30034 300.693203 125.30034 295.362434 
+L 125.30034 268.975126 
+Q 125.30034 263.644357 117.04194 263.644357 
+L 26.61246 263.644357 
+Q 18.35406 263.644357 18.35406 268.975126 
+L 18.35406 295.362434 
+Q 18.35406 300.693203 26.61246 300.693203 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s3, #1baf7a); opacity: 0.16; stroke: var(--s3, #1baf7a); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_26">
+    <path d="M 167.00526 300.693203 
+L 257.43474 300.693203 
+Q 265.69314 300.693203 265.69314 295.362434 
+L 265.69314 268.975126 
+Q 265.69314 263.644357 257.43474 263.644357 
+L 167.00526 263.644357 
+Q 158.74686 263.644357 158.74686 268.975126 
+L 158.74686 295.362434 
+Q 158.74686 300.693203 167.00526 300.693203 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s3, #1baf7a); opacity: 0.16; stroke: var(--s3, #1baf7a); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_27">
+    <path d="M 307.39806 300.693203 
+L 397.82754 300.693203 
+Q 406.08594 300.693203 406.08594 295.362434 
+L 406.08594 268.975126 
+Q 406.08594 263.644357 397.82754 263.644357 
+L 307.39806 263.644357 
+Q 299.13966 263.644357 299.13966 268.975126 
+L 299.13966 295.362434 
+Q 299.13966 300.693203 307.39806 300.693203 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: var(--s3, #1baf7a); opacity: 0.16; stroke: var(--s3, #1baf7a); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_28">
+    <path d="M 174.23136 174.087434 
+L 250.20864 174.087434 
+Q 258.46704 174.087434 258.46704 168.756665 
+L 258.46704 138.37128 
+Q 258.46704 133.040511 250.20864 133.040511 
+L 174.23136 133.040511 
+Q 165.97296 133.040511 165.97296 138.37128 
+L 165.97296 168.756665 
+Q 165.97296 174.087434 174.23136 174.087434 
+L 174.23136 174.087434 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: none; stroke: var(--s2, #eb6834); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_29">
+    <path d="M 167.00526 62.14128 
+L 257.43474 62.14128 
+Q 265.69314 62.14128 265.69314 56.810511 
+L 265.69314 35.753972 
+Q 265.69314 30.423203 257.43474 30.423203 
+L 167.00526 30.423203 
+Q 158.74686 30.423203 158.74686 35.753972 
+L 158.74686 56.810511 
+Q 158.74686 62.14128 167.00526 62.14128 
+L 167.00526 62.14128 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: none; stroke: var(--s4, #eda100); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-style: italic; font-size: 7.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-muted, #898781)" x="217.17504" y="73.602434" transform="rotate(-0 217.17504 73.602434)">información de gestión</text>
+   </g>
+   <g id="patch_30">
+    <path d="M 11.12796 88.12878 
+L 101.55744 88.12878 
+Q 109.81584 88.12878 109.81584 82.798011 
+L 109.81584 56.410703 
+Q 109.81584 51.079934 101.55744 51.079934 
+L 11.12796 51.079934 
+Q 2.86956 51.079934 2.86956 56.410703 
+L 2.86956 82.798011 
+Q 2.86956 88.12878 11.12796 88.12878 
+L 11.12796 88.12878 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: none; stroke: var(--s5, #e87ba4); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_2">
+    <text style="font-style: italic; font-size: 7.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="137.8944" y="103.054934" transform="rotate(-0 137.8944 103.054934)">datos</text>
+   </g>
+   <g id="patch_31">
+    <path d="M 11.12796 144.101857 
+L 101.55744 144.101857 
+Q 109.81584 144.101857 109.81584 138.771088 
+L 109.81584 112.38378 
+Q 109.81584 107.053011 101.55744 107.053011 
+L 11.12796 107.053011 
+Q 2.86956 107.053011 2.86956 112.38378 
+L 2.86956 138.771088 
+Q 2.86956 144.101857 11.12796 144.101857 
+L 11.12796 144.101857 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: none; stroke: var(--s5, #e87ba4); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_3">
+    <text style="font-style: italic; font-size: 7.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="137.8944" y="131.041472" transform="rotate(-0 137.8944 131.041472)">calificaciones</text>
+   </g>
+   <g id="patch_32">
+    <path d="M 11.12796 200.074934 
+L 101.55744 200.074934 
+Q 109.81584 200.074934 109.81584 194.744165 
+L 109.81584 168.356857 
+Q 109.81584 163.026088 101.55744 163.026088 
+L 11.12796 163.026088 
+Q 2.86956 163.026088 2.86956 168.356857 
+L 2.86956 194.744165 
+Q 2.86956 200.074934 11.12796 200.074934 
+L 11.12796 200.074934 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: none; stroke: var(--s5, #e87ba4); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_4">
+    <text style="font-style: italic; font-size: 7.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="137.8944" y="159.028011" transform="rotate(-0 137.8944 159.028011)">recuperaciones</text>
+   </g>
+   <g id="patch_33">
+    <path d="M 11.12796 256.048011 
+L 101.55744 256.048011 
+Q 109.81584 256.048011 109.81584 250.717242 
+L 109.81584 224.329934 
+Q 109.81584 218.999165 101.55744 218.999165 
+L 11.12796 218.999165 
+Q 2.86956 218.999165 2.86956 224.329934 
+L 2.86956 250.717242 
+Q 2.86956 256.048011 11.12796 256.048011 
+L 11.12796 256.048011 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: none; stroke: var(--s5, #e87ba4); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_5">
+    <text style="font-style: italic; font-size: 7.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="137.8944" y="187.014549" transform="rotate(-0 137.8944 187.014549)">escenarios</text>
+   </g>
+   <g id="patch_34">
+    <path d="M 322.88256 88.12878 
+L 413.31204 88.12878 
+Q 421.57044 88.12878 421.57044 82.798011 
+L 421.57044 56.410703 
+Q 421.57044 51.079934 413.31204 51.079934 
+L 322.88256 51.079934 
+Q 314.62416 51.079934 314.62416 56.410703 
+L 314.62416 82.798011 
+Q 314.62416 88.12878 322.88256 88.12878 
+L 322.88256 88.12878 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: none; stroke: var(--s1, #2a78d6); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_6">
+    <text style="font-style: italic; font-size: 7.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="286.5456" y="103.054934" transform="rotate(-0 286.5456 103.054934)">parámetros</text>
+   </g>
+   <g id="patch_35">
+    <path d="M 322.88256 144.101857 
+L 413.31204 144.101857 
+Q 421.57044 144.101857 421.57044 138.771088 
+L 421.57044 112.38378 
+Q 421.57044 107.053011 413.31204 107.053011 
+L 322.88256 107.053011 
+Q 314.62416 107.053011 314.62416 112.38378 
+L 314.62416 138.771088 
+Q 314.62416 144.101857 322.88256 144.101857 
+L 322.88256 144.101857 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: none; stroke: var(--s1, #2a78d6); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_7">
+    <text style="font-style: italic; font-size: 7.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="286.5456" y="131.041472" transform="rotate(-0 286.5456 131.041472)">ECL y cierre</text>
+   </g>
+   <g id="patch_36">
+    <path d="M 322.88256 200.074934 
+L 413.31204 200.074934 
+Q 421.57044 200.074934 421.57044 194.744165 
+L 421.57044 168.356857 
+Q 421.57044 163.026088 413.31204 163.026088 
+L 322.88256 163.026088 
+Q 314.62416 163.026088 314.62416 168.356857 
+L 314.62416 194.744165 
+Q 314.62416 200.074934 322.88256 200.074934 
+L 322.88256 200.074934 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: none; stroke: var(--s1, #2a78d6); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_8">
+    <text style="font-style: italic; font-size: 7.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="286.5456" y="159.028011" transform="rotate(-0 286.5456 159.028011)">proyecciones</text>
+   </g>
+   <g id="patch_37">
+    <path d="M 322.88256 256.048011 
+L 413.31204 256.048011 
+Q 421.57044 256.048011 421.57044 250.717242 
+L 421.57044 224.329934 
+Q 421.57044 218.999165 413.31204 218.999165 
+L 322.88256 218.999165 
+Q 314.62416 218.999165 314.62416 224.329934 
+L 314.62416 250.717242 
+Q 314.62416 256.048011 322.88256 256.048011 
+L 322.88256 256.048011 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: none; stroke: var(--s1, #2a78d6); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_9">
+    <text style="font-style: italic; font-size: 7.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="286.5456" y="187.014549" transform="rotate(-0 286.5456 187.014549)">precio y límites</text>
+   </g>
+   <g id="patch_38">
+    <path d="M 26.61246 300.693203 
+L 117.04194 300.693203 
+Q 125.30034 300.693203 125.30034 295.362434 
+L 125.30034 268.975126 
+Q 125.30034 263.644357 117.04194 263.644357 
+L 26.61246 263.644357 
+Q 18.35406 263.644357 18.35406 268.975126 
+L 18.35406 295.362434 
+Q 18.35406 300.693203 26.61246 300.693203 
+L 26.61246 300.693203 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: none; stroke: var(--s3, #1baf7a); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_10">
+    <text style="font-style: italic; font-size: 7.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="71.8272" y="260.179357" transform="rotate(-0 71.8272 260.179357)">expediente / hallazgos</text>
+   </g>
+   <g id="patch_39">
+    <path d="M 167.00526 300.693203 
+L 257.43474 300.693203 
+Q 265.69314 300.693203 265.69314 295.362434 
+L 265.69314 268.975126 
+Q 265.69314 263.644357 257.43474 263.644357 
+L 167.00526 263.644357 
+Q 158.74686 263.644357 158.74686 268.975126 
+L 158.74686 295.362434 
+Q 158.74686 300.693203 167.00526 300.693203 
+L 167.00526 300.693203 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: none; stroke: var(--s3, #1baf7a); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_11">
+    <text style="font-style: italic; font-size: 7.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="212.22" y="260.179357" transform="rotate(-0 212.22 260.179357)">evidencia</text>
+   </g>
+   <g id="patch_40">
+    <path d="M 307.39806 300.693203 
+L 397.82754 300.693203 
+Q 406.08594 300.693203 406.08594 295.362434 
+L 406.08594 268.975126 
+Q 406.08594 263.644357 397.82754 263.644357 
+L 307.39806 263.644357 
+Q 299.13966 263.644357 299.13966 268.975126 
+L 299.13966 295.362434 
+Q 299.13966 300.693203 307.39806 300.693203 
+L 307.39806 300.693203 
+z
+" clip-path="url(#pc67dfe478b)" style="fill: none; stroke: var(--s3, #1baf7a); stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_12">
+    <text style="font-style: italic; font-size: 7.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="352.6128" y="260.179357" transform="rotate(-0 352.6128 260.179357)">documentación</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 600; font-size: 11.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="5.76" y="14.958203" transform="rotate(-0 5.76 14.958203)">Mapa de actores y flujos alrededor del área de modelos</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 9.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink, #0b0b0b)" transform="translate(192.35375 150.427311)">Analítica</text>
+    <text style="font-size: 9.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink, #0b0b0b)" transform="translate(188.500531 161.777883)">y modelos</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink, #0b0b0b)" x="212.22" y="48.768117" transform="rotate(-0 212.22 48.768117)">Consejo y sus comités</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink, #0b0b0b)" x="56.3427" y="72.031044" transform="rotate(-0 56.3427 72.031044)">Tecnología y datos</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink, #0b0b0b)" transform="translate(20.624653 122.945714)">Riesgo de crédito</text>
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink, #0b0b0b)" transform="translate(39.284138 133.062528)">1.ª línea</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink, #0b0b0b)" transform="translate(29.329466 178.533391)">Operaciones,</text>
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink, #0b0b0b)" transform="translate(9.450231 189.093005)">recuperación y jurídico</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink, #0b0b0b)" x="56.3427" y="239.786275" transform="rotate(-0 56.3427 239.786275)">Estudios económicos</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink, #0b0b0b)" transform="translate(332.379253 66.972637)">Riesgo de crédito</text>
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink, #0b0b0b)" transform="translate(351.038738 77.089452)">2.ª línea</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink, #0b0b0b)" x="368.0973" y="128.004121" transform="rotate(-0 368.0973 128.004121)">Finanzas y contraloría</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink, #0b0b0b)" x="368.0973" y="183.977198" transform="rotate(-0 368.0973 183.977198)">Tesorería y planeación</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink, #0b0b0b)" x="368.0973" y="239.950275" transform="rotate(-0 368.0973 239.950275)">Negocio y originación</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink, #0b0b0b)" transform="translate(50.933856 279.373061)">Validación</text>
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink, #0b0b0b)" transform="translate(42.246981 289.489875)">independiente</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink, #0b0b0b)" x="212.22" y="284.431468" transform="rotate(-0 212.22 284.431468)">Auditoría interna</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink, #0b0b0b)" transform="translate(325.393925 279.373061)">Regulatorio y</text>
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: var(--c-ink, #0b0b0b)" transform="translate(326.605347 289.489875)">supervisores</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pc67dfe478b">
+   <rect x="5.76" y="26.958203" width="412.92" height="277.2"/>
+  </clipPath>
+ </defs>
+</svg></div><figcaption>Actores que rodean al área de modelos, agrupados por el tipo de relación: proveedores de insumos, consumidores del producto, funciones de desafío y control, y órgano de gobierno. Esquema del autor.</figcaption></figure></p>
+<h3 id="primera-linea-negocio-y-originacion">Primera línea: negocio y originación<a class="hlink" href="#primera-linea-negocio-y-originacion" aria-label="enlace">#</a></h3>
+<p><strong>Quiénes son.</strong> Banqueros de relación, originación, estructuración, sindicación.</p>
+<p><strong>Qué necesitan del área de modelos.</strong> Una calificación rápida y explicable; un precio
+mínimo que puedan defender ante el cliente; saber cuánto capital consume una estructura
+antes de proponerla; entender por qué una operación que aprobaron el año pasado hoy no
+pasa.</p>
+<p><strong>Qué necesita el área de modelos de ellos.</strong> Información financiera actualizada y
+completa; los datos cualitativos que alimentan el módulo experto; que las excepciones
+(<em>overrides</em>) se documenten con su motivo; y sobre todo, <strong>evidencia de uso</strong>: SS4/24 exige
+demostrar tres años de uso de los sistemas de calificación interna en decisiones de crédito,
+políticas de originación y monitoreo de riesgo, además de un ciclo completo de gobernanza
+IRB durante al menos un año y tres años de historial de monitoreo, validación y auditoría
+[R15 §4.4-4.7].</p>
+<p><strong>Fricción típica.</strong> El modelo se percibe como un obstáculo entre el banquero y la
+comisión.</p>
+<div class="box box-practica">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">«El modelo me está costando el cliente»</span></div>
+<div class="box-b">
+<p>La conversación llega siempre en la misma forma: un banquero senior explica que el
+competidor está ofreciendo un precio que su modelo no permite igualar, y que si no se hace
+una excepción se pierde una relación de quince años. Tres cosas funcionan y una no.</p>
+<p>Lo que no funciona es defender el modelo. El banquero no está discutiendo la
+especificación; está discutiendo una decisión de negocio.</p>
+<p>Lo que funciona: <strong>primero</strong>, separar el diagnóstico de la decisión —el modelo dice que
+esta operación, a ese precio, destruye valor; si el banco quiere hacerla por la relación,
+esa es una decisión legítima que le corresponde al comité, no al modelo (cap. 29).
+<strong>Segundo</strong>, poner el número completo sobre la mesa: no solo el diferencial, sino el
+consumo de capital, la provisión del día uno y el valor de la relación completa, para que
+la decisión se tome con todo el cuadro. <strong>Tercero</strong>, si la excepción se concede, exigir
+que quede registrada como excepción con su motivo, porque el patrón agregado de excepciones
+es información de gestión de primer orden: si el 30 % de las operaciones de un sector
+requiere excepción de precio, el problema no son las excepciones, es el apetito declarado
+para ese sector.</p>
+</div>
+</div>
+<h3 id="riesgo-de-credito-de-primera-linea">Riesgo de crédito de primera línea<a class="hlink" href="#riesgo-de-credito-de-primera-linea" aria-label="enlace">#</a></h3>
+<p><strong>Quiénes son.</strong> Los analistas de crédito que califican, estructuran covenants y proponen
+la decisión; formalmente parte de la línea de negocio o de una unidad de suscripción
+dependiente de riesgos, según el banco.</p>
+<p><strong>Qué necesitan.</strong> Que la herramienta de calificación sea usable, que la escala tenga
+sentido, que el modelo no les obligue a capturar cuarenta campos para calificar a un
+cliente cuyo expediente ya está en el sistema, y que las excepciones tengan un camino claro.</p>
+<p><strong>Qué necesita el área de modelos de ellos.</strong> Son los productores del dato más valioso del
+banco: la calificación y sus insumos. La calidad de la calificación es la calidad del
+modelo.</p>
+<p><strong>Fricción típica.</strong> La captura de datos se percibe como carga administrativa, y el
+resultado es información incompleta, tardía o de conveniencia. SS4/24 exige sistemas y
+procesos para recopilar y analizar continuamente las excepciones finales de calificación
+[R15 §10.17(d)(iii)], lo que convierte esa disciplina en un requisito, no en una buena
+práctica.</p>
+<h3 id="riesgo-de-credito-de-segunda-linea">Riesgo de crédito de segunda línea<a class="hlink" href="#riesgo-de-credito-de-segunda-linea" aria-label="enlace">#</a></h3>
+<p><strong>Quiénes son.</strong> La función que fija políticas, límites y apetito, y que supervisa el
+perfil de riesgo agregado.</p>
+<p><strong>Qué necesitan.</strong> Parámetros creíbles, alertas tempranas de deterioro, la traducción del
+apetito a límites operativos, y análisis que expliquen qué está pasando en la cartera y por
+qué.</p>
+<p><strong>Qué necesita el área de modelos de ellos.</strong> El patrocinio. La segunda línea es
+normalmente el dueño de negocio de los modelos de riesgo y quien defiende su presupuesto.</p>
+<p><strong>Fricción típica.</strong> Cuando el modelo dice algo que no coincide con la intuición de la
+función de riesgos, la tentación es ajustar el modelo. El antídoto es institucional: los
+ajustes fuera de modelo deben tener el mismo gobierno, la misma documentación y la misma
+trazabilidad que el modelo (cap. 26).</p>
+<h3 id="analitica-y-modelos">Analítica y modelos<a class="hlink" href="#analitica-y-modelos" aria-label="enlace">#</a></h3>
+<p><strong>Qué produce.</strong> Modelos de PD, LGD, EAD, estructuras temporales, modelos macroeconómicos,
+motor de ECL, motor de RWA, herramientas de decisión y precio, monitoreo, documentación.</p>
+<p><strong>Qué necesita de todos.</strong> Datos, uso, desafío y presupuesto.</p>
+<h3 id="validacion-independiente">Validación independiente<a class="hlink" href="#validacion-independiente" aria-label="enlace">#</a></h3>
+<p><strong>Qué necesitan del área de modelos.</strong> El expediente completo, con antelación suficiente,
+con acceso a los datos de desarrollo y al código, y con la lista honesta de limitaciones
+conocidas.</p>
+<p><strong>Qué necesita el área de modelos de ellos.</strong> Desafío temprano y proporcional, y una
+distinción clara entre hallazgos que impiden usar el modelo y hallazgos que se remedian en
+el siguiente ciclo.</p>
+<p><strong>Fricción típica.</strong> Validación reta el modelo cuando ya no hay tiempo para cambiarlo.
+Esto es un problema de proceso, no de personas, y tiene una solución conocida: la
+<strong>revisión por fases</strong>. Validación entra en el diseño, no en la entrega. Cuesta más horas
+de validación pero elimina la peor patología del ciclo —descubrir en noviembre que el
+modelo que entra en producción en enero tiene un problema de representatividad de la
+muestra que obliga a rehacer la calibración.</p>
+<div class="box box-practica">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">La conversación con validación que hay que tener el primer día</span></div>
+<div class="box-b">
+<p>Antes de empezar un desarrollo, siéntese con el responsable de validación y acuerden por
+escrito tres cosas: qué pruebas va a exigir, qué umbrales va a aplicar, y en qué momentos
+del desarrollo va a intervenir. Se llama <em>criterios de aceptación</em> y es una práctica
+elemental de gestión de proyectos que en modelos de riesgo casi nadie aplica.</p>
+<p>El efecto no es que validación sea más blanda —no debe serlo—, sino que el desarrollo se
+diseña contra criterios conocidos. Y tiene un beneficio adicional de gobierno: si
+validación cambia los criterios a mitad de camino, hay un documento que lo evidencia, y la
+conversación deja de ser sobre quién tiene razón y pasa a ser sobre por qué cambiaron los
+criterios.</p>
+</div>
+</div>
+<h3 id="finanzas-y-contraloria">Finanzas y contraloría<a class="hlink" href="#finanzas-y-contraloria" aria-label="enlace">#</a></h3>
+<p><strong>Qué necesitan.</strong> La cifra de provisión en la fecha del cierre, conciliada, explicada y
+firmable. Y el análisis de movimientos: por qué la provisión subió, cuánto viene de
+volumen, cuánto de migración, cuánto de cambio de escenario, cuánto de modelo.</p>
+<p><strong>Qué necesita el área de modelos de ellos.</strong> La conciliación contable, la validación de
+que el saldo del motor coincide con el mayor, y —crítico— la corresponsabilidad sobre la
+cifra. El Banco Central Europeo ha sido explícito al respecto: entre las deficiencias de
+gobernanza de los ajustes fuera de modelo identificó <strong>involucramiento limitado de finanzas
+y de las unidades de negocio</strong> en las decisiones de ajuste y sobre-dependencia de las
+unidades de riesgo con supervisión insuficiente de la función de reporte financiero; solo
+30 de los bancos encuestados cumplían estándares satisfactorios y el 44 % presentaba falta
+de asignación clara de tareas y de procedimientos de escalamiento [F22]. El BCE lo resume
+recordando que los contadores «llevan siglos lidiando con riesgos que no se pueden
+modelizar estadísticamente» y espera responsabilidades explícitas de la función de reporte
+financiero [F22].</p>
+<p><strong>Fricción típica.</strong> Finanzas necesita la provisión el día 3 del cierre y el modelo
+necesita datos que llegan el día 2. Es la fricción más crónica del calendario y merece su
+propia sección.</p>
+<h3 id="tesoreria-y-planeacion-financiera">Tesorería y planeación financiera<a class="hlink" href="#tesoreria-y-planeacion-financiera" aria-label="enlace">#</a></h3>
+<p><strong>Qué necesitan.</strong> Proyecciones de provisiones y de activos ponderados para el presupuesto
+y el plan de capital; el consumo de capital por unidad de negocio para asignarlo; los
+insumos de riesgo de crédito de las pruebas de estrés (cap. 30).</p>
+<p><strong>Qué necesita el área de modelos de ellos.</strong> Las proyecciones de balance y de margen, sin
+las cuales no hay ejercicio de estrés, y los precios de transferencia de fondos, sin los
+cuales no hay rentabilidad ajustada por riesgo bien atribuida (cap. 29).</p>
+<h3 id="regulatorio-y-relacion-con-supervisores">Regulatorio y relación con supervisores<a class="hlink" href="#regulatorio-y-relacion-con-supervisores" aria-label="enlace">#</a></h3>
+<p><strong>Qué necesitan.</strong> Documentación en el formato y el idioma que el supervisor espera,
+respuestas a requerimientos en plazo, y aviso anticipado de cualquier cosa que pueda
+sorprender al supervisor.</p>
+<p><strong>Qué necesita el área de modelos de ellos.</strong> La lectura de qué le preocupa realmente al
+supervisor, el calendario de inspecciones y la traducción de una pregunta regulatoria a un
+requerimiento técnico concreto.</p>
+<p><strong>Fricción típica.</strong> El regulador pregunta por algo que depende de otra área. Es tan
+frecuente que conviene tener el mecanismo montado de antemano: un responsable único de la
+respuesta, una matriz de quién contesta qué, y un plazo interno más corto que el plazo
+externo.</p>
+<h3 id="tecnologia-y-datos">Tecnología y datos<a class="hlink" href="#tecnologia-y-datos" aria-label="enlace">#</a></h3>
+<p><strong>Qué necesitan.</strong> Requerimientos claros, priorizados y estables; y que el área de modelos
+entienda que su petición compite con cincuenta más.</p>
+<p><strong>Qué necesita el área de modelos de ellos.</strong> Absolutamente todo lo que entra al modelo.
+SS4/24 exige objetivos y estándares cuantificados y documentados para probar la exactitud
+de los datos, con pruebas que cubran conciliación de reportes, monitoreo de indicadores de
+riesgo, documentación de la infraestructura tecnológica, estándares de propiedad y
+puntualidad del dato, y programas de auditoría cuantitativa [R15 §6.2-6.3].</p>
+<p><strong>Fricción típica.</strong> Tecnología no prioriza el dato de riesgo porque no genera ingreso
+visible. Es la fricción estructuralmente más difícil, porque el área de modelos no controla
+ni el presupuesto ni la prioridad.</p>
+<div class="box box-practica">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Cómo se pide presupuesto para datos y se consigue</span></div>
+<div class="box-b">
+<p>Un requerimiento de datos formulado como «necesitamos el campo de fecha de primer impago
+en el almacén» pierde contra cualquier iniciativa comercial, siempre. Cuatro movimientos
+que sí funcionan:</p>
+<p><strong>1. Traducir el dato a dinero.</strong> No «falta el campo X», sino «la ausencia del campo X nos
+obliga a aplicar un margen de conservadurismo de la categoría A que añade N puntos básicos
+a la PD media, lo que equivale a M millones de activos ponderados y a K millones de capital
+al 14 %». Ese número, que se puede calcular con el marco de tres categorías de margen de
+conservadurismo de SS4/24 [R15 §9.1-9.14], convierte una petición técnica en un caso de
+negocio.</p>
+<p><strong>2. Agregar peticiones en un programa.</strong> Veinte requerimientos sueltos de datos pierden
+veinte veces. Un programa único de calidad del dato de riesgo, con un patrocinador de nivel
+de dirección y un caso de negocio agregado, compite en otra liga.</p>
+<p><strong>3. Buscar el aliado con más poder.</strong> El dueño natural del caso no es el área de modelos:
+es quien sufre las consecuencias con más visibilidad. Normalmente es finanzas —que reprocesa
+cierres— o el responsable de la relación con el supervisor —que tiene un hallazgo abierto—.
+Deje que el caso lo presente quien tenga más influencia sobre el comité de inversión, y
+provea usted la munición.</p>
+<p><strong>4. Vincularlo a un compromiso ya adquirido.</strong> Un requerimiento asociado a la remediación
+de un hallazgo de auditoría, a un compromiso con el supervisor o a una condición de una
+autorización de modelo tiene prioridad automática. Si su necesidad de dato encaja en uno de
+esos, encájela; no es una manipulación, es reconocer cómo se asignan realmente las
+prioridades.</p>
+</div>
+</div>
+<h3 id="operaciones-de-credito-recuperacion-y-juridico">Operaciones de crédito, recuperación y jurídico<a class="hlink" href="#operaciones-de-credito-recuperacion-y-juridico" aria-label="enlace">#</a></h3>
+<p><strong>Qué necesitan.</strong> Criterios operativos claros: cuándo una exposición es incumplimiento,
+cuándo cura, qué se considera reestructura, cómo se registra una recuperación.</p>
+<p><strong>Qué necesita el área de modelos de ellos.</strong> Los datos de recuperación, que son la materia
+prima de la LGD y el activo de datos peor mantenido de casi todos los bancos: fechas,
+importes, costos directos e indirectos, garantías ejecutadas y su valor de realización.
+Sin un flujo de recuperación bien capturado no hay modelo de LGD defendible, y el artículo
+181 del CRR exige estimar la LGD como promedio ponderado por incumplimiento de las LGD
+realizadas observadas, con tratamiento conservador de las recuperaciones incompletas y
+consideración de los retrasos en la toma de control y liquidación de la garantía [R16].</p>
+<p><strong>Fricción típica.</strong> El equipo de recuperación mide su desempeño por importe recuperado,
+no por calidad del registro. Todo lo que no afecta a su indicador se captura mal.</p>
+<h3 id="auditoria-interna">Auditoría interna<a class="hlink" href="#auditoria-interna" aria-label="enlace">#</a></h3>
+<p><strong>Qué necesitan.</strong> Evidencia de que el marco funciona: actas, expedientes, trazabilidad de
+cambios, cumplimiento del plan de monitoreo.</p>
+<p><strong>Qué necesita el área de modelos de ellos.</strong> Auditoría es, contraintuitivamente, uno de
+los mejores aliados de un director de modelos: un hallazgo de auditoría es el instrumento
+más eficaz que existe para conseguir presupuesto y prioridad. En México el Anexo 32-A
+exige una auditoría interna anual con reporte al Consejo en un máximo de <strong>30 días
+naturales</strong> [M5], y el Anexo 26 sitúa expresamente en Auditoría Interna la vigilancia de
+las validaciones [M4].</p>
+<h3 id="el-consejo-y-sus-comites">El consejo y sus comités<a class="hlink" href="#el-consejo-y-sus-comites" aria-label="enlace">#</a></h3>
+<p><strong>Qué necesitan.</strong> Una visión agregada del riesgo de modelo, no una lista de modelos; el
+apetito de riesgo de modelo y su cumplimiento; los cambios materiales y su impacto; y las
+decisiones que requieren su aprobación.</p>
+<p><strong>Qué necesita el área de modelos de ellos.</strong> Cobertura política y decisiones. En México,
+el Anexo 32-A exige aprobación del Consejo de Administración y de la Dirección General del
+marco de calificaciones internas, con reuniones anuales mínimas con el área de control de
+crédito [M5], y el Anexo 26 asigna al Director General una <strong>responsabilidad
+intransferible</strong> ante la Comisión [M4]. En el Reino Unido, SS4/24 exige una atestación
+anual en la que la función de alta dirección responsable certifica por escrito si la
+entidad está totalmente conforme, materialmente conforme o materialmente no conforme con el
+CRR y las declaraciones supervisoras de la PRA, y en caso de no conformidad material, un
+plan de remediación creíble [R15 §2.12-2.13].</p>
+<div class="box box-economico">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Sentido económico</span></div>
+<div class="box-b">
+<p>La atestación anual y la responsabilidad intransferible del Director General convierten el
+cumplimiento del marco de modelos en un asunto personal de alguien con nombre y apellido.
+Ese es el mecanismo por el que un problema técnico obtiene atención ejecutiva, y saber
+usarlo —sin abusar— es una competencia de dirección.</p>
+</div>
+</div>
+<h2 id="la-tabla-de-doble-entrada">La tabla de doble entrada<a class="hlink" href="#la-tabla-de-doble-entrada" aria-label="enlace">#</a></h2>
+<p>Lo que sigue es el contrato implícito entre el área de modelos y el resto del banco. Vale
+la pena hacerlo explícito, escribirlo y revisarlo una vez al año.</p>
+<table>
+<thead>
+<tr>
+<th>Área</th>
+<th>Entrega al área de modelos</th>
+<th>Frecuencia</th>
+<th>Recibe del área de modelos</th>
+<th>Frecuencia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Negocio y originación</td>
+<td>Información financiera y cualitativa del cliente; justificación de excepciones</td>
+<td>Continua / anual por cliente</td>
+<td>Calificación, precio mínimo, consumo de capital, simulador de estructuras</td>
+<td>En línea</td>
+</tr>
+<tr>
+<td>Riesgo de crédito 1.ª línea</td>
+<td>Calificaciones, excepciones documentadas, datos de covenants</td>
+<td>Continua</td>
+<td>Herramienta de calificación, guías de aplicación, capacitación</td>
+<td>Continua / anual</td>
+</tr>
+<tr>
+<td>Riesgo de crédito 2.ª línea</td>
+<td>Apetito, políticas, prioridades de cartera</td>
+<td>Anual con revisiones</td>
+<td>Parámetros, alertas de deterioro, análisis de cartera, traducción del apetito a límites</td>
+<td>Mensual / trimestral</td>
+</tr>
+<tr>
+<td>Finanzas y contraloría</td>
+<td>Conciliación contable, saldos, cierre de balances</td>
+<td>Mensual</td>
+<td>ECL por etapa, análisis de movimientos, sensibilidades, notas a los estados financieros</td>
+<td>Mensual / trimestral</td>
+</tr>
+<tr>
+<td>Tesorería y planeación</td>
+<td>Proyección de balance y de margen, precios de transferencia</td>
+<td>Trimestral / anual</td>
+<td>Proyección de provisiones y de RWA, insumos de crédito de estrés e ICAAP</td>
+<td>Trimestral / anual</td>
+</tr>
+<tr>
+<td>Estudios económicos</td>
+<td>Trayectorias macroeconómicas por escenario</td>
+<td>Trimestral</td>
+<td>Elasticidades observadas, retropruebas del modelo de satélite</td>
+<td>Trimestral</td>
+</tr>
+<tr>
+<td>Tecnología y datos</td>
+<td>Datos, entornos, ejecución de procesos, disponibilidad</td>
+<td>Diaria</td>
+<td>Requerimientos priorizados, especificación funcional, pruebas de aceptación</td>
+<td>Por proyecto</td>
+</tr>
+<tr>
+<td>Operaciones y recuperación</td>
+<td>Datos de mora, incumplimiento, recuperación y garantías</td>
+<td>Mensual</td>
+<td>Criterios operativos de incumplimiento y cura; información de la cartera en gestión</td>
+<td>Mensual</td>
+</tr>
+<tr>
+<td>Validación independiente</td>
+<td>Plan de validación, hallazgos, criterios de aceptación</td>
+<td>Anual / por modelo</td>
+<td>Expediente de desarrollo, datos, código, respuesta a hallazgos</td>
+<td>Por modelo</td>
+</tr>
+<tr>
+<td>Regulatorio</td>
+<td>Calendario supervisor, lectura de expectativas</td>
+<td>Continua</td>
+<td>Documentación, autoevaluaciones, respuestas a requerimientos</td>
+<td>Por requerimiento</td>
+</tr>
+<tr>
+<td>Auditoría interna</td>
+<td>Plan de auditoría, hallazgos</td>
+<td>Anual</td>
+<td>Evidencia de control, seguimiento de remediaciones</td>
+<td>Continua</td>
+</tr>
+<tr>
+<td>Consejo y comités</td>
+<td>Apetito de riesgo de modelo, aprobaciones, desafío</td>
+<td>Trimestral / anual</td>
+<td>Información de gestión del inventario, cambios materiales, atestación</td>
+<td>Trimestral / anual</td>
+</tr>
+</tbody>
+</table>
+<div class="box box-llano">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">En palabras llanas</span></div>
+<div class="box-b">
+<p>Esta tabla es el trabajo real. Cada celda es una promesa que alguien tiene que cumplir en
+una fecha, y la mayoría de los problemas que parecen técnicos son en realidad una celda de
+esta tabla que nadie está cumpliendo.</p>
+</div>
+</div>
+<h2 id="el-cierre-mensual-donde-se-rompe-todo">El cierre mensual: dónde se rompe todo<a class="hlink" href="#el-cierre-mensual-donde-se-rompe-todo" aria-label="enlace">#</a></h2>
+<p><figure class="fig" id="fig-cap31_calendario"><div class="fig-svg"><svg preserveAspectRatio="xMidYMid meet" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 435.6 334.014547" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 334.014547 
+L 435.6 334.014547 
+L 435.6 0 
+L 0 0 
+L 0 334.014547 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 5.76 298.982203 
+L 429.84 298.982203 
+L 429.84 43.958203 
+L 5.76 43.958203 
+L 5.76 298.982203 
+z
+" style="fill: none"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 20.383448 298.982203 
+L 20.383448 43.958203 
+" clip-path="url(#p5a797c389c)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_2"/>
+     <g id="text_1">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="20.383448" y="312.200719" transform="rotate(-0 20.383448 312.200719)">D-6</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 49.630345 298.982203 
+L 49.630345 43.958203 
+" clip-path="url(#p5a797c389c)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_2">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="49.630345" y="312.200719" transform="rotate(-0 49.630345 312.200719)">D-4</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 78.877241 298.982203 
+L 78.877241 43.958203 
+" clip-path="url(#p5a797c389c)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_3">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="78.877241" y="312.200719" transform="rotate(-0 78.877241 312.200719)">D-2</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 108.124138 298.982203 
+L 108.124138 43.958203 
+" clip-path="url(#p5a797c389c)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_4">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="108.124138" y="312.200719" transform="rotate(-0 108.124138 312.200719)">D0</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 137.371034 298.982203 
+L 137.371034 43.958203 
+" clip-path="url(#p5a797c389c)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_5">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="137.371034" y="312.200719" transform="rotate(-0 137.371034 312.200719)">D+2</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_11">
+      <path d="M 166.617931 298.982203 
+L 166.617931 43.958203 
+" clip-path="url(#p5a797c389c)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_12"/>
+     <g id="text_6">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="166.617931" y="312.200719" transform="rotate(-0 166.617931 312.200719)">D+4</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_13">
+      <path d="M 195.864828 298.982203 
+L 195.864828 43.958203 
+" clip-path="url(#p5a797c389c)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_14"/>
+     <g id="text_7">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="195.864828" y="312.200719" transform="rotate(-0 195.864828 312.200719)">D+6</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_15">
+      <path d="M 225.111724 298.982203 
+L 225.111724 43.958203 
+" clip-path="url(#p5a797c389c)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_16"/>
+     <g id="text_8">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="225.111724" y="312.200719" transform="rotate(-0 225.111724 312.200719)">D+8</text>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_17">
+      <path d="M 254.358621 298.982203 
+L 254.358621 43.958203 
+" clip-path="url(#p5a797c389c)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_18"/>
+     <g id="text_9">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="254.358621" y="312.200719" transform="rotate(-0 254.358621 312.200719)">D+10</text>
+     </g>
+    </g>
+    <g id="xtick_10">
+     <g id="line2d_19">
+      <path d="M 283.605517 298.982203 
+L 283.605517 43.958203 
+" clip-path="url(#p5a797c389c)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_20"/>
+     <g id="text_10">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="283.605517" y="312.200719" transform="rotate(-0 283.605517 312.200719)">D+12</text>
+     </g>
+    </g>
+    <g id="text_11">
+     <text style="font-size: 10px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="217.8" y="326.174859" transform="rotate(-0 217.8 326.174859)">día hábil respecto al cierre contable</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2"/>
+   <g id="patch_3">
+    <path d="M 108.124138 351.606203 
+L 108.124138 351.606203 
+L 108.124138 335.414203 
+L 108.124138 335.414203 
+z
+" clip-path="url(#p5a797c389c)" style="fill: var(--s1, #2a78d6)"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 108.124138 351.606203 
+L 108.124138 351.606203 
+L 108.124138 335.414203 
+L 108.124138 335.414203 
+z
+" clip-path="url(#p5a797c389c)" style="fill: var(--s2, #eb6834)"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 108.124138 351.606203 
+L 108.124138 351.606203 
+L 108.124138 335.414203 
+L 108.124138 335.414203 
+z
+" clip-path="url(#p5a797c389c)" style="fill: var(--s3, #1baf7a)"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 108.124138 351.606203 
+L 108.124138 351.606203 
+L 108.124138 335.414203 
+L 108.124138 335.414203 
+z
+" clip-path="url(#p5a797c389c)" style="fill: var(--s4, #eda100)"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 5.76 298.982203 
+L 5.76 43.958203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 5.76 298.982203 
+L 429.84 298.982203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 64.253793 65.716203 
+L 108.124138 65.716203 
+L 108.124138 54.584203 
+L 64.253793 54.584203 
+z
+" clip-path="url(#p5a797c389c)" style="fill: var(--s1, #2a78d6)"/>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="111.78" y="62.468078" transform="rotate(-0 111.78 62.468078)">Corte de posiciones y calificaciones</text>
+   </g>
+   <g id="patch_10">
+    <path d="M 108.124138 85.956203 
+L 137.371034 85.956203 
+L 137.371034 74.824203 
+L 108.124138 74.824203 
+z
+" clip-path="url(#p5a797c389c)" style="fill: var(--s1, #2a78d6)"/>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="141.026897" y="82.876078" transform="rotate(-0 141.026897 82.876078)">Carga y conciliación del dato de riesgo</text>
+   </g>
+   <g id="patch_11">
+    <path d="M 122.747586 106.196203 
+L 151.994483 106.196203 
+L 151.994483 95.064203 
+L 122.747586 95.064203 
+z
+" clip-path="url(#p5a797c389c)" style="fill: var(--s2, #eb6834)"/>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="155.650345" y="102.948078" transform="rotate(-0 155.650345 102.948078)">Controles de calidad y excepciones</text>
+   </g>
+   <g id="patch_12">
+    <path d="M 20.383448 126.436203 
+L 49.630345 126.436203 
+L 49.630345 115.304203 
+L 20.383448 115.304203 
+z
+" clip-path="url(#p5a797c389c)" style="fill: var(--s3, #1baf7a)"/>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="53.286207" y="123.188078" transform="rotate(-0 53.286207 123.188078)">Escenarios macro aprobados (D-30)</text>
+   </g>
+   <g id="patch_13">
+    <path d="M 137.371034 146.676203 
+L 166.617931 146.676203 
+L 166.617931 135.544203 
+L 137.371034 135.544203 
+z
+" clip-path="url(#p5a797c389c)" style="fill: var(--s2, #eb6834)"/>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="170.273793" y="143.428078" transform="rotate(-0 170.273793 143.428078)">Motor de PD/LGD/EAD y etapas</text>
+   </g>
+   <g id="patch_14">
+    <path d="M 151.994483 166.916203 
+L 181.241379 166.916203 
+L 181.241379 155.784203 
+L 151.994483 155.784203 
+z
+" clip-path="url(#p5a797c389c)" style="fill: var(--s2, #eb6834)"/>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="184.897241" y="163.836078" transform="rotate(-0 184.897241 163.836078)">Cálculo de ECL y conciliación</text>
+   </g>
+   <g id="patch_15">
+    <path d="M 166.617931 187.156203 
+L 195.864828 187.156203 
+L 195.864828 176.024203 
+L 166.617931 176.024203 
+z
+" clip-path="url(#p5a797c389c)" style="fill: var(--s2, #eb6834)"/>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="199.52069" y="184.076078" transform="rotate(-0 199.52069 184.076078)">Análisis de movimientos y atribución</text>
+   </g>
+   <g id="patch_16">
+    <path d="M 166.617931 207.396203 
+L 195.864828 207.396203 
+L 195.864828 196.264203 
+L 166.617931 196.264203 
+z
+" clip-path="url(#p5a797c389c)" style="fill: var(--s2, #eb6834)"/>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="199.52069" y="204.148078" transform="rotate(-0 199.52069 204.148078)">Propuesta de ajustes fuera de modelo</text>
+   </g>
+   <g id="patch_17">
+    <path d="M 195.864828 227.636203 
+L 210.488276 227.636203 
+L 210.488276 216.504203 
+L 195.864828 216.504203 
+z
+" clip-path="url(#p5a797c389c)" style="fill: var(--s3, #1baf7a)"/>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="214.144138" y="224.556078" transform="rotate(-0 214.144138 224.556078)">Comité de provisiones</text>
+   </g>
+   <g id="patch_18">
+    <path d="M 210.488276 247.876203 
+L 239.735172 247.876203 
+L 239.735172 236.744203 
+L 210.488276 236.744203 
+z
+" clip-path="url(#p5a797c389c)" style="fill: var(--s4, #eda100)"/>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="243.391034" y="244.796078" transform="rotate(-0 243.391034 244.796078)">Contabilización y cierre de libros</text>
+   </g>
+   <g id="patch_19">
+    <path d="M 225.111724 268.116203 
+L 254.358621 268.116203 
+L 254.358621 256.984203 
+L 225.111724 256.984203 
+z
+" clip-path="url(#p5a797c389c)" style="fill: var(--s4, #eda100)"/>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="258.014483" y="264.868078" transform="rotate(-0 258.014483 264.868078)">Reporte a casa matriz y regulatorio</text>
+   </g>
+   <g id="patch_20">
+    <path d="M 239.735172 288.356203 
+L 268.982069 288.356203 
+L 268.982069 277.224203 
+L 239.735172 277.224203 
+z
+" clip-path="url(#p5a797c389c)" style="fill: var(--s3, #1baf7a)"/>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 8.4px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="272.637931" y="285.276078" transform="rotate(-0 272.637931 285.276078)">Análisis para el comité de riesgos</text>
+   </g>
+   <g id="text_24">
+    <text style="font-weight: 600; font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="110.317655" y="293.922203" transform="rotate(-0 110.317655 293.922203)">cierre contable (D0)</text>
+   </g>
+   <g id="text_25">
+    <text style="font-weight: 600; font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--st-warning, #fab219)" x="198.058345" y="293.922203" transform="rotate(-0 198.058345 293.922203)">decisión de provisiones</text>
+   </g>
+   <g id="text_26">
+    <text style="font-weight: 600; font-size: 11.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="5.76" y="14.958203" transform="rotate(-0 5.76 14.958203)">Cierre mensual de la ECL: secuencia y dependencias entre áreas</text>
+   </g>
+   <g id="line2d_21">
+    <path d="M 108.124138 298.982203 
+L 108.124138 43.958203 
+" clip-path="url(#p5a797c389c)" style="fill: none; stroke-dasharray: 4.07,1.76; stroke-dashoffset: 0; stroke: var(--c-ink, #0b0b0b); stroke-width: 1.1"/>
+   </g>
+   <g id="line2d_22">
+    <path d="M 195.864828 298.982203 
+L 195.864828 43.958203 
+" clip-path="url(#p5a797c389c)" style="fill: none; stroke-dasharray: 1.1,1.815; stroke-dashoffset: 0; stroke: var(--st-warning, #fab219); stroke-width: 1.1"/>
+   </g>
+   <g id="legend_1">
+    <g id="patch_21">
+     <path d="M 9.56 36.90738 
+L 23.81 36.90738 
+L 23.81 30.25738 
+L 9.56 30.25738 
+z
+" style="fill: var(--s1, #2a78d6)"/>
+    </g>
+    <g id="text_27">
+     <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="29.51" y="36.90738" transform="rotate(-0 29.51 36.90738)">Tecnología y datos</text>
+    </g>
+    <g id="patch_22">
+     <path d="M 131.793828 36.90738 
+L 146.043828 36.90738 
+L 146.043828 30.25738 
+L 131.793828 30.25738 
+z
+" style="fill: var(--s2, #eb6834)"/>
+    </g>
+    <g id="text_28">
+     <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="151.743828" y="36.90738" transform="rotate(-0 151.743828 36.90738)">Modelos</text>
+    </g>
+    <g id="patch_23">
+     <path d="M 205.280781 36.90738 
+L 219.530781 36.90738 
+L 219.530781 30.25738 
+L 205.280781 30.25738 
+z
+" style="fill: var(--s3, #1baf7a)"/>
+    </g>
+    <g id="text_29">
+     <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="225.230781" y="36.90738" transform="rotate(-0 225.230781 36.90738)">Riesgo / comités</text>
+    </g>
+    <g id="patch_24">
+     <path d="M 318.045781 36.90738 
+L 332.295781 36.90738 
+L 332.295781 30.25738 
+L 318.045781 30.25738 
+z
+" style="fill: var(--s4, #eda100)"/>
+    </g>
+    <g id="text_30">
+     <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="337.995781" y="36.90738" transform="rotate(-0 337.995781 36.90738)">Finanzas</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p5a797c389c">
+   <rect x="5.76" y="43.958203" width="424.08" height="255.024"/>
+  </clipPath>
+ </defs>
+</svg></div><figcaption>Secuencia típica de un cierre mensual de la pérdida crediticia esperada, con la ventana de cada tarea y el área responsable. Calendario ilustrativo del autor; los plazos concretos varían por institución.</figcaption></figure></p>
+<p>El cierre de la ECL es el proceso donde convergen todas las dependencias, y es el mejor
+diagnóstico del estado real de la organización. Tres observaciones sobre el calendario de
+la figura.</p>
+<p><strong>El camino crítico no pasa por el modelo.</strong> El motor de cálculo tarda horas; la carga y
+conciliación del dato tarda días. Cuando alguien pide «acelerar el cierre», la respuesta
+casi nunca está en el área de modelos.</p>
+<p><strong>Los escenarios se aprueban un mes antes del cierre.</strong> Es una necesidad operativa, no un
+capricho: hay que correr el motor, revisar, escalar y contabilizar. La consecuencia es que
+la información macroeconómica que sustenta la provisión tiene entre uno y tres meses de
+antigüedad en la fecha de reporte, y esa brecha es una de las razones estructurales por las
+que existen los ajustes fuera de modelo (cap. 26).</p>
+<p><strong>La ventana de análisis es la primera que se sacrifica.</strong> Cuando el dato llega tarde,
+lo que se comprime no es la contabilización —que tiene fecha legal— sino el análisis de
+movimientos y la revisión de ajustes. Es exactamente al revés de lo que debería pasar, y es
+la causa raíz de la mayoría de los reprocesos.</p>
+<div class="box box-practica">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">El día 3 contra el día 2</span></div>
+<div class="box-b">
+<p>La fricción es aritmética: finanzas necesita la cifra el día hábil 3 y el dato de riesgo se
+consolida el día 2. Quedan menos de veinticuatro horas para calcular, revisar, decidir
+ajustes y explicar movimientos. Cuatro respuestas que funcionan, en orden de coste
+creciente:</p>
+<p><strong>Precálculo con datos preliminares.</strong> Correr el motor el día −2 con la cartera del cierre
+anterior actualizada y el escenario ya aprobado produce una <strong>estimación con un error
+típicamente pequeño</strong>, disponible antes del cierre. Finanzas trabaja con esa estimación y
+la sustituye por la definitiva; el ahorro de tiempo se convierte en tiempo de análisis. Hay
+que gobernarlo: la estimación preliminar nunca es la cifra contable, y la diferencia entre
+ambas se documenta.</p>
+<p><strong>Automatizar los controles, no el cálculo.</strong> El tiempo se va en verificar, no en calcular.
+Un conjunto de controles automáticos con umbrales —variaciones por segmento, cobertura por
+etapa, conteos de exposiciones sin calificación— que se ejecuten al terminar la carga
+convierte una revisión manual de horas en una lista de excepciones de minutos.</p>
+<p><strong>Congelar el alcance del cierre.</strong> Ningún cambio de modelo, de segmentación ni de
+parámetro entra en el mes de cierre trimestral. Suena obvio y casi nunca se respeta.</p>
+<p><strong>Renegociar el calendario contable.</strong> Es la respuesta más eficaz y la que nadie intenta,
+porque se asume que el día 3 es una ley de la naturaleza. A menudo no lo es: es una
+costumbre heredada de un reporte a la casa matriz que ya cambió de fecha. Vale la pena
+preguntar.</p>
+</div>
+</div>
+<h2 id="los-puntos-de-friccion-estructurales">Los puntos de fricción estructurales<a class="hlink" href="#los-puntos-de-friccion-estructurales" aria-label="enlace">#</a></h2>
+<p>Los seis conflictos que siguen no son fallos de personas: son consecuencias previsibles de
+cómo están alineados los incentivos. Se gestionan, no se resuelven.</p>
+<h3 id="el-negocio-percibe-el-modelo-como-un-obstaculo">El negocio percibe el modelo como un obstáculo<a class="hlink" href="#el-negocio-percibe-el-modelo-como-un-obstaculo" aria-label="enlace">#</a></h3>
+<p><strong>Mecanismo.</strong> El banquero se mide por volumen y margen; el modelo restringe ambos.</p>
+<p><strong>Qué funciona.</strong> Convertir el modelo en herramienta antes que en control: un simulador
+que permita al banquero probar estructuras y ver el efecto sobre el precio mínimo y el
+consumo de capital <strong>antes</strong> de comprometerse con el cliente cambia radicalmente la
+percepción. El modelo pasa de decir «no» a decir «así sí». Y el efecto de gobierno es
+mayor que el comercial: es la mejor evidencia posible de use test, que SS4/24 exige al
+requerir que los parámetros de riesgo jueguen «un papel esencial en la gestión de riesgo
+interna y la toma de decisiones» [R15 §4.1-4.2].</p>
+<h3 id="finanzas-necesita-la-cifra-antes-de-que-exista">Finanzas necesita la cifra antes de que exista<a class="hlink" href="#finanzas-necesita-la-cifra-antes-de-que-exista" aria-label="enlace">#</a></h3>
+<p>Tratado arriba. Añádase un principio de gobierno: <strong>la cifra la firma finanzas</strong>, no
+modelos. El área de modelos responde por el cálculo; la función de reporte financiero
+responde por la cifra publicada. Cuando esa frontera se difumina —porque finanzas «confía»
+y no revisa— el banco tiene la deficiencia de gobernanza que el BCE describe como
+sobre-dependencia de las unidades de riesgo con supervisión insuficiente de la función de
+reporte financiero [F22].</p>
+<h3 id="tecnologia-no-prioriza-el-dato-de-riesgo">Tecnología no prioriza el dato de riesgo<a class="hlink" href="#tecnologia-no-prioriza-el-dato-de-riesgo" aria-label="enlace">#</a></h3>
+<p>Tratado arriba. Un punto adicional de gestión: <strong>mida y publique el costo de la carencia</strong>.
+Un indicador mensual de «modelos que operan con margen de conservadurismo por deficiencia
+de datos» y su equivalente en capital hace visible un costo que de otro modo es invisible,
+y lo que se ve se prioriza.</p>
+<h3 id="validacion-reta-el-modelo-cuando-ya-no-hay-tiempo">Validación reta el modelo cuando ya no hay tiempo<a class="hlink" href="#validacion-reta-el-modelo-cuando-ya-no-hay-tiempo" aria-label="enlace">#</a></h3>
+<p>Tratado arriba: revisión por fases y criterios de aceptación acordados el primer día.</p>
+<h3 id="el-regulador-pregunta-por-algo-que-depende-de-otra-area">El regulador pregunta por algo que depende de otra área<a class="hlink" href="#el-regulador-pregunta-por-algo-que-depende-de-otra-area" aria-label="enlace">#</a></h3>
+<p><strong>Mecanismo.</strong> El supervisor evalúa al banco como un todo; la organización responde por
+silos.</p>
+<p><strong>Qué funciona.</strong> Un responsable único de la respuesta, con autoridad para pedir insumos a
+cualquier área y un plazo interno anterior al externo; y una <strong>base de respuestas</strong>: la
+mayoría de las preguntas se repiten entre inspecciones y entre jurisdicciones, y mantener
+las respuestas anteriores versionadas ahorra semanas. Recuérdese además que el paquete de
+solicitud IRB de la PRA exige una autoevaluación exhaustiva frente a todos los artículos
+relevantes del CRR, la CRD, las normas técnicas y las declaraciones supervisoras aplicables,
+señalando cualquier brecha material, y una declaración con certificación a nivel de
+director general sobre la exactitud de la información [R21]. Esa autoevaluación es, en la
+práctica, el mejor inventario de dependencias entre áreas que un director de modelos puede
+tener.</p>
+<h3 id="la-casa-matriz-centraliza-y-la-filial-pierde-control">La casa matriz centraliza y la filial pierde control<a class="hlink" href="#la-casa-matriz-centraliza-y-la-filial-pierde-control" aria-label="enlace">#</a></h3>
+<p><strong>Mecanismo.</strong> El grupo busca consistencia metodológica, eficiencia y una sola versión de
+la verdad; la filial responde ante su supervisor local por modelos que no controla del todo.</p>
+<p><strong>Qué funciona.</strong> Distinguir tres capas y negociar cada una por separado. La <strong>metodología</strong>
+puede y debe ser común: no hay razón para que la definición de incremento significativo del
+riesgo de crédito difiera entre entidades del mismo grupo salvo por exigencia local. La
+<strong>calibración</strong> debe ser local: los datos, el ciclo económico y la definición de
+incumplimiento aplicable son locales; obsérvese que el umbral de mora del artículo 178 del
+CRR admite 180 días en lugar de 90 para ciertos segmentos a criterio de la autoridad
+competente [R10], mientras que el Anexo 26 de la CUB mexicana fija 90 días para cartera
+comercial [M4]. Y la <strong>gobernanza</strong> debe ser local con reporte al grupo: quien responde ante
+la CNBV es el Director General de la filial, con responsabilidad intransferible [M4], y eso
+no se delega a un comité en otro huso horario.</p>
+<div class="box box-practica">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">La frase que hay que poder decirle al supervisor local</span></div>
+<div class="box-b">
+<p>«El modelo lo desarrolla el centro de excelencia global con nuestra participación; la
+calibración se hace con datos locales y la aprueba nuestro comité local; el uso, el
+monitoreo y la validación son locales; y el Director General de esta entidad ha atestado su
+cumplimiento.» Si usted no puede decir esa frase con documentos que la respalden, tiene un
+problema de autorización antes que un problema de modelo.</p>
+<p>El error opuesto también existe y es menos visible: la filial que rechaza toda
+centralización acaba con modelos peores, menos recursos y sin acceso al conocimiento del
+grupo. La posición defendible no es la autonomía total, es la <strong>autonomía sobre las
+decisiones de las que responde ante su supervisor</strong>.</p>
+</div>
+</div>
+<h2 id="gestion-hacia-arriba-y-hacia-los-lados">Gestión hacia arriba y hacia los lados<a class="hlink" href="#gestion-hacia-arriba-y-hacia-los-lados" aria-label="enlace">#</a></h2>
+<h3 id="traducir-un-hallazgo-tecnico-en-una-decision-de-negocio">Traducir un hallazgo técnico en una decisión de negocio<a class="hlink" href="#traducir-un-hallazgo-tecnico-en-una-decision-de-negocio" aria-label="enlace">#</a></h3>
+<p>Un hallazgo técnico —«el modelo de LGD subestima la severidad en el segmento inmobiliario
+comercial por representatividad insuficiente de la muestra de recesión»— no es accionable
+para nadie fuera del área. La traducción tiene cuatro movimientos:</p>
+<ol>
+<li><strong>Magnitud en unidades del destinatario.</strong> «Subestima» no significa nada; «subestima
+   entre 4 y 7 puntos de LGD, lo que equivale a entre X e Y millones de provisión adicional
+   y entre Z y W millones de capital» sí.</li>
+<li><strong>Probabilidad y horizonte.</strong> ¿Es un problema que se materializa ya, o solo en una
+   recesión? ¿Cuándo tendríamos evidencia?</li>
+<li><strong>Opciones, no una recomendación única.</strong> Al menos tres: no hacer nada y documentar el
+   riesgo; aplicar un margen de conservadurismo o un ajuste fuera de modelo mientras se
+   remedia; rehacer el modelo con datos externos. Con su costo, su plazo y su efecto.</li>
+<li><strong>La decisión que se pide.</strong> Explícita, con quién debe tomarla y para cuándo.</li>
+</ol>
+<div class="box box-alerta">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">El hallazgo que se presenta sin opciones</span></div>
+<div class="box-b">
+<p>Presentar un problema sin opciones es delegar el trabajo difícil hacia arriba, y se paga
+de dos maneras: el comité decide mal por falta de alternativas, o no decide y el asunto
+vuelve el trimestre siguiente sin haber avanzado. Un director que solo trae problemas es
+percibido como un problema.</p>
+</div>
+</div>
+<h3 id="presentar-un-modelo-a-un-comite-no-tecnico">Presentar un modelo a un comité no técnico<a class="hlink" href="#presentar-un-modelo-a-un-comite-no-tecnico" aria-label="enlace">#</a></h3>
+<p>Un comité de riesgos con consejeros independientes tiene entre quince y veinticinco minutos
+para su punto y ninguna obligación de entender una regresión. Estructura que funciona:</p>
+<ul>
+<li><strong>Una frase con la decisión que se pide.</strong> Primera diapositiva, antes de cualquier
+  contexto.</li>
+<li><strong>Qué problema resuelve el modelo y quién lo usa.</strong> En lenguaje de negocio.</li>
+<li><strong>El impacto</strong>: cuánto cambia la provisión, el capital, las decisiones de originación.
+  Con el número, no con adjetivos.</li>
+<li><strong>Cómo se sabe que funciona</strong>: una o dos métricas con su umbral y su interpretación, y
+  una gráfica —la curva de calibración o el desempeño observado frente al estimado— que se
+  entienda sin explicación.</li>
+<li><strong>Qué puede salir mal</strong>: las tres limitaciones principales y qué mitigante tiene cada una.</li>
+<li><strong>Qué dijo validación</strong>: la opinión independiente, resumida honestamente, incluidos los
+  hallazgos abiertos.</li>
+<li><strong>El anexo técnico</strong>, que nadie leerá pero cuya existencia demuestra que el trabajo está
+  hecho.</li>
+</ul>
+<p>Dos reglas más. La primera: <strong>nunca presentar un modelo sin su limitación más grave
+explícita</strong>. Si el comité descubre después una limitación que usted conocía y no dijo,
+pierde la credibilidad de todos los modelos futuros, no solo la de ese. La segunda:
+<strong>anticipar la pregunta del consejero incómodo</strong>. Suele ser una de estas tres —«¿por qué
+cambia tanto respecto del año pasado?», «¿qué hacen los competidores?», «¿qué pasa si se
+equivoca?»— y llevar la respuesta preparada, con un número, cambia por completo el tono de
+la reunión.</p>
+<div class="box box-practica">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">La diapositiva que nunca hay que poner</span></div>
+<div class="box-b">
+<p>La diapositiva con la ecuación. No convence a los técnicos —que quieren el expediente— y
+pierde a los no técnicos, que a partir de ese momento dejan de escuchar y esperan a que
+termine. Si necesita mostrar que hay rigor detrás, muestre el índice del expediente de
+validación: comunica lo mismo y no expulsa a nadie de la conversación.</p>
+</div>
+</div>
+<div class="box box-entrevista">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Pregunta de entrevista</span></div>
+<div class="box-b">
+<p><strong>«El comité de riesgos del consejo le pregunta por qué la provisión de la cartera
+corporativa subió un 22 % este trimestre. Tiene tres minutos y una sola diapositiva.»</strong></p>
+<p>No es una pregunta sobre provisiones: es una prueba de si el candidato sabe estructurar
+información para un órgano de gobierno.</p>
+<p>La respuesta esperada es una <strong>atribución</strong>, no una explicación narrativa: cuánto del
+incremento viene de volumen, cuánto de migración de calificaciones, cuánto de cambio de
+escenario macroeconómico, cuánto de transferencias a etapa 2, cuánto de ajustes fuera de
+modelo y cuánto de cambios de modelo. Cinco o seis barras que sumen al 22 %, cada una con
+su importe. Esa descomposición existe o no existe, y si no existe, el área no puede
+explicar su propio número.</p>
+<p>Lo segundo que buscan es que el candidato <strong>separe lo que es deterioro real de lo que es
+efecto de método</strong>. Un aumento por migración de calificaciones es información sobre la
+cartera; un aumento por cambio de escenario es información sobre las expectativas
+macroeconómicas; un aumento por cambio de modelo no es ninguna de las dos y debería
+haberse anticipado al comité antes de que ocurriera.</p>
+<p>Y lo tercero, que cierre con la implicación, no con el dato: si el 60 % del incremento
+viene de migración en un sector concreto, la conversación que el comité necesita tener es
+sobre el apetito para ese sector, no sobre la provisión.</p>
+</div>
+</div>
+<h3 id="construir-una-coalicion-para-un-programa-plurianual">Construir una coalición para un programa plurianual<a class="hlink" href="#construir-una-coalicion-para-un-programa-plurianual" aria-label="enlace">#</a></h3>
+<p>Una solicitud de autorización IRB es un programa de tres a cinco años que atraviesa toda la
+organización. El paquete de solicitud de la PRA se estructura en <strong>ocho módulos organizados
+en tres fases</strong>: fase 1, alcance; fase 2, revisión técnica, tecnología y datos, use test y
+experiencia, y planificación de la implementación; fase 3, reporte financiero, validación y
+gobernanza [R21]. Nótese que solo dos de los ocho módulos son competencia principal del
+área de modelos: los otros seis dependen de tecnología, negocio, finanzas, validación y
+gobierno. Y no hay plazos predeterminados públicos para completar la solicitud o su
+aprobación; los plazos indicativos se acuerdan con la PRA tras completar la fase 1 [R21].</p>
+<p><figure class="fig" id="fig-cap31_influencia"><div class="fig-svg"><svg preserveAspectRatio="xMidYMid meet" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 462.25125 305.466547" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 305.466547 
+L 462.25125 305.466547 
+L 462.25125 0 
+L 0 0 
+L 0 305.466547 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 37.526875 270.434203 
+L 450.446875 270.434203 
+L 450.446875 26.498203 
+L 37.526875 26.498203 
+L 37.526875 270.434203 
+z
+" style="fill: none"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 243.986875 148.466203 
+L 450.446875 148.466203 
+L 450.446875 26.498203 
+L 243.986875 26.498203 
+z
+" clip-path="url(#p24f43e70be)" style="fill: var(--s1, #2a78d6); opacity: 0.07"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="37.526875" y="283.652719" transform="rotate(-0 37.526875 283.652719)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="120.110875" y="283.652719" transform="rotate(-0 120.110875 283.652719)">2</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="202.694875" y="283.652719" transform="rotate(-0 202.694875 283.652719)">4</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="285.278875" y="283.652719" transform="rotate(-0 285.278875 283.652719)">6</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="367.862875" y="283.652719" transform="rotate(-0 367.862875 283.652719)">8</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6"/>
+     <g id="text_6">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="450.446875" y="283.652719" transform="rotate(-0 450.446875 283.652719)">10</text>
+     </g>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 10px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="243.986875" y="297.626859" transform="rotate(-0 243.986875 297.626859)">interés en el resultado del programa</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_7">
+      <path d="M 37.526875 270.434203 
+L 450.446875 270.434203 
+" clip-path="url(#p24f43e70be)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_8">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="31.526875" y="274.043461" transform="rotate(-0 31.526875 274.043461)">0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_9">
+      <path d="M 37.526875 226.082203 
+L 450.446875 226.082203 
+" clip-path="url(#p24f43e70be)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_9">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="31.526875" y="229.691461" transform="rotate(-0 31.526875 229.691461)">2</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_11">
+      <path d="M 37.526875 181.730203 
+L 450.446875 181.730203 
+" clip-path="url(#p24f43e70be)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_12"/>
+     <g id="text_10">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="31.526875" y="185.339461" transform="rotate(-0 31.526875 185.339461)">4</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_13">
+      <path d="M 37.526875 137.378203 
+L 450.446875 137.378203 
+" clip-path="url(#p24f43e70be)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_14"/>
+     <g id="text_11">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="31.526875" y="140.987461" transform="rotate(-0 31.526875 140.987461)">6</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_15">
+      <path d="M 37.526875 93.026203 
+L 450.446875 93.026203 
+" clip-path="url(#p24f43e70be)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_16"/>
+     <g id="text_12">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="31.526875" y="96.635461" transform="rotate(-0 31.526875 96.635461)">8</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_17">
+      <path d="M 37.526875 48.674203 
+L 450.446875 48.674203 
+" clip-path="url(#p24f43e70be)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_18"/>
+     <g id="text_13">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="31.526875" y="52.283461" transform="rotate(-0 31.526875 52.283461)">10</text>
+     </g>
+    </g>
+    <g id="text_14">
+     <text style="font-size: 10px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="13.358438" y="148.466203" transform="rotate(-90 13.358438 148.466203)">influencia sobre su viabilidad</text>
+    </g>
+   </g>
+   <g id="line2d_19">
+    <path d="M 37.526875 159.554203 
+L 450.446875 159.554203 
+" clip-path="url(#p24f43e70be)" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-linecap: round"/>
+   </g>
+   <g id="line2d_20">
+    <path d="M 243.986875 270.434203 
+L 243.986875 26.498203 
+" clip-path="url(#p24f43e70be)" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 37.526875 270.434203 
+L 37.526875 26.498203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 37.526875 270.434203 
+L 450.446875 270.434203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="PathCollection_1">
+    <defs>
+     <path id="m1e79a79a43" d="M 0 4.873397 
+C 1.29244 4.873397 2.532119 4.359905 3.446012 3.446012 
+C 4.359905 2.532119 4.873397 1.29244 4.873397 0 
+C 4.873397 -1.29244 4.359905 -2.532119 3.446012 -3.446012 
+C 2.532119 -4.359905 1.29244 -4.873397 0 -4.873397 
+C -1.29244 -4.873397 -2.532119 -4.359905 -3.446012 -3.446012 
+C -4.359905 -2.532119 -4.873397 -1.29244 -4.873397 0 
+C -4.873397 1.29244 -4.359905 2.532119 -3.446012 3.446012 
+C -2.532119 4.359905 -1.29244 4.873397 0 4.873397 
+z
+"/>
+    </defs>
+    <g clip-path="url(#p24f43e70be)">
+     <use xlink:href="#m1e79a79a43" x="223.340875" y="61.979803" style="fill: var(--s2, #eb6834)"/>
+    </g>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="223.340875" y="79.979803" transform="rotate(-0 223.340875 79.979803)">Consejo</text>
+   </g>
+   <g id="PathCollection_2">
+    <defs>
+     <path id="m922c7918f8" d="M 0 4.873397 
+C 1.29244 4.873397 2.532119 4.359905 3.446012 3.446012 
+C 4.359905 2.532119 4.873397 1.29244 4.873397 0 
+C 4.873397 -1.29244 4.359905 -2.532119 3.446012 -3.446012 
+C 2.532119 -4.359905 1.29244 -4.873397 0 -4.873397 
+C -1.29244 -4.873397 -2.532119 -4.359905 -3.446012 -3.446012 
+C -4.359905 -2.532119 -4.873397 -1.29244 -4.873397 0 
+C -4.873397 1.29244 -4.359905 2.532119 -3.446012 3.446012 
+C -2.532119 4.359905 -1.29244 4.873397 0 4.873397 
+z
+"/>
+    </defs>
+    <g clip-path="url(#p24f43e70be)">
+     <use xlink:href="#m922c7918f8" x="392.638075" y="70.850203" style="fill: var(--s1, #2a78d6)"/>
+    </g>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="392.638075" y="88.850203" transform="rotate(-0 392.638075 88.850203)">Dirección de Riesgos</text>
+   </g>
+   <g id="PathCollection_3">
+    <g clip-path="url(#p24f43e70be)">
+     <use xlink:href="#m922c7918f8" x="301.795675" y="88.591003" style="fill: var(--s1, #2a78d6)"/>
+    </g>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="301.795675" y="78.591003" transform="rotate(-0 301.795675 78.591003)">Dirección Financiera</text>
+   </g>
+   <g id="PathCollection_4">
+    <g clip-path="url(#p24f43e70be)">
+     <use xlink:href="#m1e79a79a43" x="169.661275" y="106.331803" style="fill: var(--s2, #eb6834)"/>
+    </g>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="169.661275" y="96.331803" transform="rotate(-0 169.661275 96.331803)">Banca corporativa</text>
+   </g>
+   <g id="PathCollection_5">
+    <g clip-path="url(#p24f43e70be)">
+     <use xlink:href="#m1e79a79a43" x="202.694875" y="137.378203" style="fill: var(--s2, #eb6834)"/>
+    </g>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="202.694875" y="127.378203" transform="rotate(-0 202.694875 127.378203)">Tecnología y datos</text>
+   </g>
+   <g id="PathCollection_6">
+    <g clip-path="url(#p24f43e70be)">
+     <use xlink:href="#m922c7918f8" x="400.896475" y="155.119003" style="fill: var(--s1, #2a78d6)"/>
+    </g>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="400.896475" y="145.119003" transform="rotate(-0 400.896475 145.119003)">Validación</text>
+   </g>
+   <g id="PathCollection_7">
+    <g clip-path="url(#p24f43e70be)">
+     <use xlink:href="#m922c7918f8" x="285.278875" y="146.248603" style="fill: var(--s1, #2a78d6)"/>
+    </g>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="285.278875" y="136.248603" transform="rotate(-0 285.278875 136.248603)">Auditoría interna</text>
+   </g>
+   <g id="PathCollection_8">
+    <g clip-path="url(#p24f43e70be)">
+     <use xlink:href="#m922c7918f8" x="417.413275" y="57.544603" style="fill: var(--s1, #2a78d6)"/>
+    </g>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="417.413275" y="75.544603" transform="rotate(-0 417.413275 75.544603)">Supervisor local</text>
+   </g>
+   <g id="PathCollection_9">
+    <g clip-path="url(#p24f43e70be)">
+     <use xlink:href="#m922c7918f8" x="343.087675" y="79.720603" style="fill: var(--s1, #2a78d6)"/>
+    </g>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="343.087675" y="69.720603" transform="rotate(-0 343.087675 69.720603)">Casa matriz</text>
+   </g>
+   <g id="PathCollection_10">
+    <defs>
+     <path id="m139d5eb48f" d="M 0 4.873397 
+C 1.29244 4.873397 2.532119 4.359905 3.446012 3.446012 
+C 4.359905 2.532119 4.873397 1.29244 4.873397 0 
+C 4.873397 -1.29244 4.359905 -2.532119 3.446012 -3.446012 
+C 2.532119 -4.359905 1.29244 -4.873397 0 -4.873397 
+C -1.29244 -4.873397 -2.532119 -4.359905 -3.446012 -3.446012 
+C -4.359905 -2.532119 -4.873397 -1.29244 -4.873397 0 
+C -4.873397 1.29244 -4.359905 2.532119 -3.446012 3.446012 
+C -2.532119 4.359905 -1.29244 4.873397 0 4.873397 
+z
+"/>
+    </defs>
+    <g clip-path="url(#p24f43e70be)">
+     <use xlink:href="#m139d5eb48f" x="260.503675" y="195.035803" style="fill: var(--s3, #1baf7a)"/>
+    </g>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="260.503675" y="185.035803" transform="rotate(-0 260.503675 185.035803)">Operaciones de crédito</text>
+   </g>
+   <g id="text_25">
+    <text style="font-weight: 600; font-size: 8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="442.188475" y="154.010203" transform="rotate(-0 442.188475 154.010203)">GESTIONAR DE CERCA</text>
+   </g>
+   <g id="text_26">
+    <text style="font-weight: 600; font-size: 8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-muted, #898781)" x="45.785275" y="154.010203" transform="rotate(-0 45.785275 154.010203)">MANTENER SATISFECHO</text>
+   </g>
+   <g id="text_27">
+    <text style="font-weight: 600; font-size: 8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="442.188475" y="264.890203" transform="rotate(-0 442.188475 264.890203)">MANTENER INFORMADO</text>
+   </g>
+   <g id="text_28">
+    <text style="font-weight: 600; font-size: 8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-muted, #898781)" x="45.785275" y="264.890203" transform="rotate(-0 45.785275 264.890203)">VIGILAR</text>
+   </g>
+   <g id="text_29">
+    <text style="font-weight: 600; font-size: 11.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="37.526875" y="14.498203" transform="rotate(-0 37.526875 14.498203)">Mapa de partes interesadas de un programa IRB plurianual</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p24f43e70be">
+   <rect x="37.526875" y="26.498203" width="412.92" height="243.936"/>
+  </clipPath>
+ </defs>
+</svg></div><figcaption>Mapa de partes interesadas de un programa de autorización IRB, según su influencia sobre la viabilidad del programa y su interés en el resultado. Posiciones ilustrativas del autor; varían por institución.</figcaption></figure></p>
+<p>El mapa de la figura ordena a los actores en cuatro cuadrantes y cada cuadrante pide una
+táctica distinta:</p>
+<ul>
+<li><strong>Alta influencia y alto interés</strong> (supervisor, dirección de riesgos, casa matriz):
+  gestionar de cerca. Reuniones periódicas, información antes de que la pidan, ninguna
+  sorpresa.</li>
+<li><strong>Alta influencia y bajo interés</strong> (consejo, banca corporativa, tecnología): mantener
+  satisfechos. Es el cuadrante peligroso: pueden hundir el programa sin querer, por
+  desatención. La táctica es hacer visible lo que ganan —menos capital, mejor precio,
+  menos reprocesos— y pedirles poco pero en momentos decisivos.</li>
+<li><strong>Baja influencia y alto interés</strong> (validación, auditoría, operaciones): mantener
+  informados. Son aliados naturales y fuentes de argumentos.</li>
+<li><strong>Baja influencia y bajo interés</strong>: vigilar, por si cambian de posición.</li>
+</ul>
+<div class="box box-practica">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Cómo se sostiene un programa de cuatro años</span></div>
+<div class="box-b">
+<p>Cuatro mecanismos que separan los programas que llegan de los que se apagan.</p>
+<p><strong>Entregas intermedias con valor propio.</strong> Un programa cuyo único hito es «autorización en
+el año cuatro» muere en el año dos, cuando cambia el director financiero o llega un recorte.
+Un programa que en el año uno entrega una herramienta de calificación que el negocio ya
+usa, en el año dos un modelo de LGD que mejora el precio, y en el año tres la
+infraestructura de datos que reduce el cierre en dos días, sobrevive a los cambios de
+patrocinador porque ya ha demostrado valor.</p>
+<p><strong>Un patrocinador de nivel de dirección general que hable en su nombre.</strong> No el jefe
+directo: alguien que se siente en el comité donde se recortan presupuestos.</p>
+<p><strong>Un indicador de avance que el comité pueda leer.</strong> El porcentaje de módulos de la
+autoevaluación completados frente al plan es imperfecto pero comprensible, y evita la
+conversación circular de «¿cómo vamos?».</p>
+<p><strong>Un registro público de dependencias incumplidas.</strong> Un cuadro con las entregas
+comprometidas por otras áreas, su fecha y su estado, presentado en cada comité de programa.
+No para señalar culpables, sino porque las dependencias que no se hacen visibles no se
+cumplen. Este mecanismo, aplicado sin agresividad, es probablemente la herramienta de
+gestión lateral más eficaz que existe.</p>
+</div>
+</div>
+<h2 id="la-organizacion-con-doble-reporte">La organización con doble reporte<a class="hlink" href="#la-organizacion-con-doble-reporte" aria-label="enlace">#</a></h2>
+<p>Un Senior Manager de analítica de riesgos en un grupo global suele tener dos jefes: uno
+funcional —el responsable global de modelos de crédito— y uno de entidad —el director de
+riesgos de la entidad local—. No es una anomalía, es el diseño, y responde a una tensión
+real: el grupo necesita consistencia, la entidad responde ante su supervisor.</p>
+<p><strong>Qué quiere cada uno.</strong> El jefe funcional quiere metodología común, reutilización,
+eficiencia, y que no haya sorpresas metodológicas que expliquen mal en el consolidado. El
+jefe de entidad quiere que los modelos sirvan a su cartera, que el supervisor local esté
+tranquilo y que el cierre salga a tiempo.</p>
+<p><strong>Dónde chocan.</strong> En las prioridades —el proyecto global de armonización contra la
+remediación del hallazgo local—, en la calibración —el parámetro global contra la evidencia
+local—, y en los recursos —el mismo equipo sirve a ambas agendas.</p>
+<p>Reglas prácticas que funcionan:</p>
+<ol>
+<li><strong>Explicitar la matriz de decisión.</strong> Escribir qué decide cada jefe: metodología y
+   estándares el funcional; prioridades, calibración local y calendario el de entidad. Una
+   página, acordada por los dos, revisada anualmente. La mayor parte del conflicto de un
+   doble reporte viene de que esa página no existe.</li>
+<li><strong>Nunca dejar que se enteren por separado.</strong> La información que importa se comunica a
+   los dos a la vez. Un jefe que se entera por el otro deja de confiar.</li>
+<li><strong>Escalar los conflictos de prioridad, no absorberlos.</strong> Cuando las dos agendas no caben
+   en la capacidad del equipo, la tentación es absorber la tensión trabajando más. Es un
+   error: convierte un problema de asignación de recursos, que es de ellos, en un problema
+   de ejecución, que pasa a ser suyo. La forma correcta es presentar la capacidad, las dos
+   demandas y las opciones, y pedir que decidan.</li>
+<li><strong>Usar la asimetría regulatoria como argumento objetivo.</strong> Cuando el conflicto es
+   irreducible, el criterio de desempate es quién responde legalmente. En México, ante la
+   CNBV responde el Director General de la entidad, con responsabilidad intransferible
+   [M4]; y la evaluación técnica de cumplimiento independiente de las metodologías internas
+   de reservas debe realizarse <strong>al menos cada 18 meses</strong> [M20, art. 139 Bis 3 fr. II]. Eso
+   no es una preferencia: es una obligación de la entidad, y como tal gana.</li>
+</ol>
+<div class="box box-entrevista">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Pregunta de entrevista</span></div>
+<div class="box-b">
+<p><strong>«Su jefe funcional global le pide migrar al modelo corporativo del grupo en seis meses.
+Su director de riesgos local le dice que ese modelo no discrimina bien en su cartera y que
+además hay un hallazgo del supervisor local pendiente que consume todo el equipo. ¿Qué
+hace?»</strong></p>
+<p>El panel busca cuatro cosas.</p>
+<p><strong>Que no elija bando de entrada.</strong> La respuesta que empieza «obviamente prima el
+supervisor local» es tan mala como la que empieza «hay que alinearse con el grupo». Ambas
+saltan el análisis.</p>
+<p><strong>Que traiga evidencia, no opinión.</strong> «No discrimina bien» no es un argumento; el
+diferencial de poder discriminante del modelo global frente al local sobre la cartera
+local, con su intervalo de confianza y su efecto sobre la calibración, sí lo es. Si el
+modelo global es peor, hay que demostrarlo con números; si resulta ser mejor, la posición
+local se cae y hay que decirlo.</p>
+<p><strong>Que separe metodología de calendario.</strong> Frecuentemente el conflicto no es sobre qué
+modelo, sino sobre cuándo. Adoptar la metodología del grupo con calibración local y un
+calendario de doce meses en lugar de seis puede satisfacer a ambos, y esa opción intermedia
+es la que el panel quiere ver aparecer.</p>
+<p><strong>Que gestione el escalamiento correctamente.</strong> Presentar a ambos jefes, a la vez, el mismo
+documento: capacidad del equipo, las dos demandas, tres opciones con su costo y su riesgo,
+y una recomendación propia. Y explicitar la restricción dura: el compromiso con el
+supervisor local tiene una fecha comprometida y su incumplimiento tiene consecuencias
+regulatorias para la entidad, mientras que el calendario del grupo es una prioridad
+interna. Eso no cierra la discusión, pero la ordena.</p>
+<p>Un candidato que resuelva la pregunta trabajando más horas —«hacemos las dos cosas»— ha
+fallado: ha ocultado un problema de asignación de recursos que sus jefes necesitaban ver.</p>
+</div>
+</div>
+<h2 id="indicadores-de-gestion-del-area-de-modelos">Indicadores de gestión del área de modelos<a class="hlink" href="#indicadores-de-gestion-del-area-de-modelos" aria-label="enlace">#</a></h2>
+<p><figure class="fig" id="fig-cap31_tablero"><div class="fig-svg"><svg preserveAspectRatio="xMidYMid meet" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 465.454517 282.106203" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 282.106203 
+L 465.454517 282.106203 
+L 465.454517 -0 
+L 0 -0 
+L 0 282.106203 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 5.76 276.346203 
+L 418.68 276.346203 
+L 418.68 43.498203 
+L 5.76 43.498203 
+L 5.76 276.346203 
+z
+" style="fill: none"/>
+   </g>
+   <g id="matplotlib.axis_1"/>
+   <g id="matplotlib.axis_2"/>
+   <g id="patch_3">
+    <path d="M 5.76 73.705511 
+L 170.928 73.705511 
+L 170.928 57.343219 
+L 5.76 57.343219 
+z
+" clip-path="url(#p91cc6b049b)" style="fill: var(--c-grid, #e1e0d9)"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 5.76 105.171457 
+L 170.928 105.171457 
+L 170.928 88.809165 
+L 5.76 88.809165 
+z
+" clip-path="url(#p91cc6b049b)" style="fill: var(--c-grid, #e1e0d9)"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 5.76 136.637403 
+L 170.928 136.637403 
+L 170.928 120.275111 
+L 5.76 120.275111 
+z
+" clip-path="url(#p91cc6b049b)" style="fill: var(--c-grid, #e1e0d9)"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 5.76 168.103349 
+L 170.928 168.103349 
+L 170.928 151.741057 
+L 5.76 151.741057 
+z
+" clip-path="url(#p91cc6b049b)" style="fill: var(--c-grid, #e1e0d9)"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 5.76 199.569295 
+L 170.928 199.569295 
+L 170.928 183.207003 
+L 5.76 183.207003 
+z
+" clip-path="url(#p91cc6b049b)" style="fill: var(--c-grid, #e1e0d9)"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 5.76 231.035241 
+L 170.928 231.035241 
+L 170.928 214.672949 
+L 5.76 214.672949 
+z
+" clip-path="url(#p91cc6b049b)" style="fill: var(--c-grid, #e1e0d9)"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 5.76 262.501187 
+L 170.928 262.501187 
+L 170.928 246.138895 
+L 5.76 246.138895 
+z
+" clip-path="url(#p91cc6b049b)" style="fill: var(--c-grid, #e1e0d9)"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 5.76 361.304257 
+L 5.76 361.304257 
+L 5.76 336.1315 
+L 5.76 336.1315 
+z
+" clip-path="url(#p91cc6b049b)" style="fill: var(--st-good, #0ca30c)"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 5.76 361.304257 
+L 5.76 361.304257 
+L 5.76 336.1315 
+L 5.76 336.1315 
+z
+" clip-path="url(#p91cc6b049b)" style="fill: var(--st-warning, #fab219)"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 5.76 361.304257 
+L 5.76 361.304257 
+L 5.76 336.1315 
+L 5.76 336.1315 
+z
+" clip-path="url(#p91cc6b049b)" style="fill: var(--st-critical, #d03b3b)"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 5.76 73.705511 
+L 170.928 73.705511 
+L 170.928 57.343219 
+L 5.76 57.343219 
+z
+" clip-path="url(#p91cc6b049b)" style="fill: var(--st-good, #0ca30c)"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 5.76 105.171457 
+L 152.75952 105.171457 
+L 152.75952 88.809165 
+L 5.76 88.809165 
+z
+" clip-path="url(#p91cc6b049b)" style="fill: var(--st-warning, #fab219)"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 5.76 136.637403 
+L 42.09696 136.637403 
+L 42.09696 120.275111 
+L 5.76 120.275111 
+z
+" clip-path="url(#p91cc6b049b)" style="fill: var(--st-warning, #fab219)"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 5.76 168.103349 
+L 134.59104 168.103349 
+L 134.59104 151.741057 
+L 5.76 151.741057 
+z
+" clip-path="url(#p91cc6b049b)" style="fill: var(--st-critical, #d03b3b)"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 5.76 199.569295 
+L 42.9228 199.569295 
+L 42.9228 183.207003 
+L 5.76 183.207003 
+z
+" clip-path="url(#p91cc6b049b)" style="fill: var(--st-critical, #d03b3b)"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 5.76 231.035241 
+L 82.8384 231.035241 
+L 82.8384 214.672949 
+L 5.76 214.672949 
+z
+" clip-path="url(#p91cc6b049b)" style="fill: var(--st-critical, #d03b3b)"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 5.76 262.501187 
+L 47.052 262.501187 
+L 47.052 246.138895 
+L 5.76 246.138895 
+z
+" clip-path="url(#p91cc6b049b)" style="fill: var(--st-critical, #d03b3b)"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 5.76 276.346203 
+L 5.76 43.498203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 5.76 276.346203 
+L 418.68 276.346203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 8.3px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="177.53472" y="67.814647" transform="rotate(-0 177.53472 67.814647)">Modelos en inventario con ficha completa   (100 %; objetivo 100 %)</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 8.3px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="177.53472" y="99.280592" transform="rotate(-0 177.53472 99.280592)">Cobertura de cartera con modelo vigente   (89 %; objetivo 95 %)</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 8.3px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="177.53472" y="130.817218" transform="rotate(-0 177.53472 130.817218)">Modelos con antigüedad &gt; 3 años   (22 %; objetivo 15 %)</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 8.3px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="177.53472" y="162.212484" transform="rotate(-0 177.53472 162.212484)">Cumplimiento del plan de monitoreo anual   (78 %; objetivo 95 %)</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 8.3px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="177.53472" y="193.84443" transform="rotate(-0 177.53472 193.84443)">Hallazgos de validación abiertos vencidos   (9; objetivo 0)</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 8.3px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="177.53472" y="225.144376" transform="rotate(-0 177.53472 225.144376)">Ciclo medio de un cambio menor (semanas)   (14; objetivo 8)</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 8.3px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="177.53472" y="256.610322" transform="rotate(-0 177.53472 256.610322)">Reprocesos del cierre de ECL (12 meses)   (3; objetivo 0)</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 600; font-size: 11.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="5.76" y="14.498203" transform="rotate(-0 5.76 14.498203)">Tablero de indicadores del área de modelos (ilustrativo)</text>
+   </g>
+   <g id="line2d_1">
+    <path d="M 170.928 75.908127 
+L 170.928 55.140603 
+" clip-path="url(#p91cc6b049b)" style="fill: none; stroke: var(--c-ink, #0b0b0b); stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 162.6696 107.374073 
+L 162.6696 86.606549 
+" clip-path="url(#p91cc6b049b)" style="fill: none; stroke: var(--c-ink, #0b0b0b); stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 30.5352 138.840019 
+L 30.5352 118.072495 
+" clip-path="url(#p91cc6b049b)" style="fill: none; stroke: var(--c-ink, #0b0b0b); stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 162.6696 170.305965 
+L 162.6696 149.538441 
+" clip-path="url(#p91cc6b049b)" style="fill: none; stroke: var(--c-ink, #0b0b0b); stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 5.76 201.771911 
+L 5.76 181.004387 
+" clip-path="url(#p91cc6b049b)" style="fill: none; stroke: var(--c-ink, #0b0b0b); stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 49.8048 233.237857 
+L 49.8048 212.470333 
+" clip-path="url(#p91cc6b049b)" style="fill: none; stroke: var(--c-ink, #0b0b0b); stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 5.76 264.703803 
+L 5.76 243.936279 
+" clip-path="url(#p91cc6b049b)" style="fill: none; stroke: var(--c-ink, #0b0b0b); stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="legend_1">
+    <g id="patch_22">
+     <path d="M 9.56 36.55826 
+L 23.81 36.55826 
+L 23.81 29.90826 
+L 9.56 29.90826 
+z
+" style="fill: var(--st-good, #0ca30c)"/>
+    </g>
+    <g id="text_9">
+     <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="29.51" y="36.55826" transform="rotate(-0 29.51 36.55826)">en objetivo</text>
+    </g>
+    <g id="patch_23">
+     <path d="M 96.772969 36.55826 
+L 111.022969 36.55826 
+L 111.022969 29.90826 
+L 96.772969 29.90826 
+z
+" style="fill: var(--st-warning, #fab219)"/>
+    </g>
+    <g id="text_10">
+     <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="116.722969" y="36.55826" transform="rotate(-0 116.722969 36.55826)">cerca del objetivo</text>
+    </g>
+    <g id="patch_24">
+     <path d="M 215.460625 36.55826 
+L 229.710625 36.55826 
+L 229.710625 29.90826 
+L 215.460625 29.90826 
+z
+" style="fill: var(--st-critical, #d03b3b)"/>
+    </g>
+    <g id="text_11">
+     <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="235.410625" y="36.55826" transform="rotate(-0 235.410625 36.55826)">fuera de objetivo</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p91cc6b049b">
+   <rect x="5.76" y="43.498203" width="412.92" height="232.848"/>
+  </clipPath>
+ </defs>
+</svg></div><figcaption>Tablero ilustrativo de indicadores de gestión del área de modelos, con el valor observado, el objetivo y el semáforo. Valores del autor, ilustrativos; no corresponden a ninguna institución.</figcaption></figure></p>
+<p>Un área de modelos que no se mide a sí misma no puede pedir recursos ni defender
+prioridades. El conjunto mínimo:</p>
+<table>
+<thead>
+<tr>
+<th>Indicador</th>
+<th>Definición</th>
+<th>Por qué importa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Inventario completo</strong></td>
+<td>Modelos registrados con ficha completa / total de modelos identificados</td>
+<td>Es el primer principio de SS1/23: sin inventario no hay gestión del riesgo de modelo [R27]</td>
+</tr>
+<tr>
+<td><strong>Cobertura</strong></td>
+<td>Exposición cubierta por un modelo vigente / exposición total</td>
+<td>Mide el hueco real; la exposición sin modelo se gestiona con juicio y consume conservadurismo</td>
+</tr>
+<tr>
+<td><strong>Antigüedad</strong></td>
+<td>Proporción de modelos con más de 3 años desde su último redesarrollo o recalibración</td>
+<td>Anticipa la ola de redesarrollos y permite planificar capacidad con dos años de antelación</td>
+</tr>
+<tr>
+<td><strong>Hallazgos abiertos</strong></td>
+<td>Número y antigüedad de hallazgos de validación y auditoría no cerrados, por severidad</td>
+<td>Es el indicador que más mira el supervisor; los hallazgos vencidos son la métrica, no los abiertos</td>
+</tr>
+<tr>
+<td><strong>Cumplimiento del plan de monitoreo</strong></td>
+<td>Informes de monitoreo emitidos en plazo / planificados</td>
+<td>El monitoreo es la primera víctima de cualquier urgencia, y su incumplimiento es un hallazgo casi automático</td>
+</tr>
+<tr>
+<td><strong>Tiempo de ciclo de un cambio</strong></td>
+<td>Semanas desde la solicitud hasta la implantación, por tipo de cambio</td>
+<td>Mide la capacidad de reacción; un ciclo largo empuja a la organización hacia los ajustes fuera de modelo</td>
+</tr>
+<tr>
+<td><strong>Reprocesos de cierre</strong></td>
+<td>Número de cierres con recálculo posterior a la publicación interna, en 12 meses</td>
+<td>Diagnóstico directo de la calidad del proceso de producción</td>
+</tr>
+<tr>
+<td><strong>Ajustes fuera de modelo</strong></td>
+<td>Proporción de la ECL explicada por ajustes, por cartera</td>
+<td>Referencia empírica: la EBA reportó, para cartera corporativa, un promedio del 26,3 % y una mediana del 24,9 % [F21]</td>
+</tr>
+</tbody>
+</table>
+<div class="box box-dato">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Referencias empíricas para el indicador de ajustes fuera de modelo</span></div>
+<div class="box-b">
+<p>Según el informe de monitoreo de la EBA de noviembre de 2023, con datos a diciembre de
+2021, la participación de los ajustes fuera de modelo en la ECL total fue, en cartera
+corporativa, del <strong>26,3 % en promedio</strong> y del <strong>24,9 % en mediana</strong>; en hipotecas
+minoristas, 24,9 % y 13,3 %; en PYME minorista, 37,1 % y 30,8 %. Hubo casos individuales
+por encima del <strong>50 %</strong> a nivel de cartera [F21]. Además, de las instituciones encuestadas,
+16 aplicaron ajustes únicamente a nivel de ECL total, 10 únicamente a nivel de parámetro y
+8 en ambos niveles; la EBA considera los ajustes a nivel de parámetro más sensibles al
+riesgo y más consistentes con la necesidad de incorporar fuentes adicionales de riesgo,
+también para la evaluación de etapas [F21].</p>
+<p>Sirve como referencia de orden de magnitud, no como objetivo: un área con un 5 % de ajustes
+puede estar mejor —o puede no estar capturando riesgos que sus modelos no ven.</p>
+</div>
+</div>
+<p>Dos advertencias sobre el uso de estos indicadores. La primera: <strong>el tiempo de ciclo de un
+cambio de modelo depende de qué se considere cambio material</strong>, y eso es regulatorio, no
+interno. El artículo 143 del CRR exige permiso previo de la autoridad para cambios
+materiales al alcance de un sistema de calificación o al propio sistema, y notificación de
+<strong>todos</strong> los cambios, materiales o no [R19]. En la investigación de esta guía <strong>no se
+localizaron plazos estándar publicados por la PRA</strong> para la tramitación de un cambio
+material frente a una nueva solicitud; el paquete de solicitud trata ambos bajo el mismo
+marco procedimental y los plazos se acuerdan caso a caso [R21]. Planificar suponiendo un
+plazo fijo es, por tanto, planificar sobre un supuesto no verificado.</p>
+<p>La segunda: <strong>estos indicadores miden la salud del proceso, no la calidad de los modelos</strong>.
+Un área con inventario perfecto y cero hallazgos vencidos puede tener modelos mediocres. La
+calidad se mide con el capítulo 34; esto se mide para gestionar.</p>
+<h2 id="estructura-y-dimensionamiento-del-equipo">Estructura y dimensionamiento del equipo<a class="hlink" href="#estructura-y-dimensionamiento-del-equipo" aria-label="enlace">#</a></h2>
+<h3 id="perfiles">Perfiles<a class="hlink" href="#perfiles" aria-label="enlace">#</a></h3>
+<p><figure class="fig" id="fig-cap31_dotacion"><div class="fig-svg"><svg preserveAspectRatio="xMidYMid meet" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 536.016062 247.570547" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 247.570547 
+L 536.016062 247.570547 
+L 536.016062 0 
+L 0 0 
+L 0 247.570547 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 152.946062 212.938203 
+L 322.831063 212.938203 
+L 322.831063 26.498203 
+L 152.946062 26.498203 
+L 152.946062 212.938203 
+z
+" style="fill: none"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 152.946062 212.938203 
+L 152.946062 26.498203 
+" clip-path="url(#p059b42e8c0)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_2"/>
+     <g id="text_1">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="152.946062" y="226.156719" transform="rotate(-0 152.946062 226.156719)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 215.866433 212.938203 
+L 215.866433 26.498203 
+" clip-path="url(#p059b42e8c0)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_2">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="215.866433" y="226.156719" transform="rotate(-0 215.866433 226.156719)">10</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 278.786803 212.938203 
+L 278.786803 26.498203 
+" clip-path="url(#p059b42e8c0)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_3">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="278.786803" y="226.156719" transform="rotate(-0 278.786803 226.156719)">20</text>
+     </g>
+    </g>
+    <g id="text_4">
+     <text style="font-size: 10px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="237.888563" y="239.730859" transform="rotate(-0 237.888563 239.730859)">% de la capacidad anual</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_7">
+      <path d="M 152.946062 196.526772 
+L 322.831063 196.526772 
+" clip-path="url(#p059b42e8c0)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_5">
+      <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="146.946062" y="199.806132" transform="rotate(-0 146.946062 199.806132)">Gestión y comités</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_9">
+      <path d="M 152.946062 170.923916 
+L 322.831063 170.923916 
+" clip-path="url(#p059b42e8c0)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_6">
+      <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="146.946062" y="174.203275" transform="rotate(-0 146.946062 174.203275)">Datos y remediación</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_11">
+      <path d="M 152.946062 145.321059 
+L 322.831063 145.321059 
+" clip-path="url(#p059b42e8c0)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_12"/>
+     <g id="text_7">
+      <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="146.946062" y="148.600419" transform="rotate(-0 146.946062 148.600419)">Documentación y regulador</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_13">
+      <path d="M 152.946062 119.718203 
+L 322.831063 119.718203 
+" clip-path="url(#p059b42e8c0)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_14"/>
+     <g id="text_8">
+      <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="146.946062" y="122.997563" transform="rotate(-0 146.946062 122.997563)">Respuesta a validación y auditoría</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_15">
+      <path d="M 152.946062 94.115347 
+L 322.831063 94.115347 
+" clip-path="url(#p059b42e8c0)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_16"/>
+     <g id="text_9">
+      <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="146.946062" y="97.394706" transform="rotate(-0 146.946062 97.394706)">Producción y cierre mensual</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_17">
+      <path d="M 152.946062 68.51249 
+L 322.831063 68.51249 
+" clip-path="url(#p059b42e8c0)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_18"/>
+     <g id="text_10">
+      <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="146.946062" y="71.79185" transform="rotate(-0 146.946062 71.79185)">Monitoreo y recalibración</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_19">
+      <path d="M 152.946062 42.909634 
+L 322.831063 42.909634 
+" clip-path="url(#p059b42e8c0)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_20"/>
+     <g id="text_11">
+      <text style="font-size: 8.2px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="146.946062" y="46.024993" transform="rotate(-0 146.946062 46.024993)">Desarrollo y redesarrollo</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 152.946062 204.463658 
+L 184.406248 204.463658 
+L 184.406248 188.589887 
+L 152.946062 188.589887 
+z
+" clip-path="url(#p059b42e8c0)" style="fill: var(--s1, #2a78d6); stroke: var(--c-surface, #fcfcfb); stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 152.946062 178.860801 
+L 209.574396 178.860801 
+L 209.574396 162.98703 
+L 152.946062 162.98703 
+z
+" clip-path="url(#p059b42e8c0)" style="fill: var(--s1, #2a78d6); stroke: var(--c-surface, #fcfcfb); stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 152.946062 153.257945 
+L 228.450507 153.257945 
+L 228.450507 137.384174 
+L 152.946062 137.384174 
+z
+" clip-path="url(#p059b42e8c0)" style="fill: var(--s1, #2a78d6); stroke: var(--c-surface, #fcfcfb); stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 152.946062 127.655089 
+L 241.034581 127.655089 
+L 241.034581 111.781318 
+L 152.946062 111.781318 
+z
+" clip-path="url(#p059b42e8c0)" style="fill: var(--s1, #2a78d6); stroke: var(--c-surface, #fcfcfb); stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 152.946062 102.052232 
+L 278.786803 102.052232 
+L 278.786803 86.178461 
+L 152.946062 86.178461 
+z
+" clip-path="url(#p059b42e8c0)" style="fill: var(--s1, #2a78d6); stroke: var(--c-surface, #fcfcfb); stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 152.946062 76.449376 
+L 266.202729 76.449376 
+L 266.202729 60.575605 
+L 152.946062 60.575605 
+z
+" clip-path="url(#p059b42e8c0)" style="fill: var(--s1, #2a78d6); stroke: var(--c-surface, #fcfcfb); stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 152.946062 50.84652 
+L 291.370877 50.84652 
+L 291.370877 34.972749 
+L 152.946062 34.972749 
+z
+" clip-path="url(#p059b42e8c0)" style="fill: var(--s1, #2a78d6); stroke: var(--c-surface, #fcfcfb); stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 152.946062 212.938203 
+L 152.946062 26.498203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 152.946062 212.938203 
+L 322.831063 212.938203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 600; font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="189.439877" y="198.899835" transform="rotate(-0 189.439877 198.899835)">5</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 600; font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="214.608025" y="173.296978" transform="rotate(-0 214.608025 173.296978)">9</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 600; font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="233.484137" y="147.694122" transform="rotate(-0 233.484137 147.694122)">12</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 600; font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="246.068211" y="122.091266" transform="rotate(-0 246.068211 122.091266)">14</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 600; font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="283.820433" y="96.488409" transform="rotate(-0 283.820433 96.488409)">20</text>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 600; font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="271.236359" y="70.885553" transform="rotate(-0 271.236359 70.885553)">18</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 600; font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink2, #52514e)" x="296.404507" y="45.282697" transform="rotate(-0 296.404507 45.282697)">22</text>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 600; font-size: 11.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="152.946062" y="14.498203" transform="rotate(-0 152.946062 14.498203)">Reparto del esfuerzo</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_12">
+    <path d="M 360.371062 212.938203 
+L 530.256062 212.938203 
+L 530.256062 26.498203 
+L 360.371062 26.498203 
+L 360.371062 212.938203 
+z
+" style="fill: none"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_4">
+     <g id="line2d_21"/>
+     <g id="text_20">
+      <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="378.165341" y="224.864984" transform="rotate(-0 378.165341 224.864984)">PD IRB</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_22"/>
+     <g id="text_21">
+      <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="411.739452" y="224.864984" transform="rotate(-0 411.739452 224.864984)">LGD/EAD</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_23"/>
+     <g id="text_22">
+      <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="445.313562" y="224.864984" transform="rotate(-0 445.313562 224.864984)">IFRS 9</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_24"/>
+     <g id="text_23">
+      <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="478.887673" y="224.864984" transform="rotate(-0 478.887673 224.864984)">Macro</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_25"/>
+     <g id="text_24">
+      <text style="font-size: 7.8px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-muted, #898781)" x="512.461784" y="224.864984" transform="rotate(-0 512.461784 224.864984)">Decisión</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_8">
+     <g id="line2d_26">
+      <path d="M 360.371062 212.938203 
+L 530.256062 212.938203 
+" clip-path="url(#pbb99599174)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_27"/>
+     <g id="text_25">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="354.371062" y="216.547461" transform="rotate(-0 354.371062 216.547461)">0</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_28">
+      <path d="M 360.371062 183.806953 
+L 530.256062 183.806953 
+" clip-path="url(#pbb99599174)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_29"/>
+     <g id="text_26">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="354.371062" y="187.416211" transform="rotate(-0 354.371062 187.416211)">1</text>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_30">
+      <path d="M 360.371062 154.675703 
+L 530.256062 154.675703 
+" clip-path="url(#pbb99599174)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_31"/>
+     <g id="text_27">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="354.371062" y="158.284961" transform="rotate(-0 354.371062 158.284961)">2</text>
+     </g>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_32">
+      <path d="M 360.371062 125.544453 
+L 530.256062 125.544453 
+" clip-path="url(#pbb99599174)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_33"/>
+     <g id="text_28">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="354.371062" y="129.153711" transform="rotate(-0 354.371062 129.153711)">3</text>
+     </g>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_34">
+      <path d="M 360.371062 96.413203 
+L 530.256062 96.413203 
+" clip-path="url(#pbb99599174)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_35"/>
+     <g id="text_29">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="354.371062" y="100.022461" transform="rotate(-0 354.371062 100.022461)">4</text>
+     </g>
+    </g>
+    <g id="ytick_13">
+     <g id="line2d_36">
+      <path d="M 360.371062 67.281953 
+L 530.256062 67.281953 
+" clip-path="url(#pbb99599174)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_37"/>
+     <g id="text_30">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="354.371062" y="70.891211" transform="rotate(-0 354.371062 70.891211)">5</text>
+     </g>
+    </g>
+    <g id="ytick_14">
+     <g id="line2d_38">
+      <path d="M 360.371062 38.150703 
+L 530.256062 38.150703 
+" clip-path="url(#pbb99599174)" style="fill: none; stroke: var(--c-grid, #e1e0d9); stroke-width: 0.8; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_39"/>
+     <g id="text_31">
+      <text style="font-size: 9.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: end; fill: var(--c-muted, #898781)" x="354.371062" y="41.759961" transform="rotate(-0 354.371062 41.759961)">6</text>
+     </g>
+    </g>
+    <g id="text_32">
+     <text style="font-size: 10px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="342.247" y="119.718203" transform="rotate(-90 342.247 119.718203)">modelos / persona</text>
+    </g>
+   </g>
+   <g id="patch_13">
+    <path d="M 368.093108 212.938203 
+L 388.237574 212.938203 
+L 388.237574 138.029275 
+L 368.093108 138.029275 
+z
+" clip-path="url(#pbb99599174)" style="fill: var(--s2, #eb6834); stroke: var(--c-surface, #fcfcfb); stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 401.667219 212.938203 
+L 421.811685 212.938203 
+L 421.811685 131.370703 
+L 401.667219 131.370703 
+z
+" clip-path="url(#pbb99599174)" style="fill: var(--s2, #eb6834); stroke: var(--c-surface, #fcfcfb); stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 435.241329 212.938203 
+L 455.385796 212.938203 
+L 455.385796 143.023203 
+L 435.241329 143.023203 
+z
+" clip-path="url(#pbb99599174)" style="fill: var(--s2, #eb6834); stroke: var(--c-surface, #fcfcfb); stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 468.81544 212.938203 
+L 488.959906 212.938203 
+L 488.959906 154.675703 
+L 468.81544 154.675703 
+z
+" clip-path="url(#pbb99599174)" style="fill: var(--s2, #eb6834); stroke: var(--c-surface, #fcfcfb); stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 502.389551 212.938203 
+L 522.534017 212.938203 
+L 522.534017 52.716328 
+L 502.389551 52.716328 
+z
+" clip-path="url(#pbb99599174)" style="fill: var(--s2, #eb6834); stroke: var(--c-surface, #fcfcfb); stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 360.371062 212.938203 
+L 360.371062 26.498203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 360.371062 212.938203 
+L 530.256062 212.938203 
+" style="fill: none; stroke: var(--c-axis, #c3c2b7); stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_33">
+    <text style="font-weight: 600; font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="378.165341" y="134.533525" transform="rotate(-0 378.165341 134.533525)">2,6</text>
+   </g>
+   <g id="text_34">
+    <text style="font-weight: 600; font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="411.739452" y="127.874953" transform="rotate(-0 411.739452 127.874953)">2,8</text>
+   </g>
+   <g id="text_35">
+    <text style="font-weight: 600; font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="445.313562" y="139.527453" transform="rotate(-0 445.313562 139.527453)">2,4</text>
+   </g>
+   <g id="text_36">
+    <text style="font-weight: 600; font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="478.887673" y="151.179953" transform="rotate(-0 478.887673 151.179953)">2,0</text>
+   </g>
+   <g id="text_37">
+    <text style="font-weight: 600; font-size: 8.6px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: var(--c-ink2, #52514e)" x="512.461784" y="49.220578" transform="rotate(-0 512.461784 49.220578)">5,5</text>
+   </g>
+   <g id="text_38">
+    <text style="font-weight: 600; font-size: 11.5px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: var(--c-ink, #0b0b0b)" x="360.371062" y="14.498203" transform="rotate(-0 360.371062 14.498203)">Modelos por FTE</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p059b42e8c0">
+   <rect x="152.946062" y="26.498203" width="169.885" height="186.44"/>
+  </clipPath>
+  <clipPath id="pbb99599174">
+   <rect x="360.371062" y="26.498203" width="169.885" height="186.44"/>
+  </clipPath>
+ </defs>
+</svg></div><figcaption>Izquierda: reparto ilustrativo del esfuerzo anual del área. Derecha: modelos por persona a tiempo completo por familia de modelos. Cifras del autor, ilustrativas.</figcaption></figure></p>
+<p>Un área de modelos de banca mayorista necesita, como mínimo, cinco perfiles distintos, y el
+error de dimensionamiento más común es contratar cinco veces el mismo:</p>
+<ul>
+<li><strong>Modelador estadístico.</strong> Econometría, aprendizaje estadístico, diseño de muestras. Es
+  el perfil que todo el mundo contrata primero y el que menos escasea.</li>
+<li><strong>Especialista de dominio crediticio.</strong> Alguien que ha leído expedientes, que sabe qué es
+  una cláusula de aceleración cruzada y por qué una empresa incumple. Sin este perfil, los
+  modelos son estadísticamente correctos y económicamente absurdos. La EBA exige
+  expresamente consultar a los expertos relevantes de las áreas de negocio sobre la
+  selección de factores de riesgo [F19]; para eso hace falta alguien que hable los dos
+  idiomas.</li>
+<li><strong>Ingeniero de datos y de producción.</strong> Quien lleva el modelo del cuaderno al entorno
+  productivo, con pruebas, control de versiones y trazabilidad. Es el perfil más
+  infravalorado y el que más errores previene: la mayoría de los incidentes de riesgo de
+  modelo son de implementación, no de especificación.</li>
+<li><strong>Especialista regulatorio y de documentación.</strong> Quien conoce el CRR, las declaraciones
+  supervisoras, la CUB y sus anexos, y sabe convertir un desarrollo en un expediente
+  defendible. En un banco bajo supervisión dual este perfil no es un lujo.</li>
+<li><strong>Gestor de producto y de relación.</strong> Quien traduce, coordina, negocia calendarios y
+  mantiene viva la tabla de doble entrada. En equipos pequeños lo hace el director; a
+  partir de veinte personas hace falta dedicación específica.</li>
+</ul>
+<h3 id="cuantos-modelos-por-persona">Cuántos modelos por persona<a class="hlink" href="#cuantos-modelos-por-persona" aria-label="enlace">#</a></h3>
+<p>No hay una regla universal, y cualquier cifra que se cite debe entenderse como criterio del
+autor, no como estándar. Lo que sí se puede afirmar es qué determina el número:</p>
+<ul>
+<li><strong>La materialidad y el nivel de riesgo del modelo.</strong> Un modelo IRB autorizado, con
+  atestación anual [R15 §2.12-2.13] y monitoreo formal, consume un orden de magnitud más de
+  capacidad que una herramienta interna de apoyo.</li>
+<li><strong>La frecuencia de uso.</strong> Un modelo que corre mensualmente en producción consume
+  capacidad todos los meses.</li>
+<li><strong>La estabilidad de la cartera y del entorno.</strong> Un modelo sobre una cartera estable en un
+  entorno tranquilo puede pasar dos años sin tocarse; el mismo modelo en un entorno con
+  cambios regulatorios o macroeconómicos consume capacidad continuamente.</li>
+<li><strong>La madurez de la infraestructura.</strong> La diferencia entre un entorno con datos
+  gobernados y uno donde cada desarrollo empieza reconstruyendo la muestra es, fácilmente,
+  un factor de dos en capacidad.</li>
+</ul>
+<p>Como criterio de planeación —<strong>criterio del autor</strong>, no norma— un modelo IRB material
+requiere del orden de media persona a tiempo completo al año en estado estacionario
+(monitoreo, recalibración, documentación, atención a validación y supervisor), y entre dos
+y cuatro personas-año concentradas en un año de redesarrollo. Sobre esa base se planifica
+mirando la <strong>antigüedad del inventario</strong>: si dieciocho de treinta y seis modelos cumplen
+tres años en los próximos dos ejercicios, la ola de redesarrollo es previsible con dos años
+de antelación, y esa previsibilidad es el mejor argumento presupuestario que existe.</p>
+<div class="box box-practica">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">El error de dimensionar por el desarrollo</span></div>
+<div class="box-b">
+<p>Casi todos los planes de dotación se construyen contando desarrollos y olvidando que el
+desarrollo es, en el estado estacionario, alrededor de una quinta parte del esfuerzo del
+área. El resto es monitoreo, producción, respuesta a validación y auditoría, documentación
+y remediación de datos. Un área dimensionada solo para desarrollar entrega los modelos a
+tiempo el primer año y colapsa el tercero, cuando el peso acumulado del inventario consume
+toda la capacidad y ya no queda nadie para desarrollar nada.</p>
+<p>El diagnóstico se hace con una pregunta: ¿qué proporción de la capacidad del equipo está
+comprometida antes de empezar el año? Si supera el 75 %, el área no tiene capacidad de
+respuesta y cualquier imprevisto —un hallazgo, un cambio regulatorio, una integración— se
+paga cancelando el plan.</p>
+</div>
+</div>
+<h3 id="construir-o-comprar">Construir o comprar<a class="hlink" href="#construir-o-comprar" aria-label="enlace">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Dimensión</th>
+<th>Construir internamente</th>
+<th>Comprar o subcontratar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Coste inicial</td>
+<td>Alto en tiempo, bajo en efectivo</td>
+<td>Bajo en tiempo, alto en efectivo</td>
+</tr>
+<tr>
+<td>Coste recurrente</td>
+<td>Capacidad del equipo</td>
+<td>Licencia y dependencia del proveedor</td>
+</tr>
+<tr>
+<td>Ajuste a la cartera</td>
+<td>Total</td>
+<td>Limitado, requiere calibración local</td>
+</tr>
+<tr>
+<td>Defensa ante el supervisor</td>
+<td>Plena si está documentada</td>
+<td>Exige entender el modelo del proveedor lo bastante para defenderlo</td>
+</tr>
+<tr>
+<td>Riesgo de concentración</td>
+<td>Personas clave</td>
+<td>Proveedor único</td>
+</tr>
+<tr>
+<td>Velocidad</td>
+<td>Lenta</td>
+<td>Rápida en la entrega, lenta en la adaptación</td>
+</tr>
+</tbody>
+</table>
+<p>El criterio que resuelve la mayoría de los casos: <strong>se construye lo que es fuente de
+ventaja y se compra lo que es infraestructura</strong>. Un modelo de PD corporativa sobre la
+cartera propia es fuente de ventaja —discrimina mejor que un modelo genérico porque conoce
+la cartera— y además es el objeto sobre el que recae la autorización. Un motor de cálculo
+de ECL, un gestor de flujos de trabajo o una plataforma de inventario de modelos son
+infraestructura y rara vez justifica construirlos.</p>
+<p>Dos advertencias. La primera: comprar un modelo <strong>no traslada la responsabilidad</strong>. El
+banco responde igual ante el supervisor, y SS4/24 exige, para el uso de datos externos,
+evaluar la representatividad y aplicar margen de conservadurismo cuando esta sea limitada
+[R15 §9.1-9.14, §8.2-8.9]. La segunda: la subcontratación de la <strong>producción</strong> del cierre es
+mucho más peligrosa que la del desarrollo, porque crea una dependencia operativa en una
+fecha con consecuencias contables.</p>
+<div class="box box-entrevista">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Pregunta de entrevista</span></div>
+<div class="box-b">
+<p><strong>«Tiene presupuesto para tres contrataciones. Su inventario tiene treinta y seis modelos,
+dieciocho de los cuales cumplen tres años en los próximos dos ejercicios, y el cierre
+mensual consume el 20 % de la capacidad del equipo. ¿A quién contrata?»</strong></p>
+<p>La respuesta que el panel no quiere es «tres modeladores».</p>
+<p>Lo que buscan, primero, es que el candidato <strong>razone desde la restricción, no desde el
+deseo</strong>: con dieciocho redesarrollos en dos años y una capacidad de entre dos y cuatro
+personas-año por redesarrollo material, la aritmética no cuadra con tres contrataciones, y
+decirlo es parte de la respuesta. La primera conclusión honesta es que hay que <strong>priorizar
+el inventario por materialidad y riesgo</strong> y proponer al comité que algunos modelos se
+recalibren en lugar de redesarrollarse, con la justificación documentada.</p>
+<p>Segundo, que reconozca que la palanca de mayor rendimiento no es contratar modeladores
+sino <strong>liberar capacidad</strong>: si el cierre consume el 20 % del equipo, un ingeniero de datos
+y producción que automatice controles y reduzca ese consumo a la mitad libera el
+equivalente a dos modeladores, y además reduce el riesgo de implementación, que es la
+fuente más frecuente de incidentes de riesgo de modelo.</p>
+<p>Tercero, que cubra el hueco de perfil, no el de volumen. Un reparto defendible sería un
+ingeniero de datos y producción, un especialista regulatorio y de documentación —que en un
+banco bajo supervisión dual libera desproporcionadamente tiempo de los modeladores
+senior— y un modelador senior con experiencia de dominio crediticio. Cualquier reparto es
+aceptable si viene con ese razonamiento; ninguno lo es si viene sin él.</p>
+<p>Cuarto, y es lo que distingue al candidato de dirección: llevar al comité <strong>la brecha que
+queda después de las tres contrataciones</strong>, cuantificada, con las opciones para cerrarla
+—subcontratación, ampliación del calendario de redesarrollo con margen de conservadurismo
+adicional documentado, o más presupuesto— y una recomendación. Aceptar tres plazas y callar
+la brecha es asumir un compromiso que no se podrá cumplir.</p>
+</div>
+</div>
+<div class="box box-checklist">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Diagnóstico rápido de un área de modelos</span></div>
+<div class="box-b">
+<ul>
+<li>¿Existe un inventario único, completo y con clasificación por riesgo?</li>
+<li>¿Está escrito quién decide qué entre el reporte funcional y el de entidad?</li>
+<li>¿Hay criterios de aceptación acordados con validación antes de empezar cada desarrollo?</li>
+<li>¿Se conoce el porcentaje de capacidad comprometida antes de empezar el año?</li>
+<li>¿Existe un cuadro de dependencias de otras áreas con fecha y estado, revisado en comité?</li>
+<li>¿Se mide y se publica el costo en capital de las deficiencias de datos?</li>
+<li>¿Cuántos hallazgos están vencidos y cuál es el más antiguo?</li>
+<li>¿El negocio usa alguna herramienta del área antes de decidir, o solo después?</li>
+<li>¿Puede el área explicar el movimiento de la provisión del último trimestre en cinco
+  líneas y con números?</li>
+<li>¿Existe algún modelo material cuyo único conocedor sea una sola persona?</li>
+</ul>
+</div>
+</div>
+<h2 id="conexion-con-el-resto-de-la-guia">Conexión con el resto de la guía<a class="hlink" href="#conexion-con-el-resto-de-la-guia" aria-label="enlace">#</a></h2>
+<p>El gobierno del riesgo de modelo como disciplina —inventario, clasificación, validación,
+mitigantes— se desarrolla en el capítulo 32. La documentación, el use test y el proceso de
+autorización ante la PRA y la CNBV, en el capítulo 33. El monitoreo continuo y el ciclo de
+redesarrollo, en el capítulo 34. Este capítulo es la capa que los atraviesa: la
+organización sin la cual ninguno de los tres funciona.</p>
+<div class="box box-clave">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Idea clave</span></div>
+<div class="box-b">
+<p>Un modelo vive en una red de dependencias que su autor no controla. La competencia que
+distingue a un director de modelos de un buen modelador no es construir mejores modelos:
+es hacer que esa red funcione —conseguir el dato, el uso, el desafío y el presupuesto— y
+saber cuándo un problema técnico es en realidad un problema de gobierno que hay que
+escalar.</p>
+</div>
+</div>
+<div class="box box-entrevista">
+<div class="box-h"><span class="box-i" aria-hidden="true"></span><span class="box-t">Pregunta de entrevista</span></div>
+<div class="box-b">
+<p><strong>«Lleva tres meses en el puesto dirigiendo un área de veinticinco personas. Encuentra que
+el 40 % de la ECL de la cartera corporativa viene de ajustes fuera de modelo, que hay once
+hallazgos de validación vencidos y que el equipo no ha entregado un informe de monitoreo en
+ocho meses. ¿Cuáles son sus primeras tres acciones y en qué orden?»</strong></p>
+<p>Lo que el panel evalúa es el criterio de priorización y la capacidad de secuenciar, no la
+lista.</p>
+<p>La respuesta que funciona empieza por <strong>diagnosticar antes de actuar</strong>, pero con un plazo
+corto y explícito: cuatro a seis semanas para entender si el 40 % de ajustes refleja
+modelos rotos, riesgos genuinamente no modelizables o una decisión no documentada de
+conservadurismo; y si los hallazgos vencidos son de un modelo o están distribuidos. Sin ese
+diagnóstico, cualquier acción es un tiro al aire.</p>
+<p>La primera acción sustantiva es <strong>restablecer el monitoreo</strong>, porque es lo que genera la
+información que todo lo demás necesita y porque su ausencia es el hallazgo más fácil de
+levantar para un supervisor. Es también la señal interna más clara de que la disciplina
+volvió.</p>
+<p>La segunda es <strong>poner el problema sobre la mesa del comité con números y con opciones</strong>: el
+40 % de ajustes por encima de la referencia empírica disponible —la EBA reportó un promedio
+del 26,3 % para cartera corporativa [F21]— y una recomendación de migrar los ajustes a
+nivel de parámetro, que es la preferencia expresa de la EBA, del BCE y de la PRA
+[F21][F22][R29]. El comité tiene que saberlo antes de que se lo diga el supervisor, y tiene
+que quedar en acta.</p>
+<p>La tercera es <strong>renegociar el plan del año</strong> con los dos jefes, porque cerrar once
+hallazgos y restablecer el monitoreo consume capacidad que estaba comprometida en otra
+cosa. Un candidato que no plantea esta renegociación está prometiendo hacerlo todo, y no
+podrá.</p>
+<p>Y una cuarta que suma puntos si aparece: <strong>no culpar al predecesor</strong>. El panel lo está
+mirando.</p>
+</div>
+</div>
+<h3 id="fuentes-de-este-capitulo-30">Fuentes de este capítulo<a class="hlink" href="#fuentes-de-este-capitulo-30" aria-label="enlace">#</a></h3>
+<p><strong>Bank of England / PRA</strong></p>
+<ul>
+<li>[R10] legislation.gov.uk, artículo 178 CRR (<em>Default of an obligor or credit facility</em>)
+  — umbral de 90 días y opción de 180 días para determinados segmentos:
+  https://www.legislation.gov.uk/eur/2013/575/article/178</li>
+<li>[R15] Bank of England, <em>Credit risk internal ratings based approach</em> (SS4/24), versión
+  septiembre 2024 — use test §4.1-4.7; atestación anual §2.12-2.13; margen de
+  conservadurismo §9.1-9.14; representatividad §8.2-8.9; estándares de datos §6.2-6.3;
+  seguimiento de excepciones §10.17(d)(iii):
+  https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/supervisory-statement/2024/credit-risk-internal-ratings-based-approach-supervisory-statement.pdf</li>
+<li>[R16] legislation.gov.uk, artículo 181 CRR (<em>Requirements specific to own-LGD estimates</em>):
+  https://www.legislation.gov.uk/eur/2013/575/article/181</li>
+<li>[R19] legislation.gov.uk, artículo 143 CRR (<em>Permission to use the IRB Approach</em>) —
+  permiso previo para cambios materiales y notificación de todos los cambios:
+  https://www.legislation.gov.uk/eur/2013/575/article/143</li>
+<li>[R21] Bank of England, <em>Application under Article 143 for Permission to use the IRB
+  Approach</em> (paquete de solicitud) — ocho módulos en tres fases, autoevaluación exhaustiva,
+  certificación a nivel de director general, ausencia de plazos predeterminados:
+  https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/authorisations/capital-requirements-regulation-permissions/internal-ratings-based-approach-crr-permission-application-pack.pdf</li>
+<li>[R27] Bank of England, <em>Model risk management principles for banks</em> (SS1/23), mayo 2023
+  — cinco principios, alcance y entrada en vigor el 17 de mayo de 2024:
+  https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/supervisory-statement/2023/ss123.pdf</li>
+<li>[R29] Bank of England, <em>Thematic feedback on accounting for IFRS 9 ECL and climate risk</em>
+  (carta a directores financieros), 27 septiembre 2024:
+  https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/letter/2024/thematic-feedback-on-accounting-for-ifrs-9-ecl-and-climate-risk.pdf</li>
+</ul>
+<p><strong>EBA, BCE e IASB</strong></p>
+<ul>
+<li>[F19] EBA/GL/2017/06, <em>Guidelines on credit institutions' credit risk management practices
+  and accounting for expected credit losses</em>, 20 septiembre 2017 — control interno §27,
+  separación de roles §32, validación §65-67:
+  https://www.eba.europa.eu/documents/10180/1965596/8a9a9df0-a0cc-406e-a781-7d4fb753495d/Guidelines%20on%20Accounting%20for%20ECL%20(EBA-GL-2017-06)_EN.pdf</li>
+<li>[F21] EBA, <em>IFRS 9 Implementation by EU institutions – 2023 Monitoring Report</em>,
+  noviembre 2023 — participación de los ajustes fuera de modelo por cartera:
+  https://www.eba.europa.eu/sites/default/files/2023-11/25b12d35-9c28-4335-a589-166c77198920/Final%20Report%20on%20IFRS9%20implementation%20by%20EU%20institutions.pdf</li>
+<li>[F22] ECB Banking Supervision, <em>IFRS 9 overlays and model improvements for novel risks</em>,
+  julio 2024 — deficiencias de gobernanza, involucramiento de finanzas:
+  https://www.bankingsupervision.europa.eu/ecb/pub/pdf/ssm.IFRS9novelrisks_202407~5e0eb30b5c.en.pdf</li>
+</ul>
+<p><strong>CNBV / México</strong></p>
+<ul>
+<li>[M1] Circular Única de Bancos, Título Segundo, Capítulo IV — Administración Integral de
+  Riesgos: Comité de Riesgos, Unidad para la Administración Integral de Riesgos y Auditoría
+  Interna (copia espejo de la Asociación de Bancos de México):
+  https://www.abm.org.mx/legislacion-y-regulacion/juridico/cnbv/CircularUnicadeBancos.pdf</li>
+<li>[M4] Anexo 26 de la CUB — requisitos para autorizar metodologías internas de calificación
+  basadas en probabilidades de incumplimiento para cartera comercial; definición de
+  incumplimiento a 90 días; responsabilidad intransferible del Director General; área de
+  evaluación de riesgos funcionalmente independiente; autoevaluación bienal:
+  https://www.abm.org.mx/legislacion-y-regulacion/juridico/anexoscub/CUB_Anexo26.pdf</li>
+<li>[M5] Anexo 32-A de la CUB — requisitos mínimos del método básico basado en calificaciones
+  internas; aprobación del Consejo y de la Dirección General; auditoría interna anual con
+  reporte al Consejo en 30 días naturales:
+  https://www.abm.org.mx/legislacion-y-regulacion/juridico/anexoscub/CUB_Anexo32A.pdf</li>
+<li>[M20] DOF, <em>Resolución que modifica las Disposiciones de carácter general aplicables a las
+  instituciones de crédito</em>, 30 diciembre 2021 (código DOF 5639748) — artículo 139 Bis 3,
+  fracción II: evaluación técnica de cumplimiento independiente al menos cada 18 meses:
+  https://sidof.segob.gob.mx/notas/docFuente/5639748</li>
+</ul></section><nav class="pager"><a href="cap-30-stress.html"><span class="dir">← Anterior</span><span class="nm">30. Pruebas de estrés, ICAAP y planeación</span></a><a class="next" href="cap-32-mrm.html"><span class="dir">Siguiente →</span><span class="nm">32. Gestión del riesgo de modelo</span></a></nav></div></main>
+</div>
+<button class="top" id="top" aria-label="Volver arriba">↑</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
