@@ -74,3 +74,17 @@ por relevancia. Es bilingüe: el índice se enriquece con los 301 pares
 español-inglés del glosario del capítulo 38, así que buscar *margin of
 conservatism* encuentra las secciones sobre margen de conservadurismo aunque
 estén escritas en español. Atajo: la tecla `/`.
+
+## Autoría y licencia
+
+© 2026 Jonathan Vázquez Hernández. Todos los derechos reservados.
+
+Se permite leer, descargar para uso personal, citar fragmentos breves con
+atribución y enlazar a la obra. Reproducirla, adaptarla, incorporarla a
+materiales de una organización, usarla comercialmente o emplearla para entrenar
+sistemas de inteligencia artificial requiere autorización escrita del autor.
+Los términos completos están en [`LICENSE`](LICENSE).
+
+Los textos normativos citados pertenecen a sus emisores y se reproducen solo en
+la extensión necesaria para su cita y comentario. Las opiniones son del autor a
+título personal y no representan la posición de ninguna institución.
